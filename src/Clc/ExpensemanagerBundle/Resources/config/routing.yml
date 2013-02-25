@@ -1,0 +1,5 @@
+# src/Clc/ExpensemanagerBundle/Resources/config/routing.yml
+
+clc_expensemanager_homepage:
+    pattern:  /
+    defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:index }

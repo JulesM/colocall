@@ -1,0 +1,35 @@
+/* web/css/footer.css*/
+
+footer { 
+    border-top: solid 1px;
+    border-color: #a4a4a4;
+    height: 100px;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Oswald-Light';
+    font-size: 18px;
+}
+
+footer li {    
+    display: inline-block;
+    margin-left: 60px;   
+}
+
+
+footer a:link {
+    text-decoration:none;
+    color: #a4a4a4;
+}
+footer a:visited {
+    text-decoration:none;
+    color: #a4a4a4;
+}
+footer a:hover {
+    text-decoration:none;
+    color: #a4a4a4;
+}
+footer a:active {
+    text-decoration:none;
+    color: #a4a4a4;
+}
+

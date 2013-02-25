@@ -1,0 +1,27 @@
+{# src/Clc/DashboardBundle/resources/views/default/addtodomodal.html.twig #}
+
+<!DOCTYPE html>
+
+<div class="modal hide fade" id="addtodomodal" area-hidden="true">
+
+    <div class="modal-header">
+        <h3>Add a new to-dp</h3>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <label>Task description</label>
+            <input type="text" class="span4"/><br>
+            <label>Due date</label>
+            <input type="date" class="span4"/><br>
+            <button type="submit" class="btn btn-success">Add to-do</button>
+            <button type="reset" class="btn">Clear</button>
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
+    </div>
+    
+</div>

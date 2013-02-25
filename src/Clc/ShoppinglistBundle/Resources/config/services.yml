@@ -1,0 +1,7 @@
+parameters:
+#    clc_shoppinglist.example.class: Clc\ShoppinglistBundle\Example
+
+services:
+#    clc_shoppinglist.example:
+#        class: %clc_shoppinglist.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

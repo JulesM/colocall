@@ -1,0 +1,3 @@
+clc_shoppinglist_homepage:
+    pattern:  /
+    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:index }

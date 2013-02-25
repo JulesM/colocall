@@ -1,0 +1,30 @@
+{# src/Clc/DashboardBundle/resources/views/default/addexpensemodal.html.twig #}
+
+<!DOCTYPE html>
+
+<div class="modal hide fade" id="addexpensemodal" area-hidden="true">
+
+    <div class="modal-header">
+        <h3>Add your expense</h3>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <label>Expense description</label>
+            <input type="text" class="span3"/>
+            <label>Amount</label>
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                <input class="span2" id="prependedInput" type="text">
+            </div>    
+            <button type="submit" class="btn btn-success">Add expense</button>
+            <button type="reset" class="btn">Clear</button>
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
+    </div>
+    
+</div>

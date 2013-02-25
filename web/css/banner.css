@@ -1,0 +1,93 @@
+/* web/css/banner.css */
+
+root { 
+    display: block;
+}
+
+/* --- Style de la bannière --- */
+
+#banner{
+    height: 40px;
+    width: 1280px;
+    background-color: white;
+    box-shadow: 0px 4px 2px #aaa;
+}
+
+#banner1{
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    margin-left: 180px;
+    vertical-align: top;
+    margin-top: 2px;
+}
+
+#banner2{
+    display: inline-block;
+    width: 450px;
+    height: 30px;
+    vertical-align: top;
+    margin-left: 300px;
+    padding-top: 5px;
+    font-family: 'Oswald-Regular';
+}
+
+#banner2 #remember_me{
+    margin-left: 10px;
+}
+
+#banner2 form label{
+    margin-left: 5px;
+}
+
+#banner2 form button{
+    margin-left: 20px;
+}
+
+#name_button{
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+
+#name_button a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#home_button{
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+
+#home_button a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#settings_button{
+    display: inline-block;
+    float: right;
+    margin-right: 70px;
+    margin-top: 5px;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+#settings_dropdown_button{
+    text-decoration: none;
+    color: black;
+}
+
+.nav nav-tabs nav-stacked{
+    height: 100%;
+}

@@ -1,0 +1,5 @@
+# src/Clc/TodosBundle/Resources/routing.yml
+
+clc_todos_homepage:
+    pattern:  /
+    defaults: { _controller: ClcTodosBundle:Todos:index }

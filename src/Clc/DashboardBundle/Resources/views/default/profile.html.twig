@@ -1,0 +1,35 @@
+{# src/Clc/DashboardBundle/Resources/views/default/profile.html.twig #}
+
+    {% extends "::base.html.twig" %}
+
+    {% block title %}
+      {{ parent() }} - Profile
+    {% endblock %}
+
+    {% block body %}
+      
+      <div id="profile-content">
+          <div id="profile-left">
+              <div id="profile-picture">
+                  <img src="{{ asset('img/Profile_Jules.jpg') }}" height="50%" width="50%" alt="">
+              </div>
+              <div id="edit-buttons">
+                  <button class="btn" href="#">Edit profile picture</button>
+                  <button class="btn" href="#">Edit profile information</button>
+              </div>    
+          </div>
+          <div id="profile-right">
+              <h3>Jules Marcilhacy</h3>
+              <p>Double_Jay</p>
+              <p>Male</p>
+              <p>French</p>
+              <p>October 12th, 1989</p>
+              <p>+33 6 76 32 62 88</p>
+              <p>jules.marcilhacy@gmail.com</p>
+              <p>I like Football, Kite surf, Skiing and Going out</p>
+              <button class="btn btn-primary"> Add me on Facebook</button>
+              <button class="btn btn-primary"> Follow me on Twitter</button>
+          </div>     
+      </div>
+      
+    {% endblock body %}  

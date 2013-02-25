@@ -1,0 +1,40 @@
+# app/config/config.yml
+
+security:
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+      
+        login_firewall:
+            pattern:    ^/login$
+            anonymous:  ~
+            
+        secured_area:
+            pattern:    ^/
+            anonymous:  false
+            form_login:
+                login_path:   /login
+                check_path:   /login_check
+                default_target_path: /dashboard
+                provider: fos_userbundle
+                remember_me: true
+            remember_me:
+                key: %secret%
+            logout:
+                path:   /logout
+                target: /login
+
+    access_control:
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    ryan:  { password: ryanpass, roles: 'ROLE_USER' }
+                    admin: { password: kitten, roles: 'ROLE_ADMIN' }
+        fos_userbundle:
+            id: fos_user.user_manager            
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512

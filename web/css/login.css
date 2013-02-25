@@ -1,0 +1,304 @@
+/* --- Style de la page de login --- */
+
+body{
+    background-image: url('../img/visitor_homepage/Background/Overview-bckgd.jpg');
+    background-size: 1400px 2000px;
+}
+
+/* --- block 1 --- */
+
+#block1{
+    border-top: solid 1px transparent;
+    background-image: url('../img/main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 540px;
+    width: 1280px;
+    margin-left: -180px;
+    margin-top: 1px;
+    box-shadow: 0px 2px 2px #d59392;
+}
+
+#middle_block1_ext{
+    height: 60%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    padding: 0.5% 0.5% 0.8% 0.5%;
+    background-color: white;
+    box-shadow: 4px 4px 4px #d59392; 
+}
+
+#middle_block1{
+    border: solid #d59392 4px;
+    height: 99%;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#catchphrase_box{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+}
+
+#catchphrase1{
+    font-size: 60px;
+    font-family: Oswald-Bold;
+    color: #CF4423;
+    text-align: center;
+    height: 50%;
+    padding-top: 10%;
+}
+
+#catchphrase2{
+    font-size: 45px;
+    font-family: Oswald-Light;
+    text-align: center;
+    height: 50%;
+}
+
+#signin_box{
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+}
+
+#signin_box p{
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_content{
+    width: 90%;
+    border: solid 1px;
+    border-color: rgb(229, 229, 229);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+}
+
+#legend{
+    text-align: center;
+    font-size: 19px;
+    background-color: whitesmoke;
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_content label{
+    width: 30%;
+    display: inline-block;
+    margin-left: 2%;
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_content input{
+    display: inline-block;
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_footer{
+    border-top: solid 1px;
+    border-color: rgb(229, 229, 229);
+    height: 20%;
+}
+
+#signin_box_footer button{
+    margin-left: 12%;
+    margin-top: 3%;
+    font-family: 'Oswald-Regular';
+}
+
+/* --- block 2 --- */
+
+#block2{
+    
+}
+
+#ribbon_container{
+    width: 1280px;
+    margin-left: -160px;
+    height: 13px;
+    margin-top: 10px;
+    background-image: url('../img/visitor_homepage/orange-ribbon.jpg');
+    background-repeat: repeat-x;
+    box-shadow: 0px 2px 2px #d59392;
+}
+
+#ribbon_block2{
+    border: solid black 1px;
+    width: 100%;
+}
+
+#feature_container{
+}
+
+#feature{
+    display: inline-block;
+    height: 450px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#feature h3{
+    font-family: 'Oswald-Light';
+    color: #CF4423; 
+}
+
+#feature p{
+    font-family: 'Oswald-Stencil';
+}
+
+.lign{
+    background: transparent;
+    border-color: black;
+    border-width: 0 0 1px;
+    border-style: groove;
+}
+
+#carousel_container{
+    height: 400px;
+}
+
+.carousel-inner{
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-inner #item_container{
+    height: 250px;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 100px;
+}
+
+.carousel-inner #item_container h3{
+    font-family: 'Oswald-Regular';
+    color: #CF4423;
+}
+
+.carousel-inner #item_container p{
+    font-family: 'Oswald-Light';
+}
+
+.carousel-inner #text{
+    display: inline-block;
+    height: 200px;
+    width: 58%;
+    vertical-align: top;
+    padding-left: 20px;
+}
+
+.carousel-inner #pic{
+    display: inline-block;
+    height: 200px;
+    width: 38%;
+    text-align: center;
+}
+
+.carousel-control{
+    margin-top: 0px;
+}
+
+#indicators_container{
+    height: 100px;
+    text-align: center;
+}
+
+.carousel-indicators{
+    position: relative;
+    margin-left: 415px;
+}
+
+.carousel-indicators li{
+    background-color: lightsteelblue;
+}
+
+.carousel-indicators .active{
+    background-color: #CF4423;
+}
+
+#platform_container{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#platform_pic{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ribbon_container2{
+    width: 1280px;
+    margin-left: -160px;
+    height: 17px;
+    margin-top: 10px;
+    background-image: url('../img/visitor_homepage/ribbon_with_frange.png');
+    background-repeat: repeat-x;
+    box-shadow: 0px 2px 2px #d59392;
+}
+
+/* --- block 3 --- */
+
+#block3{
+    width: 1280px;
+    height: 540px;
+    margin-left: -180px;
+    background-image: url('../img/visitor_homepage/Background/Business-Model-bckgd.jpg');
+    background-repeat: no-repeat;
+    box-shadow: 0px 6px 12px #888;
+}
+
+#block3_container{
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.whitebox{
+    background-color: white;
+    height: 150px;
+}
+
+#trialbox{
+    margin-bottom: 30px;
+}
+
+#lignboxleft{
+    display: inline-block;
+    height: 2px;
+    width: 40%;   
+}
+
+#timebox{
+    display: inline-block;
+    color: white;
+    width: 19%;
+    text-align: center;
+    font-family: 'Oswald-Regular';
+    font-size: 18px;
+}
+
+#lignboxright{
+    display: inline-block;
+    height: 2px;
+    width: 40%;
+}
+
+#freebox{
+    display: inline-block;
+    width: 30%;
+    margin-top: 30px;
+}
+
+#paybox{
+    display: inline-block;
+    float: right;
+    width: 68%;
+    margin-top: 30px;
+}

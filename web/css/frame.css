@@ -1,0 +1,22 @@
+/* web/css/frame.css */
+
+root { 
+    display: block;
+}
+
+
+/* --- framework --- */
+
+@font-face { 
+    font-family: 'Oswald-Regular';
+    src: url('polices/oswald/oswaldregular.ttf') format('truetype');}
+@font-face {    
+    font-family: 'Oswald-Stencil';
+    src: url('polices/oswald/oswaldstencil.ttf') format('truetype');}
+@font-face {    
+    font-family: 'Oswald-Bold';
+    src: url('polices/oswald/oswaldbold.ttf') format('truetype');}
+@font-face {    
+    font-family: 'Oswald-Light';
+    src: url('polices/oswald/oswaldlight.ttf') format('truetype');
+}

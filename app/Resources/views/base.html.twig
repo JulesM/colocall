@@ -1,0 +1,27 @@
+{# app/Resources/views/base.html.twig #}
+
+{% extends "::frame.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" type="text/css" />
+{% endblock %}
+
+{% block mainbox %}
+    
+<div id="pseudocontainer">    
+    <div id="mainbox">
+            <div id="leftbox">
+                {% include ":default:navbox.html.twig" %}
+            </div>   
+        
+            <div id="content">
+                {% block body %}
+                
+                {% endblock %}
+            </div>  
+        
+    </div>
+</div>
+
+{% endblock mainbox %}

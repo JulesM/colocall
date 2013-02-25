@@ -1,0 +1,59 @@
+{# src/Clc/ShoppinglistBundle/Resources/views/layout.html.twig #}
+ 
+{% extends "::base.html.twig" %}
+ 
+{% block title %}
+  {{ parent() }} - Shopping list
+{% endblock %}
+ 
+{% block body %}
+  
+  <div id="shoppinglist-content">
+      
+      <div id="shoppinglist-table1-container">
+        <table id="table1" class="table">
+              <caption>Dynamic shopping list</caption>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Item</th>
+                  <th>Comment</th>
+                  <th>Who</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mar 14</td>
+                  <td>Dishwasher liquid</td>
+                  <td>Tkae the cheapest</td>
+                  <td>John</td>
+                </tr>
+              </tbody>
+        </table>
+      </div>
+      
+      <div id="shoppinglist-table2-container">
+        <table id="table2" class="table">
+              <caption>Dynamic shopping list</caption>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Item</th>
+                  <th>Comment</th>
+                  <th>Who</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mar 14</td>
+                  <td>Dishwasher liquid</td>
+                  <td>Tkae the cheapest</td>
+                  <td>John</td>
+                </tr>
+              </tbody>
+        </table>
+      </div>
+      
+  </div> 
+    
+{% endblock %}
