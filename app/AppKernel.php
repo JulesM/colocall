@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Clc\UserBundle\ClcUserBundle(),
             new Clc\EventBundle\ClcEventBundle(),
             new Clc\InboxBundle\ClcInboxBundle(),
+            new Clc\ColocBundle\ClcColocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
