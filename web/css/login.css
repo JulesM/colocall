@@ -1,22 +1,23 @@
 /* --- Style de la page de login --- */
 
 body{
-    background-image: url('../img/visitor_homepage/Background/Overview-bckgd.jpg');
-    background-size: 1400px 2000px;
+    background-image: url('../img/visitor_homepage/Background/Overview-bckgd-new.jpg');
+/*    background-size: 1400px 2000px;*/
+/*    background-repeat:repeat;*/
 }
 
 /* --- block 1 --- */
 
 #block1{
     border-top: solid 1px transparent;
-    background-image: url('../img/main.jpg');
+    background-image: url('../img/signin_bckgd_image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 540px;
     width: 1280px;
     margin-left: -180px;
     margin-top: 1px;
-    box-shadow: 0px 2px 2px #d59392;
+/*    box-shadow: 0px 2px 2px #d59392;*/
 }
 
 #middle_block1_ext{
@@ -26,17 +27,19 @@ body{
     margin-right: auto;
     margin-top: 80px;
     padding: 0.5% 0.5% 0.8% 0.5%;
-    background-color: white;
-    box-shadow: 4px 4px 4px #d59392; 
+    background-image: url('../img/visitor_homepage/Background/signin-box-strips.jpg');
+/*    box-shadow: 4px 4px 4px #d59392; */
 }
 
 #middle_block1{
-    border: solid #d59392 4px;
+    border: solid rgba(252, 220, 209, .5) 4px;
     height: 99%;
     width: 99%;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
 }
+
 
 #catchphrase_box{
     display: inline-block;
@@ -125,7 +128,7 @@ body{
     margin-top: 10px;
     background-image: url('../img/visitor_homepage/orange-ribbon.jpg');
     background-repeat: repeat-x;
-    box-shadow: 0px 2px 2px #d59392;
+/*    box-shadow: 0px 2px 2px #d59392;*/
 }
 
 #ribbon_block2{
@@ -144,8 +147,9 @@ body{
 }
 
 #feature h3{
-    font-family: 'Oswald-Light';
-    color: #CF4423; 
+    font-family: 'Oswald-Bold';
+    color: #CF4423;
+    font-weight: normal;
 }
 
 #feature p{
@@ -179,6 +183,7 @@ body{
 .carousel-inner #item_container h3{
     font-family: 'Oswald-Regular';
     color: #CF4423;
+    font-weight: normal;
 }
 
 .carousel-inner #item_container p{
@@ -239,7 +244,7 @@ body{
     margin-top: 10px;
     background-image: url('../img/visitor_homepage/ribbon_with_frange.png');
     background-repeat: repeat-x;
-    box-shadow: 0px 2px 2px #d59392;
+    box-shadow: 0px 1px 1px #323232;
 }
 
 /* --- block 3 --- */
