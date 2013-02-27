@@ -8,7 +8,8 @@ root {
 
 #content_top{
     width: 100%;
-    height: 250px;
+/*    height: 250px;*/
+height: 50px;
     background-image: url('../img/dashboard/Wood-bckgd.jpg');
     background-repeat: repeat-x;
     margin-top: 1px;
@@ -55,6 +56,7 @@ root {
     background-size: cover;
 }
 
+
 #expense-dashboard-container{
     width: 70%;
     margin-left: 15%;
@@ -96,3 +98,78 @@ root {
     margin-left: auto;
     margin-right: auto;
 }
+
+/*---Post-it News---*/
+
+#content_test{
+    width: 100%;
+    height: 300px;
+    background-image: url('../img/dashboard/Wood-bckgd.jpg');
+    background-repeat: repeat;
+    margin-top: 20px;
+    padding-top: 100px;
+}
+
+.postit-container{
+    height: 185px;
+    width: 532px;
+}
+
+
+#expense-postit-container{
+    width: 532px;
+    margin-left: 24%;
+}
+
+
+.item photo{
+    position: relative;
+top: -5px;
+padding: 0px 10px;
+    padding-top: 0px;
+    padding-right-value: 10px;
+    padding-bottom: 0px;
+    padding-left-value: 10px;
+    padding-left-ltr-source: physical;
+    padding-left-rtl-source: physical;
+    padding-right-ltr-source: physical;
+    padding-right-rtl-source: physical;
+}
+
+.middle {
+    background: url('../img/dashboard/post_middle.png') repeat scroll 0% 0% transparent;
+    min-height: 100px;
+}
+
+.item_content {
+    position: relative;
+    top: -5px;
+    padding: 0px 10px;
+    text-shadow: 0px 1px rgb(255, 255, 255);
+color: rgb(119, 119, 119);
+}
+
+.upper {
+    background: url('../img/dashboard/post_upper.png') no-repeat scroll 0% 0% transparent;
+    height: 15px;
+    margin-top: 50px;
+
+}
+
+
+
+.lower {
+    background: url('../img/dashboard/post_lower.png') no-repeat scroll 0% 0% transparent;
+    height: 70px;
+    position: relative;
+    top: -2px;
+}
+
+
+
+.lower_content {
+   padding: 30px 30px 0px;
+text-shadow: none;
+}
+
+
