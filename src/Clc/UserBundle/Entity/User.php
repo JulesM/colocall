@@ -18,6 +18,11 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profile_picture", cascade={"persist"})
+    */
+    private $profile_picture;
 
     /**
      * Get id
@@ -27,5 +32,28 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set profile_picture
+     *
+     * @param \Clc\UserBundle\Entity\profile_picture $profilePicture
+     * @return User
+     */
+    public function setProfilePicture(\Clc\UserBundle\Entity\profile_picture $profilePicture = null)
+    {
+        $this->profile_picture = $profilePicture;
+    
+        return $this;
+    }
+
+    /**
+     * Get profile_picture
+     *
+     * @return \Clc\UserBundle\Entity\profile_picture 
+     */
+    public function getProfilePicture()
+    {
+        return $this->profile_picture;
     }
 }
