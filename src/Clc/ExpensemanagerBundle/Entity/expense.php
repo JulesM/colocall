@@ -43,6 +43,13 @@ class expense
     private $amount;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="number", type="integer")
+     */
+    private $number;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="comment", type="string", length=255)
@@ -50,15 +57,29 @@ class expense
     private $comment;
     
     /**
-    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
     */
     private $author;
   
    /**
-    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
     */
     private $owner;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+     private $users;
+     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -206,5 +227,61 @@ class expense
     public function getOwner()
     {
         return $this->owner;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return expense
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+    
+    /**
+     * Add users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     * @return expense
+     */
+    public function addUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     */
+    public function removeUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

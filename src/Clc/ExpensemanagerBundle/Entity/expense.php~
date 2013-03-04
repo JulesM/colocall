@@ -43,6 +43,13 @@ class expense
     private $amount;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="number", type="integer")
+     */
+    private $number;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="comment", type="string", length=255)
@@ -50,15 +57,21 @@ class expense
     private $comment;
     
     /**
-    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
     */
     private $author;
   
    /**
-    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
     */
     private $owner;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+     private $users;
 
     /**
      * Get id
@@ -160,5 +173,74 @@ class expense
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return expense
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param \Clc\UserBundle\Entity\User $owner
+     * @return expense
+     */
+    public function setOwner(\Clc\UserBundle\Entity\User $owner = null)
+    {
+        $this->owner = $owner;
+    
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return expense
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
     }
 }
