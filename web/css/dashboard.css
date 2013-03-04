@@ -9,11 +9,11 @@ root {
 #content_top{
     width: 100%;
 /*    height: 250px;*/
-height: 50px;
+height: 150px;
     background-image: url('../img/dashboard/Wood-bckgd.jpg');
     background-repeat: repeat-x;
     margin-top: 1px;
-    box-shadow: 0px 4px 2px #888;
+/*    box-shadow: 0px 4px 2px #888;*/
 }
 
 #welcome-box{
@@ -43,60 +43,128 @@ height: 50px;
 #content_bottom{
     width: 100%;
     height: 646px;
-    background-image: url('../img/dashboard/dashboard-bckgd.jpg');
+    background-image: url('../img/dashboard/wild_oliva.png');
     background-repeat: repeat;
     margin-top: 2px;
     padding-top: 100px;
 }
 
 .dashboard-container{
-    height: 250px;
-    box-shadow: 2px 2px 0px black;
-    background-image: url('../img/dashboard/writing_pad.png');
-    background-size: cover;
+    height: 185px;
+    width: 69%;
 }
 
-
 #expense-dashboard-container{
-    width: 70%;
+    width: 69%;
     margin-left: 15%;
 }
 
-#clip1{
-    margin-top: -40px;
-    margin-left: 140px;
+.expense-upper{
+    background: url('../img/dashboard/expense-post-upper.png') no-repeat scroll 0% 0% transparent;
+    height: 15px;
+    margin-top: 50px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
 }
 
-#clip2{
-    margin-top: -40px;
-    margin-left: 320px;
+.expense-left-tag{
+    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
+    width: 7px;
+    height: 64px;
+    position: relative;
+    left: -6px;
+    top: 79px;
+}
+
+.expense-middle-tag{
+    background: url('../img/dashboard/ribbon_center.png') repeat scroll 0% 0% transparent;
+    width: 100%;
+    height: 57px;
+}
+
+.expense-right-tag{
+    background: url('../img/dashboard/ribbon_right.png') no-repeat scroll 0% 0% transparent;
+
+    background: url("../img/dashboard/ribbon_right.png") no-repeat scroll 0% 0% transparent;
+    width: 14px;
+    height: 57px;
+    position: relative;
+    right: -688px;
+    top: 136px;
+
+
+}
+
+.expense-middle{
+    background: url('../img/dashboard/expense-post-middle.png') repeat scroll 0% 0% transparent;
+    min-height: 100px;
+    width: 100%;
+}
+
+.expense-lower{
+    background: url('../img/dashboard/expense-post-lower.png') no-repeat scroll 0% 0% transparent;
+    height: 70px;
+    width: 100%;
+    top: -2px;
 }
 
 #to-do-dashboard-container{
     display: inline-block;
     width: 32%;
     margin-left: 15%;
+    margin-top: 220px;
     text-align: center;
 }
+.todo-upper{
+    background: url('../img/dashboard/todo-post-upper.png') no-repeat scroll 0% 0% transparent;
+    height: 15px;
+    width: 100%;
+    position: relative;
+}
 
-#clip3{
-    margin-top: -40px;
-    margin-left: auto;
-    margin-right: auto;
+.todo-middle{
+    background: url('../img/dashboard/todo-post-middle.png') repeat scroll 0% 0% transparent;
+    min-height: 100px;
+    width: 100%;
+    position: relative;
+}
+
+.todo-lower{
+    background: url('../img/dashboard/todo-post-lower.png') no-repeat scroll 0% 0% transparent;
+    height: 70px;
+    position: relative;
+    top: -2px;
 }
 
 #shopping-dashboard-container{
     display: inline-block;
     width: 32%;
     margin-left: 5%;
-    margin-top: 50px;
+    margin-top: 220px;
     text-align: center;
 }
 
-#clip4{
-    margin-top: -40px;
-    margin-left: auto;
-    margin-right: auto;
+.shopping-upper{
+    background: url('../img/dashboard/todo-post-upper.png') no-repeat scroll 0% 0% transparent;
+    height: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.shopping-middle{
+    background: url('../img/dashboard/todo-post-middle.png') repeat scroll 0% 0% transparent;
+    min-height: 100px;
+    width: 100%;
+    position: relative;
+}
+
+.shopping-lower{
+    background: url('../img/dashboard/todo-post-lower.png') no-repeat scroll 0% 0% transparent;
+    height: 70px;
+    position: relative;
+    top: -2px;
 }
 
 /*---Post-it News---*/
@@ -113,12 +181,13 @@ height: 50px;
 .postit-container{
     height: 185px;
     width: 532px;
+
 }
 
 
 #expense-postit-container{
-    width: 532px;
-    margin-left: 24%;
+    width: 600px;
+    margin-left: 20%;
 }
 
 
@@ -126,19 +195,14 @@ height: 50px;
     position: relative;
 top: -5px;
 padding: 0px 10px;
-    padding-top: 0px;
-    padding-right-value: 10px;
-    padding-bottom: 0px;
-    padding-left-value: 10px;
-    padding-left-ltr-source: physical;
-    padding-left-rtl-source: physical;
-    padding-right-ltr-source: physical;
-    padding-right-rtl-source: physical;
+   
 }
 
 .middle {
     background: url('../img/dashboard/post_middle.png') repeat scroll 0% 0% transparent;
     min-height: 100px;
+    width: 500px;
+    position: relative;
 }
 
 .item_content {
@@ -146,13 +210,24 @@ padding: 0px 10px;
     top: -5px;
     padding: 0px 10px;
     text-shadow: 0px 1px rgb(255, 255, 255);
-color: rgb(119, 119, 119);
+    color: rgb(119, 119, 119);
+}
+.ribbon-left{
+    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
+    width: 7px;
+    height: 64px;
+    position: relative;
+    left: -7px;
+    top: 5px;
 }
 
 .upper {
     background: url('../img/dashboard/post_upper.png') no-repeat scroll 0% 0% transparent;
+    
     height: 15px;
     margin-top: 50px;
+    width: 500px;
+    position: relative;
 
 }
 
@@ -171,5 +246,15 @@ color: rgb(119, 119, 119);
    padding: 30px 30px 0px;
 text-shadow: none;
 }
+
+/*#left{
+    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
+    width: 10px;
+    height: 35px;
+    position: absolute;
+    left: -38px;
+    top: 10px;
+}*/
+
 
 

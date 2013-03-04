@@ -1,0 +1,82 @@
+{# src/Clc/DashboardBundle/Resources/views/layout.html.twig #}
+ 
+    {% extends "::base.html.twig" %}
+
+    {% block title %}
+      {{ parent() }} - Dashboard
+    {% endblock %}
+
+    {% block body %}
+
+      <div id="content_top">
+          
+          <div id="welcome-box">
+              <h1>Welcome Home !</h1>
+          </div>
+          
+          <div id="quicklink-toolbar">
+              
+              {% include "ClcDashboardBundle:default:addexpensemodal.html.twig" %}
+              {% include "ClcDashboardBundle:default:requestpaybackmodal.html.twig" %}
+              {% include "ClcDashboardBundle:default:addtodomodal.html.twig" %}
+              {% include "ClcDashboardBundle:default:additemmodal.html.twig" %}
+              
+              <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
+              <button class="btn btn-primary" href="#requestpaybackmodal"data-toggle="modal"><i class="icon-bullhorn icon-white"></i> Request Payback</button>
+              <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
+              <button class="btn btn-primary" href="#additemmodal" data-toggle="modal"><i class="icon-shopping-cart icon-white"></i> Add Shopping Item</button>
+              
+          </div>        
+      </div>
+      
+      <div id="content_bottom">
+          
+          <div id="expense-dashboard-container" class="dashboard-container">
+              <img id="clip1" src="{{ asset('img/dashboard/clip.png') }}" alt="">
+              <img id="clip2" src="{{ asset('img/dashboard/clip.png') }}" alt="">
+          </div>
+          
+          <div id="to-do-dashboard-container" class="dashboard-container">
+              <img id="clip3" src="{{ asset('img/dashboard/clip.png') }}" alt="">
+          </div>
+          
+          <div id="shopping-dashboard-container" class="dashboard-container">
+              <img id="clip4" src="{{ asset('img/dashboard/clip.png') }}" alt="">
+          </div>
+
+     
+        <div id="content_test">
+
+          <div id="expense-postit-container" class="postit-container">
+
+		       	<div class="item photo">
+                            
+				<a class="ribbon-left"> </a>
+                            
+					<div class="upper">
+                                        </div>
+
+
+					<div class="middle">
+
+                                                <div class="item_content">
+                                                    <p>hello you! it looks like you owe me some money</p>
+						</div>
+					</div>
+
+					<div class="lower_no_info">
+                                        </div>
+
+					<div class="lower">
+						<div class="lower_content">
+<a> updated by Arnaud </a>
+						</div>
+
+					</div>
+
+		        </div>
+            </div>
+    </div>
+ </div>
+    {% endblock %}
+     
