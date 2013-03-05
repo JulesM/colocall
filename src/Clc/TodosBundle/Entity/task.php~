@@ -162,4 +162,50 @@ class task
     {
         return $this->comment;
     }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return task
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param \Clc\UserBundle\Entity\User $owner
+     * @return task
+     */
+    public function setOwner(\Clc\UserBundle\Entity\User $owner = null)
+    {
+        $this->owner = $owner;
+    
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
 }

@@ -1,13 +1,13 @@
 {# app/Resources/views/banner.html.twig#}
   
-<div id="banner1">
+
+      <div id="banner1">
     <img src="{{ asset('img/logo.png') }}" height="80%" width="80%" alt="">
 </div>
         
 <div id="banner2">
-    
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        
+
         <div id="settings_button">      
             <div class="dropdown">
                 <a id="settings_dropdown_button" class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -29,7 +29,7 @@
         <div id="name_button">
             <a class="btn btn-link" href="{{ path('clc_dashboard_profile') }}">{{ app.user.username }}</a>        
         </div>
-    
+
     {% else %}
     
     {% if error %}
@@ -47,5 +47,7 @@
     </form>
         
     {% endif %}
-    
-</div> 
+       
+</div>
+          
+       

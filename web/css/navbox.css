@@ -22,7 +22,6 @@ root {
     width: 22%;
     height: 100%;
     min-height: 600px;
-    box-shadow: 4px 2px 2px #888;
     background-image: url('../img/dashboard/left_menu.jpg');
     margin-top: 2px;
 }

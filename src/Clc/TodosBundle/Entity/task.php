@@ -51,7 +51,6 @@ class task
     
     /**
     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
     */
     private $author;
   
