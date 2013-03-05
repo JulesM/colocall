@@ -50,7 +50,7 @@ height: 150px;
 }
 
 .dashboard-container{
-    height: 185px;
+    height: 239px;
     width: 69%;
 }
 
@@ -62,45 +62,48 @@ height: 150px;
 .expense-upper{
     background: url('../img/dashboard/expense-post-upper.png') no-repeat scroll 0% 0% transparent;
     height: 15px;
-    margin-top: 50px;
+/*    margin-top: 50px;*/
+    top: 0px;
     width: 100%;
     margin: 0px;
     padding: 0px;
     border: 0px none;
+
 }
 
-.expense-left-tag{
+/*.expense-left-tag{
     background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
     width: 7px;
     height: 64px;
     position: relative;
     left: -6px;
     top: 79px;
-}
+}*/
 
 .expense-middle-tag{
     background: url('../img/dashboard/ribbon_center.png') repeat scroll 0% 0% transparent;
-    width: 100%;
+    width: 110%;
+    margin-left: -5%;
     height: 57px;
 }
 
-.expense-right-tag{
+/*.expense-right-tag{
     background: url('../img/dashboard/ribbon_right.png') no-repeat scroll 0% 0% transparent;
-
-    background: url("../img/dashboard/ribbon_right.png") no-repeat scroll 0% 0% transparent;
     width: 14px;
     height: 57px;
     position: relative;
     right: -688px;
     top: 136px;
-
-
-}
+}*/
 
 .expense-middle{
     background: url('../img/dashboard/expense-post-middle.png') repeat scroll 0% 0% transparent;
     min-height: 100px;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+
 }
 
 .expense-lower{
@@ -108,6 +111,10 @@ height: 150px;
     height: 70px;
     width: 100%;
     top: -2px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+
 }
 
 #to-do-dashboard-container{
