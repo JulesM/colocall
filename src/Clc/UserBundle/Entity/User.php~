@@ -21,6 +21,11 @@ class User extends BaseUser
      */
     protected $id;
     
+   /**
+    * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
+    */
+    protected $picture;
+    
      /**
      * Get id
      *

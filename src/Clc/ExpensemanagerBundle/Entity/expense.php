@@ -291,4 +291,27 @@ class expense
     {
         return $this->users;
     }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return expense
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
+    }
 }

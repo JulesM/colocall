@@ -50,9 +50,9 @@ class coloc
     private $address2;
 
     /**
-     * @var smallint
+     * @var integer
      *
-     * @ORM\Column(name="zipcode", type="smallint")
+     * @ORM\Column(name="zipcode", type="integer")
      */
     private $zipcode;
 

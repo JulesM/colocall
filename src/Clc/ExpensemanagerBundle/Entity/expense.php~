@@ -1,4 +1,5 @@
 <?php
+//Src/Clc/ExpensemanagerBundle/Entity/expense.php
 
 namespace Clc\ExpensemanagerBundle\Entity;
 
@@ -55,6 +56,12 @@ class expense
      * @ORM\Column(name="comment", type="string", length=255)
      */
     private $comment;
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $coloc;
     
     /**
     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})

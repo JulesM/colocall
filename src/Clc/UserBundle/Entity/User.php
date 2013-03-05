@@ -21,6 +21,11 @@ class User extends BaseUser
      */
     protected $id;
     
+    /**
+     * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
+     */
+    protected $picture;
+   
      /**
      * Get id
      *
@@ -29,5 +34,28 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param \Clc\UserBundle\Entity\profilepicture $picture
+     * @return User
+     */
+    public function setPicture(\Clc\UserBundle\Entity\profilepicture $picture = null)
+    {
+        $this->picture = $picture;
+    
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return \Clc\UserBundle\Entity\profilepicture 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
     }
 }
