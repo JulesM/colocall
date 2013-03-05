@@ -7,7 +7,8 @@ root {
 /* --- General frame --- */
 
 #pseudocontainer{
-    width: 1280px;
+    width: 100%;
+    min-width: 800px;
 }
 
 /* --- Base framework --- */
@@ -15,7 +16,7 @@ root {
 #leftbox {
     display: inline-block;
     vertical-align: top;
-    width: 280px;
+    width: 22%;
     height: 100%;
     min-height: 600px;
     box-shadow: 4px 2px 2px #888;
@@ -59,7 +60,7 @@ root {
 #content{
     display: inline-block;
     float: right;
-    width: 996px;
+    width: 78%;
     height: 100%;
     min-height: 600px;
     margin-top: 2px;

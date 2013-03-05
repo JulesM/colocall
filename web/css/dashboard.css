@@ -55,7 +55,7 @@ height: 150px;
 }
 
 #expense-dashboard-container{
-    width: 69%;
+    width: 689px;
     margin-left: 15%;
 }
 
@@ -81,9 +81,9 @@ height: 150px;
 }*/
 
 .expense-middle-tag{
-    background: url('../img/dashboard/ribbon_center.png') repeat scroll 0% 0% transparent;
+    background: url('../img/dashboard/new-ribbon.png') no-repeat scroll 0% 0% transparent;
     width: 110%;
-    margin-left: -5%;
+    margin-left: -1.5%;
     height: 57px;
 }
 
@@ -98,7 +98,7 @@ height: 150px;
 
 .expense-middle{
     background: url('../img/dashboard/expense-post-middle.png') repeat scroll 0% 0% transparent;
-    min-height: 100px;
+    min-height: 200px;
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -119,9 +119,9 @@ height: 150px;
 
 #to-do-dashboard-container{
     display: inline-block;
-    width: 32%;
+    width: 319px;
     margin-left: 15%;
-    margin-top: 220px;
+    margin-top: 100px;
     text-align: center;
 }
 .todo-upper{
@@ -133,7 +133,7 @@ height: 150px;
 
 .todo-middle{
     background: url('../img/dashboard/todo-post-middle.png') repeat scroll 0% 0% transparent;
-    min-height: 100px;
+    min-height: 150px;
     width: 100%;
     position: relative;
 }
@@ -145,11 +145,18 @@ height: 150px;
     top: -2px;
 }
 
+.todo-middle-tag{
+    background: url('../img/dashboard/new-ribbon.png') no-repeat scroll 0% 0% transparent;
+    width: 366px;
+    margin-left: -10.5px;
+    height: 57px;
+}
+
 #shopping-dashboard-container{
     display: inline-block;
-    width: 32%;
+    width: 319px;
     margin-left: 5%;
-    margin-top: 220px;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -162,7 +169,7 @@ height: 150px;
 
 .shopping-middle{
     background: url('../img/dashboard/todo-post-middle.png') repeat scroll 0% 0% transparent;
-    min-height: 100px;
+    min-height: 150px;
     width: 100%;
     position: relative;
 }
@@ -173,95 +180,3 @@ height: 150px;
     position: relative;
     top: -2px;
 }
-
-/*---Post-it News---*/
-
-#content_test{
-    width: 100%;
-    height: 300px;
-    background-image: url('../img/dashboard/Wood-bckgd.jpg');
-    background-repeat: repeat;
-    margin-top: 20px;
-    padding-top: 100px;
-}
-
-.postit-container{
-    height: 185px;
-    width: 532px;
-
-}
-
-
-#expense-postit-container{
-    width: 600px;
-    margin-left: 20%;
-}
-
-
-.item photo{
-    position: relative;
-top: -5px;
-padding: 0px 10px;
-   
-}
-
-.middle {
-    background: url('../img/dashboard/post_middle.png') repeat scroll 0% 0% transparent;
-    min-height: 100px;
-    width: 500px;
-    position: relative;
-}
-
-.item_content {
-    position: relative;
-    top: -5px;
-    padding: 0px 10px;
-    text-shadow: 0px 1px rgb(255, 255, 255);
-    color: rgb(119, 119, 119);
-}
-.ribbon-left{
-    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
-    width: 7px;
-    height: 64px;
-    position: relative;
-    left: -7px;
-    top: 5px;
-}
-
-.upper {
-    background: url('../img/dashboard/post_upper.png') no-repeat scroll 0% 0% transparent;
-    
-    height: 15px;
-    margin-top: 50px;
-    width: 500px;
-    position: relative;
-
-}
-
-
-
-.lower {
-    background: url('../img/dashboard/post_lower.png') no-repeat scroll 0% 0% transparent;
-    height: 70px;
-    position: relative;
-    top: -2px;
-}
-
-
-
-.lower_content {
-   padding: 30px 30px 0px;
-text-shadow: none;
-}
-
-/*#left{
-    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
-    width: 10px;
-    height: 35px;
-    position: absolute;
-    left: -38px;
-    top: 10px;
-}*/
-
-
-
