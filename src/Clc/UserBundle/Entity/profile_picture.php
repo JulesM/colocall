@@ -1,11 +1,12 @@
 <?php
+//src/Clc/userBundle/Entity/profile_picture.php
 
 namespace Clc\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * profile_picture
+ * Clc\UserBundle\Entity\profile_picture
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Clc\UserBundle\Entity\profile_pictureRepository")
@@ -34,7 +35,6 @@ class profile_picture
      * @ORM\Column(name="alt", type="string", length=255)
      */
     private $alt;
-
 
     /**
      * Get id
