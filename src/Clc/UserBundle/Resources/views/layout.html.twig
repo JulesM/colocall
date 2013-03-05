@@ -9,6 +9,55 @@
 
 {% block mainbox %}
 
+
+<div id="signup-box" class="container-fluid">
+<div class="container">
+  <div id="mainbox">
+
+    
+        <div id="middle_block1_ext">
+            <div id="middle_block1">
+                <div id="catchphrase_box">
+                    <div id="catchphrase1">
+                        <p>Live Together,<br><br><br><br>
+                           Live Better</p>
+                    </div>
+                    <div id="catchphrase2">
+                       <p>Start Using <strong>Coloc'all,</strong><br><br><br>
+                          Today</p>
+                    </div>
+                </div>
+
+                <div id="signin_box">
+                 <div id="signin_box_content">
+                      <form>
+                        <fieldset>
+                          <legend>
+                              <div id="legend">
+                                  New on Coloc'all ? Sign up for free !
+                              </div>
+                          </legend>
+                          <label>Name</label>
+                          <input type="text" placeholder="Enter your full name">
+                          <label>E-mail</label>
+                          <input type="text" placeholder="Your e-mail here">
+                          <label>Password</label>
+                          <input type="password" placeholder="And choose a Password">
+                          <div id="signin_box_footer">
+                            <button type="submit" class="btn btn-primary btn-medium">Log in with facebook</button>
+                            <button type="submit" class="btn btn-warning btn-medium">Sign up</button>
+                          </div>
+                        </fieldset>
+                      </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    
+</div>
+</div>
+
+
 <div class="container">    
   <div id="mainbox">    
 
@@ -293,5 +342,7 @@
   </div>
 </div>        
 
-  
+        <div id="footer" class="row">
+            {% include ":default:footer.html.twig" %}
+        </div>
 {% endblock mainbox %}

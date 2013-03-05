@@ -8,14 +8,26 @@ body{
 
 /* --- block 1 --- */
 
+#signup-box{
+    border-top: solid 1px transparent;
+    background-image: url('../img/signin_bckgd_image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 540px;
+/*    width: 1280px;
+    margin-left: -180px;*/
+    margin-top: 1px;
+/*    box-shadow: 0px 2px 2px #d59392;*/
+}
+
 #block1{
     border-top: solid 1px transparent;
     background-image: url('../img/signin_bckgd_image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 540px;
-    width: 1280px;
-    margin-left: -180px;
+/*    width: 1280px;
+    margin-left: -180px;*/
     margin-top: 1px;
 /*    box-shadow: 0px 2px 2px #d59392;*/
 }

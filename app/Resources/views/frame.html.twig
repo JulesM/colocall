@@ -18,19 +18,18 @@
   </head>
  
   <body>
-        <div id="banner">
-            {% include ":default:banner.html.twig" %}
-        </div>    
-            
+        <div class="container-fluid" id="banner-container">
+                <div id="banner">
+
+                    {% include ":default:banner.html.twig" %}
+
+                </div>
+        </div>
 
             {% block mainbox %}
         
             {% endblock mainbox %}
 
-        
-        <div id="footer" class="row">
-            {% include ":default:footer.html.twig" %}
-        </div>
  
   {% block javascripts %}
     {# Ajoutez ces javascripts si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}

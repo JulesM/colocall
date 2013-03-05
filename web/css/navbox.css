@@ -1,0 +1,71 @@
+/* 
+    Document   : navbox
+    Created on : 5 mars 2013, 16:53:19
+    Author     : arnaudrizard
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+/*---NavBox---*/
+#leftbox {
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    height: 100%;
+    min-height: 600px;
+    box-shadow: 4px 2px 2px #888;
+    background-image: url('../img/dashboard/left_menu.jpg');
+    margin-top: 2px;
+}
+
+#nav_container1{
+    box-shadow: 0px 2px 2px #888;
+}
+
+#nav_container1 #p{
+    margin-left: 60px;
+    font-family: 'Oswald-Regular';
+    font-size: 16px;
+    color: #888;
+}
+
+#nav_container2 #p{
+    margin-left: 60px;
+    font-family: 'Oswald-Regular';
+    font-size: 16px;
+    color: #888;
+}
+
+#nav_container3{
+    box-shadow: 0px 2px 2px #888;
+}
+
+#nav_container3_bis{
+    box-shadow: 0px -2px 2px #888;
+}
+
+#nav_container3 #p{
+    margin-left: 60px;
+    font-family: 'Oswald-Regular';
+    font-size: 16px;
+    color: #888;
+}
+
+#content{
+    display: inline-block;
+    float: right;
+    width: 78%;
+    height: 100%;
+    min-height: 600px;
+    margin-top: 2px;
+    box-shadow: 0px 2px 2px #888;
+}
