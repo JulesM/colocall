@@ -12,4 +12,21 @@ class TodosController extends Controller
     {
         return $this->render('ClcTodosBundle::layout.html.twig');
     }
+    
+    public function newAction(Request $request)
+    {
+        // crée une tâche et lui donne quelques données par défaut pour cet exemple
+        $task = new Task();
+        $task->setDate(new \DateTime('today'));
+        $task->setDuedate(new \DateTime('tomorrow'));
+
+        $form = $this->createFormBuilder($task)
+            ->add('task', 'text')
+            ->add('duedate', 'date')   
+            ->getForm();
+
+        return $this->render('ClcTodosBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
 }
