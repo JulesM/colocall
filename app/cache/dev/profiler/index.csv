@@ -1,0 +1,8 @@
+5136797cb3583,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/login,1362524540,
+51367980dbf03,::1,POST,http://localhost:8888/Colocall/web/app_dev.php/login_check,1362524544,
+5136798123ebf,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/dashboard,1362524545,
+513679819394e,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/dashboard/,1362524545,
+51367a7946248,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/dashboard/,1362524793,
+51367a8fe8cf1,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/logout,1362524815,
+51367a9025609,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/login,1362524816,
+51367b4898de9,::1,GET,http://localhost:8888/Colocall/web/app_dev.php/login,1362525000,
