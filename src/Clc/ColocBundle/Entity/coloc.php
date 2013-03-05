@@ -83,6 +83,12 @@ class coloc
      * @ORM\Column(name="other", type="text")
      */
     private $other;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\UserBundle\Entity\User", mappedBy="coloc", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $users;
 
 
     /**
@@ -300,5 +306,45 @@ class coloc
     public function getOther()
     {
         return $this->other;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     * @return coloc
+     */
+    public function addUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     */
+    public function removeUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

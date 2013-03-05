@@ -83,6 +83,12 @@ class coloc
      * @ORM\Column(name="other", type="text")
      */
     private $other;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\UserBundle\Entity\User", mappedBy="coloc", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $users;
 
 
     /**

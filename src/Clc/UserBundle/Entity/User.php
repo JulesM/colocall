@@ -25,6 +25,11 @@ class User extends BaseUser
      * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
      */
     protected $picture;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="user", cascade={"persist"})
+     */
+    protected $users;
    
      /**
      * Get id
@@ -57,5 +62,28 @@ class User extends BaseUser
     public function getPicture()
     {
         return $this->picture;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $users
+     * @return User
+     */
+    public function setUsers(\Clc\ColocBundle\Entity\coloc $users = null)
+    {
+        $this->users = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }
