@@ -11,6 +11,7 @@ body{
 #mainbox-bckgd{
     background-image: url('../img/visitor_homepage/Background/shaded-background.png');
     background-repeat: repeat-y;
+    min-width: 800px;
 }
 
 /* --- block 1 --- */
@@ -21,6 +22,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 540px;
+    min-width: 800px;
 /*    width: 1280px;
     margin-left: -180px;*/
     margin-top: 1px;
@@ -42,17 +44,32 @@ body{
 
 #container-center-signup{
     height: 100%;
+    min-width: 800px;
 }
 
-#mainbox{
+#mainbox{ 
     height: 68%;
+    width: 800px;
+    min-width: 800 px;
     margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+#mainbox-body{ 
+    height: 68%;
+    min-height: 1008px;
+    min-width: 768 px;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: auto;
 }
 
 #middle_block1_ext{
     height: 90%;
-    width: 800px;
+/*    width: 800px;*/
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
@@ -207,6 +224,12 @@ body{
 
 #carousel_container{
     height: 400px;
+    margin-left: 0px;
+}
+
+#caroussel-container-large{
+    
+  margin-left: 0px;  
 }
 
 .carousel-inner{
@@ -214,6 +237,8 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 .carousel-inner #item_container{
     height: 250px;
@@ -272,6 +297,7 @@ body{
 #platform_container{
     text-align: center;
     padding-bottom: 20px;
+    margin-left: 0px;
 }
 
 #platform_pic{
