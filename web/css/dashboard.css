@@ -4,6 +4,11 @@ root {
     display: block;
 }
 
+body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 /* --- Top box --- */
 
 #content_top{
