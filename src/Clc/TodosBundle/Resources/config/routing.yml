@@ -3,3 +3,7 @@
 clc_todos_homepage:
     pattern:  /
     defaults: { _controller: ClcTodosBundle:Todos:index }
+
+clc_todos_new:
+    pattern: /new
+    defaults: { _controller: ClcTodosBundle:Todos:new }

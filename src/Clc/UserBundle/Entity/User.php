@@ -29,7 +29,7 @@ class User extends BaseUser
     /**
      * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="user", cascade={"persist"})
      */
-    protected $users;
+    protected $coloc;
    
      /**
      * Get id
@@ -85,5 +85,28 @@ class User extends BaseUser
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return User
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
     }
 }
