@@ -6,6 +6,7 @@ root {
 
 /* --- General frame --- */
 
+
 #pseudocontainer{
     width: 100%;
     min-width: 800px;
@@ -13,14 +14,16 @@ root {
 
 /* --- Base framework --- */
 
-#leftbox {
+#leftbox{
     width: 22%;
     height: 100%;
+    overflow: hidden;
     min-height: 600px;
+    
 }
-
-
-
+#mainbox{
+    overflow: hidden;
+}
 /* --- User Bundle/profile ---- */
 
 #profile-content{
