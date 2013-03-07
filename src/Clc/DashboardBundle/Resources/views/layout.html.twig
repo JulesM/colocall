@@ -9,66 +9,76 @@
     {% block body %}
 
       <div id="content_top">
-          
-          <div id="welcome-box">
-              <h1>Welcome Home !</h1>
+          <div id="welcome-container">
+                <div id="welcome-box">
+                    <h1>Welcome Home !</h1>
+                </div>
+                  
+                <div id="welcome-overview">
+                </div>
+                  
+                <div id="quicklink-toolbar">
+
+                    {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
+                    {% include "ClcExpensemanagerBundle:Default:requestpaybackmodal.html.twig" %}
+                    {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
+                    {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
+
+                    <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
+                    <button class="btn btn-primary" href="#requestpaybackmodal"data-toggle="modal"><i class="icon-bullhorn icon-white"></i> Request Payback</button>
+                    <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
+                    <button class="btn btn-primary" href="#additemmodal" data-toggle="modal"><i class="icon-shopping-cart icon-white"></i> Add Shopping Item</button>
+
+                </div>  
           </div>
-          
-          <div id="quicklink-toolbar">
-              
-              {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
-              {% include "ClcExpensemanagerBundle:Default:requestpaybackmodal.html.twig" %}
-              {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
-              {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
-              
-              <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
-              <button class="btn btn-primary" href="#requestpaybackmodal"data-toggle="modal"><i class="icon-bullhorn icon-white"></i> Request Payback</button>
-              <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
-              <button class="btn btn-primary" href="#additemmodal" data-toggle="modal"><i class="icon-shopping-cart icon-white"></i> Add Shopping Item</button>
-              
-          </div>        
       </div>
       
       <div id="content_bottom">
-          <div id="expense-dashboard-container" class="dashboard-container">
-<div class="expense-right-tag">
+          
+          <div id="overview-container">
+          
+              <div id="expense-dashboard-container" class="dashboard-container">
+                    <div class="expense-right-tag">
+                        </div>
+                    <div class="expense-left-tag">
                     </div>
-                <div class="expense-left-tag">
-                </div>
 
-                <div class="expense-upper">
-                </div>
-                    
-                <div class="expense-middle">
-                    <div class="expense-middle-tag">
-                       
+                    <div class="expense-upper">
                     </div>
-                </div>
-                 <div class="expense-lower">
-                 </div>
-          </div>
 
-          <div id="to-do-dashboard-container" class="dashboard-container">
-                <div class="todo-upper">
-                </div>
-                <div class="todo-middle">
-                    <div class="todo-middle-tag">
+                    <div class="expense-middle">
+                        <div class="expense-middle-tag">
+                                <h1>Expenses Summary</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="todo-lower">
-                </div>
-          </div>
+                     <div class="expense-lower">
+                     </div>
+              </div>
 
-          <div id="shopping-dashboard-container" class="dashboard-container">
-                <div class="shopping-upper">
-                </div>
-                <div class="shopping-middle">
-                    <div class="todo-middle-tag">
+              <div id="to-do-dashboard-container" class="dashboard-container">
+                    <div class="todo-upper">
                     </div>
-                </div>
-                <div class="shopping-lower">
-                </div>
-          </div>
+                    <div class="todo-middle">
+                        <div class="todo-middle-tag">
+                                <h1>To-do List</h1>
+                        </div>
+                    </div>
+                    <div class="todo-lower">
+                    </div>
+              </div>
+
+              <div id="shopping-dashboard-container" class="dashboard-container">
+                    <div class="shopping-upper">
+                    </div>
+                    <div class="shopping-middle">
+                        <div class="todo-middle-tag">
+                                <h1>Shopping List</h1>
+                        </div>
+                    </div>
+                    <div class="shopping-lower">
+                    </div>
+              </div>
+           </div>   
       </div>
 
      

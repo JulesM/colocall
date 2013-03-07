@@ -19,7 +19,7 @@ root {
 #leftbox {
     display: inline-block;
     vertical-align: top;
-    width: 22%;
+    width: 15%;
     height: 100%;
     min-height: 600px;
     background-image: url('../img/dashboard/left_menu.jpg');
@@ -28,22 +28,31 @@ root {
 }
 
 #nav_container1{
-    box-shadow: 0px 2px 2px #888;
+    box-shadow: 0px 2px 2px #888;  
 }
 
 #nav_container1 #p{
-    margin-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-family: 'Oswald-Regular';
     font-size: 16px;
     color: #888;
 }
 
 #nav_container2 #p{
-    margin-left: 60px;
-    font-family: 'Oswald-Regular';
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Oswald-Light';
     font-size: 16px;
-    color: #888;
+    font-weight: normal;
+    color: black;
+    white-space: nowrap;
+    text-shadow: 0px 1px 0px white;
 }
+
+
 
 #nav_container3{
     box-shadow: 0px 2px 2px #888;
@@ -54,7 +63,9 @@ root {
 }
 
 #nav_container3 #p{
-    margin-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-family: 'Oswald-Regular';
     font-size: 16px;
     color: #888;
@@ -63,9 +74,14 @@ root {
 #content{
     display: inline-block;
     float: right;
-    width: 78%;
+    width: 85%;
     height: 100%;
     min-height: 600px;
     margin-top: 2px;
     box-shadow: 0px 2px 2px #888;
+}
+
+[class^="icon-"] {
+margin-top: 4px;
+margin-right: 5px;
 }

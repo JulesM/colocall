@@ -98,7 +98,7 @@ body{
 #catchphrase1{
     font-size: 60px;
     font-family: Oswald-Bold;
-    color: #CF4423;
+    color: #e34a25;
     text-align: center;
     height: 50%;
     padding-top: 10%;
@@ -187,7 +187,7 @@ body{
 }
 
 #feature-container{
-    height: 450px;
+    height: 400px;
     width: 100%;
     min-width: 724px;
     margin-top:50px;
@@ -197,7 +197,7 @@ body{
 
 #feature{
     display: inline-block;
-    height: 450px;
+    height: 350px;
     width: 25%;
     min-width: 200px;
     margin-left: 5%;
@@ -207,12 +207,12 @@ body{
 
 #feature h3{
     font-family: 'Oswald-Bold';
-    color: #CF4423;
+    color: #e34a25;
     font-weight: normal;
 }
 
 #feature p{
-    font-family: 'Oswald-Stencil';
+    font-family: 'Oswald-Regular';
 }
 
 .lign{
@@ -249,7 +249,7 @@ body{
 
 .carousel-inner #item_container h3{
     font-family: 'Oswald-Regular';
-    color: #CF4423;
+    color: #e34a25;
     font-weight: normal;
 }
 
@@ -291,7 +291,7 @@ body{
 }
 
 .carousel-indicators .active{
-    background-color: #CF4423;
+    background-color: #e34a25;
 }
 
 #platform_container{
