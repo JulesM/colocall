@@ -11,7 +11,10 @@ class TodosController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ClcTodosBundle::layout.html.twig');
+        return $this->render('ClcTodosBundle::layout.html.twig', array(
+            'coloc_task'=> $this->displayByColocAction(),
+            'user_task'=> $this->displayMineAction(),
+        ));
     }
     
     public function newAction(Request $request)
@@ -45,7 +48,8 @@ class TodosController extends Controller
                 $em->persist($task);
                 $em->flush();
                 
-                return $this->redirect($this->generateUrl('clc_dashboard_homepage'));
+                $url = $this->getRequest()->headers->get("referer");
+                return $this->redirect($url);
             }
         }
         
@@ -53,4 +57,53 @@ class TodosController extends Controller
             'form' => $form->createView(),
         ));
     }
+    
+    public function displayByColocAction() 
+    {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        
+        $repository = $this->getDoctrine()
+                           ->getManager()
+                           ->getRepository('ClcTodosBundle:task');
+        
+        $task_list = $repository->findBy(array('coloc'=>$coloc),
+                                         array('dueDate'=>'asc'));
+        
+        return $task_list;
+    }
+    
+    public function displayMineAction() 
+    {
+        $user = $this->getUser();
+        
+        $repository = $this->getDoctrine()
+                           ->getManager()
+                           ->getRepository('ClcTodosBundle:task');
+        
+        $task_list = $repository->findBy(array('owner'=>$user),
+                                         array('dueDate'=>'asc'));
+        
+        return $task_list;
+    }
+    
+    public function displayPastAction() 
+    {
+        
+    }
+    
+    public function removeAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $task = $em->getRepository('ClcTodosBundle:task')
+                   ->find($id);
+          
+        $em->remove($task);
+        $em->flush();
+
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }        
 }

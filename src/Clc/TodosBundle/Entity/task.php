@@ -1,8 +1,10 @@
 <?php
+//src/Clc/TodosBundle/Entity/task.php
 
 namespace Clc\TodosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * task
@@ -19,46 +21,46 @@ class task
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
     
     /**
-     * @var \DateTime
+     * @var string
+     *
+     * @ORM\Column(name="task", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    protected $task;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dueDate", type="date")
+     * @Assert\NotBlank()
+     * @Assert\Type("\DateTime")
+     */
+    protected $dueDate;
+    
+    /**
+     * @var integer
      *
      * @ORM\Column(name="date", type="date")
      */
-    private $date;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="todo", type="string", length=255)
-     */
-    private $todo;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="duedate", type="date")
-     */
-    private $duedate;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="comment", type="text")
-     */
-    private $comment;
+    protected $date;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
-    */
-    private $author;
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+    protected $author;
   
-   /**
-    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
-    */
-    private $owner;
-
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+    protected $owner;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     */
+    private $coloc;
 
     /**
      * Get id
@@ -71,49 +73,49 @@ class task
     }
 
     /**
-     * Set todo
+     * Set task
      *
-     * @param string $todo
+     * @param string $task
      * @return task
      */
-    public function setTodo($todo)
+    public function setTask($task)
     {
-        $this->todo = $todo;
+        $this->task = $task;
     
         return $this;
     }
 
     /**
-     * Get todo
+     * Get task
      *
      * @return string 
      */
-    public function getTodo()
+    public function getTask()
     {
-        return $this->todo;
+        return $this->task;
     }
 
     /**
-     * Set duedate
+     * Set dueDate
      *
-     * @param \DateTime $duedate
+     * @param \DateTime $dueDate
      * @return task
      */
-    public function setDuedate($duedate)
+    public function setDueDate($dueDate)
     {
-        $this->duedate = $duedate;
+        $this->dueDate = $dueDate;
     
         return $this;
     }
 
     /**
-     * Get duedate
+     * Get dueDate
      *
      * @return \DateTime 
      */
-    public function getDuedate()
+    public function getDueDate()
     {
-        return $this->duedate;
+        return $this->dueDate;
     }
 
     /**
@@ -137,29 +139,6 @@ class task
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * Set comment
-     *
-     * @param string $comment
-     * @return task
-     */
-    public function setComment($comment)
-    {
-        $this->comment = $comment;
-    
-        return $this;
-    }
-
-    /**
-     * Get comment
-     *
-     * @return string 
-     */
-    public function getComment()
-    {
-        return $this->comment;
     }
 
     /**
@@ -206,5 +185,28 @@ class task
     public function getOwner()
     {
         return $this->owner;
+    }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return task
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
     }
 }

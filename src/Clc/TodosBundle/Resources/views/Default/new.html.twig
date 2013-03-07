@@ -1,0 +1,22 @@
+{# src/Clc/TodosBundle/Resources/views/Default/new.html.twig #}
+
+<form action="{{ path('clc_todos_new') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.task, 'To-do description') }}
+        {{ form_errors(form.task) }}
+        {{ form_widget(form.task) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dueDate, 'Due date') }}
+        {{ form_errors(form.dueDate) }}
+        {{ form_widget(form.dueDate) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" type="submit" />
+</form>

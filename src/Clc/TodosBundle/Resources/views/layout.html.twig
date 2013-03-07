@@ -10,49 +10,85 @@
   
   <div id="todos-content">
       
-      <div id="todos-table1-container">
-          <table id="table1" class="table">
-            <caption>My to-dos</caption>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Task</th>
-                <th>Comment</th>
-                <th>Who</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mar 18</td>
-                <td>Call the electrician</td>
-                <td>number = 789 654 232</td>
-                <td>John</td>
-              </tr>
-            </tbody>
-          </table>
-      </div>
-          
-      <div id="todos-table2-container">
-          <table id="table2" class="table">
-            <caption>My to-dos</caption>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Task</th>
-                <th>Comment</th>
-                <th>Who</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mar 18</td>
-                <td>Call the electrician</td>
-                <td>number = 789 654 232</td>
-                <td>John</td>
-              </tr>
-            </tbody>
-          </table>
-      </div> 
+       <div id="todos-table1-container">
+         <table id="table1" class="table">
+           <caption>My Coming To-dos</caption>
+           <thead>
+             <tr>
+               <th>Date</th>
+               <th>Task</th>
+               <th>Comment</th>
+               <th>Who</th>
+               <th>State</th>
+               <th></th>
+               <th></th>
+             </tr>
+           </thead>
+           <tbody>
+                
+             {% for task in user_task %}
+                
+               <tr>
+                 <td>{{ task.dueDate|date("d/m") }}</td>
+                 <td>{{ task.task }}</td>
+                 <td> Add a comment ...</td>
+                 <td>{{ task.owner }}</td>
+                 <td></td>
+                 <td><a class="btn">edit</a></td>
+                 <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
+                       <i class="icon-trash"></i>
+                       Remove
+                     </a>
+                 </td>
+               </tr>
+              
+             {% endfor %}
+                
+           </tbody>
+         </table>
+       </div>    
+      
+       {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
+       
+       <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
+       
+       <div id="todos-table2-container">
+         <table id="table2" class="table">
+           <caption>Coloc To-dos</caption>
+           <thead>
+             <tr>
+               <th>Date</th>
+               <th>Task</th>
+               <th>Comment</th>
+               <th>Who</th>
+               <th>State</th>
+               <th></th>
+               <th></th>
+             </tr>
+           </thead>
+           <tbody>
+                
+             {% for task in coloc_task %}
+                
+               <tr>
+                 <td>{{ task.dueDate|date("d/m") }}</td>
+                 <td>{{ task.task }}</td>
+                 <td> Add a comment ...</td>
+                 <td>{{ task.owner }}</td>
+                 <td></td>
+                 <td><a class="btn">edit</a></td>
+                 <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
+                       <i class="icon-trash"></i>
+                       Remove
+                     </a>
+                 </td>
+               </tr>
+              
+             {% endfor %}
+                
+           </tbody>
+         </table>
+       </div> 
       
   </div>
   

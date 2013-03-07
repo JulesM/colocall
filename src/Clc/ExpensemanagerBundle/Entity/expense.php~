@@ -9,9 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  * expense
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Clc\ExpensemanagerBundle\Entity\expenseRepository")
+ * @ORM\Entity(repositoryClass="Clc\ExpensemanagerBundle\Entity\ExpenseRepository")
  */
-class expense
+class Expense
 {
     /**
      * @var integer

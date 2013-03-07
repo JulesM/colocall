@@ -7,3 +7,7 @@ clc_todos_homepage:
 clc_todos_new:
     pattern: /new
     defaults: { _controller: ClcTodosBundle:Todos:new }
+    
+clc_todos_remove:
+    pattern: /remove/{id}
+    defaults: { _controller: ClcTodosBundle:Todos:remove }
