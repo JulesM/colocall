@@ -17,7 +17,7 @@ class TodosController extends Controller
         ));
     }
     
-    public function newAction(Request $request)
+    public function newAction()
     {
         $user = $this->getUser();
         $coloc = $user->getColoc();
@@ -38,6 +38,49 @@ class TodosController extends Controller
                 'property'=>'username',
                 ))    
             ->getForm();
+        
+        $request = $this->get('request');
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($task);
+                $em->flush();
+                
+                $url = $this->getRequest()->headers->get("referer");
+                return $this->redirect($url);
+            }
+        }
+        
+        return $this->render('ClcTodosBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+    
+    public function editAction($id)
+    {
+        $user = $this->getUser();
+        
+        $task = $this->getDoctrine()
+        ->getRepository('ClcTodosBundle:task')
+        ->find($id);
+        
+        $task->setDate(new \DateTime('today'));
+
+        $form = $this->createFormBuilder($task)
+            ->add('task', 'text')
+            ->add('dueDate', 'date')
+            ->add('owner', 'entity', array(
+                'required'=>false,
+                'class'=>'ClcUserBundle:User', 
+                'property'=>'username',
+                ))    
+            ->getForm();
+        
+        $request = $this->get('request');
 
         if ($request->isMethod('POST')) {
             $form->bind($request);

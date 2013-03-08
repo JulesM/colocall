@@ -1,5 +1,7 @@
 {# src/Clc/ExpensemanagerBundle/Resources/views/Default/dynamicTable.html.twig #}
 
+{% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
+
 {% for task in coloc_task %}
                 
   <tr>
@@ -8,7 +10,7 @@
     <td> Add a comment ...</td>
     <td>{{ task.owner }}</td>
     <td></td>
-    <td><a class="btn">edit</a></td>
+    <td><button class="btn" href="#addtodomodal" data-toggle="modal">edit</button></td>
     <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
         <i class="icon-trash"></i>
         </a>

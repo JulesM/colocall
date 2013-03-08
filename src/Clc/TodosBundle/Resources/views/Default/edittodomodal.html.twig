@@ -1,0 +1,7 @@
+{# src/Clc/DashboardBundle/resources/views/default/edittodomodal.html.twig #}
+
+{% extends "ClcTodosBundle:Default:todomodal.html.twig" %} 
+
+    {% block render %}
+        {% render 'ClcTodosBundle:Todos:edit'with {'id': 999} %}
+    {% endblock %}

@@ -8,6 +8,10 @@ clc_todos_new:
     pattern: /
     defaults: { _controller: ClcTodosBundle:Todos:new }
     
+clc_todos_edit:
+    pattern: /edit/{id}
+    defaults: { _controller: ClcTodosBundle:Todos:edit }    
+    
 clc_todos_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcTodosBundle:Todos:remove }

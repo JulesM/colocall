@@ -1,0 +1,22 @@
+{# src/Clc/DashboardBundle/resources/views/default/todomodal.html.twig #}
+
+<!DOCTYPE html>
+
+<div class="modal hide fade" id="addtodomodal" area-hidden="true">
+
+    <div class="modal-header">
+        <h3>Add a new to-do</h3>
+    </div>
+
+    <div class="modal-body">
+        
+        {% block render %}
+        {% endblock %}
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
+    </div>
+    
+</div>
