@@ -9,11 +9,11 @@ use Clc\TodosBundle\Entity\task;
 
 class TodosController extends Controller
 {
-    public function indexAction()
+    public function indexAction($state)
     {
         return $this->render('ClcTodosBundle::layout.html.twig', array(
-            'coloc_task'=> $this->displayByColocAction(),
-            'user_task'=> $this->displayMineAction(),
+            'coloc_task'=> $this->getByColocAction($state),
+            'user_task'=> $this->getMineAction(),
         ));
     }
     
@@ -58,22 +58,36 @@ class TodosController extends Controller
         ));
     }
     
-    public function displayByColocAction() 
+    public function getByColocAction($state) 
     {
         $user = $this->getUser();
         $coloc = $user->getColoc();
         
-        $repository = $this->getDoctrine()
-                           ->getManager()
-                           ->getRepository('ClcTodosBundle:task');
+        $em = $this->getDoctrine()->getEntityManager();
         
-        $task_list = $repository->findBy(array('coloc'=>$coloc),
-                                         array('dueDate'=>'asc'));
+        if ($state == 0) 
+        {
+        $query = $em->createQuery(
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.dueDate >= :date ORDER BY t.dueDate ASC'
+                                 ); 
+        }
+        
+        else 
+        {
+        $query = $em->createQuery(
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.dueDate < :date ORDER BY t.dueDate ASC'
+                                 );    
+        }
+        
+        $query->setParameter('coloc', $coloc);
+        $query->setParameter('date', new \DateTime('today'));
+        
+        $task_list = $query->getResult();
         
         return $task_list;
     }
     
-    public function displayMineAction() 
+    public function getMineAction() 
     {
         $user = $this->getUser();
         
@@ -87,7 +101,7 @@ class TodosController extends Controller
         return $task_list;
     }
     
-    public function displayPastAction() 
+    public function getPastAction() 
     {
         
     }

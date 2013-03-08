@@ -1,0 +1,18 @@
+{# src/Clc/ExpensemanagerBundle/Resources/views/Default/dynamicTable.html.twig #}
+
+{% for task in coloc_task %}
+                
+  <tr>
+    <td>{{ task.dueDate|date("d/m") }}</td>
+    <td>{{ task.task }}</td>
+    <td> Add a comment ...</td>
+    <td>{{ task.owner }}</td>
+    <td></td>
+    <td><a class="btn">edit</a></td>
+    <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
+        <i class="icon-trash"></i>
+        </a>
+    </td>
+  </tr>
+
+{% endfor %}

@@ -37,7 +37,6 @@
                  <td><a class="btn">edit</a></td>
                  <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
                        <i class="icon-trash"></i>
-                       Remove
                      </a>
                  </td>
                </tr>
@@ -50,9 +49,17 @@
       
        {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
        
-       <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
+       
        
        <div id="todos-table2-container">
+           
+         <div class="btn-group">
+           <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-list icon-white"></i></button>
+           <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Past</a>
+           <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Coming</a>
+           <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button> 
+         </div>    
+           
          <table id="table2" class="table">
            <caption>Coloc To-dos</caption>
            <thead>
@@ -68,23 +75,7 @@
            </thead>
            <tbody>
                 
-             {% for task in coloc_task %}
-                
-               <tr>
-                 <td>{{ task.dueDate|date("d/m") }}</td>
-                 <td>{{ task.task }}</td>
-                 <td> Add a comment ...</td>
-                 <td>{{ task.owner }}</td>
-                 <td></td>
-                 <td><a class="btn">edit</a></td>
-                 <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
-                       <i class="icon-trash"></i>
-                       Remove
-                     </a>
-                 </td>
-               </tr>
-              
-             {% endfor %}
+             {% include "ClcTodosBundle:Default:dynamicTable.html.twig" %} 
                 
            </tbody>
          </table>
