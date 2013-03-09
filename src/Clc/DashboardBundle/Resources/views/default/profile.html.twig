@@ -2,34 +2,62 @@
 
     {% extends "::base.html.twig" %}
 
+
+
     {% block title %}
       {{ parent() }} - Profile
     {% endblock %}
 
     {% block body %}
       
-      <div id="profile-content">
-          <div id="profile-left">
-              <div id="profile-picture">
-                  <img src="{{ asset('img/Profile_Jules.jpg') }}" height="50%" width="50%" alt="">
-              </div>
-              <div id="edit-buttons">
-                  <button class="btn" href="#">Edit profile picture</button>
-                  <button class="btn" href="#">Edit profile information</button>
-              </div>    
-          </div>
-          <div id="profile-right">
-              <h3>Jules Marcilhacy</h3>
-              <p>Double_Jay</p>
-              <p>Male</p>
-              <p>French</p>
-              <p>October 12th, 1989</p>
-              <p>+33 6 76 32 62 88</p>
-              <p>jules.marcilhacy@gmail.com</p>
-              <p>I like Football, Kite surf, Skiing and Going out</p>
+<div id="profile-page-content">
+      
+      
+<div class="profile-container">
+	<section id="profile-content">
+		<form action="">
+			<h1>Double_Jay</h1>
+                        
+                        <div id="profile-picture">
+                            <img src="{{ asset('img/profile-pic.png') }}" height="65px" width="65px" margin="auto" alt="">
+                        </div>
+                        
+			<div>
+                            <div class="details">
+                            <i class="icon-user"></i> <p>Jules Marcilhacy</p> 
+                            </div>
+                            <div class="details">             
+                                <i class="icon-globe"></i><p>French</p>
+                                </div>
+                                <div class="details">
+                                <i class="icon-gift"></i><p>18/10/89</p>
+                                </div>
+                                <div class="details">
+                                <i class="icon-comment"></i><p>+33 6 76 32 62 88</p>
+                                </div>
+                                <div class="details">
+                                <i class="icon-envelope"></i><p>jules.marcilhacy@gmail.com</p>
+                                </div>
+                                <div class="details">
+                                <i class="icon-heart"></i><p>I like Football, Kite surf, Skiing and Going out</p>
+                                </div>
+			</div>
+			
+			<div>
+				<input type="submit" value="Edit" />
+				
+			</div>
+		</form><!-- form -->
+		<div class="button">
+		
               <button class="btn btn-primary"> Add me on Facebook</button>
               <button class="btn btn-primary"> Follow me on Twitter</button>
-          </div>     
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+
+
       </div>
-      
+
+
     {% endblock body %}  
