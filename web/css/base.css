@@ -115,7 +115,9 @@ root {
     background-repeat: repeat;
     width: 100%;
     height: 100%;
-    padding-top: 60px;
+    padding-top: 20px;
+    position: relative;
+    z-index: -3;
 }
 
 #profile-left{
@@ -176,7 +178,7 @@ form:after {
 	clear: both;
 	visibility: hidden;
 }
-.profile-container { margin: 25px auto; position: relative; width: 900px; }
+.profile-container { margin: 25px auto; position: relative; width: 900px;}
 #profile-content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
@@ -197,20 +199,22 @@ form:after {
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
 	width: 400px;
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 }
 #profile-content h1 {
-	color: #7E7E7E;
+	color: black;
 	font: bold 25px Helvetica, Arial, sans-serif;
 	letter-spacing: -0.05em;
 	line-height: 20px;
 	margin: 10px 0 30px;
+        text-shadow: 0px 1px 0px white;
 }
 #profile-content h1:before,
 #profile-content h1:after {
 	content: "";
 	height: 1px;
 	position: absolute;
-	top: 10px;
+	top: 40px;
 	width: 27%;
 }
 #profile-content h1:after {
@@ -220,7 +224,7 @@ form:after {
 	background: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    right: 0;
+        right: 0;
 }
 #profile-content h1:before {
 	background: rgb(126,126,126);
@@ -229,7 +233,7 @@ form:after {
 	background: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    left: 0;
+        left: 0;
 }
 #profile-content:after,
 #profile-content:before {
@@ -248,12 +252,14 @@ form:after {
 	position: absolute;
 	width: 100%;
 }
+
 #profile-content:after {
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
 	-ms-transform: rotate(2deg);
 	-o-transform: rotate(2deg);
 	transform: rotate(2deg);
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 	top: 0;
 	z-index: -1;
 }
@@ -263,6 +269,7 @@ form:after {
 	-ms-transform: rotate(-3deg);
 	-o-transform: rotate(-3deg);
 	transform: rotate(-3deg);
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 	top: 0;
 	z-index: -2;
 }
@@ -351,7 +358,7 @@ form:after {
     margin: 30px 15px 0 0;
     text-decoration: underline;
 }
-.button {
+.profile-footer {
 	background: rgb(247,249,250);
 	background: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
@@ -372,7 +379,7 @@ form:after {
 	border-top: 1px solid #CFD5D9;
 	padding: 15px 0;
 }
-.button a {
+/*.button a {
 	background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
 	color: #7E7E7E;
 	font-size: 17px;
@@ -387,7 +394,7 @@ form:after {
 .button a:hover {
 	background-position: 0 -135px;
 	color: #00aeef;
-}
+}*/
 
 
 #profile-picture{
@@ -400,23 +407,32 @@ form:after {
 }
 
 .details{
-    
-    margin-left: 20%
 }
 
 .details i{
-    position: absolute;
-    left: 20%;
+    float: left;
+    margin-right: 10px;
+    margin-left: 15px;
+    color: grey;
+    font-size: 1.3em;
+    display: inline-block;
 }
 
 .details p{
     text-align: left;
-    margin-left: 20px;
+    margin-left: 0px;
+    width: 250px;
+    display: inline-block;
 }
 
-[class^="icon-"] {
-margin-top: 4px;
-margin-right: 5px;
+#static-details{
+    text-align: left;
+    color: grey;
+    width: 95px;
+    float: left;
+    margin-right: 8px;
+    
 }
+
 
 

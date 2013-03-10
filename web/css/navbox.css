@@ -32,7 +32,7 @@ root {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25); 
     height: 46px;
     margin-bottom: 0px;
-    background: linear-gradient(to bottom, rgb(68, 197, 236), rgb(37, 155, 219)) repeat scroll 0% 0% rgb(37, 155, 219);
+    background: linear-gradient(to bottom, rgb(216, 222, 229), rgb(191, 197, 204)) repeat scroll 0% 0% rgb(37, 155, 219);
     text-align: center;
 }
 
@@ -47,36 +47,41 @@ root {
 
 #nav_container2 #p{
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
     font: 13px/20px "Lucida Grande",Tahoma,Verdana,sans-serif;
     color: rgb(64, 64, 64);
     font-size: 11px;
     font-weight: bold;
-    color: rgb(102, 102, 102);
+    color: rgb(88, 104, 120);
     text-decoration: none;
     text-shadow: 0px 1px white;
     white-space: nowrap;
     text-shadow: 0px 1px 0px white;
 }
 
-
-
 #nav_container3{
-    box-shadow: 0px 2px 2px #888;
+    height: 32px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to bottom, rgb(216, 222, 229), rgb(191, 197, 204)) repeat scroll 0% 0% rgb(37, 155, 219);
 }
 
 #nav_container3_bis{
-    box-shadow: 0px -2px 2px #888;
+    height: 32px;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+    
 }
 
 #nav_container3 #p{
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    padding-top: 5px;
     text-align: center;
+    vertical-align: middle;
     font-family: 'Oswald-Regular';
     font-size: 16px;
-    color: #888;
+    color: rgb(88, 104, 120);
+    text-shadow: 0px 1px rgba(255, 255, 255, 1);
+    /*height: 100%;*/
 }
 
 #content{
@@ -104,6 +109,13 @@ border-bottom: 1px dotted rgb(204, 204, 204);
 }
 
 
+.nav-pills.nav-stacked > li:last-child > a {
+    border-bottom: none;
+}
+
+.nav i{
+    font-size: 1.3em;
+}
 /*Test*/
 
 
