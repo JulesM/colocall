@@ -1,8 +1,8 @@
 {# app/Resources/views/banner.html.twig#}
   
 
-      <div id="banner1">
-    <img src="{{ asset('img/logo.png') }}" height="80%" width="80%" alt="">
+<div id="banner1">
+  <img src="{{ asset('img/logo.png') }}" height="80%" width="80%" alt="">
 </div>
         
 <div id="banner2">
@@ -37,7 +37,7 @@
     {% endif %}
 
     <form class="form-inline" action="{{ path('login_check') }}" method="post">
-        <input type="text" id="username" class="input-small" placeholder="Username" name="_username" value="{{ last_username }}" />
+        <input type="text" id="username" class="input-small" placeholder="Username or e-mail" name="_username" value="{{ last_username }}" />
         <input type="password" id="password" class="input-small" placeholder="Password" name="_password" />
 
         <input type="checkbox" id="remember_me" name="_remember_me" checked />
