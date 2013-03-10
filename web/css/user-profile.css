@@ -1,16 +1,50 @@
-/* 
-    Document   : user-profile
-    Created on : 9 mars 2013, 14:42:43
-    Author     : arnaudrizard
-    Description:
-        Purpose of the stylesheet follows.
-*/
 
-root { 
-    display: block;
+/* --- User Bundle/profile ---- */
+
+#profile-page-content{
+    background-image: url('../img/dashboard/Wood-bckgd.jpg');
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    position: relative;
+    z-index: -3;
 }
 
-﻿/* Reset CSS */
+#profile-left{
+    border: 1px solid transparent;
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+}
+
+
+
+#edit-buttons{
+    text-align: center;
+}
+
+
+#edit-buttons .btn{
+    margin-top: 10px;
+}
+
+#profile-right{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    width: 70%;
+    font-family: 'Oswald-Regular';
+}
+
+#profile-right h3{
+    font-family: 'Oswald-Stencil';
+}
+
+
+/*User Profile*/
+
+
 
 h1{ font-size:28px;}
 h2{ font-size:26px;}
@@ -35,7 +69,7 @@ form:after {
 	clear: both;
 	visibility: hidden;
 }
-.profile-container { margin: 25px auto; position: relative; width: 900px; }
+.profile-container { margin: 25px auto; position: relative; width: 900px;}
 #profile-content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
@@ -56,20 +90,22 @@ form:after {
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
 	width: 400px;
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 }
 #profile-content h1 {
-	color: #7E7E7E;
+	color: black;
 	font: bold 25px Helvetica, Arial, sans-serif;
 	letter-spacing: -0.05em;
 	line-height: 20px;
 	margin: 10px 0 30px;
+        text-shadow: 0px 1px 0px white;
 }
 #profile-content h1:before,
 #profile-content h1:after {
 	content: "";
 	height: 1px;
 	position: absolute;
-	top: 10px;
+	top: 40px;
 	width: 27%;
 }
 #profile-content h1:after {
@@ -79,7 +115,7 @@ form:after {
 	background: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    right: 0;
+        right: 0;
 }
 #profile-content h1:before {
 	background: rgb(126,126,126);
@@ -88,7 +124,7 @@ form:after {
 	background: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
 	background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
-    left: 0;
+        left: 0;
 }
 #profile-content:after,
 #profile-content:before {
@@ -107,12 +143,14 @@ form:after {
 	position: absolute;
 	width: 100%;
 }
+
 #profile-content:after {
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
 	-ms-transform: rotate(2deg);
 	-o-transform: rotate(2deg);
 	transform: rotate(2deg);
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 	top: 0;
 	z-index: -1;
 }
@@ -122,10 +160,11 @@ form:after {
 	-ms-transform: rotate(-3deg);
 	-o-transform: rotate(-3deg);
 	transform: rotate(-3deg);
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
 	top: 0;
 	z-index: -2;
 }
-#profile-content form { margin: 0 20px; position: relative }
+#profile-content form { margin: 0 20px; position: relative; }
 #profile-content form input[type="text"],
 #profile-content form input[type="password"] {
 	-webkit-border-radius: 3px;
@@ -185,10 +224,11 @@ form:after {
 	border: 1px solid #D69E31;
 	color: #85592e;
 	cursor: pointer;
-	float: left;
 	font: bold 15px Helvetica, Arial, sans-serif;
 	height: 35px;
 	margin: 20px 0 35px 15px;
+        margin-left: auto;
+        margin-right: auto;
 	position: relative;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	width: 120px;
@@ -209,7 +249,7 @@ form:after {
     margin: 30px 15px 0 0;
     text-decoration: underline;
 }
-.button {
+.profile-footer {
 	background: rgb(247,249,250);
 	background: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
@@ -230,7 +270,7 @@ form:after {
 	border-top: 1px solid #CFD5D9;
 	padding: 15px 0;
 }
-.button a {
+/*.button a {
 	background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
 	color: #7E7E7E;
 	font-size: 17px;
@@ -245,4 +285,45 @@ form:after {
 .button a:hover {
 	background-position: 0 -135px;
 	color: #00aeef;
+}*/
+
+
+#profile-picture{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
+
+.details{
+}
+
+.details i{
+    float: left;
+    margin-right: 10px;
+    margin-left: 15px;
+    color: grey;
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+.details p{
+    text-align: left;
+    margin-left: 0px;
+    width: 250px;
+    display: inline-block;
+}
+
+#static-details{
+    text-align: left;
+    color: grey;
+    width: 95px;
+    float: left;
+    margin-right: 8px;
+    
+}
+
+
+
