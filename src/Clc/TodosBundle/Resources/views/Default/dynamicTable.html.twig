@@ -3,18 +3,21 @@
 {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
 
 {% for task in coloc_task %}
-                
-  <tr>
-    <td>{{ task.dueDate|date("d/m") }}</td>
-    <td>{{ task.task }}</td>
-    <td> Add a comment ...</td>
-    <td>{{ task.owner }}</td>
-    <td></td>
-    <td><button class="btn" href="#addtodomodal" data-toggle="modal">edit</button></td>
-    <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
-        <i class="icon-trash"></i>
-        </a>
-    </td>
-  </tr>
 
+
+   <tr>
+     <td id="check"></td>
+     <td>{{ task.task }}</td>
+     <td>{{ task.owner }}</td>
+     <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
+     <td id="todo-list-edit-comment-delete">
+     <i class="icon-eye-open"></i>
+     <i class="icon-edit" href="#addtodomodal" data-toggle="modal"></i>
+     <a>
+           <i class="icon-trash" href="{{ path('clc_todos_remove', {'id': task.id}) }}" ></i>
+         </a>
+     </td>
+   </tr>
+  
+  
 {% endfor %}

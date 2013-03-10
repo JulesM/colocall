@@ -1,6 +1,12 @@
 {# src/Clc/ExpensemanagerBundle/Resources/views/layout.html.twig #}
  
 {% extends "::base.html.twig" %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/todos.css') }}" type="text/css" />
+{% endblock %}
  
 {% block title %}
   {{ parent() }} - To-dos
@@ -9,75 +15,78 @@
 {% block body %}
   
   <div id="todos-content">
+        <div id="todos-table1-container">
+            
+            <section class="todo">
+
+                 <table id="todo-list" class="table">
+                 <caption id="todo-table-caption"><div><p>My Coming To-dos</p></div></caption>
+                 <tbody>
+
+                     {% for task in user_task %}
+
+                       <tr>
+                         <td id="check"></td>
+                         <td>{{ task.task }}</td>
+                         <td>{{ task.owner }}</td>
+                         <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
+                         <td id="todo-list-edit-comment-delete">
+                         <i class="icon-eye-open"></i>
+                         <i class="icon-edit"></i>
+                         <a>
+                               <i class="icon-trash" href="{{ path('clc_todos_remove', {'id': task.id}) }}" ></i>
+                             </a>
+                         </td>
+                       </tr>
+
+                     {% endfor %}
+
+                   </tbody>
+                 </table>      
+
+              <ul class="todo-pagination">
+                <li class="previous"><span><i class="icon-previous"></i> Previous</span></li>
+                <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
+              </ul>
+                
+    </section>
+  </div>
       
-       <div id="todos-table1-container">
-         <table id="table1" class="table">
-           <caption>My Coming To-dos</caption>
-           <thead>
-             <tr>
-               <th>Date</th>
-               <th>Task</th>
-               <th>Comment</th>
-               <th>Who</th>
-               <th>State</th>
-               <th></th>
-               <th></th>
-             </tr>
-           </thead>
-           <tbody>
-                
-             {% for task in user_task %}
-                
-               <tr>
-                 <td>{{ task.dueDate|date("d/m") }}</td>
-                 <td>{{ task.task }}</td>
-                 <td> Add a comment ...</td>
-                 <td>{{ task.owner }}</td>
-                 <td></td>
-                 <td><a class="btn">edit</a></td>
-                 <td><a href="{{ path('clc_todos_remove', {'id': task.id}) }}" class="btn">
-                       <i class="icon-trash"></i>
-                     </a>
-                 </td>
-               </tr>
-              
-             {% endfor %}
-                
-           </tbody>
-         </table>
-       </div>    
+
       
        {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
-       
-       <div id="todos-table2-container">
-           
-         <div class="btn-group">
-           <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-list icon-white"></i></button>
-           <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Past</a>
-           <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Coming</a>
-           <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button> 
-         </div>    
-           
-         <table id="table2" class="table">
-           <caption>Coloc To-dos</caption>
-           <thead>
-             <tr>
-               <th>Date</th>
-               <th>Task</th>
-               <th>Comment</th>
-               <th>Who</th>
-               <th>State</th>
-               <th></th>
-               <th></th>
-             </tr>
-           </thead>
-           <tbody>
+  
+        <div id="todos-table2-container">
+            
+            <section class="todo">
+
+                 <table id="todo-list" class="table">
+                 <caption id="todo-table-caption">
+                    <div id="all-todos-caption"><p>All To-dos</p>                  
+                    </div>
+                 </caption>
+                 <tbody>
+
                 
              {% include "ClcTodosBundle:Default:dynamicTable.html.twig" %} 
+                   </tbody>
+                 </table>      
+
+              <ul class="todo-pagination">
+                <li class="previous"><span><i class="icon-previous"></i> Previous</span></li>
+
+                <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
+              </ul>
+                    <div class="btn-group">
+                      <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-list icon-white"></i></button>
+                      <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Past</a>
+                      <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Coming</a>
+                      <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button> 
+                    </div> 
                 
-           </tbody>
-         </table>
-       </div> 
+    </section>
+  </div>                
+
       
   </div>
   

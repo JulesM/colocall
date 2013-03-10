@@ -54,33 +54,6 @@ root {
     margin-top: 20px;
 }
 
-/* --- Todos Bundle --- */
-
-#todos-content{
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/dashboard/dashboard-bckgd.jpg');
-    background-repeat: repeat;
-    padding-top: 20px;
-}
-
-#todos-table1-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#todos-table2-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-
 /* --- Shoppinglist Bundle --- */
 
 #shoppinglist-content{
