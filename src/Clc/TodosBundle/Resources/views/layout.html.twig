@@ -15,18 +15,60 @@
 {% block body %}
   
   <div id="todos-content">
+
+      
         <div id="todos-table1-container">
             
             <section class="todo">
 
                  <table id="todo-list" class="table">
-                 <caption id="todo-table-caption"><div><p>My Coming To-dos</p></div></caption>
+                     
+                     
+                 <caption id="todo-table-caption">  
+                    <div id="todo-filter-tab-container"> 
+                        <div id="all-todos-caption">
+                            <p>My to-dos</p>
+                            
+                        </div>
+                        <div style="width: 50%; display: inline-block; flaot:right;">
+                             <ul class="todo-filter-tab">
+                                <li class="add-todo"> 
+                                    <button class="circle-button"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
+                                </li>
+                                <li class="status-filter">
+                                    <form action="index.html" method="post" class="settings-form">
+                                    <label>
+                                        <input type="checkbox" name="gps" value="0">
+                                            <span class="settings-switch">                                           
+                                            <span class="settings-switch-handle">                                          
+                                            </span>
+                                            </span>
+                                    </label>
+                                    </form>
+                                </li>
+                                <li class="category-filter"><button class="square-button"><i class="icon-th-large icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                 </caption>
+                 
+                 
                  <tbody>
 
                      {% for task in user_task %}
 
                        <tr>
-                         <td id="check"></td>
+                         <td id="check">
+                                    <form action="index.html" method="post" class="settings-form">
+                                    <label>
+                                        <input type="checkbox" name="gps" value="0">
+                                            <span class="todo-settings-switch">                                           
+                                            <span class="todo-settings-switch-handle">                                          
+                                            </span>
+                                            </span>
+                                    </label>
+                                    </form>                         
+                         </td>
                          <td>{{ task.task }}</td>
                          <td>{{ task.owner }}</td>
                          <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
@@ -61,10 +103,34 @@
             <section class="todo">
 
                  <table id="todo-list" class="table">
-                 <caption id="todo-table-caption">
-                    <div id="all-todos-caption"><p>All To-dos</p>                  
+                     
+                 <caption id="todo-table-caption">  
+                    <div id="todo-filter-tab-container"> 
+                        <div id="all-todos-caption">
+                            <p>All To-dos</p>
+                        </div>
+                        <div style="width: 50%; display: inline-block; flaot:right;">
+                             <ul class="todo-filter-tab">
+                                <li class="add-todo"> 
+                                    <button class="circle-button"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
+                                </li>
+                                <li class="status-filter">
+                                    <form action="index.html" method="post" class="settings-form">
+                                    <label>
+                                        <input type="checkbox" name="gps" value="0">
+                                            <span class="settings-switch">                                           
+                                            <span class="settings-switch-handle">                                          
+                                            </span>
+                                            </span>
+                                    </label>
+                                    </form>
+                                </li>
+                                <li class="category-filter"><button class="square-button"><i class="icon-th-large icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
+                            </ul>
+                        </div>
                     </div>
                  </caption>
+                         
                  <tbody>
 
                 
@@ -77,12 +143,7 @@
 
                 <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
               </ul>
-                    <div class="btn-group">
-                      <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-list icon-white"></i></button>
-                      <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Past</a>
-                      <a class="btn btn-primary" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Coming</a>
-                      <button class="btn btn-primary" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button> 
-                    </div> 
+
                 
     </section>
   </div>                
