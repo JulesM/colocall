@@ -17,6 +17,9 @@
   <div id="todos-content">
 
       
+
+      
+      
         <div id="todos-table1-container">
             
             <section class="todo">
@@ -27,28 +30,9 @@
                  <caption id="todo-table-caption">  
                     <div id="todo-filter-tab-container"> 
                         <div id="all-todos-caption">
-                            <p>My to-dos</p>
-                            
+                            <p>My to-dos</p>                           
                         </div>
-                        <div style="width: 50%; display: inline-block; flaot:right;">
-                             <ul class="todo-filter-tab">
-                                <li class="add-todo"> 
-                                    <button class="circle-button"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
-                                </li>
-                                <li class="status-filter">
-                                    <form action="index.html" method="post" class="settings-form">
-                                    <label>
-                                        <input type="checkbox" name="gps" value="0">
-                                            <span class="settings-switch">                                           
-                                            <span class="settings-switch-handle">                                          
-                                            </span>
-                                            </span>
-                                    </label>
-                                    </form>
-                                </li>
-                                <li class="category-filter"><button class="square-button"><i class="icon-th-large icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
-                            </ul>
-                        </div>
+
                     </div>
                  </caption>
                  
@@ -59,17 +43,11 @@
 
                        <tr>
                          <td id="check">
-                                    <form action="index.html" method="post" class="settings-form">
-                                    <label>
-                                        <input type="checkbox" name="gps" value="0">
-                                            <span class="todo-settings-switch">                                           
-                                            <span class="todo-settings-switch-handle">                                          
-                                            </span>
-                                            </span>
-                                    </label>
-                                    </form>                         
+                             <div class="btn-group">
+                                 <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+                             </div>                        
                          </td>
-                         <td>{{ task.task }}</td>
+                         <td id="task">{{ task.task }}</td>
                          <td>{{ task.owner }}</td>
                          <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
                          <td id="todo-list-edit-comment-delete">
@@ -97,7 +75,23 @@
 
       
        {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
-  
+      
+        <div id="todos-toolbar-tab">
+             <ul class="todo-filter-tab">
+                <li class="add-todo"> 
+                    <button class="circle-button"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
+                </li>
+                <li class="status-filter">
+                    <div class="btn-group">
+                    <button class="btn">Pending</button>
+                    <button class="btn">Checked</button>
+                    </div>
+                </li>
+                <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
+            </ul>
+                        
+        </div>
+      
         <div id="todos-table2-container">
             
             <section class="todo">
@@ -109,24 +103,7 @@
                         <div id="all-todos-caption">
                             <p>All To-dos</p>
                         </div>
-                        <div style="width: 50%; display: inline-block; flaot:right;">
-                             <ul class="todo-filter-tab">
-                                <li class="add-todo"> 
-                                    <button class="circle-button"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
-                                </li>
-                                <li class="status-filter">
-                                    <form action="index.html" method="post" class="settings-form">
-                                    <label>
-                                        <input type="checkbox" name="gps" value="0">
-                                            <span class="settings-switch">                                           
-                                            <span class="settings-switch-handle">                                          
-                                            </span>
-                                            </span>
-                                    </label>
-                                    </form>
-                                </li>
-                                <li class="category-filter"><button class="square-button"><i class="icon-th-large icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
-                            </ul>
+
                         </div>
                     </div>
                  </caption>

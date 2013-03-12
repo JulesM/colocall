@@ -7,17 +7,11 @@
 
    <tr>
      <td id="check">
-        <form action="index.html" method="post" class="settings-form">
-        <label>
-            <input type="checkbox" name="gps" value="0">
-                <span class="todo-settings-switch">                                           
-                <span class="todo-settings-switch-handle">                                          
-                </span>
-                </span>
-        </label>
-        </form>             
+         <div class="btn-group">
+             <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+         </div>                        
      </td>
-     <td>{{ task.task }}</td>
+     <td id="task">{{ task.task }}</td>
      <td>{{ task.owner }}</td>
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
