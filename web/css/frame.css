@@ -20,3 +20,16 @@ root {
     font-family: 'Oswald-Light';
     src: url('polices/oswald/oswaldlight.ttf') format('truetype');
 }
+@font-face { 
+    font-family: 'Proxima-Regular';
+    src: url('polices/proxima/ProximaNova-Regular.otf') format('truetype');}
+@font-face {    
+    font-family: 'Proxima-Bold';
+    src: url('polices/proxima/ProximaNova-Bold.otf') format('truetype');}
+@font-face {    
+    font-family: 'Oswald-Bold';
+    src: url('polices/oswald/oswaldbold.ttf') format('truetype');}
+@font-face {    
+    font-family: 'Oswald-Light';
+    src: url('polices/oswald/oswaldlight.ttf') format('truetype');
+}
