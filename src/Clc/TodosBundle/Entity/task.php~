@@ -4,6 +4,7 @@
 namespace Clc\TodosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * task
@@ -23,9 +24,17 @@ class task
     protected $id;
     
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer")
+     */
+    protected $state;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="task", type="string", length=255)
+     * @Assert\NotBlank()
      */
     protected $task;
     
@@ -33,6 +42,8 @@ class task
      * @var integer
      *
      * @ORM\Column(name="dueDate", type="date")
+     * @Assert\NotBlank()
+     * @Assert\Type("\DateTime")
      */
     protected $dueDate;
     
@@ -54,9 +65,9 @@ class task
     protected $owner;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
-    */
-    private $coloc;
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     */
+    protected $coloc;
 
     /**
      * Get id
@@ -181,5 +192,51 @@ class task
     public function getOwner()
     {
         return $this->owner;
+    }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return task
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
+    }
+
+    /**
+     * Set state
+     *
+     * @param integer $state
+     * @return task
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+    
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return integer 
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }

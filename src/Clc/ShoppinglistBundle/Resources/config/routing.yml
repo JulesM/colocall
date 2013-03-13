@@ -1,3 +1,9 @@
+# src/Clc/ShoppinglistBundle/Resources/config/routing.yml
+
 clc_shoppinglist_homepage:
     pattern:  /
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:index }
+
+clc_shoppinglist_new:
+    pattern: /new
+    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:new }

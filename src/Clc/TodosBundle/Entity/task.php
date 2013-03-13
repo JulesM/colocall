@@ -24,6 +24,13 @@ class task
     protected $id;
     
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer")
+     */
+    protected $state;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="task", type="string", length=255)
@@ -60,7 +67,7 @@ class task
     /**
      * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
      */
-    private $coloc;
+    protected $coloc;
 
     /**
      * Get id
@@ -208,5 +215,28 @@ class task
     public function getColoc()
     {
         return $this->coloc;
+    }
+
+    /**
+     * Set state
+     *
+     * @param integer $state
+     * @return task
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+    
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return integer 
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }

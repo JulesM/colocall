@@ -1,0 +1,22 @@
+{# src/Clc/ShoppinglistBundle/Resources/views/Default/new.html.twig #}
+
+<form action="{{ path('clc_shoppinglist_new') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+
+    <div>
+        {{ form_label(form.comment) }}
+        {{ form_errors(form.comment) }}
+        {{ form_widget(form.comment) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" type="submit" />
+</form>

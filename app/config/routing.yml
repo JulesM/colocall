@@ -16,7 +16,7 @@ clc_event:
 
 clc_shoppinglist:
     resource: "@ClcShoppinglistBundle/Resources/config/routing.yml"
-    prefix:   /shoppinglist/
+    prefix:   /shoppinglist
     
 clc_todos:
     resource: "@ClcTodosBundle/Resources/config/routing.yml"

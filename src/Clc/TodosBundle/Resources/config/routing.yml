@@ -1,4 +1,4 @@
-# src/Clc/TodosBundle/Resources/routing.yml
+# src/Clc/TodosBundle/Resources/config/routing.yml
 
 clc_todos_homepage:
     pattern:  /{state}
