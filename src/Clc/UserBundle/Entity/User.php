@@ -22,6 +22,48 @@ class User extends BaseUser
     protected $id;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string", length=255)
+     */
+    protected $firstname;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lasttname", type="string", length=255)
+     */
+    protected $lastname;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationality", type="string", length=255)
+     */
+    protected $nationality;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="birthday", type="date")
+     */
+    protected $birthday;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phone", type="integer")
+     */
+    protected $phone;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     */
+    protected $comment;
+    
+    /**
      * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
      */
     protected $picture;
@@ -108,5 +150,143 @@ class User extends BaseUser
     public function getColoc()
     {
         return $this->coloc;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string 
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set nationality
+     *
+     * @param string $nationality
+     * @return User
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+    
+        return $this;
+    }
+
+    /**
+     * Get nationality
+     *
+     * @return string 
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param \DateTime $birthday
+     * @return User
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return \DateTime 
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param integer $phone
+     * @return User
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return integer 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return User
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
     }
 }

@@ -18,7 +18,7 @@
       
 <div class="profile-container">
 	<section id="profile-content">
-			<h1>Double_Jay</h1>
+			<h1>{{ app.user.username }}</h1>
                         
                         <div id="profile-picture">
                             <img src="{{ asset('img/profile-pic.png') }}" height="65px" width="65px" margin="auto" alt="">
@@ -26,22 +26,22 @@
                         
 			<div>
                             <div class="details">
-                            <i class="icon-user"></i> <p id="static-details">Name</p><p>Jules Marcilhacy</p> 
+                            <i class="icon-user"></i> <p id="static-details">Name</p><p>{{ app.user.firstname }} {{ app.user.lastname }}</p> 
                             </div>
                             <div class="details">             
-                                <i class="icon-globe icon-2x"></i><p id="static-details">Nationality</p><p>French</p>
+                                <i class="icon-globe icon-2x"></i><p id="static-details">Nationality</p><p>{{ app.user.nationality }}</p>
                                 </div>
                                 <div class="details">
-                                <i class="icon-gift"></i><p id="static-details">Birth Date</p><p>18/10/89</p>
+                                <i class="icon-gift"></i><p id="static-details">Birth Date</p><p>{{ app.user.birthday|date("d/m/y") }}</p>
                                 </div>
                                 <div class="details">
                                 <i class="icon-comment"></i><p id="static-details">Phone Number</p><p>+33 6 76 32 62 88</p>
                                 </div>
                                 <div class="details">
-                                <i class="icon-envelope"></i><p id="static-details">E-mail</p><p>jules.marcilhacy@gmail.com</p>
+                                <i class="icon-envelope"></i><p id="static-details">E-mail</p><p>{{ app.user.email }}</p>
                                 </div>
                                 <div class="details">
-                                <i class="icon-heart"></i><p id="static-details">Passions</p><p>I like Football, Kite surf, Skiing and Going out</p>
+                                <i class="icon-heart"></i><p id="static-details">Passions</p><p>{{ app.user.comment }}</p>
                                 </div>
 			</div>
 			

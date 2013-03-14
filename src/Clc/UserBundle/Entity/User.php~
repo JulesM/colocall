@@ -22,6 +22,48 @@ class User extends BaseUser
     protected $id;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="firstname", type="string", length=255)
+     */
+    protected $firstname;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lasttname", type="string", length=255)
+     */
+    protected $lastname;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationality", type="string", length=255)
+     */
+    protected $nationality;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="birthday", type="date")
+     */
+    protected $birthday;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phone", type="integer")
+     */
+    protected $phone;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     */
+    protected $comment;
+    
+    /**
      * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
      */
     protected $picture;
@@ -85,5 +127,28 @@ class User extends BaseUser
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return User
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
     }
 }
