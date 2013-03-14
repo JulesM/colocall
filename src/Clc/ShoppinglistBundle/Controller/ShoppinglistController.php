@@ -9,9 +9,11 @@ use Clc\ShoppinglistBundle\Entity\item;
 
 class ShoppinglistController extends Controller
 {
-    public function indexAction()
+    public function indexAction($state)
     {
-        return $this->render('ClcShoppinglistBundle::layout.html.twig');
+        return $this->render('ClcShoppinglistBundle::layout.html.twig', array(
+            'item_list'=> $this->getByColocAction($state),
+        ));
     }
     
     public function newAction()
@@ -28,7 +30,7 @@ class ShoppinglistController extends Controller
 
         $form = $this->createFormBuilder($item)
                      ->add('name', 'text')
-                     ->add('comment', 'text')   
+                     ->add('comment', 'text', array('required' => false) )  
                      ->getForm();
         
         $request = $this->get('request');
@@ -51,4 +53,37 @@ class ShoppinglistController extends Controller
             'form' => $form->createView(),
         ));
     }
+    
+    public function getByColocAction($state)
+    {
+        $coloc = $this->getUser()->getColoc();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $query = $em->createQuery(
+            'SELECT i FROM ClcShoppinglistBundle:item i WHERE i.coloc = :coloc AND i.state >= :state ORDER BY i.addedDate ASC'
+                                 );
+        
+        $query->setParameter('coloc', $coloc);
+        $query->setParameter('state', $state);
+        
+        $item_list = $query->getResult();
+        
+        return $item_list;
+    }
+    
+    public function removeAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $item = $em->getRepository('ClcShoppinglistBundle:item')
+                   ->find($id);
+          
+        $em->remove($item);
+        $em->flush();
+
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }        
 }

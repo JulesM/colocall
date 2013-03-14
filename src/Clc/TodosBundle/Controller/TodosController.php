@@ -34,9 +34,9 @@ class TodosController extends Controller
             ->add('task', 'text')
             ->add('dueDate', 'date')
             ->add('owner', 'entity', array(
-                'required'=>false,
-                'class'=>'ClcUserBundle:User', 
-                'property'=>'username',
+                  'required'=>false,
+                  'class'=>'ClcUserBundle:User', 
+                  'property'=>'username',
                 ))    
             ->getForm();
         
@@ -109,22 +109,12 @@ class TodosController extends Controller
         
         $em = $this->getDoctrine()->getEntityManager();
         
-        if ($state == 0) 
-        {
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.dueDate >= :date ORDER BY t.dueDate ASC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state >= :state ORDER BY t.dueDate ASC'
                                  ); 
-        }
-        
-        else 
-        {
-        $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.dueDate < :date ORDER BY t.dueDate ASC'
-                                 );    
-        }
         
         $query->setParameter('coloc', $coloc);
-        $query->setParameter('date', new \DateTime('today'));
+        $query->setParameter('state', $state);
         
         $task_list = $query->getResult();
         
@@ -135,19 +125,17 @@ class TodosController extends Controller
     {
         $user = $this->getUser();
         
-        $repository = $this->getDoctrine()
-                           ->getManager()
-                           ->getRepository('ClcTodosBundle:task');
+        $em = $this->getDoctrine()->getManager();
         
-        $task_list = $repository->findBy(array('owner'=>$user),
-                                         array('dueDate'=>'asc'));
+        $query = $em->createQuery(
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.dueDate >= :date ORDER BY t.dueDate ASC'
+                                 );
+        $query->setParameter('user', $user);
+        $query->setParameter('date', new \DateTime('today'));
+        
+        $task_list = $query->getResult();
         
         return $task_list;
-    }
-    
-    public function getPastAction() 
-    {
-        
     }
     
     public function removeAction($id)

@@ -1,9 +1,14 @@
 # src/Clc/ShoppinglistBundle/Resources/config/routing.yml
 
 clc_shoppinglist_homepage:
-    pattern:  /
+    pattern: /{state}
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:index }
 
 clc_shoppinglist_new:
-    pattern: /new
+    pattern: /
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:new }
+
+clc_shoppinglist_remove:
+    pattern: /remove/{id}
+    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:remove }
+    

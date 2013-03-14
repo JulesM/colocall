@@ -4,7 +4,6 @@
 
 {% for task in coloc_task %}
 
-
    <tr>
      <td id="check">
          <div class="btn-group">
@@ -15,11 +14,11 @@
      <td>{{ task.owner }}</td>
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
-     <i class="icon-eye-open"></i>
-     <i class="icon-edit" href="#addtodomodal" data-toggle="modal"></i>
-     <a>
-           <i class="icon-trash" href="{{ path('clc_todos_remove', {'id': task.id}) }}" ></i>
-         </a>
+       <i class="icon-eye-open"></i>
+       <i class="icon-edit" href="#addtodomodal" data-toggle="modal"></i>
+       <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
+         <i class="icon-trash"></i>
+       </a>
      </td>
    </tr>
   
