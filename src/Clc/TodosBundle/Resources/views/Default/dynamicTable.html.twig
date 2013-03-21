@@ -4,10 +4,10 @@
 
 {% for task in coloc_task %}
 
-   <tr>
+   <tr id={{ task.task }}>
      <td id="check">
          <div class="btn-group">
-             <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+             <button id="todo-check" class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
          </div>                        
      </td>
      <td id="task">{{ task.task }}</td>

@@ -7,6 +7,11 @@
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('css/todos.css') }}" type="text/css" />
 {% endblock %}
+  
+{% block javascripts %}
+  {{ parent() }}
+  <script type='text/javascript' src='{{ asset('js/todos-script.js') }}'></script>
+{% endblock %}
  
 {% block title %}
   {{ parent() }} - To-dos
@@ -117,8 +122,7 @@
                 
     </section>
   </div>                
-
-      
+    
   </div>
   
 {% endblock %}

@@ -2,7 +2,7 @@
 #mainbox{
         background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
-    z-index: -3
+    /*z-index: -3*/
 }
 
 
@@ -11,7 +11,7 @@
     width: 100%;
     padding-top: 20px;
     position: relative;
-    z-index:0;
+    /*z-index:0;*/
 }
 #todos-toolbar-tab{
     width: 640px;
@@ -68,13 +68,13 @@ body {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   background: url("../img/Ppaper-bckgd.png") repeat scroll 0% 0% transparent;
-  
+  /*z-index: 3;*/
 }
 .todo:before, .todo:after {
   content: '';
   position: absolute;
-  z-index: -1;
-  height: 4px;
+  /*z-index: -1;*/
+  height: 1px;
   background: white;
   border: 1px solid #cccccc;
   border-radius: 2px;
@@ -109,7 +109,7 @@ body {
   bottom: 0;
   left: 35px;
   width: 3px;
-  z-index: 2;
+  /*z-index: 2;*/
   border: 1px solid #f2e3df;
   border-width: 0 1px;
 }
@@ -292,7 +292,7 @@ body {
   margin-left: 23px;
   left: 35px;
   width: 3px;
-  z-index: 1;
+  /*z-index: 1;*/
   border: 1px solid #ffd5d5;
   border-width: 0 1px;
 }
