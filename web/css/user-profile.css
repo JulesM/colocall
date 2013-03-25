@@ -2,13 +2,13 @@
 /* --- User Bundle/profile ---- */
 
 #profile-page-content{
-    background-image: url('../img/dashboard/Wood-bckgd.jpg');
+    background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
     width: 100%;
     height: 100%;
     padding-top: 20px;
     position: relative;
-    z-index: -3;
+    z-index: -9999999;
 }
 
 #profile-left{

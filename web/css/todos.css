@@ -1,8 +1,7 @@
 /* --- Todos Bundle --- */
 #mainbox{
-        background-image: url('../img/dashboard/retina_wood_@2X.png');
+    background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
-    /*z-index: -3*/
 }
 
 
