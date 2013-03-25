@@ -1,5 +1,4 @@
 <?php
-//Src/Clc/ExpensemanagerBundle/Entity/expense.php
 
 namespace Clc\ExpensemanagerBundle\Entity;
 
@@ -9,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * expense
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Clc\ExpensemanagerBundle\Entity\ExpenseRepository")
+ * @ORM\Entity(repositoryClass="Clc\ExpensemanagerBundle\Entity\expenseRepository")
  */
-class Expense
+class expense
 {
     /**
      * @var integer
@@ -20,73 +19,62 @@ class Expense
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
-     */
-    private $date;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $category;
+    protected $name;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="amount", type="float")
+     * @ORM\Column(name="amount", type="decimal")
      */
-    private $amount;
+    protected $amount;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="addedDate", type="date")
+     */
+    protected $addedDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    protected $date;
+    
     /**
      * @var integer
      *
-     * @ORM\Column(name="number", type="integer")
+     * @ORM\Column(name="state", type="integer", nullable=true)
      */
-    private $number;
+    protected $state;
     
     /**
-     * @var string
-     *
-     * @ORM\Column(name="comment", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
      */
-    private $comment;
+    protected $author;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
-    */
-    private $coloc;
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+    protected $owner;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
-    */
-    private $author;
-  
-   /**
-    * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
-    */
-    private $owner;
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     */
+    protected $coloc;
     
     /**
      * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
      */
-     private $users;
-     
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    protected $users;
 
     /**
      * Get id
@@ -99,49 +87,26 @@ class Expense
     }
 
     /**
-     * Set date
+     * Set name
      *
-     * @param \DateTime $date
+     * @param string $name
      * @return expense
      */
-    public function setDate($date)
+    public function setName($name)
     {
-        $this->date = $date;
+        $this->name = $name;
     
         return $this;
     }
 
     /**
-     * Get date
-     *
-     * @return \DateTime 
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * Set category
-     *
-     * @param string $category
-     * @return expense
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-    
-        return $this;
-    }
-
-    /**
-     * Get category
+     * Get name
      *
      * @return string 
      */
-    public function getCategory()
+    public function getName()
     {
-        return $this->category;
+        return $this->name;
     }
 
     /**
@@ -168,49 +133,72 @@ class Expense
     }
 
     /**
-     * Set comment
+     * Set addedDate
      *
-     * @param string $comment
+     * @param \DateTime $addedDate
      * @return expense
      */
-    public function setComment($comment)
+    public function setAddedDate($addedDate)
     {
-        $this->comment = $comment;
+        $this->addedDate = $addedDate;
     
         return $this;
     }
 
     /**
-     * Get comment
+     * Get addedDate
      *
-     * @return string 
+     * @return \DateTime 
      */
-    public function getComment()
+    public function getAddedDate()
     {
-        return $this->comment;
+        return $this->addedDate;
     }
 
     /**
-     * Set author
+     * Set date
      *
-     * @param \Clc\UserBundle\Entity\User $author
+     * @param \DateTime $date
      * @return expense
      */
-    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    public function setDate($date)
     {
-        $this->author = $author;
+        $this->date = $date;
     
         return $this;
     }
 
     /**
-     * Get author
+     * Get date
      *
-     * @return \Clc\UserBundle\Entity\User 
+     * @return \DateTime 
      */
-    public function getAuthor()
+    public function getDate()
     {
-        return $this->author;
+        return $this->date;
+    }
+
+    /**
+     * Set state
+     *
+     * @param integer $state
+     * @return expense
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+    
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return integer 
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 
     /**
@@ -237,68 +225,12 @@ class Expense
     }
 
     /**
-     * Set number
-     *
-     * @param integer $number
-     * @return expense
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-    
-        return $this;
-    }
-
-    /**
-     * Get number
-     *
-     * @return integer 
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-    
-    /**
-     * Add users
-     *
-     * @param \Clc\UserBundle\Entity\User $users
-     * @return expense
-     */
-    public function addUser(\Clc\UserBundle\Entity\User $users)
-    {
-        $this->users[] = $users;
-    
-        return $this;
-    }
-
-    /**
-     * Remove users
-     *
-     * @param \Clc\UserBundle\Entity\User $users
-     */
-    public function removeUser(\Clc\UserBundle\Entity\User $users)
-    {
-        $this->users->removeElement($users);
-    }
-
-    /**
-     * Get users
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
      * Set coloc
      *
      * @param \Clc\ColocBundle\Entity\coloc $coloc
      * @return expense
      */
-    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc)
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
     {
         $this->coloc = $coloc;
     
@@ -313,5 +245,28 @@ class Expense
     public function getColoc()
     {
         return $this->coloc;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return expense
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

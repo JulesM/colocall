@@ -307,6 +307,7 @@ class coloc
     {
         return $this->other;
     }
+    
     /**
      * Constructor
      */

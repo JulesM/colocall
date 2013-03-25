@@ -6,17 +6,71 @@
   {{ parent() }} - Expense Manager
 {% endblock %}
  
-{% block body %}
+{% block body %} 
+  
+  {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
   
   <div id="expense-content">
+      
+      <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
+       
       <div id="balance-container">
           <div id="balance-container-left">
           </div>
           <div id="balance-container-right">
           </div>    
       </div>
-      <div id="list-container">
-      </div>    
+      <div id="list-container-left">
+          
+          <table>
+              <tbody>
+
+                {% for expense in user_expense %}
+
+                <tr>
+                 <td id="task">{{ expense.name }}</td>
+                 <td>{{ expense.amount }}€</td>
+                 <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                 <td id="todo-list-edit-comment-delete">
+                   <i class="icon-eye-open"></i>
+                   <i class="icon-edit"></i>
+                   <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                     <i class="icon-trash"></i>
+                   </a>
+                 </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>    
+                
+      </div> 
+      <div id="list-container-right">
+          
+          <table>
+              <tbody>
+
+                {% for expense in coloc_expense %}
+
+                <tr>
+                 <td>{{ expense.owner }}</td>   
+                 <td id="task">{{ expense.name }}</td>
+                 <td>{{ expense.amount }}€</td>
+                 <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                 <td id="todo-list-edit-comment-delete">
+                   <i class="icon-eye-open"></i>
+                   <i class="icon-edit"></i>
+                   <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                     <i class="icon-trash"></i>
+                   </a>
+                 </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+          
+      </div>
   </div>
   
 {% endblock %}

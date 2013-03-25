@@ -9,17 +9,8 @@
     </div>
 
     <div class="modal-body">
-        <form>
-            <label>Expense description</label>
-            <input type="text" class="span3"/>
-            <label>Amount</label>
-            <div class="input-prepend">
-                <span class="add-on">$</span>
-                <input class="span2" id="prependedInput" type="text">
-            </div>    
-            <button type="submit" class="btn btn-success">Add expense</button>
-            <button type="reset" class="btn">Clear</button>
-        </form>
+        
+        {% render 'ClcExpensemanagerBundle:Expensemanager:new' %}
 
     </div>
 

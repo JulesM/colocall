@@ -1,4 +1,5 @@
 <?php
+//Src/Clc/ShoppinglistBundle/Entity/item.php
 
 namespace Clc\ShoppinglistBundle\Entity;
 

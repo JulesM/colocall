@@ -130,6 +130,7 @@ class TodosController extends Controller
         $query = $em->createQuery(
             'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.dueDate >= :date ORDER BY t.dueDate ASC'
                                  );
+        
         $query->setParameter('user', $user);
         $query->setParameter('date', new \DateTime('today'));
         
