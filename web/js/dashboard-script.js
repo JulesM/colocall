@@ -19,6 +19,16 @@
 
 $(document).ready(function(){
  $(function() {
-$( "#accordion" ).accordion();
-});
+$( "#accordion" ).accordion({
+        active: false,
+    collapsible: true 
+      });
+    });
+    
+ $(function() {
+$( "#accordion1" ).accordion({
+        active: false,
+    collapsible: true 
+      });
+    });
 });

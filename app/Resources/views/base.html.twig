@@ -11,6 +11,17 @@
     
 {% endblock %}
 
+{% block javascripts %}
+  {{ parent() }}
+
+  <script type="text/javascript">
+    var div = document.getElementById('content');
+    var div1 = document.getElementById('leftbox');
+    div.style.height = document.body.clientHeight + 'px';
+    div1.style.height = div.style.height; 
+  </script>
+{% endblock %}   
+    
 {% block mainbox %}
     
 <div id="pseudocontainer">    

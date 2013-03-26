@@ -15,8 +15,8 @@ $(document).ready(function(){
         $(this).css('background-color', 'transparent');
     });
     
-    $('#todo-check').click(function() {
-        $('#todo-list tbody tr').fadeOut('slow');
-    });
+//    $('#todo-check').click(function() {
+//        $('#todo-list tbody tr').fadeOut('slow');
+//    });
 
 });

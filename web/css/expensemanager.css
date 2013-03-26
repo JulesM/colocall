@@ -1,0 +1,74 @@
+/* 
+    Document   : expensemanager
+    Created on : 25 mars 2013, 21:16:53
+    Author     : arnaudrizard
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#expense-content{
+    background-image: url('../img/dashboard/retina_wood_@2X.png');
+    background-repeat: repeat;
+}
+
+#overview-container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 380px;
+}
+
+#expense-container{
+    width: 689px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.expense-list{
+    border-radius: 10px 10px 10px 10px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(238, 238, 238)) repeat scroll 0% 0% rgb(37, 155, 219);
+    border-color: rgb(170, 170, 170) rgb(170, 170, 170) rgb(170, 170, 170);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    min-height:250px;
+    width: 340px;
+    margin-top: 50px; 
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+#expense-list-header{
+    height: 30px;
+}
+
+#expense-list-body{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#expense-list-body table{
+
+    width: 100%;
+}
+
+#expense-list-body table tr{
+    height: 30px;
+    width: 100%;
+}
+
+#expense-list-body table tr td{
+    padding-left: 6px;
+    color: rgb(4, 127, 201);
+}
+
+#expense-list-body table tr td:last-child{
+    text-align: right;
+    color: rgb(139, 143, 151);
+}
+
+
+#accordion h3{
+    background: none;
+}
+
+#accordion div{
+    height: 20px;
+}

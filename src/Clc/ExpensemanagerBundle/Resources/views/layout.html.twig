@@ -5,6 +5,29 @@
 {% block title %}
   {{ parent() }} - Expense Manager
 {% endblock %}
+
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/expensemanager.css') }}" type="text/css" />
+{% endblock %}
+  
+{% block javascripts %}
+  {{ parent() }}
+  <script type='text/javascript' src='{{ asset('js/expensemanager-script.js') }}'></script>
+  <script type="text/javascript">
+      
+    var div = document.getElementById('personal-expense');
+    var div1 = document.getElementById('everyone-expense');
+    
+    if (div.style.height>div1.style.height){
+        div1.style.height=div.offsetHeight+"px";
+    }else{
+        div.style.height=div1.offsetHeight+"px";
+    }
+
+  </script>
+{% endblock %}  
  
 {% block body %} 
   
@@ -14,14 +37,35 @@
       
       <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
        
-      <div id="balance-container">
-          <div id="balance-container-left">
-          </div>
-          <div id="balance-container-right">
-          </div>    
-      </div>
-      <div id="list-container-left">
+      <div id="overview-container">
           
+              <div id="expense-dashboard-container" class="dashboard-container">
+                  
+                    <div id="expense-left">
+                        <div id="expense-header">
+                        </div>
+
+                        <div id="expense-body">  
+                            
+                        </div>
+                    </div>
+                    <div id="expense-right">
+
+                        <div id="expense-header">
+                        </div>
+
+                        <div id="expense-body">             
+                        </div>
+                    </div>
+                    </div>
+      </div>
+
+<div id="expense-container">
+      <div  id="personal-expense" class="expense-list">
+          <div id="expense-list-header">
+          </div>
+          <div id="expense-list-body">
+
           <table>
               <tbody>
 
@@ -42,11 +86,17 @@
 
                 {% endfor %}
             </tbody>
-        </table>    
-                
-      </div> 
-      <div id="list-container-right">
-          
+        </table>   
+
+ 
+          </div>
+      </div>  
+        
+      <div id="everyone-expense" class="expense-list">
+          <div id="expense-list-header">
+          </div>
+          <div id="expense-list-body">
+
           <table>
               <tbody>
 
@@ -69,6 +119,22 @@
                 {% endfor %}
             </tbody>
         </table>
+ 
+          </div>
+      </div>       
+      
+</div>   
+      
+
+      
+      <div id="list-container-left">
+          
+ 
+                
+      </div> 
+      <div id="list-container-right">
+          
+
           
       </div>
   </div>

@@ -21,9 +21,20 @@
                         {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
       
       <div id="dashboard-content">
+          
+          <div id="floating-toolbar">
+            <ul class="floating-toolbar-features">
+                <li><a href="{{ path('clc_inbox_homepage') }}"><div id="p"><i id="icon" class="icon-inbox"></i>Expense</div></a></li>
+                <li><a href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-tags"></i>To-do</div></a></li>
+                <li><a href="{{ path('clc_todos_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-calendar"></i>Missing Item</div></a></li>
+                <li><a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-list"></i>Payback</div></a></li>
+            </ul>          
+          </div>
+          
+          
            <div id="welcome-container">
 
-                                  <div id="quicklink-toolbar">
+                    <div id="quicklink-toolbar">
                         <button class="btn btn-block btn-warning" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
                         <button class="btn btn-block btn-warning" href="#requestpaybackmodal"data-toggle="modal"><i class="icon-bullhorn icon-white"></i> Request Payback</button>
                         <button class="btn btn-block btn-warning" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>

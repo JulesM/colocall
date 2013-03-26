@@ -24,8 +24,42 @@ root {
 #mainbox{
     overflow: hidden;
     min-width: 800px;
-    height: 800px;
+    height: 100%;
 }
+/* --- Floating Toolbar --- */
+#floating-toolbar{
+    width: 120px;
+    background-color: rgb( 60, 35, 16);
+    opacity: 0.6;
+    position: fixed;
+    margin-left: 60px;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    box-shadow:inset 0 0 10px #000000;
+}
+
+#floating-toolbar ul{
+    margin-left: 0px;
+
+}
+
+#floating-toolbar li{
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px dotted rgb(204, 204, 204);
+    list-style: none;
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+#floating-toolbar li:last-child{
+    border-bottom: none;
+}
+
+#floating-toolbar li a{
+    color: white;
+}
+
 
 /* --- Expensemanager Bundle --- */
 
