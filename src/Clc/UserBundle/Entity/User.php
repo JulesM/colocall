@@ -72,6 +72,17 @@ class User extends BaseUser
      * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="user", cascade={"persist"})
      */
     protected $coloc;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", mappedBy="owner", cascade={"persist"})
+     */
+    protected $myExpenses;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", mappedBy="users", cascade={"persist"})
+     */
+    protected $ForMeExpenses;
+    
    
      /**
      * Get id
@@ -288,5 +299,108 @@ class User extends BaseUser
     public function getComment()
     {
         return $this->comment;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->myExpenses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ForMeExpenses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add myExpenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expenses $myExpenses
+     * @return User
+     */
+    public function addMyExpense(\Clc\ExpensemanagerBundle\Entity\expenses $myExpenses)
+    {
+        $this->myExpenses[] = $myExpenses;
+    
+        return $this;
+    }
+
+    /**
+     * Remove myExpenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expenses $myExpenses
+     */
+    public function removeMyExpense(\Clc\ExpensemanagerBundle\Entity\expenses $myExpenses)
+    {
+        $this->myExpenses->removeElement($myExpenses);
+    }
+
+    /**
+     * Get myExpenses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMyExpenses()
+    {
+        return $this->myExpenses;
+    }
+
+    /**
+     * Add ForMeExpenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses
+     * @return User
+     */
+    public function addForMeExpense(\Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses)
+    {
+        $this->ForMeExpenses[] = $forMeExpenses;
+    
+        return $this;
+    }
+
+    /**
+     * Remove ForMeExpenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses
+     */
+    public function removeForMeExpense(\Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses)
+    {
+        $this->ForMeExpenses->removeElement($forMeExpenses);
+    }
+
+    /**
+     * Get ForMeExpenses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getForMeExpenses()
+    {
+        return $this->ForMeExpenses;
+    }
+    
+    public function getTotalSpent()
+    {
+        $myExpenses = $this->getMyExpenses();
+        
+        $totalSpent = 0;
+        foreach($myExpenses as $expense){
+            $totalSpent += $expense->getAmount();
+        }
+        
+        return $totalSpent;  
+    }
+    
+    public function getTotalSpentForMe()
+    {
+        $ForMeExpenses = $this->getForMeExpenses();
+        
+        $totalSpentForMe = 0;
+        foreach($ForMeExpenses as $expense){
+            $totalSpentForMe +=  $expense->getAmount()/$expense->getNumber();
+        }
+        
+        return $totalSpentForMe;
+    }
+    
+    public function getBalance()
+    {
+        return $balance = $this->getTotalSpent() - $this->getTotalSpentForMe();
     }
 }

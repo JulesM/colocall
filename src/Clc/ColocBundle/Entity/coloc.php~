@@ -19,76 +19,81 @@ class coloc
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
      */
-    private $date;
+    protected $date;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="address1", type="string", length=255)
      */
-    private $address1;
+    protected $address1;
 
     /**
      * @var string
      *
      * @ORM\Column(name="address2", type="string", length=255)
      */
-    private $address2;
+    protected $address2;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="zipcode", type="integer")
      */
-    private $zipcode;
+    protected $zipcode;
 
     /**
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=255)
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string
      *
      * @ORM\Column(name="country", type="string", length=255)
      */
-    private $country;
+    protected $country;
 
     /**
      * @var smallint
      *
      * @ORM\Column(name="number", type="smallint")
      */
-    private $number;
+    protected $number;
 
     /**
      * @var string
      *
      * @ORM\Column(name="other", type="text")
      */
-    private $other;
+    protected $other;
     
     /**
      * @ORM\OneToMany(targetEntity="Clc\UserBundle\Entity\User", mappedBy="coloc", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $users;
+    protected $users;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", mappedBy="coloc", cascade={"persist"})
+     */
+    protected $expenses;
 
 
     /**

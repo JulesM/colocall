@@ -12,4 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class expenseRepository extends EntityRepository
 {
+    public function getByColoc($coloc)
+    {
+         $q = $this
+            ->createQueryBuilder('e')
+            ->where('e.coloc = :coloc')
+            ->orderBy('e.date', 'ASC')
+            ->setParameter('coloc', $coloc)
+            ->getQuery();
+
+         return $q->getResult();
+    }
+    
+    public function getNumber()
+    {
+        
+    }
 }

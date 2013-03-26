@@ -62,17 +62,17 @@ class expense
     protected $author;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", inversedBy="myExpenses", cascade={"persist"})
      */
     protected $owner;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="expenses", cascade={"persist"})
      */
     protected $coloc;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", inversedBy="ForMeExpenses", cascade={"persist"})
      */
     protected $users;
 
@@ -268,5 +268,45 @@ class expense
     public function getAuthor()
     {
         return $this->author;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     * @return expense
+     */
+    public function addUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Clc\UserBundle\Entity\User $users
+     */
+    public function removeUser(\Clc\UserBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

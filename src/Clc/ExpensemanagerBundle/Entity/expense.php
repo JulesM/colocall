@@ -62,17 +62,17 @@ class expense
     protected $author;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", inversedBy="myExpenses", cascade={"persist"})
      */
     protected $owner;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="expenses", cascade={"persist"})
      */
     protected $coloc;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", inversedBy="ForMeExpenses", cascade={"persist"})
      */
     protected $users;
 
@@ -308,5 +308,11 @@ class expense
     public function getUsers()
     {
         return $this->users;
+    }
+    
+    public function getNumber()
+    {
+        $users = $this->getUsers();
+        return $n = count($users);
     }
 }

@@ -14,6 +14,8 @@ class ExpensemanagerController extends Controller
         return $this->render('ClcExpensemanagerBundle::layout.html.twig', array(
             'coloc_expense'=> $this->getByColocAction(),
             'user_expense'=> $this->getMineAction(),
+            'forme_expense'=> $this->getForMeAction(),
+            'balances' => $this->getBalancesAction(),
         ));
     }
     
@@ -70,51 +72,17 @@ class ExpensemanagerController extends Controller
     
     public function getByColocAction()
     {
-        $user = $this->getUser();
-        $coloc = $user->getColoc();
-        $em = $this->getDoctrine()->getEntityManager();
-        
-        $query = $em->createquery(
-            'SELECT e FROM ClcExpensemanagerBundle:expense e WHERE e.coloc = :coloc ORDER BY e.date ASC'
-                                 );
-        
-        $query->setParameter('coloc', $coloc);
-        
-        $coloc_expense=$query->getResult();
-        
-        return $coloc_expense;
+        return $coloc_expenses = $this->getUser()->getColoc()->getExpenses();
     }
     
     public function getMineAction()
     {
-        $user = $this->getUser();
-        $em = $this->getDoctrine()->getEntitymanager();
-        
-        $query = $em->createquery(
-                'SELECT e FROM ClcExpensemanagerBundle:expense e WHERE e.owner = :user ORDER BY e.date ASC'
-                );
-        
-        $query->setParameter('user', $user);
-        
-        $user_expense = $query->getResult();
-        
-        return $user_expense;
+        return $my_expenses = $this->getUser()->getMyExpenses();
     }
     
     public function getForMeAction()
     {
-        $user = $this->getUser();
-        $em = $this->getDoctrine()->getEntitymanager();
-        
-        $query = $em->createquery(
-                'SELECT e FROM ClcExpensemanagerBundle:expense e WHERE e.users = :user ORDER BY e.date ASC'
-                );
-        
-        $query->setParameter('user', $user);
-        
-        $forme_expense = $query->getResult();
-        
-        return $forme_expense;
+        return $forme_expenses = $this->getUser()->getForMeExpenses(); 
     }
     
     public function removeAction($id)
@@ -123,12 +91,27 @@ class ExpensemanagerController extends Controller
                    ->getEntityManager();
         
         $expense = $em->getRepository('ClcExpensemanagerBundle:expense')
-                   ->find($id);
+                      ->find($id);
           
         $em->remove($expense);
         $em->flush();
 
         $url = $this->getRequest()->headers->get("referer");
         return $this->redirect($url);
+    }
+    
+    public function getBalancesAction()
+    {
+        $coloc = $this->getUser()->getColoc();
+        $users = $coloc->getUsers();
+        $balances = new \Doctrine\Common\Collections\ArrayCollection;
+        
+        foreach ($users as $u){
+            $balance = $u->getBalance();
+            $name = $u->getUsername();
+            $balances[$name] = $balance;
+        }
+        
+        return $balances;
     }
 }
