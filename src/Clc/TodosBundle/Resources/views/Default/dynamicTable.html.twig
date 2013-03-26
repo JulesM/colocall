@@ -1,6 +1,6 @@
 {# src/Clc/ExpensemanagerBundle/Resources/views/Default/dynamicTable.html.twig #}
 
-{% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
+{% include "ClcTodosBundle:Default:edittodomodal.html.twig" %}
 
 {% for task in coloc_task %}
 
@@ -15,7 +15,8 @@
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
        <i class="icon-eye-open"></i>
-       <i class="icon-edit" href="#addtodomodal" data-toggle="modal"></i>
+       <a href="#edittodomodal" data-toggle="modal">
+         <i class="icon-edit"></i>
        <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
          <i class="icon-trash"></i>
        </a>

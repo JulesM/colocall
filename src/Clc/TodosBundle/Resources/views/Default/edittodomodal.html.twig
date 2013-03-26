@@ -1,7 +1,19 @@
 {# src/Clc/DashboardBundle/resources/views/default/edittodomodal.html.twig #}
 
-{% extends "ClcTodosBundle:Default:todomodal.html.twig" %} 
+<div class="modal hide fade" id="addtodomodal" area-hidden="true">
 
-    {% block render %}
-        {% render 'ClcTodosBundle:Todos:edit'with {'id': 999} %}
-    {% endblock %}
+    <div class="modal-header">
+        <h3>Edit To-do</h3>
+    </div>
+
+    <div class="modal-body">
+        
+      {#  {% render 'ClcTodosBundle:Todos:edit' with {'id': id} %} #}
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
+    </div>
+    
+</div>

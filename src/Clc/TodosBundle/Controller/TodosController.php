@@ -63,11 +63,9 @@ class TodosController extends Controller
     
     public function editAction($id)
     {
-        $user = $this->getUser();
-        
         $task = $this->getDoctrine()
-        ->getRepository('ClcTodosBundle:task')
-        ->find($id);
+                     ->getRepository('ClcTodosBundle:task')
+                     ->find($id);
         
         $task->setDate(new \DateTime('today'));
 
