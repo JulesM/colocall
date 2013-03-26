@@ -152,5 +152,20 @@ class TodosController extends Controller
 
         $url = $this->getRequest()->headers->get("referer");
         return $this->redirect($url);
-    }        
+    } 
+    
+    public function checkAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $task = $em->getRepository('ClcTodosBundle:task')
+                   ->find($id);
+        
+        $task->setSate(1);
+        $em->flush();
+        
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
 }

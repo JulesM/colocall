@@ -15,3 +15,7 @@ clc_todos_edit:
 clc_todos_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcTodosBundle:Todos:remove }
+    
+clc_todos_check:
+    pattern: /check/{id}
+    defaults: { _controller: ClcTodosBundle:Todos:check }
