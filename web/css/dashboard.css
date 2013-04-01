@@ -84,7 +84,7 @@ body{
 #expense-dashboard-container{
     width: 689px;
     height: 380px;
-    background: url('../img/dashboard/expense.png') no-repeat scroll 0% 0% transparent;
+    background: url('../img/dashboard/dashboard.png') no-repeat scroll 0% 0% transparent;
 }
 
 #expense-left{
@@ -124,6 +124,11 @@ body{
     padding: 0px;
     border: 0px none;
 
+}
+
+.shopping-upper p i{
+    float: right;
+    margin-right: 20px;
 }
 
 /*.expense-left-tag{
@@ -226,45 +231,91 @@ body{
     padding-top: 7px;
 }
 
-.todo-middle-tag h1{
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: left;
-    margin-left: 10px;
-    font-family: 'Oswald-Regular';
-    color: white;
-    text-shadow: 0px 1px 0px black;
-    font-size: 30px;
-    font-weight: normal;
-    vertical-align: middle;
-}
 
-#shopping-dashboard-container{
+.small-dashboard-container{
     display: inline-block;
     width: 319px;
-    margin-left: 5%;
-    margin-top: 50px;
+    height: 239px;
+    margin-top: 20px;
     text-align: center;
-    float: right;
+    border-radius: 10px 10px 10px 10px ;
+    background-color: rgb( 240, 240, 240);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#small-dashboard-container-left{
+        float: left;
+}
+
+#small-dashboard-container-right{
+        float: right;
+        margin-left: 5%;
 }
 
 .shopping-upper{
-    background: url('../img/dashboard/todo-post-upper.png') no-repeat scroll 0% 0% transparent;
-    height: 15px;
+    height: 52px;
     width: 100%;
-    position: relative;
+    background: linear-gradient(to bottom, rgb(103, 109, 114), rgb(142, 153, 160)) repeat scroll 0% 0% rgb(142, 153, 160);
+    background: url('../img/dashboard/small-dash-bckgd.png') repeat-x scroll 0% 0% transparent;
+    border-radius: 10px 10px 0px 0px ;
+    vertical-align: middle;
+    /*box-shadow:  0px 0px 0px 2px rgb(109, 109, 109), 0px 0px 0px 0.5px rgb(58, 52, 44);*/
+    box-shadow: 0px 0px 0px -1px rgb(104, 104, 104), 0px 0px 0px -2px rgb(58, 43, 45);
 }
 
-.shopping-middle{
-    background: url('../img/dashboard/todo-post-middle.png') repeat scroll 0% 0% transparent;
-    min-height: 150px;
-    width: 100%;
-    position: relative;
+
+.shopping-upper p{
+    height: 100%;
+    padding-top: 16px;
+    text-align: left;
+    margin-left: 15px;
+    vertical-align: middle;
+    font-family: 'Proxima-Bold';
+    color: white;
+    text-shadow: 0px 1px 0px black;
+    font-size: 25px;
+    font-weight: normal;
 }
+
 
 .shopping-lower{
-    background: url('../img/dashboard/todo-post-lower.png') no-repeat scroll 0% 0% transparent;
-    height: 70px;
+    height: 187px;
     position: relative;
-    top: -2px;
+    overflow: scroll;
+}
+
+.shopping-lower table tr{
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.shopping-lower table tr td{
+    border-top: none;
+}
+
+
+#mini-shopping-list-item{
+   width: 100%;
+   color: rgb(103, 111, 127);
+   font-size: 12px;
+   font-style: italic;
+   font-family: 'Georgia';
+}
+
+#mini-shopping-list-item h3{
+   margin: 0px;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   font-size: 15px;
+   line-height: 10px;
+   font-style: normal;
+   color: black;
+   font-family: 'Proxima-Regular';
+}
+
+#todo-list-edit-comment-delete{
+    float: right;
+    text-align: right;
+    width: 80px;
+    height: 100%;
+        
 }

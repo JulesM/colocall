@@ -18,9 +18,10 @@
 
 
 $(document).ready(function(){
+        
  $(function() {
 $( "#accordion" ).accordion({
-        active: false,
+    active: false,
     collapsible: true 
       });
     });
@@ -31,4 +32,27 @@ $( "#accordion1" ).accordion({
     collapsible: true 
       });
     });
+
+$(function(){
+    $('.shopping-lower').slimScroll({
+        height: '170px',
+        alwaysVisible: false,
+        disableFadeOut: false
+    });
+});
+
+    $('#mini-shopping-list-table tbody tr').mouseenter(function() {
+    $(this).css('background-color', 'rgba(255, 255, 255, 1)');
+
+});
+
+    $('#mini-shopping-list-table tbody tr').mouseleave(function() {
+    $(this).css('background-color', 'transparent');
+});
+
+    $('#mini-shopping-list-table tbody tr' ).dblclick(function() {
+    $(this).toggle( "slide", 500 ),
+   $(this).css('background-color', 'rgba(0, 255, 255, 1)')
+});
+
 });

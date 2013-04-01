@@ -11,6 +11,12 @@
     background-repeat: repeat;
 }
 
+#expense-dashboard-container{
+    width: 689px;
+    height: 380px;
+    background: url('../img/dashboard/expense.png') no-repeat scroll 0% 0% transparent;
+}
+
 #overview-container{
     margin-left: auto;
     margin-right: auto;

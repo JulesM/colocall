@@ -11,6 +11,7 @@
     {% block javascripts %}
       {{ parent() }}
       <script type='text/javascript' src='{{ asset('js/dashboard-script.js') }}'></script>
+      <script type='text/javascript' src='{{ asset('js/jquery.slimscroll.min.js') }}'></script>
     {% endblock %}      
 
     {% block body %}
@@ -21,116 +22,112 @@
                         {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
       
       <div id="dashboard-content">
-          
-          <div id="floating-toolbar">
-            <ul class="floating-toolbar-features">
-                <li><a href="{{ path('clc_inbox_homepage') }}"><div id="p"><i id="icon" class="icon-inbox"></i>Expense</div></a></li>
-                <li><a href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-tags"></i>To-do</div></a></li>
-                <li><a href="{{ path('clc_todos_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-calendar"></i>Missing Item</div></a></li>
-                <li><a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div id="p"><i class="icon-list"></i>Payback</div></a></li>
-            </ul>          
-          </div>
-          
-          
-           <div id="welcome-container">
 
-                    <div id="quicklink-toolbar">
-                        <button class="btn btn-block btn-warning" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
-                        <button class="btn btn-block btn-warning" href="#requestpaybackmodal"data-toggle="modal"><i class="icon-bullhorn icon-white"></i> Request Payback</button>
-                        <button class="btn btn-block btn-warning" href="#addtodomodal" data-toggle="modal"><i class="icon-ok icon-white"></i> Add To-do</button>
-                        <button class="btn btn-block btn-warning" href="#additemmodal" data-toggle="modal"><i class="icon-shopping-cart icon-white"></i> Add Shopping Item</button>
-
-                    </div>  
-          </div>          
+                              
           <div id="overview-container">
           
+        
+              
               <div id="expense-dashboard-container" class="dashboard-container">
                   
-                  <div id="expense-left">
-                      <div id="expense-header">
-                      </div>
-                      
-                      <div id="expense-body">  
-
-                            <div id="accordion">
-                            <h3>Section 1</h3>
-                            <div>
-                            <p>
-                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                            amet, nunc. 
-                            </p>
-                            </div>
-                            <h3>Section 2</h3>
-                            <div>
-                            <p>
-                            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                            suscipit faucibus urna.
-                            </p>
-                            </div>
-                            <h3>Section 3</h3>
-                            <div>
-                            <p>
-                            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                            Phasellus pellentesque purus in massa. Aenean in pede. 
-                            </p>
-                            <ul>
-                            <li>List item one</li>
-                            <li>List item two</li>
-                            <li>List item three</li>
-                            </ul>
-                            </div>
-                            <h3>Section 4</h3>
-                            <div>
-                            <p>
-                            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                            et malesuada fames ac turpis egestas.
-                            </p>
-                            <p>
-                            Suspendisse eu nisl. 
-                            </p>
-                            </div>
-                            </div>    
-                          </div>
-                  </div>
-                  <div id="expense-right">
-                      
-                      <div id="expense-header">
-                      </div>
-                      
-                      <div id="expense-body">             
-                      </div>
-                  </div>
+                  
               </div>
 
-              <div id="to-do-dashboard-container" class="dashboard-container">
-                    <div class="todo-upper">
-                    </div>
-                    <div class="todo-middle">
-                        <div class="todo-middle-tag">
-                                <h1>To-do List</h1>
-                        </div>
-                    </div>
-                    <div class="todo-lower">
-                    </div>
-              </div>
-
-              <div id="shopping-dashboard-container" class="dashboard-container">
+              <div id="small-dashboard-container-left" class="small-dashboard-container" >
                     <div class="shopping-upper">
-                    </div>
-                    <div class="shopping-middle">
-                        <div class="todo-middle-tag">
-                                <h1>Shopping List</h1>
-                        </div>
+                        <p>To-dos  <i class="icon-chevron-right"></i></p>
                     </div>
                     <div class="shopping-lower">
                     </div>
               </div>
+
+              <div id="small-dashboard-container-right" class="small-dashboard-container">
+                    <div class="shopping-upper">
+                        <p>Shopping List <i class="icon-chevron-right"></i></p>
+                        
+                    </div>
+                    <div class="shopping-lower">
+                        
+
+                        <table id="mini-shopping-list-table" class="table">
+                          <tbody>
+
+                              <tr>
+                                 <td id="mini-shopping-list-item">
+                                     <h3>Orange Juice</h3>
+                                     <i class="icon-time"></i>Added 3 days ago                                 
+                                 </td>
+                                 <td id="todo-list-edit-comment-delete">
+                                   <i class="icon-eye-open"></i>
+                                   <i class="icon-edit"></i>
+                                   <a href="#">
+                                     <i class="icon-trash"></i>
+                                   </a>
+                                 </td>
+                               </tr>
+                               
+                               <tr>
+                                 <td id="mini-shopping-list-item">
+                                     <h3>Washing Powder</h3>
+                                     <i class="icon-time"></i>Added 3 days ago                                 
+                                 </td>
+                                 <td id="todo-list-edit-comment-delete">
+                                   <i class="icon-eye-open"></i>
+                                   <i class="icon-edit"></i>
+                                   <a href="#">
+                                     <i class="icon-trash"></i>
+                                   </a>
+                                 </td>
+                               </tr>
+                               
+                               <tr>
+                                 <td id="mini-shopping-list-item">
+                                     <h3>PQ</h3>
+                                     <i class="icon-time"></i>Added 3 days ago                                 
+                                 </td>
+                                 <td id="todo-list-edit-comment-delete">
+                                   <i class="icon-eye-open"></i>
+                                   <i class="icon-edit"></i>
+                                   <a href="#">
+                                     <i class="icon-trash"></i>
+                                   </a>
+                                 </td>
+                               </tr>
+                               
+                                                              <tr>
+                                 <td id="mini-shopping-list-item">
+                                     <h3>PQ</h3>
+                                     <i class="icon-time"></i>Added 3 days ago                                 
+                                 </td>
+                                 <td id="todo-list-edit-comment-delete">
+                                   <i class="icon-eye-open"></i>
+                                   <i class="icon-edit"></i>
+                                   <a href="#">
+                                     <i class="icon-trash"></i>
+                                   </a>
+                                 </td>
+                               </tr>
+ 
+
+                           </tbody>
+                         </table>      
+                        
+                        
+                        
+                    </div>
+              </div>
            </div>
           
-          
+        <div id="floating-toolbar-container">  
+          <div id="floating-toolbar">
+            <ul class="floating-toolbar-features">
+                <li><button href="#addexpensemodal" data-toggle="modal"><div id="p"><i id="icon" class="icon-plus"></i>Expense</div></button></li>
+                <li><button href="#addtodomodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>To-do</div></button></li>
+                <li><button href="#additemmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Missing Item</div></button></li>
+                <li><button href="#requestpaybackmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Payback</div></button></li>
+            </ul>          
+          </div>
+        </div>        
 
           
       </div>
