@@ -94,7 +94,11 @@ class coloc
      * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", mappedBy="coloc", cascade={"persist"})
      */
     protected $expenses;
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", mappedBy="coloc", cascade={"persist"})
+     */
+    protected $paybacks;
 
     /**
      * Get id
@@ -352,5 +356,38 @@ class coloc
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Add expenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expense $expenses
+     * @return coloc
+     */
+    public function addExpense(\Clc\ExpensemanagerBundle\Entity\expense $expenses)
+    {
+        $this->expenses[] = $expenses;
+    
+        return $this;
+    }
+
+    /**
+     * Remove expenses
+     *
+     * @param \Clc\ExpensemanagerBundle\Entity\expense $expenses
+     */
+    public function removeExpense(\Clc\ExpensemanagerBundle\Entity\expense $expenses)
+    {
+        $this->expenses->removeElement($expenses);
+    }
+
+    /**
+     * Get expenses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getExpenses()
+    {
+        return $this->expenses;
     }
 }

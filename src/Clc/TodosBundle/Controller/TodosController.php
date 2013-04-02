@@ -160,7 +160,7 @@ class TodosController extends Controller
         $task = $em->getRepository('ClcTodosBundle:task')
                    ->find($id);
         
-        $task->setSate(1);
+        $task->setState(1);
         $em->flush();
         
         $url = $this->getRequest()->headers->get("referer");

@@ -24,35 +24,35 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     protected $firstname;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="lasttname", type="string", length=255)
+     * @ORM\Column(name="lasttname", type="string", length=255, nullable=true)
      */
     protected $lastname;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nationality", type="string", length=255)
+     * @ORM\Column(name="nationality", type="string", length=255, nullable=true)
      */
     protected $nationality;
     
     /**
      * @var integer
      *
-     * @ORM\Column(name="birthday", type="date")
+     * @ORM\Column(name="birthday", type="date", nullable=true)
      */
     protected $birthday;
     
     /**
      * @var integer
      *
-     * @ORM\Column(name="phone", type="integer")
+     * @ORM\Column(name="phone", type="integer", nullable=true)
      */
     protected $phone;
     
@@ -83,8 +83,7 @@ class User extends BaseUser
      */
     protected $ForMeExpenses;
     
-   
-     /**
+    /**
      * Get id
      *
      * @return integer 
@@ -305,6 +304,7 @@ class User extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->myExpenses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ForMeExpenses = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -315,7 +315,7 @@ class User extends BaseUser
      * @param \Clc\ExpensemanagerBundle\Entity\expenses $myExpenses
      * @return User
      */
-    public function addMyExpense(\Clc\ExpensemanagerBundle\Entity\expenses $myExpenses)
+    public function addMyExpense(\Clc\ExpensemanagerBundle\Entity\expense $myExpenses)
     {
         $this->myExpenses[] = $myExpenses;
     
@@ -327,7 +327,7 @@ class User extends BaseUser
      *
      * @param \Clc\ExpensemanagerBundle\Entity\expenses $myExpenses
      */
-    public function removeMyExpense(\Clc\ExpensemanagerBundle\Entity\expenses $myExpenses)
+    public function removeMyExpense(\Clc\ExpensemanagerBundle\Entity\expense $myExpenses)
     {
         $this->myExpenses->removeElement($myExpenses);
     }
@@ -348,7 +348,7 @@ class User extends BaseUser
      * @param \Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses
      * @return User
      */
-    public function addForMeExpense(\Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses)
+    public function addForMeExpense(\Clc\ExpensemanagerBundle\Entity\expense $forMeExpenses)
     {
         $this->ForMeExpenses[] = $forMeExpenses;
     
@@ -360,7 +360,7 @@ class User extends BaseUser
      *
      * @param \Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses
      */
-    public function removeForMeExpense(\Clc\ExpensemanagerBundle\Entity\expenses $forMeExpenses)
+    public function removeForMeExpense(\Clc\ExpensemanagerBundle\Entity\expense $forMeExpenses)
     {
         $this->ForMeExpenses->removeElement($forMeExpenses);
     }

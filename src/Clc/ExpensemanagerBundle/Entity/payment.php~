@@ -1,0 +1,147 @@
+<?php
+
+namespace Clc\ExpensemanagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * payment
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Clc\ExpensemanagerBundle\Entity\paymentRepository")
+ */
+class payment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="amount", type="decimal")
+     */
+    protected $amount;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", inversedBy="myPaid", cascade={"persist"})
+     */
+    protected $payer;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", inversedBy="myReceived", cascade={"persist"})
+     */
+    protected $receiver;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", inversedBy="payments", cascade={"persist"})
+     */
+    protected $payback;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param float $amount
+     * @return payment
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return float 
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Set payer
+     *
+     * @param \Clc\UserBundle\Entity\User $payer
+     * @return payment
+     */
+    public function setPayer(\Clc\UserBundle\Entity\User $payer = null)
+    {
+        $this->payer = $payer;
+    
+        return $this;
+    }
+
+    /**
+     * Get payer
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getPayer()
+    {
+        return $this->payer;
+    }
+
+    /**
+     * Set receiver
+     *
+     * @param \Clc\UserBundle\Entity\User $receiver
+     * @return payment
+     */
+    public function setReceiver(\Clc\UserBundle\Entity\User $receiver = null)
+    {
+        $this->receiver = $receiver;
+    
+        return $this;
+    }
+
+    /**
+     * Get receiver
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getReceiver()
+    {
+        return $this->receiver;
+    }
+
+    /**
+     * Set payback
+     *
+     * @param \Clc\UserBundle\Entity\User $payback
+     * @return payment
+     */
+    public function setPayback(\Clc\UserBundle\Entity\User $payback = null)
+    {
+        $this->payback = $payback;
+    
+        return $this;
+    }
+
+    /**
+     * Get payback
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getPayback()
+    {
+        return $this->payback;
+    }
+}

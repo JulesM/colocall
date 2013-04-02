@@ -50,11 +50,11 @@ class expense
     protected $date;
     
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="state", type="integer", nullable=true)
+     * @ORM\Column(name="active", type="boolean")
      */
-    protected $state;
+    protected $active = true;
     
     /**
      * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
@@ -179,26 +179,26 @@ class expense
     }
 
     /**
-     * Set state
+     * Set active
      *
-     * @param integer $state
+     * @param integer $active
      * @return expense
      */
-    public function setState($state)
+    public function setActive($active)
     {
-        $this->state = $state;
+        $this->active = $active;
     
         return $this;
     }
 
     /**
-     * Get state
+     * Get active
      *
      * @return integer 
      */
-    public function getState()
+    public function getActive()
     {
-        return $this->state;
+        return $this->active;
     }
 
     /**

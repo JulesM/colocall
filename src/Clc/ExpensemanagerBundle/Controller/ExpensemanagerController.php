@@ -6,16 +6,18 @@ namespace Clc\ExpensemanagerBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Clc\ExpensemanagerBundle\Entity\expense;
+use Clc\ExpensemanagerBundle\Entity\payback;
 
 class ExpensemanagerController extends Controller
 {
     public function indexAction()
     { 
         return $this->render('ClcExpensemanagerBundle::layout.html.twig', array(
-            'coloc_expense'=> $this->getByColocAction(),
-            'user_expense'=> $this->getMineAction(),
-            'forme_expense'=> $this->getForMeAction(),
-            'balances' => $this->getBalancesAction(),
+            'coloc_expense' => $this->getByColocAction(),
+            'user_expense'  => $this->getMineAction(),
+            'forme_expense' => $this->getForMeAction(),
+            'balances'      => $this->getActiveBalancesAction(),
+            'last_payback'  => $this->getLastPaybackAction(),
         ));
     }
     
@@ -28,24 +30,31 @@ class ExpensemanagerController extends Controller
         $expense->setAuthor($user);
         $expense->setOwner($user);
         $expense->setColoc($coloc);
-        $expense->setName('test');
-        $expense->setAmount(1000);
         $expense->setAddedDate(new \DateTime('today'));
         $expense->setDate(new \DateTime('today'));
-        $expense->setState(0);
         
         $form = $this->createFormBuilder($expense)
                      ->add('owner', 'entity', array(
-                            'class'=>'ClcUserBundle:User', 
-                            'property'=>'username',
+                            'class'    =>'ClcUserBundle:User', 
+                            'property' =>'username',
                           ))
                      ->add('name', 'text')
-                     ->add('amount', 'integer')
+                     ->add('amount', 'integer', array(
+                            'attr'     => array(
+                             'prepend_input' => '€'
+                            )
+                          ))
+                     ->add('date', 'date', array(
+                            'input'    => 'datetime',
+                            'widget'   =>'choice',
+                     ))
                      ->add('users', 'entity', array(
-                            'class'=>'ClcUserBundle:User', 
-                            'property'=>'username',
+                            'class'    => 'ClcUserBundle:User', 
+                            'property' => 'username',
                             'multiple' => 'true',
                             'expanded' => 'true',
+                            'required' => 'true',
+                            'attr'     => array('inline' => true),
                           ))
                      ->getForm();
         
@@ -72,17 +81,35 @@ class ExpensemanagerController extends Controller
     
     public function getByColocAction()
     {
-        return $coloc_expenses = $this->getUser()->getColoc()->getExpenses();
+        $coloc_expenses_collection = $this->getUser()->getColoc()->getExpenses();
+        $coloc_expenses = $coloc_expenses_collection->toArray();
+        
+        $pb = $this->container->get('clc_expensemanager.payback');
+        $coloc_expenses_sorted = $pb->sortExpensesByDate($coloc_expenses);
+        
+        return $coloc_expenses_sorted;
     }
     
     public function getMineAction()
     {
-        return $my_expenses = $this->getUser()->getMyExpenses();
+        $my_expenses_collection = $this->getUser()->getMyExpenses();
+        $my_expenses = $my_expenses_collection->toArray();
+        
+        $pb = $this->container->get('clc_expensemanager.payback');
+        $my_expenses_sorted = $pb->sortExpensesByDate($my_expenses);
+        
+        return $my_expenses_sorted;
     }
     
     public function getForMeAction()
     {
-        return $forme_expenses = $this->getUser()->getForMeExpenses(); 
+        $forme_expenses_collection = $this->getUser()->getForMeExpenses();
+        $forme_expenses = $forme_expenses_collection->toArray();
+        
+        $pb = $this->container->get('clc_expensemanager.payback');
+        $forme_expenses_sorted = $pb->sortExpensesByDate($forme_expenses);
+        
+        return $forme_expenses_sorted;
     }
     
     public function removeAction($id)
@@ -100,18 +127,44 @@ class ExpensemanagerController extends Controller
         return $this->redirect($url);
     }
     
-    public function getBalancesAction()
+    public function getActiveBalancesAction()
     {
         $coloc = $this->getUser()->getColoc();
-        $users = $coloc->getUsers();
-        $balances = new \Doctrine\Common\Collections\ArrayCollection;
+        $bal = $this->container->get('clc_user.balance');
         
-        foreach ($users as $u){
-            $balance = $u->getBalance();
-            $name = $u->getUsername();
-            $balances[$name] = $balance;
-        }
+        return $bal->getActiveBalances($coloc);
+    }
+    
+    public function applyPaybackAction()
+    {
+        $coloc = $this->getUser()->getColoc();
+        $payback = new payback();
+        $payback->setColoc($coloc);
+        $payback->setDate(new \Datetime('today'));
         
-        return $balances;
+        $bal = $this->container->get('clc_user.balance');
+        $activeBalances = $bal->getActiveBalances($coloc);
+        
+        $pb = $this->container->get('clc_expensemanager.payback');
+        $payments = $pb->applyPayback($coloc, $activeBalances);
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $payback->setPaymentsArray($payments);
+        
+        $em->persist($payback);
+        $em->flush();
+        
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
+    
+    public function getLastPaybackAction()
+    {
+        $coloc = $this->getUser()->getColoc();
+        
+        $paybacks = $coloc->getPaybacks();
+        
+        return $paybacks[sizeof($paybacks)-1];
     }
 }

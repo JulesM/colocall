@@ -11,3 +11,7 @@ clc_expensemanager_new:
 clc_expensemanager_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:remove }
+    
+clc_expensemanager_applypayback:
+    pattern: /payback
+    defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:applyPayback }

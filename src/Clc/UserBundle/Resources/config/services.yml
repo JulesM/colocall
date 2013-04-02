@@ -1,0 +1,7 @@
+parameters:
+#    clc_expensemanager.example.class: Clc\ExpensemanagerBundle\Example
+
+services:
+    clc_user.balance:
+        class: Clc\UserBundle\Services\Balance
+#        arguments: [@service_id, "plain_value", %parameter%]

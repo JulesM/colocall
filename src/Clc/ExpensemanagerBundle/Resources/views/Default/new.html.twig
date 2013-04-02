@@ -4,13 +4,37 @@
     
     {{ form_errors(form) }}
 
-    <div>
+    <div style="display: inline-block;">
         {{ form_label(form.name) }}
         {{ form_errors(form.name) }}
         {{ form_widget(form.name) }}
     </div>
+    
+    <div style="display: inline-block;">
+        {{ form_label(form.amount) }}
+        {{ form_errors(form.amount) }}
+        {{ form_widget(form.amount) }}
+    </div>
+    
+    <div style="display: inline-block;">
+        {{ form_label(form.owner) }}
+        {{ form_errors(form.owner) }}
+        {{ form_widget(form.owner) }}
+    </div>
+    
+    <div style="display: inline-block;">
+        {{ form_label(form.date) }}
+        {{ form_errors(form.date) }}
+        {{ form_widget(form.date) }}
+    </div>
+    
+    <div class="inline">
+        {{ form_label(form.users) }}
+        {{ form_errors(form.users) }}
+        {{ form_widget(form.users) }}
+    </div>
 
     {{ form_rest(form) }}
 
-    <input class="btn btn-success" type="submit" />
+    <input class="btn btn-success" type="submit" style="float: right; vertical-align: bottom;" />
 </form>

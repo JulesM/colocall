@@ -35,95 +35,112 @@
   
   <div id="expense-content">
       
-      <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
-       
+    <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
+    
       <div id="overview-container">
-          
-              <div id="expense-dashboard-container" class="dashboard-container">
-                  
-                    <div id="expense-left">
-                        <div id="expense-header">
-                        </div>
+        <div id="expense-dashboard-container" class="dashboard-container">
+          <div id="expense-left">
+            <div id="expense-header">
+            </div>
 
-                        <div id="expense-body">  
-                            
-                        </div>
-                    </div>
-                    <div id="expense-right">
+            <div id="expense-body"> 
+                
+                {% for key,value in balances %}
+                
+                <p>{{ key }}'s balance is {{ value }} €</p>
+                
+                {% endfor %}
+                
+            </div>
+          </div>
+       
+          <div id="expense-right">
+            <div id="expense-header">
+            </div>
 
-                        <div id="expense-header">
-                        </div>
-
-                        <div id="expense-body">             
-                        </div>
-                    </div>
-                    </div>
+            <div id="expense-body"> 
+                
+                
+                
+                <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Apply Payback</a>
+                
+                {% if last_payback is null %}
+                    <p>No Payback yet</p>
+                {% else %}
+                    <p>Last payback on {{ last_payback.date|date("d/m") }}</p>
+                    
+                    {% for payment in last_payback.paymentsArray %}
+                        <p>{{ payment[0] }} paid {{ payment[1] }} to {{ payment[2] }}</p>
+                    {% endfor %}
+                        
+                {% endif %}
+                    
+            </div>
+          </div>
+            
+        </div>
       </div>
 
-<div id="expense-container">
-      <div  id="personal-expense" class="expense-list">
+      <div id="expense-container">
+        <div  id="personal-expense" class="expense-list">
           <div id="expense-list-header">
           </div>
+                
           <div id="expense-list-body">
 
-          <table>
+            <table>
               <tbody>
 
                 {% for expense in user_expense %}
 
                 <tr>
-                 <td id="task">{{ expense.name }}</td>
-                 <td>{{ expense.amount }}€</td>
-                 <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
-                 <td id="todo-list-edit-comment-delete">
-                   <i class="icon-eye-open"></i>
-                   <i class="icon-edit"></i>
-                   <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                     <i class="icon-trash"></i>
-                   </a>
-                 </td>
+                  <td id="task">{{ expense.name }}</td>
+                  <td>{{ expense.amount }}€</td>
+                  <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                  <td id="todo-list-edit-comment-delete">
+                    <i class="icon-eye-open"></i>
+                    <i class="icon-edit"></i>
+                    <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                      <i class="icon-trash"></i>
+                    </a>
+                  </td>
                 </tr>
 
                 {% endfor %}
-            </tbody>
-        </table>   
+              </tbody>
+            </table>   
 
  
           </div>
-      </div>  
+        </div>  
         
-      <div id="everyone-expense" class="expense-list">
+        <div id="everyone-expense" class="expense-list">
           <div id="expense-list-header">
           </div>
+          
           <div id="expense-list-body">
 
           <table>
-              <tbody>
+            <tbody>
 
-                {% for expense in coloc_expense %}
+              {% for expense in forme_expense %}
 
                 <tr>
-                 <td>{{ expense.owner }}</td>   
-                 <td id="task">{{ expense.name }}</td>
-                 <td>{{ expense.amount }}€</td>
-                 <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
-                 <td id="todo-list-edit-comment-delete">
-                   <i class="icon-eye-open"></i>
-                   <i class="icon-edit"></i>
-                   <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                     <i class="icon-trash"></i>
-                   </a>
-                 </td>
+                  <td>{{ expense.owner }}</td>   
+                  <td id="task">{{ expense.name }}</td>
+                  <td>{{ expense.amount }}€</td>
+                  <td><i class="icon-time"></i>{{ expense.date|date("d/m") }}</td>
+                  
                 </tr>
 
-                {% endfor %}
+              {% endfor %}
+                
             </tbody>
-        </table>
+          </table>
  
           </div>
-      </div>       
-      
-</div>   
+        </div>       
+      </div>   
       
 
       

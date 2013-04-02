@@ -12,4 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    public function getUserWithMyActiveExpenses()
+    {
+        $qb = $this->createQueryBuilder('u')
+             ->leftJoin('u.myexpenses', 'e')
+             ->with('e.active = true')   
+             ->addSelect('e');
+ 
+    try {
+        return $qb->getQuery()->getResult();
+    } catch (\Doctrine\ORM\NoResultException $e) {
+        return null;
+    }
+    }
+    
+    public function getUserWithForMeActiveExpenses()
+    {
+        
+    }
 }

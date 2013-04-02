@@ -1,21 +1,25 @@
 {# src/Clc/DashboardBundle/resources/views/default/addexpensemodal.html.twig #}
 
-<!DOCTYPE html>
+{% extends "::modal.html.twig" %}
 
-<div class="modal hide fade" id="addexpensemodal" area-hidden="true">
+{% block content %}
 
-    <div class="modal-header">
-        <h3>Add your expense</h3>
+    <div class="modal hide fade" id="addexpensemodal" area-hidden="true">
+
+        <div class="modal-header">
+            <h3>Add your expense</h3>
+        </div>
+
+        <div class="modal-body">
+
+            {% render 'ClcExpensemanagerBundle:Expensemanager:new' %}
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
+        </div>
+
     </div>
 
-    <div class="modal-body">
-        
-        {% render 'ClcExpensemanagerBundle:Expensemanager:new' %}
-
-    </div>
-
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" area-hidden="true">Close</button>
-    </div>
-    
-</div>
+{% endblock content %}

@@ -7,7 +7,7 @@
    <tr id={{ task.task }}>
      <td id="check">
          <div class="btn-group">
-             <button id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+             <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
          </div>                        
      </td>
      <td id="task">{{ task.task }}</td>

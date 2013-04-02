@@ -24,35 +24,35 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     protected $firstname;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="lasttname", type="string", length=255)
+     * @ORM\Column(name="lasttname", type="string", length=255, nullable=true)
      */
     protected $lastname;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nationality", type="string", length=255)
+     * @ORM\Column(name="nationality", type="string", length=255, nullable=true)
      */
     protected $nationality;
     
     /**
      * @var integer
      *
-     * @ORM\Column(name="birthday", type="date")
+     * @ORM\Column(name="birthday", type="date", nullable=true)
      */
     protected $birthday;
     
     /**
      * @var integer
      *
-     * @ORM\Column(name="phone", type="integer")
+     * @ORM\Column(name="phone", type="integer", nullable=true)
      */
     protected $phone;
     
@@ -83,8 +83,7 @@ class User extends BaseUser
      */
     protected $ForMeExpenses;
     
-   
-     /**
+    /**
      * Get id
      *
      * @return integer 
@@ -305,6 +304,7 @@ class User extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->myExpenses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ForMeExpenses = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -373,34 +373,5 @@ class User extends BaseUser
     public function getForMeExpenses()
     {
         return $this->ForMeExpenses;
-    }
-    
-    public function getTotalSpent()
-    {
-        $myExpenses = $this->getMyExpenses();
-        
-        $totalSpent = 0;
-        foreach($myExpenses as $expense){
-            $totalSpent += $expense->getAmount();
-        }
-        
-        return $totalSpent;  
-    }
-    
-    public function getTotalSpentForMe()
-    {
-        $ForMeExpenses = $this->getForMeExpenses();
-        
-        $totalSpentForMe = 0;
-        foreach($ForMeExpenses as $expense){
-            $totalSpentForMe +=  $expense->getAmount()/$expense->getNumber();
-        }
-        
-        return $totalSpentForMe;
-    }
-    
-    public function getBalance()
-    {
-        return $balance = $this->getTotalSpent() - $this->getTotalSpentForMe();
     }
 }

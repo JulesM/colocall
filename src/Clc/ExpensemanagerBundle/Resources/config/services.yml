@@ -2,6 +2,6 @@ parameters:
 #    clc_expensemanager.example.class: Clc\ExpensemanagerBundle\Example
 
 services:
-#    clc_expensemanager.example:
-#        class: %clc_expensemanager.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    clc_expensemanager.payback:
+        class: Clc\ExpensemanagerBundle\Services\Payback
+        arguments: [@clc_user.balance]
