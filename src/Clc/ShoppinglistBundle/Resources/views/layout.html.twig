@@ -1,10 +1,14 @@
 {# src/Clc/ShoppinglistBundle/Resources/views/layout.html.twig #}
+
+{# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
+    - 'item_list' tableau d'item(state, name, comment, author, coloc, addeddate, doneDate)
+#}
  
 {% extends "::base.html.twig" %}
 
 {% block stylesheets %}
-{{ parent() }}
-<link rel="stylesheet" href="{{ asset('css/shopping-list.css') }}" type="text/css" />
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/shopping-list.css') }}" type="text/css" />
 {% endblock %}
  
 {% block title %}
@@ -15,9 +19,9 @@
   
   {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
     
-  <div id="todos-content">
+    <div id="todos-content">
         <div id="todos-toolbar-tab">
-             <ul class="todo-filter-tab">
+            <ul class="todo-filter-tab">
                 <li class="add-todo"> 
                     <button class="circle-button" href="#additemmodal" data-toggle="modal"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
                 </li>
@@ -28,65 +32,56 @@
                     </div>
                 </li>
                 <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
-            </ul>
-                        
+            </ul>            
         </div>
       
         <div id="todos-table2-container">
-            
             <section class="todo">
-
-                 <table id="todo-list" class="table">
+                <table id="todo-list" class="table">
                      
-                 <caption id="todo-table-caption">  
-                    <div id="todo-filter-tab-container">
-                        <div id="item-check" class="btn-group">
-                          <button class="btn"><i class="icon-check" style="font-size: 1.5em; vertical-align: middle; margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
-                        </div> 
-                        <div id="all-todos-caption">
-                          <p>What's missing?</p>
+                    <caption id="todo-table-caption">  
+                        <div id="todo-filter-tab-container">
+                            <div id="item-check" class="btn-group">
+                                <button class="btn"><i class="icon-check" style="font-size: 1.5em; vertical-align: middle; margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+                            </div> 
+                            <div id="all-todos-caption">
+                                <p>What's missing?</p>
+                            </div>
                         </div>
-
-                        </div>
-                    </div>
-                 </caption>
+                    </caption>
                          
-                 <tbody>
+                    <tbody>
                      
-                   {% for item in item_list %}  
+                        {% for item in item_list %}  
 
-                       <tr>
-                         <td id="check">
-                             <a href="#" class="toggle">Toggle</a>                        
-                         </td>
-                         <td id="task">{{ item.name }}</td>
-                         <td>{{ item.author }}</td>
-                         <td><i class="icon-time"></i>{{ item.addedDate|date("d/m")  }}</td>
-                         <td id="todo-list-edit-comment-delete">
-                           <i class="icon-eye-open"></i>
-                           <i class="icon-edit"></i>
-                           <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
-                             <i class="icon-trash"></i>
-                           </a>
-                         </td>
-                       </tr>
+                        <tr>
+                          <td id="check">
+                            <a href="#" class="toggle">Toggle</a>                        
+                          </td>
+                          <td id="task">{{ item.name }}</td>
+                          <td>{{ item.author }}</td>
+                          <td><i class="icon-time"></i>{{ item.addedDate|date("d/m")  }}</td>
+                          <td id="todo-list-edit-comment-delete">
+                            <i class="icon-eye-open"></i>
+                            <i class="icon-edit"></i>
+                            <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
+                              <i class="icon-trash"></i>
+                            </a>
+                          </td>
+                        </tr>
                        
-                     {% endfor %}  
+                        {% endfor %}  
                 
-                   </tbody>
-                 </table>      
+                    </tbody>
+                </table>      
 
-              <ul class="todo-pagination">
-                <li class="previous"><span><i class="icon-previous"></i> Previous</span></li>
-
-                <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
-              </ul>
-
-                
-    </section>
-  </div>                
-
-      
-  </div>
+                <ul class="todo-pagination">
+                    <li class="previous"><span><i class="icon-previous"></i> Previous</span></li>
+                    <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
+                </ul>
+                    
+            </section>
+        </div>   
+    </div>
     
 {% endblock %}
