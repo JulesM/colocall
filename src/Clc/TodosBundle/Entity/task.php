@@ -68,7 +68,7 @@ class task
      * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
      */
     protected $coloc;
-
+    
     /**
      * Get id
      *

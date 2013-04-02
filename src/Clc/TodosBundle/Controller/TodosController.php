@@ -13,7 +13,7 @@ class TodosController extends Controller
     {
         return $this->render('ClcTodosBundle::layout.html.twig', array(
             'coloc_task'=> $this->getByColocAction($state),
-            'user_task'=> $this->getMineAction(),
+            'user_task'=> $this->getMineAction($state),
         ));
     }
     
@@ -119,18 +119,18 @@ class TodosController extends Controller
         return $task_list;
     }
     
-    public function getMineAction() 
+    public function getMineAction($state) 
     {
         $user = $this->getUser();
         
         $em = $this->getDoctrine()->getManager();
         
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.dueDate >= :date ORDER BY t.dueDate ASC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.dueDate ASC'
                                  );
         
         $query->setParameter('user', $user);
-        $query->setParameter('date', new \DateTime('today'));
+        $query->setParameter('state', $state);
         
         $task_list = $query->getResult();
         
