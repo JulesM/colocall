@@ -1,0 +1,16 @@
+{# src/Clc/InboxBundle/Resources/views/Default/addmessage.html.twig #}
+
+<form action="{{ path('clc_inbox_newmessage') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div id="message-content">
+        {{ form_label(form.content, 'Type here your message') }}
+        {{ form_errors(form.content) }}
+        {{ form_widget(form.content) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input id="add-message-button" class="btn btn-success" type="submit" />
+</form>

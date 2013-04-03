@@ -1,1 +1,57 @@
-{# empty Twig template #}
+{# src/Clc/ExpensemanagerBundle/Resources/views/layout.html.twig #}
+
+{# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
+    - 'message_list' liste de tous les messages concernant la colocation active
+#}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/inbox.css') }}" type="text/css" />
+{% endblock %}
+  
+{% block javascripts %}
+  {{ parent() }}
+  {# <script type='text/javascript' src='{{ asset('js/inbox-script.js') }}'></script> #}
+{% endblock %}
+  
+  
+ 
+{% block title %}
+  {{ parent() }} - Inbox
+{% endblock %}
+ 
+{% block body %}
+  
+  <div id="inbox-content">
+      <div id="chat-content">
+          <h3>Chat here with your flatmates</h3>
+
+          <div id="inbox-messages-box">
+
+              {% for message in message_list %}
+
+                <p> {{ message.author }} wrote on {{ message.date|date("d/m") }} : </p>
+                <p> {{ message.content }} </p>
+
+              {% endfor %}
+
+          </div>
+
+          <div id="add-message-box">
+              
+              {% render 'ClcInboxBundle:Inbox:getMessageForm' %}
+              
+          </div>
+      </div> 
+          
+      <div id="notifications-content">
+          <h3>Your notifications</h3>
+          
+          <div id="notification-messages-box">
+          </div>
+      </div>    
+  </div>
+  
+{% endblock %}

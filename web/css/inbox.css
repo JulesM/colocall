@@ -1,0 +1,34 @@
+/* 
+    Document   : inbox.css
+    Created on : 3 avr. 2013, 18:01:25
+    Author     : julesmarcilhacy
+    Description:
+        Style of the inbox bundle html pages
+*/
+
+#chat-content{
+    display: inline-block;
+    border: solid;
+    width: 55%;
+    margin-left: 3%;
+    min-height: 500px;
+}
+
+#notifications-content{
+    display: inline-block;
+    border: solid;
+    width: 35%;
+    vertical-align: top;
+    float: right;
+    margin-right: 3%;
+    min-height: 500px;
+}
+
+#inbox-messages-box{
+    border-top: solid 1px;
+}
+
+#add-message-box{
+    vertical-align: bottom;
+    border-top: solid 1px;
+}
