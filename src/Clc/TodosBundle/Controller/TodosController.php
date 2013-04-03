@@ -13,7 +13,8 @@ class TodosController extends Controller
     {
         return $this->render('ClcTodosBundle::layout.html.twig', array(
             'coloc_task'=> $this->getByColocAction($state),
-            'user_task'=> $this->getMineAction($state),
+            'user_task' => $this->getMineAction(0),
+            'state'     => $state,
         ));
     }
     
@@ -105,16 +106,8 @@ class TodosController extends Controller
         $user = $this->getUser();
         $coloc = $user->getColoc();
         
-        $em = $this->getDoctrine()->getEntityManager();
-        
-        $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state >= :state ORDER BY t.dueDate ASC'
-                                 ); 
-        
-        $query->setParameter('coloc', $coloc);
-        $query->setParameter('state', $state);
-        
-        $task_list = $query->getResult();
+        $td = $this->container->get('clc_todos.todos');
+        $task_list = $td->getByColoc($coloc, $state);
         
         return $task_list;
     }
@@ -123,16 +116,8 @@ class TodosController extends Controller
     {
         $user = $this->getUser();
         
-        $em = $this->getDoctrine()->getManager();
-        
-        $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.dueDate ASC'
-                                 );
-        
-        $query->setParameter('user', $user);
-        $query->setParameter('state', $state);
-        
-        $task_list = $query->getResult();
+        $td = $this->container->get('clc_todos.todos');
+        $task_list = $td->getMine($user, $state);
         
         return $task_list;
     }
@@ -161,6 +146,21 @@ class TodosController extends Controller
                    ->find($id);
         
         $task->setState(1);
+        $em->flush();
+        
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
+    
+    public function uncheckAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $task = $em->getRepository('ClcTodosBundle:task')
+                   ->find($id);
+        
+        $task->setState(0);
         $em->flush();
         
         $url = $this->getRequest()->headers->get("referer");

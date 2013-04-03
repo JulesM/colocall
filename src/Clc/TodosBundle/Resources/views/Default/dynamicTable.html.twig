@@ -7,14 +7,19 @@
    <tr id={{ task.task }}>
      <td id="check">
          <div class="btn-group">
-             <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+             
+             {% if state == 0 %}
+                <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+             {% else %}   
+                <a id="todo-check" class="btn" href="{{ path('clc_todos_uncheck', {'id': task.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
+             {% endif %}
+         
          </div>                        
      </td>
      <td id="task">{{ task.task }}</td>
      <td>{{ task.owner }}</td>
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
-       <i class="icon-eye-open"></i>
        <a href="#edittodomodal" data-toggle="modal">
          <i class="icon-edit"></i>
        <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">

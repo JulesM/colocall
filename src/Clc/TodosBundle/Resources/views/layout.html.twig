@@ -3,6 +3,7 @@
 {# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
     - 'coloc_task' tableau de task(state, task, dueDate, date, author, owner, coloc)
     - 'user_task'  tableau de task(state, task, dueDate, date, author, owner, coloc)
+    - 'state'      0 si on affiche les pending to-dos, 1 si on affiche les checked to-dos
 #}
 
 {% extends "::base.html.twig" %}
@@ -35,7 +36,7 @@
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
                           <div id="all-todos-caption">
-                              <p>My to-dos</p>                           
+                              <p>My Pending To-dos</p>                           
                           </div>
                       </div>
                   </caption>
@@ -53,7 +54,6 @@
                         <td>{{ task.owner }}</td>
                         <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
                         <td id="todo-list-edit-comment-delete">
-                          <i class="icon-eye-open"></i>
                           <i class="icon-edit"></i>
                           <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
                             <i class="icon-trash"></i>
@@ -101,7 +101,11 @@
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
                           <div id="all-todos-caption">
-                              <p>All To-dos</p>
+                              
+                              {% if state == 0 %} <p>All Pending To-dos</p>
+                              {% else %}          <p>All Checked To-dos</p>
+                              {% endif %}
+                              
                           </div>
                       </div>
                   </caption>
