@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Clc\UserBundle\ClcUserBundle(),
             new Clc\EventBundle\ClcEventBundle(),
-            new Clc\InboxBundle\ClcInboxBundle(),
             new Clc\ColocBundle\ClcColocBundle(),
         );
 

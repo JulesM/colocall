@@ -1,7 +1,0 @@
-parameters:
-#    clc_inbox.example.class: Clc\InboxBundle\Example
-
-services:
-#    clc_inbox.example:
-#        class: %clc_inbox.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
