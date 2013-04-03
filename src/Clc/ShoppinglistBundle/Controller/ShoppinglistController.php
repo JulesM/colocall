@@ -13,6 +13,7 @@ class ShoppinglistController extends Controller
     {
         return $this->render('ClcShoppinglistBundle::layout.html.twig', array(
             'item_list'=> $this->getByColocAction($state),
+            'state'    => $state,
         ));
     }
     
@@ -58,16 +59,8 @@ class ShoppinglistController extends Controller
     {
         $coloc = $this->getUser()->getColoc();
         
-        $em = $this->getDoctrine()->getEntityManager();
-        
-        $query = $em->createQuery(
-            'SELECT i FROM ClcShoppinglistBundle:item i WHERE i.coloc = :coloc AND i.state >= :state ORDER BY i.addedDate ASC'
-                                 );
-        
-        $query->setParameter('coloc', $coloc);
-        $query->setParameter('state', $state);
-        
-        $item_list = $query->getResult();
+        $sl = $this->container->get('clc_shoppinglist.shoppinglist');
+        $item_list = $sl->getByColoc($coloc, $state);
         
         return $item_list;
     }
@@ -85,5 +78,37 @@ class ShoppinglistController extends Controller
 
         $url = $this->getRequest()->headers->get("referer");
         return $this->redirect($url);
-    }        
+    } 
+    
+    public function checkAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $task = $em->getRepository('ClcShoppinglistBundle:item')
+                   ->find($id);
+        
+        $task->setState(1);
+        $task->setDoneDate(new \DateTime('today'));
+        $em->flush();
+        
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
+    
+    public function uncheckAction($id)
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+        
+        $task = $em->getRepository('ClcShoppinglistBundle:item')
+                   ->find($id);
+        
+        $task->setState(0);
+        $task->setAddedDate(new \DateTime('today'));
+        $em->flush();
+        
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
 }

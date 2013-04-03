@@ -2,6 +2,6 @@ parameters:
 #    clc_shoppinglist.example.class: Clc\ShoppinglistBundle\Example
 
 services:
-#    clc_shoppinglist.example:
-#        class: %clc_shoppinglist.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    clc_shoppinglist.shoppinglist:
+        class: Clc\ShoppinglistBundle\Services\Shoppinglist
+        arguments: [@doctrine.orm.entity_manager]
