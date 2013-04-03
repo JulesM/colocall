@@ -1,3 +1,0 @@
-clc_inbox_homepage:
-    pattern:  /
-    defaults: { _controller: ClcInboxBundle:Default:index }
