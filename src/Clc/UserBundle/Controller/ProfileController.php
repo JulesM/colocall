@@ -67,10 +67,13 @@ class ProfileController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 
                 $user = $this->getUser();
+                $currentpicture = $user->getPicture();
                 $profilepicture->upload($user);
-                $user->setPicture($profilepicture);
-                $em->persist($user);
                 
+                $user->setPicture($profilepicture);
+                
+                $em->remove($currentpicture);
+                $em->persist($user);
                 $em->flush();
 
                 return $this->profileAction();
