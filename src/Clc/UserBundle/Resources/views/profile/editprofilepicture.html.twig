@@ -1,0 +1,23 @@
+{# src/Clc/UserBundle/Resources/views/profile/editprofilepicture.html.twig #}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/user-profile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+  {{ parent() }} - Profile
+{% endblock %}
+
+{% block body %}
+  
+  <form action="{{ path('clc_user_editprofilepicture') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_widget(form) }}
+
+    <input class="btn btn-success" type="submit" value="Upload Document"/>
+</form>
+  
+{% endblock body %}

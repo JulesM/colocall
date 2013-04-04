@@ -1,2 +1,13 @@
-## YAML Template.
----
+# src/Clc/UserBundle/Resources/config/routing.yml
+    
+clc_user_profile:
+    pattern:  /profile
+    defaults: { _controller: ClcUserBundle:Profile:profile }    
+    
+clc_user_editprofile:
+    pattern:  /profile/edit
+    defaults: { _controller: ClcUserBundle:Profile:editProfile }
+    
+clc_user_editprofilepicture:
+    pattern:  /profile/edit/picture
+    defaults: { _controller: ClcUserBundle:Profile:editProfilePicture }

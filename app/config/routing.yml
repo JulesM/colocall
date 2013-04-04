@@ -1,3 +1,7 @@
+clc_user:
+    resource: "@ClcUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
 clc_coloc:
     resource: "@ClcColocBundle/Resources/config/routing.yml"
     prefix:   /coloc

@@ -3,7 +3,3 @@
 clc_dashboard_homepage:
     pattern:  /
     defaults: { _controller: ClcDashboardBundle:Dashboard:index }
-    
-clc_dashboard_profile:
-    pattern:  /profile
-    defaults: { _controller: ClcDashboardBundle:Dashboard:profile }    

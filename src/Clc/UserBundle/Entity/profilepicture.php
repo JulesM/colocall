@@ -3,6 +3,7 @@
 namespace Clc\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * profilepicture
@@ -19,22 +20,40 @@ class profilepicture
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $url;
-
+    public $path;
+    
     /**
-     * @var string
-     *
-     * @ORM\Column(name="alt", type="string", length=255)
+     * @Assert\File(maxSize="6000000")
      */
-    private $alt;
+    public $file;
 
+    public function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir().'/'.$this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // le chemin absolu du répertoire où les documents uploadés doivent être sauvegardés
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // on se débarrasse de « __DIR__ » afin de ne pas avoir de problème lorsqu'on affiche
+        // le document/image dans la vue.
+        return 'uploads/profilepictures';
+    }
 
     /**
      * Get id
@@ -45,50 +64,49 @@ class profilepicture
     {
         return $this->id;
     }
-
+    
     /**
-     * Set url
+     * Set path
      *
-     * @param string $url
+     * @param string $path
      * @return profilepicture
      */
-    public function setUrl($url)
+    public function setPath($path)
     {
-        $this->url = $url;
+        $this->path = $path;
     
         return $this;
     }
 
     /**
-     * Get url
+     * Get path
      *
      * @return string 
      */
-    public function getUrl()
+    public function getPath()
     {
-        return $this->url;
+        return $this->path;
     }
-
-    /**
-     * Set alt
-     *
-     * @param string $alt
-     * @return profilepicture
-     */
-    public function setAlt($alt)
-    {
-        $this->alt = $alt;
     
-        return $this;
-    }
-
-    /**
-     * Get alt
-     *
-     * @return string 
-     */
-    public function getAlt()
+    public function upload($user)
     {
-        return $this->alt;
+        // la propriété « file » peut être vide si le champ n'est pas requis
+        if (null === $this->file) {
+            return;
+        }
+
+        $extension=strrchr($this->file->getClientOriginalName(),'.');
+        $newname = $user->getId().$extension;
+
+        // la méthode « move » prend comme arguments le répertoire cible et
+        // le nom de fichier cible où le fichier doit être déplacé
+        $this->file->move($this->getUploadRootDir(), $newname);
+
+        // définit la propriété « path » comme étant le nom de fichier où vous
+        // avez stocké le fichier
+        $this->path = 'uploads/profilepictures/'.$newname;
+
+        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        $this->file = null;
     }
 }

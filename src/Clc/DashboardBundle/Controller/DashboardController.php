@@ -12,9 +12,4 @@ class DashboardController extends Controller
     {
         return $this->render('ClcDashboardBundle::layout.html.twig');
     }
-    
-    public function profileAction()
-    {
-        return $this->render('ClcDashboardBundle:default:profile.html.twig');
-    }
 }

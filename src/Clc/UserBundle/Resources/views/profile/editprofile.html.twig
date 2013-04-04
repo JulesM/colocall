@@ -1,0 +1,73 @@
+{# src/Clc/UserBundle/Resources/views/profile/editprofile.html.twig #}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/user-profile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+  {{ parent() }} - Profile
+{% endblock %}
+
+{% block body %}
+  
+  <form action="{{ path('clc_user_editprofile') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.username) }}
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username) }}
+    </div>
+      
+    <div style="display: inline-block;">
+        {{ form_label(form.firstname) }}
+        {{ form_errors(form.firstname) }}
+        {{ form_widget(form.firstname) }}
+    </div>
+      
+    <div style="display: inline-block;">
+        {{ form_label(form.lastname) }}
+        {{ form_errors(form.lastname) }}
+        {{ form_widget(form.lastname) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.nationality) }}
+        {{ form_errors(form.nationality) }}
+        {{ form_widget(form.nationality) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.birthday) }}
+        {{ form_errors(form.birthday) }}
+        {{ form_widget(form.birthday) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.phone) }}
+        {{ form_errors(form.phone) }}
+        {{ form_widget(form.phone) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+      
+    <div>
+        {{ form_label(form.comment) }}
+        {{ form_errors(form.comment) }}
+        {{ form_widget(form.comment) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" type="submit"/>
+</form>
+  
+{% endblock body %}

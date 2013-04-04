@@ -50,9 +50,9 @@ class User extends BaseUser
     protected $birthday;
     
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="phone", type="integer", nullable=true)
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
      */
     protected $phone;
     
