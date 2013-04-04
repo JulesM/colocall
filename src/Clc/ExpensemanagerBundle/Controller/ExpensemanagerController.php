@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Clc\ExpensemanagerBundle\Entity\expense;
 use Clc\ExpensemanagerBundle\Entity\payback;
+use Clc\UserBundle\Entity\UserRepository;
 
 class ExpensemanagerController extends Controller
 {
@@ -50,11 +51,16 @@ class ExpensemanagerController extends Controller
                      ))
                      ->add('users', 'entity', array(
                             'class'    => 'ClcUserBundle:User', 
-                            'property' => 'username',
+                            'query_builder' => function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                            {
+                                return $ur->createQueryBuilder('u')
+                                          ->where('u.coloc = :coloc')
+                                          ->setParameter('coloc', $coloc)
+                                          ->orderBy('u.username', 'ASC');
+                            },
                             'multiple' => 'true',
                             'expanded' => 'true',
                             'required' => 'true',
-                            'attr'     => array('inline' => true),
                           ))
                      ->getForm();
         
