@@ -1,138 +1,153 @@
 {# src/Clc/DashboardBundle/Resources/views/layout.html.twig #}
- 
-    {% extends "::base.html.twig" %}
 
+{# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
+    'current_balances' => tableau de tableaux [user => balance]
+    'latest_expenses'  => tableau de dépenses(name, amount, addedDate, date, active, author, owner, coloc, users)
+    'my_todos'         => tableau de task(state, task, dueDate, date, author, owner, coloc)
+    'shopping_list'    => tableau d'item(state, name, comment, author, coloc, addeddate, doneDate)
+#}
 
+{% extends "::base.html.twig" %}
 
-    {% block title %}
-      {{ parent() }} - Dashboard
-    {% endblock %}
+{% block title %}
+  {{ parent() }} - Dashboard
+{% endblock %}
       
-    {% block javascripts %}
-      {{ parent() }}
-      <script type='text/javascript' src='{{ asset('js/dashboard-script.js') }}'></script>
-      <script type='text/javascript' src='{{ asset('js/jquery.slimscroll.min.js') }}'></script>
-    {% endblock %}      
+{% block javascripts %}
+  {{ parent() }}
+  <script type='text/javascript' src='{{ asset('js/dashboard-script.js') }}'></script>
+  <script type='text/javascript' src='{{ asset('js/jquery.slimscroll.min.js') }}'></script>
+{% endblock %}      
 
-    {% block body %}
+{% block body %}
 
-                        {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
-                        {% include "ClcExpensemanagerBundle:Default:requestpaybackmodal.html.twig" %}
-                        {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
-                        {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
+  {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
+  {% include "ClcExpensemanagerBundle:Default:requestpaybackmodal.html.twig" %}
+  {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
+  {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
       
-      <div id="dashboard-content">
-
-                              
-          <div id="overview-container">
-          
-        
+  <div id="dashboard-content">
+      <div id="overview-container">
+          <div id="expense-dashboard-container" class="dashboard-container">
+          </div>
               
-              <div id="expense-dashboard-container" class="dashboard-container">
-                  
-                  
+          {# Les deux prochaines div son là pour te donner les infos à utiliser #}    
+              
+          <div>
+              {% for key,value in current_balances %}
+                
+                <p>{{ key }}'s balance is {{ value }} €</p>
+                
+              {% endfor %}
+          </div>
+              
+          <div>
+            <table>
+              <tbody>
+
+                {% for expense in latest_expenses %}
+
+                <tr>
+                  <td id="task">{{ expense.name }}</td>
+                  <td>{{ expense.amount }}€</td>
+                  <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                  <td id="todo-list-edit-comment-delete">
+                    <i class="icon-eye-open"></i>
+                    <i class="icon-edit"></i>
+                    <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                      <i class="icon-trash"></i>
+                    </a>
+                  </td>
+                </tr>
+
+                {% endfor %}
+                
+              </tbody>
+            </table>
+              
+          </div>
+              
+          {# Jusqu'ici ... #}
+
+          <div id="small-dashboard-container-left" class="small-dashboard-container" >
+              <div class="shopping-upper">
+                  <p>To-dos  <i class="icon-chevron-right"></i></p>
               </div>
-
-              <div id="small-dashboard-container-left" class="small-dashboard-container" >
-                    <div class="shopping-upper">
-                        <p>To-dos  <i class="icon-chevron-right"></i></p>
-                    </div>
-                    <div class="shopping-lower">
-                    </div>
-              </div>
-
-              <div id="small-dashboard-container-right" class="small-dashboard-container">
-                    <div class="shopping-upper">
-                        <p>Shopping List <i class="icon-chevron-right"></i></p>
-                        
-                    </div>
-                    <div class="shopping-lower">
-                        
-
-                        <table id="mini-shopping-list-table" class="table">
-                          <tbody>
+              <div class="shopping-lower">
+                  <table id="mini-shopping-list-table" class="table">
+                      <tbody>
+                          
+                          {% for todo in my_todos %}
 
                               <tr>
-                                 <td id="mini-shopping-list-item">
-                                     <h3>Orange Juice</h3>
-                                     <i class="icon-time"></i>Added 3 days ago                                 
-                                 </td>
-                                 <td id="todo-list-edit-comment-delete">
-                                   <i class="icon-eye-open"></i>
-                                   <i class="icon-edit"></i>
-                                   <a href="#">
-                                     <i class="icon-trash"></i>
-                                   </a>
-                                 </td>
-                               </tr>
-                               
-                               <tr>
-                                 <td id="mini-shopping-list-item">
-                                     <h3>Washing Powder</h3>
-                                     <i class="icon-time"></i>Added 3 days ago                                 
-                                 </td>
-                                 <td id="todo-list-edit-comment-delete">
-                                   <i class="icon-eye-open"></i>
-                                   <i class="icon-edit"></i>
-                                   <a href="#">
-                                     <i class="icon-trash"></i>
-                                   </a>
-                                 </td>
-                               </tr>
-                               
-                               <tr>
-                                 <td id="mini-shopping-list-item">
-                                     <h3>PQ</h3>
-                                     <i class="icon-time"></i>Added 3 days ago                                 
-                                 </td>
-                                 <td id="todo-list-edit-comment-delete">
-                                   <i class="icon-eye-open"></i>
-                                   <i class="icon-edit"></i>
-                                   <a href="#">
-                                     <i class="icon-trash"></i>
-                                   </a>
-                                 </td>
-                               </tr>
-                               
-                                                              <tr>
-                                 <td id="mini-shopping-list-item">
-                                     <h3>PQ</h3>
-                                     <i class="icon-time"></i>Added 3 days ago                                 
-                                 </td>
-                                 <td id="todo-list-edit-comment-delete">
-                                   <i class="icon-eye-open"></i>
-                                   <i class="icon-edit"></i>
-                                   <a href="#">
-                                     <i class="icon-trash"></i>
-                                   </a>
-                                 </td>
-                               </tr>
- 
-
-                           </tbody>
-                         </table>      
-                        
-                        
-                        
-                    </div>
+                                <td id="mini-shopping-list-item">
+                                  <h3>{{ todo.task }}</h3>
+                                  <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
+                                </td>
+                                <td id="todo-list-edit-comment-delete">
+                                  <i class="icon-eye-open"></i>
+                                  <i class="icon-edit"></i>
+                                  <a href="#">
+                                    <i class="icon-trash"></i>
+                                  </a>
+                                </td>
+                              </tr>
+                            
+                          {% endfor %} 
+                          
+                      </tbody>
+                  </table>
               </div>
-           </div>
-          
-        <div id="floating-toolbar-container">  
-          <div id="floating-toolbar">
-            <ul class="floating-toolbar-features">
-                <li><button href="#addexpensemodal" data-toggle="modal"><div id="p"><i id="icon" class="icon-plus"></i>Expense</div></button></li>
-                <li><button href="#addtodomodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>To-do</div></button></li>
-                <li><button href="#additemmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Missing Item</div></button></li>
-                <li><button href="#requestpaybackmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Payback</div></button></li>
-            </ul>          
           </div>
-        </div>        
 
-          
+          <div id="small-dashboard-container-right" class="small-dashboard-container">
+              <div class="shopping-upper">
+                  <p>Shopping List <i class="icon-chevron-right"></i></p>
+                        
+              </div>
+              
+              <div class="shopping-lower">
+                  <table id="mini-shopping-list-table" class="table">
+                      <tbody>
+                          
+                          {% for item in shopping_list %}
+
+                              <tr>
+                                <td id="mini-shopping-list-item">
+                                  <h3>{{ item.name }}</h3>
+                                  <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
+                                </td>
+                                <td id="todo-list-edit-comment-delete">
+                                  <i class="icon-eye-open"></i>
+                                  <i class="icon-edit"></i>
+                                  <a href="#">
+                                    <i class="icon-trash"></i>
+                                  </a>
+                                </td>
+                              </tr>
+                            
+                          {% endfor %} 
+                          
+                      </tbody>
+                  </table>      
+              </div>
+          </div>
       </div>
+          
+      <div id="floating-toolbar-container">  
+          <div id="floating-toolbar">
+              <ul class="floating-toolbar-features">
+                  <li><button href="#addexpensemodal" data-toggle="modal"><div id="p"><i id="icon" class="icon-plus"></i>Expense</div></button></li>
+                  <li><button href="#addtodomodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>To-do</div></button></li>
+                  <li><button href="#additemmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Missing Item</div></button></li>
+                  <li><button href="#requestpaybackmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Payback</div></button></li>
+              </ul>          
+          </div>
+      </div>        
+  
+  </div>
 
      
 
-    {% endblock %}
+{% endblock %}
      
