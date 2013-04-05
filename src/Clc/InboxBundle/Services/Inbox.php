@@ -17,7 +17,7 @@ class Inbox {
         $em = $this->em;
         
         $query = $em->createQuery(
-            'SELECT m FROM ClcInboxBundle:message m WHERE m.coloc = :coloc ORDER BY m.date DESC'
+            'SELECT m FROM ClcInboxBundle:message m WHERE m.coloc = :coloc'
                                  ); 
         
         $query->setParameter('coloc', $coloc);
