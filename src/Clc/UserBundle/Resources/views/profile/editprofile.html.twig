@@ -1,6 +1,6 @@
 {# src/Clc/UserBundle/Resources/views/profile/editprofile.html.twig #}
 
-{% extends "::base.html.twig" %}
+{% extends "ClcUserBundle:profile:profile.html.twig" %}
 
 {% block stylesheets %}
   {{ parent() }}
@@ -11,63 +11,82 @@
   {{ parent() }} - Profile
 {% endblock %}
 
-{% block body %}
-  
-  <form action="{{ path('clc_user_editprofile') }}" method="post" {{ form_enctype(form) }}>
-    
-    {{ form_errors(form) }}
 
-    <div>
+  {% block init %}
+  
+    <form action="{{ path('clc_user_editprofile') }}" method="post" {{ form_enctype(form) }}>
+    
+        {{ form_errors(form) }}
+        
+  {% endblock %}
+      
+    {% block username %}
+    
         {{ form_label(form.username) }}
         {{ form_errors(form.username) }}
         {{ form_widget(form.username) }}
-    </div>
+    
+    {% endblock %}
+        
+    {% block picture %}
+    {% endblock %}
       
-    <div style="display: inline-block;">
-        {{ form_label(form.firstname) }}
+    {% block firstname %} 
+    
         {{ form_errors(form.firstname) }}
         {{ form_widget(form.firstname) }}
-    </div>
+    
+    {% endblock %}  
       
-    <div style="display: inline-block;">
-        {{ form_label(form.lastname) }}
+    {% block lastname %}  
+    
         {{ form_errors(form.lastname) }}
         {{ form_widget(form.lastname) }}
-    </div>
     
-    <div>
-        {{ form_label(form.nationality) }}
+    {% endblock %}
+    
+    {% block nationality %}
+
         {{ form_errors(form.nationality) }}
         {{ form_widget(form.nationality) }}
-    </div>
     
-    <div>
-        {{ form_label(form.birthday) }}
+    {% endblock %}
+    
+    {% block birthday %}  
+
         {{ form_errors(form.birthday) }}
         {{ form_widget(form.birthday) }}
-    </div>
+
+    {% endblock %}
     
-    <div>
-        {{ form_label(form.phone) }}
+    {% block phone %}  
+
         {{ form_errors(form.phone) }}
         {{ form_widget(form.phone) }}
-    </div>
+
+    {% endblock %}
     
-    <div>
-        {{ form_label(form.email) }}
+    {% block email %}  
+
         {{ form_errors(form.email) }}
         {{ form_widget(form.email) }}
-    </div>
-      
-    <div>
-        {{ form_label(form.comment) }}
+
+    {% endblock %}
+     
+    {% block comment %}  
+
         {{ form_errors(form.comment) }}
         {{ form_widget(form.comment) }}
-    </div>
 
-    {{ form_rest(form) }}
+    {% endblock %}
 
+    {% block other %}
+      
+        {{ form_rest(form) }}
+      
+    {% endblock %}
+
+{% block footer %}
     <input class="btn btn-success" type="submit"/>
 </form>
-  
-{% endblock body %}
+{% endblock %}

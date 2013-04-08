@@ -48,7 +48,7 @@ class ProfileController extends Controller
             }
         }
                 
-        return $this->render('ClcUserBundle:profile:editprofile.html.twig', array(
+        return $this->render('ClcUserBundle:profile:pictureform.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -80,7 +80,7 @@ class ProfileController extends Controller
             }
         }
 
-        return $this->render('ClcUserBundle:profile:editprofilepicture.html.twig', array(
+        return $this->render('ClcUserBundle:profile:pictureform.html.twig', array(
             'form' => $form->createView(),
                 ));
     }
