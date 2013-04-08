@@ -35,15 +35,12 @@
                                   New on Coloc'all ? Sign up for free !
                               </div>
                           </legend>
-                          <label>Name</label>
-                          <input type="text" placeholder="Enter your full name">
-                          <label>E-mail</label>
-                          <input type="text" placeholder="Your e-mail here">
-                          <label>Password</label>
-                          <input type="password" placeholder="And choose a Password">
+                          {% render 'ClcUserBundle:Registration:registerForm' %}
                           <div id="signin_box_footer">
-                            <button type="submit" class="btn btn-primary btn-medium">Log in with facebook</button>
-                            <button type="submit" class="btn btn-warning btn-medium">Sign up</button>
+                            <p style="display: inline-block;">OR</p>
+                            <button type="submit" class="btn btn-primary btn-medium" style="display:inline-block;">
+                                Log in with facebook
+                            </button>
                           </div>
                         </fieldset>
                       </form>
