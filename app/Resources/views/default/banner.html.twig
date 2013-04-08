@@ -36,7 +36,7 @@
         <div>{{ error.message }}</div>
     {% endif %}
 
-    <form class="form-inline" action="{{ path('login_check') }}" method="post">
+    <form class="form-inline" action="{{ path('fos_user_security_check') }}" method="post">
         <input type="text" id="username" class="input-small" placeholder="Username or e-mail" name="_username" value="{{ last_username }}" />
         <input type="password" id="password" class="input-small" placeholder="Password" name="_password" />
 
