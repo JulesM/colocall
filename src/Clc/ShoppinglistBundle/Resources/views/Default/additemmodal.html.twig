@@ -1,7 +1,18 @@
 {# src/Clc/ShoppinglistBundle/Resources/views/default/additemmodal.html.twig #}
 
-{% extends "ClcShoppinglistBundle:Default:itemmodal.html.twig" %} 
+<!-- Add item Modal -->
 
-    {% block render %}
-        {% render 'ClcShoppinglistBundle:Shoppinglist:new' %}
-    {% endblock %}
+<div id="additemmodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Add an item to the Shopping List</h3>
+    </div>
+<div class="modal-body">
+
+{% render 'ClcShoppinglistBundle:Shoppinglist:new' %}
+
+</div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>

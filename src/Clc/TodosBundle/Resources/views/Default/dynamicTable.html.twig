@@ -1,31 +1,47 @@
 {# src/Clc/ExpensemanagerBundle/Resources/views/Default/dynamicTable.html.twig #}
 
-{% include "ClcTodosBundle:Default:edittodomodal.html.twig" %}
-
 {% for task in coloc_task %}
 
-   <tr id={{ task.task }}>
+    <tr id={{ task.task }}>
      <td id="check">
          <div class="btn-group">
-             
+
              {% if state == 0 %}
                 <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
              {% else %}   
                 <a id="todo-check" class="btn" href="{{ path('clc_todos_uncheck', {'id': task.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
              {% endif %}
-         
+
          </div>                        
      </td>
      <td id="task">{{ task.task }}</td>
      <td>{{ task.owner }}</td>
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
-       <a href="#edittodomodal" data-toggle="modal">
+       <a href="#edittodomodal{{task.id}}" data-toggle="modal">
          <i class="icon-edit"></i>
+       </a>
        <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
          <i class="icon-trash"></i>
        </a>
      </td>
-   </tr>
+    </tr>
+
+    <!-- Edit Modal --> 
+    <div id="edittodomodal{{task.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Edit To-do</h3>
+        </div>
+    <div class="modal-body">
+
+    {% render 'ClcTodosBundle:Todos:edit' with {'id': task.id} %}
+
+    </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+   
   
 {% endfor %}

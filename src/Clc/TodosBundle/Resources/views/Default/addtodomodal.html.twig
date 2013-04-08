@@ -1,7 +1,18 @@
 {# src/Clc/TodosBundle/resources/views/default/addtodomodal.html.twig #}
 
-{% extends "ClcTodosBundle:Default:todomodal.html.twig" %} 
+<!-- Add To-do Modal -->
 
-    {% block render %}
-        {% render 'ClcTodosBundle:Todos:new' %}
-    {% endblock %}
+<div id="addtodomodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Add a To-do</h3>
+    </div>
+<div class="modal-body">
+
+{% render 'ClcTodosBundle:Todos:new' %}
+
+</div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
