@@ -66,15 +66,27 @@ root {
 }
 
 #banner2 #remember_me{
-    margin-left: 10px;
+    margin: 0px 5px 8px 5px;
 }
 
 #banner2 form label{
-    margin-left: 5px;
+    display: inline-block;
 }
 
-#banner2 form button{
-    margin-left: 20px;
+#banner2 form .btn{
+    float: right;
+    margin-top: 3px;
+}
+
+#banner2 #email{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#banner2 #password{
+    width: 60px;
+    margin-left: 5px;
 }
 
 #name_button{
