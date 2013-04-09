@@ -13,7 +13,8 @@
   
 {% block javascripts %}
   {{ parent() }}
-  {# <script type='text/javascript' src='{{ asset('js/inbox-script.js') }}'></script> #}
+  <script type='text/javascript' src='{{ asset('js/inbox-script.js') }}'></script>
+  <<script type='text/javascript' src='{{ asset('js/jquery.slimscroll.min.js') }}'></script>
 {% endblock %}
   
   
@@ -31,10 +32,14 @@
           <div id="inbox-messages-box">
 
               {% for message in message_list %}
-
-                <p> {{ message.author }} wrote on {{ message.date|date("d/m") }} : </p>
-                <p> {{ message.content }} </p>
-
+              
+            <div class="chat-box">
+                <div id="author-box"> 
+                <p id="message-author"> {{ message.author }} </p> 
+                <p id="message-date"> {{ message.date|date("d/m") }}</p> 
+                </div>
+                <p> <i class="icon-quote-left"></i>{{ message.content }} </p>
+            </div>
               {% endfor %}
 
           </div>

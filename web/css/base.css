@@ -25,6 +25,8 @@ root {
     overflow: hidden;
     min-width: 800px;
     height: 100%;
+    background-image: url('../img/dashboard/retina_wood_@2X.png');
+    position: relative;
 }
 /* --- Floating Toolbar --- */
 #floating-toolbar-container{
@@ -36,6 +38,7 @@ root {
 }
 
 #floating-toolbar{
+    height: 210px;
     width: 120px;
     background: none repeat scroll 0% 0% white;
     transform: translate3d(0px, 0px, 0px);
@@ -47,6 +50,14 @@ root {
     position: fixed;
     top: 80px;
     
+}
+
+#floating-toolbar p{
+    font-family: Proxima-Bold;
+    color: rgb(119, 119, 119);
+    font-size: 15px;
+    text-align:center;
+    margin-top: 10px;
 }
 
 #floating-toolbar ul{
@@ -64,6 +75,12 @@ root {
     padding-top: 15px;
 }
 
+
+
+#floating-toolbar li:first-child{
+    border-top: 1px solid rgb(204, 204, 204);
+}
+
 #floating-toolbar li:last-child{
     border-bottom: none;
 }
@@ -76,6 +93,12 @@ root {
     background-color: transparent;
     border: none;
     color: rgb(119, 119, 119);
+}
+
+#floating-toolbar button:hover{
+    transition: all 0.7s ease 0s;
+    /*text-shadow: 1px 0.5px 0px rgb(255, 255, 255), 1.5px 2px 0px rgba(0, 0, 0, 0.15);*/
+    color: black;
 }
 
 
