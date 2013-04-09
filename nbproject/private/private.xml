@@ -16,18 +16,25 @@
             </bookmark>
         </file>
         <file>
+<<<<<<< HEAD
             <url>src/Clc/ExpensemanagerBundle/Resources/views/Default/addexpensemodal.html.twig</url>
             <bookmark id="3">
                 <name/>
                 <line>0</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
+=======
             <url>web/css/todos.css</url>
             <bookmark id="2">
                 <name/>
                 <line>370</line>
+>>>>>>> Registration activated
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>web/css/login.css</url>
+            <bookmark id="1">
+                <name/>
+                <line>29</line>
                 <key/>
             </bookmark>
         </file>

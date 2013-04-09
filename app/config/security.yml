@@ -24,6 +24,10 @@ security:
             pattern:    ^/login$
             anonymous:  ~
             
+        register_firewall:
+            pattern:    ^/register
+            anonymous:  ~
+            
         secured_area:
             pattern:    ^/
             anonymous:  false

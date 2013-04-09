@@ -32,22 +32,8 @@
 
     {% else %}
     
-    {% if error %}
-        <div>{{ error.message }}</div>
-    {% endif %}
-
-    <form class="form-inline" action="{{ path('fos_user_security_check') }}" method="post">
-        <input type="text" id="username" class="input-small" placeholder="Username or e-mail" name="_username" value="{{ last_username }}" />
-        <input type="password" id="password" class="input-small" placeholder="Password" name="_password" />
-
-        <input type="checkbox" id="remember_me" name="_remember_me" checked />
-        <label class="checkbox" for="remember_me">Remember me</label>
-    
-        <button type="submit" class="btn btn-success">Sign in</button>
-    </form>
+      {% render 'FOSUserBundle:Security:login' %}
         
     {% endif %}
        
-</div>
-          
-       
+</div>     

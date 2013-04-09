@@ -1,0 +1,279 @@
+{# app/Resources/views/frame.html.twig #}
+ 
+{# On étend notre layout à frame #}
+{% extends "::frame.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+{% endblock %}
+
+{% block mainbox %}
+    
+    <div id="signup-box" class="container-fluid">
+        <div id="container-center-signup" class="container" >
+          <div id="mainbox">
+
+
+                <div id="middle_block1_ext">
+                    <div id="middle_block1">
+                        <div id="catchphrase_box">
+                            <div id="catchphrase1">
+                                <p>Live Together,<br><br><br><br>
+                                   Live Better</p>
+                            </div>
+                            <div id="catchphrase2">
+                               <p>Start Using <strong>Coloc'all,</strong><br><br><br>
+                                  Today</p>
+                            </div>
+                        </div>
+
+                        <div id="signin_box">
+                            <div id="signin_box_content">
+                                <legend>
+                                    <div id="legend">
+                                    New on Coloc'all ? Sign up for free !
+                                    </div>
+                                </legend>
+
+                                  {% render "FOSUserBundle:Registration:register" %}
+
+                                <div id="signin_box_footer">
+                                    <p style="display: inline-block;">OR</p>
+                                    <button class="btn btn-primary btn-medium" style="display:inline-block;">
+                                        Log in with facebook
+                                    </button>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+
+        </div>
+
+
+        <div id="mainbox-bckgd" class="container-fluid">
+
+            <div id="ribbon_container" ></div>
+
+            <div class="container">    
+                <div id="mainbox-body">    
+
+
+
+
+                    <div id="feature-container">
+                        <div id="feature" class="span4">
+                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px" alt="">
+                            <h3>Manage Your Expenses</h3>
+                            <p>Coloc'all manages your social money so you can share your life easily with your flatmates and friends. <br> 
+                                Add your latest expenses in a jiffy!</br>
+                                </p>
+                        </div>
+
+
+                        <div id="feature" class="span4">
+                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
+                            <h3>Payback Your Friends Online</h3>
+                            <p>Don't bother thinking how you'll pay back your friends. <br>
+                                Coloc'all does it for you, </br> in the easiest possible way!</br></p>
+                        </div>
+
+
+                        <div id="feature" class="span4">
+                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
+                            <h3>Manage Your To-dos & Lists</h3>
+                            <p>Make sure everyone knows what's on the agenda using Coloc'all dynamic social To-dos and Shopping Lists.</br>
+                              </br></p>
+                        </div>
+                    </div>
+
+                    <center>
+                    <img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+                    </center>
+
+                    <div id="caroussel-container-large" class="span12">
+                        <div id="myCarousel" class="carousel slide">
+
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                              <div class="active item">
+                                  <div id="item_container">
+                                    <div id="text">
+                                      <h3>Manage your common expenses</h3>    
+                                      <p>Track all your expenses and know what you owe to whom at every time. Coloc'all keeps all your expenses in one place. Sharing expenses has never been so easy!</p>
+                                    </div>
+                                    <div id="pic">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="">
+                                    </div>
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="pic">
+                                    </div>
+                                    <div id="text">
+                                        <h3>Payback your friends online</h3>    
+                                        <p> Not only can you see how much you owe or what you are owed, Coloc'all gives you the opportunity to pay back your friends instantly. No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back!</p>
+                                    </div>
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="text">
+                                        <h3>Manage your to-dos easily</h3>    
+                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div id="pic">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-postit.jpg') }}" alt="">
+                                    </div> 
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="pic">
+                                    </div>
+                                    <div id="text">
+                                        <h3>Create dynamic shopping lists</h3>    
+                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="text">
+                                      <h3>Host events with all your friends</h3>    
+                                      <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div id="pic">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="">
+                                    </div>
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="pic">
+                                    </div>
+                                    <div id="text">
+                                        <h3>Share tips with Coloc'all community</h3>    
+                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="text">
+                                        <h3>Get fun statistics on your flatshare</h3>    
+                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div id="pic">
+                                    </div> 
+                                  </div>        
+                              </div>
+                              <div class="item">
+                                  <div id="item_container">
+                                    <div id="pic">
+                                    </div>
+                                    <div id="text">
+                                        <h3>Enjoy life as you should</h3>    
+                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
+                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+                                          officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                  </div>        
+                              </div>      
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+                            <div id="indicators_container">
+                                <ol class="carousel-indicators">
+                                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                                  <li data-target="#myCarousel" data-slide-to="5"></li>
+                                  <li data-target="#myCarousel" data-slide-to="6"></li>
+                                  <li data-target="#myCarousel" data-slide-to="7"></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="platform_container" class="span12">
+                        <img id="platform_pic" src="{{ asset('img/visitor_homepage/Platform-list.jpg') }}" width="960px" alt="">
+                    </div>
+
+
+
+        </div>
+        </div>  
+
+        <div id="business-box" class="container-fluid">
+                        <div id="ribbon_container2">
+                    </div> 
+            <div id="block3" class="container">        
+                    <div id="block3_container">
+                        <div class="whitebox" id="trialbox">
+                        </div>
+                        <div class="whitebox" id="lignboxleft">
+                        </div>
+                        <div id="timebox">
+                            <p>After 3 months</p>
+                        </div>
+                        <div class="whitebox" id="lignboxright">
+                        </div>
+                        <div class="whitebox" id="freebox">
+                        </div>
+                        <div class="whitebox" id="paybox">
+                        </div>
+                    </div>               
+            </div>
+
+          </div>
+        </div>  
+        </div>
+
+        <div id="footer" class="container-fluid">
+            {% include ":default:footer.html.twig" %}
+        </div>
+{% endblock %}
