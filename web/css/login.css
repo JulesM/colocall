@@ -152,9 +152,21 @@ body{
     height: 20%;
 }
 
-#signin_box_footer button{
-    margin-left: 12%;
-    margin-top: 3%;
+#signin_box_content #register-button{
+    margin-top: 10px;
+    margin-left: 10%;
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_content #or{
+    display: inline-block;
+    font-family: 'Oswald-Regular';
+}
+
+#signin_box_footer #facebook-button{
+    margin-top: 10px;
+    float:right;
+    margin-right: 10%;
     font-family: 'Oswald-Regular';
 }
 

@@ -1,0 +1,32 @@
+{# src/Clc/UserBundle/Resources/views/Registration/register_content.html.twig #}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.plainPassword, 'Password') }}
+        {{ form_errors(form.plainPassword) }}
+        {{ form_widget(form.plainPassword) }}
+    </div>
+
+    {{ form_rest(form) }}
+      
+    
+    <div id="signin_box_footer">
+
+        <input type="submit" id="register-button" class="btn btn-success" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+        
+        <p id="or">OR</p>
+        
+        <button id="facebook-button" class="btn btn-primary" style="display:inline-block;">
+            Log in with facebook
+        </button>
+    </div>
+</form>
