@@ -33,3 +33,7 @@ root {
     font-family: 'Oswald-Light';
     src: url('polices/oswald/oswaldlight.ttf') format('truetype');
 }
+@font-face {    
+    font-family: 'Sonora';
+    src: url('polices/sonora/SonoraProOT-Light.otf') format('truetype');
+}

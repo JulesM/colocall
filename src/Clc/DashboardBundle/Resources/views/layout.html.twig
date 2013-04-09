@@ -29,10 +29,14 @@
   <div id="dashboard-content">
       <div id="overview-container">
           <div id="expense-dashboard-container" class="dashboard-container">
-          </div>
-              
-          {# Les deux prochaines div son là pour te donner les infos à utiliser #}    
-              
+                      <div id="expense-dashboard-container" class="dashboard-container">
+          <div id="expense-left">
+            <div id="expense-header">
+                <h1 class="expense-header-left">Balance</h1>
+            </div>
+
+            <div id="expense-body"> 
+                
           <div>
               {% for key,value in current_balances %}
                 
@@ -40,7 +44,17 @@
                 
               {% endfor %}
           </div>
-              
+                
+            </div>
+          </div>
+       
+          <div id="expense-right">
+            <div id="expense-header">
+                <h1 class="expense-header-right">Latest Expenses</h1>
+            </div>
+
+            <div id="expense-body"> 
+                
           <div>
             <table>
               <tbody>
@@ -66,8 +80,13 @@
             </table>
               
           </div>
-              
-          {# Jusqu'ici ... #}
+                    
+            </div>
+          </div>
+            
+        </div>
+          </div>
+
 
           <div id="small-dashboard-container-left" class="small-dashboard-container" >
               <div class="shopping-upper">
@@ -136,11 +155,11 @@
           
       <div id="floating-toolbar-container">  
           <div id="floating-toolbar">
+              <p>Quick Add:<p>
               <ul class="floating-toolbar-features">
                   <li><button href="#addexpensemodal" data-toggle="modal"><div id="p"><i id="icon" class="icon-plus"></i>Expense</div></button></li>
                   <li><button href="#addtodomodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>To-do</div></button></li>
                   <li><button href="#additemmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Missing Item</div></button></li>
-                  <li><button href="#requestpaybackmodal" data-toggle="modal"><div id="p"><i class="icon-plus"></i>Payback</div></button></li>
               </ul>          
           </div>
       </div>        
