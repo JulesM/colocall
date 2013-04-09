@@ -24,6 +24,13 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @ORM\Column(name="nickname", type="string", length=255, nullable=true)
+     */
+    protected $nickname;
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     protected $firstname;
@@ -373,5 +380,59 @@ class User extends BaseUser
     public function getForMeExpenses()
     {
         return $this->ForMeExpenses;
+    }
+
+    /**
+     * Set nickname
+     *
+     * @param string $nickname
+     * @return User
+     */
+    public function setNickname($nickname)
+    {
+        $this->nickname = $nickname;
+    
+        return $this;
+    }
+
+    /**
+     * Get nickname
+     *
+     * @return string 
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+    
+    // override methods for username and tie them with email field
+
+    /**
+     * Sets the email.
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->setUsername($email);
+        
+        $nickname = explode( '@', $email );
+        $this->setNickname($nickname[0]);
+
+        return parent::setEmail($email);
+    }
+
+    /**
+     * Set the canonical email.
+     *
+     * @param string $emailCanonical
+     * @return User
+     */
+    public function setEmailCanonical($emailCanonical)
+    {
+        $this->setUsernameCanonical($emailCanonical);
+
+        return parent::setEmailCanonical($emailCanonical);
     }
 }
