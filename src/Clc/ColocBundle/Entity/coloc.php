@@ -45,7 +45,7 @@ class coloc
     /**
      * @var string
      *
-     * @ORM\Column(name="address2", type="string", length=255)
+     * @ORM\Column(name="address2", type="string", length=255, nullable=true)
      */
     protected $address2;
 
@@ -73,14 +73,14 @@ class coloc
     /**
      * @var smallint
      *
-     * @ORM\Column(name="number", type="smallint")
+     * @ORM\Column(name="number", type="smallint", nullable=true)
      */
     protected $number;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="other", type="text")
+     * @ORM\Column(name="other", type="text", nullable=true)
      */
     protected $other;
     
@@ -99,6 +99,11 @@ class coloc
      * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", mappedBy="coloc", cascade={"persist"})
      */
     protected $paybacks;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\ColocBundle\Entity\invitation", mappedBy="coloc", cascade={"persist"})
+     */
+    protected $invitations;
 
     /**
      * Get id
@@ -422,5 +427,38 @@ class coloc
     public function getPaybacks()
     {
         return $this->paybacks;
+    }
+
+    /**
+     * Add invitations
+     *
+     * @param \Clc\ColocBundle\Entity\invitation $invitations
+     * @return coloc
+     */
+    public function addInvitation(\Clc\ColocBundle\Entity\invitation $invitations)
+    {
+        $this->invitations[] = $invitations;
+    
+        return $this;
+    }
+
+    /**
+     * Remove invitations
+     *
+     * @param \Clc\ColocBundle\Entity\invitation $invitations
+     */
+    public function removeInvitation(\Clc\ColocBundle\Entity\invitation $invitations)
+    {
+        $this->invitations->removeElement($invitations);
+    }
+
+    /**
+     * Get invitations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getInvitations()
+    {
+        return $this->invitations;
     }
 }

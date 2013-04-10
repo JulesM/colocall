@@ -1,0 +1,17 @@
+{# src/Clc/DashboardBundle/Resources/views/JoinColoc/createcoloc.html.twig #}
+
+{% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
+
+{% block content %}
+
+    <div class="span8 offset2" id="header-box">
+        <p>Hello {{ app.user.nickname }} you do not have any invitation to join a flatshare right now</p>
+        <p>Wait for an invitation or create a flatshare right now !</p>
+    </div>
+
+    <div class="span8 offset2" id="form-box">
+        
+        {% render 'ClcColocBundle:Coloc:new' %}
+        
+    </div>
+{% endblock %}

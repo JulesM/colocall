@@ -10,12 +10,29 @@ class DashboardController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ClcDashboardBundle::layout.html.twig', array(
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        $invitations = $this->container->get('clc_dashboard.invitation')->getInvitations($user);
+        
+        if ($coloc == null) {
+            if ($invitations == null) {
+                return $this->render('ClcDashboardBundle:JoinColoc:createcoloc.html.twig');
+            }
+            else {
+                return $this->render('ClcDashboardBundle:JoinColoc:invitation.html.twig', array(
+                    'invitations' => $invitations,
+                ));
+            }
+        }
+        
+        else {
+            return $this->render('ClcDashboardBundle::layout.html.twig', array(
             'current_balances' => $this->getCurrentBalancesAction(),
             'latest_expenses'  => $this->getLatestExpensesAction(),
             'my_todos'         => $this->getMyTodosAction(0),
             'shopping_list'    => $this->getShoppingListAction(0),
         ));
+        }
     }
     
     private function getCurrentBalancesAction()

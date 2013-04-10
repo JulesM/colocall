@@ -1,0 +1,19 @@
+{# src/Clc/DashboardBundle/Resources/views/JoinColoc/invitation.html.twig #}
+
+{% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
+
+{% block content %}
+
+    <div class="span8 offset2" id="header-box">
+    </div>
+
+    <div class="span8 offset2" id="invitation-box">
+        
+        {% for invitation in invitations %}
+        
+            <p> {{ invitaion.author.nickname }} <p>
+        
+        {% endfor %}
+        
+    </div>
+{% endblock %}

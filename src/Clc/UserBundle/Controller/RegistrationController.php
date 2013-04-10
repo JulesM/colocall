@@ -12,6 +12,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
 use FOS\UserBundle\Model\UserInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class RegistrationController extends BaseController
 {
@@ -24,7 +25,10 @@ class RegistrationController extends BaseController
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
-
-        return $this->container->get('templating')->renderResponse('ClcDashboardBundle:JoinColoc:join.html.twig');
+        
+        $route = 'clc_dashboard_homepage';
+        $url = $this->container->get('router')->generate($route);
+        $response = new RedirectResponse($url);
+        return $response;
     }
 }
