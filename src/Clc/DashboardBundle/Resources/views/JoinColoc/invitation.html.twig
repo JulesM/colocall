@@ -9,9 +9,17 @@
 
     <div class="span8 offset2" id="invitation-box">
         
-        {% for invitation in invitations %}
+        <h3> Hello {{ app.user.nickname }}, you have {{ invitations|length }} invitation(s) to join a flatshare</h3>
         
-            <p> {{ invitaion.author.nickname }} <p>
+        {% for invitation in invitations %}
+                  
+            <div>{{invitation.author.nickname}} ({{invitation.author.firstname}} {{invitation.author.lastname}})
+                 invites you to join <b>{{invitation.coloc.name}}</b>
+            </div>
+            <button class="btn btn-success" href="#">
+                Accept
+            </button>
+            <button class="btn btn-warning">Refuse</button>
         
         {% endfor %}
         
