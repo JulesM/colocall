@@ -1,4 +1,14 @@
+# src/Clc/ColocBundle/Resources/config/routing.yml
+
+clc_coloc_homepage:
+    pattern: /
+    defaults: { _controller: ClcColocBundle:Coloc:index }
+
 clc_coloc_new:
     pattern: /new
-    defaults: { _controller: ClcColocBundle:Coloc:new } 
+    defaults: { _controller: ClcColocBundle:Coloc:new }
+    
+clc_coloc_new_invitation:
+    pattern: /send/invitation
+    defaults: { _controller: ClcColocBundle:Coloc:sendInvitation }
  

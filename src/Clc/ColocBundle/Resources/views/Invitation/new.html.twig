@@ -1,0 +1,16 @@
+{# src/Clc/UserBundle/Resources/views/Invitation/new.html.twig #}
+
+<form action="{{ path('clc_coloc_new_invitation') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" type="submit"/>
+</form>

@@ -31,7 +31,7 @@ class invitation
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="text")
+     * @ORM\Column(name="message", type="text", nullable = true)
      */
     private $message;
     

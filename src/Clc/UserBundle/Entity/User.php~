@@ -71,7 +71,7 @@ class User extends BaseUser
     protected $comment;
     
     /**
-     * @ORM\OneToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
      */
     protected $picture;
     
@@ -380,5 +380,59 @@ class User extends BaseUser
     public function getForMeExpenses()
     {
         return $this->ForMeExpenses;
+    }
+
+    /**
+     * Set nickname
+     *
+     * @param string $nickname
+     * @return User
+     */
+    public function setNickname($nickname)
+    {
+        $this->nickname = $nickname;
+    
+        return $this;
+    }
+
+    /**
+     * Get nickname
+     *
+     * @return string 
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+    
+    // override methods for username and tie them with email field
+
+    /**
+     * Sets the email.
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->setUsername($email);
+        
+        $nickname = explode( '@', $email );
+        $this->setNickname($nickname[0]);
+
+        return parent::setEmail($email);
+    }
+
+    /**
+     * Set the canonical email.
+     *
+     * @param string $emailCanonical
+     * @return User
+     */
+    public function setEmailCanonical($emailCanonical)
+    {
+        $this->setUsernameCanonical($emailCanonical);
+
+        return parent::setEmailCanonical($emailCanonical);
     }
 }

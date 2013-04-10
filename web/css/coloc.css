@@ -1,0 +1,53 @@
+/* 
+    Document   : coloc
+    Created on : 10 avr. 2013, 15:52:32
+    Author     : julesmarcilhacy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#coloc-content{
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    max-height: 500px;
+}
+
+#coloc-left-box{
+    display: inline-block;
+    width: 48%;
+    border: solid 1px;
+    vertical-align: top;
+    height: 100%;
+}
+
+#coloc-right-box{
+    display: inline-block;
+    float:right;
+    width: 48%;
+    vertical-align: top;
+    height: 100%;
+}
+
+#coloc-right-top-box{
+    border: solid 1px;
+    
+}
+
+#coloc-right-bottom-box{
+    border: solid 1px;
+    margin-top: 10px;
+    
+}
+
+/* --- Left box css --- */
+
+#user-box{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+#user-presentation{
+    display: inline-block;
+}

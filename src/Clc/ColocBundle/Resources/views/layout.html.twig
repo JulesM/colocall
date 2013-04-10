@@ -1,0 +1,77 @@
+{# src/Clc/ColocBundle/Resources/views/layout.html.twig  #}
+
+{# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
+    - 'users'  tableau des utilisateurs de la coloc active
+#}
+
+{% extends '::base.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - Flatshare
+{% endblock %}
+  
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/coloc.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+  
+  <div id="coloc-content">
+      
+    <h1> {{ app.user.coloc.name }} </h1> 
+      
+    <div id="coloc-left-box">
+        
+        <p>{{ app.user.coloc.address1 }}</p>
+        <p>{{ app.user.coloc.address2 }}</p>
+        <p>{{ app.user.coloc.zipcode }}
+           {{ app.user.coloc.city }}</p>
+        <p>{{ app.user.coloc.country }}</p>
+        
+        <button>Edit flatshare information</button>
+        
+    </div>
+
+    <div id="coloc-right-box">
+        <div id="coloc-right-top-box">
+            
+            {% for user in users %}
+
+              <div id="user-box">
+                  <img src="{{ asset(user.picture.path) }}" height="50px" width="50px" alt="">
+                  <div id="user-presentation">
+                      {{ user.firstname }} {{ user.lastname }} is <b>{{ user.nickname }}</b>
+                  </div>
+              </div>
+
+            {% endfor %}
+            
+            <button> Leave this flatshare </button>
+            
+        </div>
+        <div id="coloc-right-bottom-box">
+            
+            {% if invitations|length == 0 %}
+                <p>There is no pending invitation</p>
+            {%else %}
+                <p>There are {{ invitations|length }} pending invitations to the following emails:</p>
+                
+                {% for invitation in invitations %}
+                    <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
+                {% endfor %}
+            {% endif %}
+             
+            {% include "ClcColocBundle:Invitation:sendInvitationModal.html.twig" %}
+                    
+            <button class="btn btn-primary" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</button>
+            
+        </div>
+    </div>
+  </div>
+  
+{% endblock %}
+   
+{% block javascripts %}
+  {{ parent() }}
+{% endblock %} 
