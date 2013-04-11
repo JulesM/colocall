@@ -1,0 +1,9 @@
+{# src/Clc/UserBundle/Resources/views/profile/pictureform.html.twig #}
+
+<form action="{{ path('clc_user_edit_profilepicture') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_widget(form) }}
+
+    <input class="btn btn-success" type="submit" value="Upload Document"/>
+
+</form>

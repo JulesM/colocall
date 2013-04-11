@@ -4,6 +4,7 @@
 namespace Clc\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Clc\UserBundle\Entity\profilepicture;
 
@@ -23,13 +24,12 @@ class ProfileController extends Controller
         $user = $this->getUser();
         
         $form = $this->createFormBuilder($user)
-                     ->add('username', 'text')
+                     ->add('nickname', 'text')
                      ->add('firstname', 'text')
                      ->add('lastname', 'text')
                      ->add('nationality','text')
                      ->add('birthday','birthday')
                      ->add('phone','integer')
-                     ->add('email','email')
                      ->add('comment','textarea')
                      ->getForm();
         
@@ -44,11 +44,13 @@ class ProfileController extends Controller
                 $em->persist($user);
                 $em->flush();
                 
-                return $this->profileAction();
+                return new RedirectResponse(
+                $this->container->get('router')->generate('clc_user_profile')
+                );
             }
         }
                 
-        return $this->render('ClcUserBundle:profile:pictureform.html.twig', array(
+        return $this->render('ClcUserBundle:profile:editprofile.html.twig', array(
             'form' => $form->createView(),
         ));
     }

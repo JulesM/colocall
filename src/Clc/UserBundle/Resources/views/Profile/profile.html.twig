@@ -1,0 +1,110 @@
+{# src/Clc/UserBundle/Resources/views/profile/profile.html.twig #}
+
+{# Variables disponibles dans cette page (entre parenthèses les attributs des variables) :
+    - 'path'  string donnant le chemin de la profile picture de l'utilisateur actif
+#}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/user-profile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+  {{ parent() }} - Profile
+{% endblock %}
+
+{% block body %}
+     
+    <div id="profile-page-content">
+        <div class="profile-container">
+	    <section id="profile-content">
+                
+                {% block init %}
+                {% endblock %}
+                
+                {% block nickname %}
+                <h1>{{ app.user.nickname }}</h1>
+                {% endblock %}
+                
+                {% block picture %}
+                <div id="profile-picture">
+                    <img src="{{ asset(app.user.picture.path) }}" class="img-polaroid" margin="auto" alt="">
+                </div>
+                {% endblock %}
+
+                <div>
+                    <div class="details">
+                        <i class="icon-user"></i> 
+                        <p id="static-details">Name</p>
+                        <p>{% block firstname %}{{ app.user.firstname }}{% endblock %}
+                           {% block lastname %}{{ app.user.lastname }}{% endblock %}
+                        </p> 
+                    </div>
+                    <div class="details">             
+                        <i class="icon-globe icon-2x"></i>
+                        <p id="static-details">Nationality</p>
+                        <p>{% block nationality %}
+                           {{ app.user.nationality }}
+                           {% endblock %}
+                        </p>
+                    </div>
+                    <div class="details">
+                        <i class="icon-gift"></i>
+                        <p id="static-details">Birth Date</p>
+                        <p>{% block birthday %}
+                           {{ app.user.birthday|date("d/m/y") }}
+                           {% endblock %}
+                        </p>
+                    </div>
+                    <div class="details">
+                        <i class="icon-comment"></i>
+                        <p id="static-details">Phone Number</p>
+                        <p>{% block phone %}
+                           {{ app.user.phone }}
+                           {% endblock %}
+                        </p>
+                    </div>
+                    <div class="details">
+                        <i class="icon-envelope"></i>
+                        <p id="static-details">E-mail</p>
+                        <p>
+                           {{ app.user.email }}
+                        </p>
+                    </div>
+                    <div class="details">
+                        <i class="icon-heart"></i>
+                        <p id="static-details">Passions</p>
+                        <p>{% block comment %}
+                           {{ app.user.comment }}
+                           {% endblock %}
+                        </p>
+                    </div>
+                        
+                           {% block other %}
+                           {% endblock %}
+                </div>
+                
+                <div class="profile-footer ">
+                    {% block footer %}
+                        
+                        <div class="btn-group">
+                            <a class="btn" href="{{ path('clc_user_edit_profile') }}">Edit Profile Information</a>
+                            <!-- Button to trigger modal -->
+                            <a href="#profilePictureModal" role="button" class="btn" data-toggle="modal">Edit Profile Picture</a>
+                        </div>
+                        
+                        {% include 'ClcUserBundle:profile:uploadPictureModal.html.twig' %}
+                    
+                    {% endblock %}
+                </div><!-- button -->
+                
+            </section><!-- content -->
+        </div><!-- container -->
+    </div>
+  
+  {% block edit %}
+  {% endblock %}
+
+{% endblock body %}  
