@@ -71,10 +71,12 @@ class ProfileController extends Controller
                 $user = $this->getUser();
                 $currentpicture = $user->getPicture();
                 $profilepicture->upload($user);
-                
                 $user->setPicture($profilepicture);
                 
+                if ($currentpicture->getId() !== 1) {
                 $em->remove($currentpicture);
+                }
+                
                 $em->persist($user);
                 $em->flush();
 
