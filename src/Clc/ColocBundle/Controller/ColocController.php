@@ -4,6 +4,7 @@
 namespace Clc\ColocBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Clc\ColocBundle\Form\Type\ColocType;
 use Clc\ColocBundle\Entity\coloc;
 
@@ -59,5 +60,15 @@ class ColocController extends Controller
         }
             
         return $pictures;
+    }
+    
+    public function leaveFlatshareAction()
+    {
+        $user = $this->getUser();
+        $user->setColoc(null);
+        
+        return new RedirectResponse(
+                $this->container->get('router')->generate('fos_user_security_logout')
+                ); 
     }
 }

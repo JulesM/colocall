@@ -16,9 +16,9 @@
             <div>{{invitation.author.nickname}} ({{invitation.author.firstname}} {{invitation.author.lastname}})
                  invites you to join <b>{{invitation.coloc.name}}</b>
             </div>
-            <button class="btn btn-success" href="#">
+            <a class="btn btn-success" href="{{ path('clc_coloc_accept_invitation', {'id' : invitation.id}) }}">
                 Accept
-            </button>
+            </a>
             <button class="btn btn-warning">Refuse</button>
         
         {% endfor %}

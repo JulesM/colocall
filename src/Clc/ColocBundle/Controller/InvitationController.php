@@ -5,6 +5,8 @@ namespace Clc\ColocBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Clc\ColocBundle\Entity\invitation;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class InvitationController extends Controller
 {
@@ -45,12 +47,58 @@ class InvitationController extends Controller
     
     public function acceptInvitationAction($id)
     {
-        $invitation = $this->getDoctrine()
-                           ->getRepository('ClcColocBundle:invitation')
-                           ->find($id);
+        $d = $this->getDoctrine();
         
-        //find user by email (créer la fonction dans user repository ?)
-        //user->setcoloc(author->getcoloc());
-        //remove(invitation)
+        $invitation = $d->getRepository('ClcColocBundle:invitation')
+                        ->find($id);
+        
+        $repository = $d->getRepository('ClcUserBundle:User');
+        $user = $repository->findOneBy(array('email' => $invitation->getEmail()));
+        
+        if ($user == $this->getUser()) {
+        
+            $user->setColoc($invitation->getAuthor()->getColoc());
+        
+            $em = $d->getEntityManager();
+            $em->persist($user);
+            $em->remove($invitation);
+            $em->flush();
+            
+            $route = 'clc_dashboard_homepage';
+            $url = $this->container->get('router')->generate($route);
+            $response = new RedirectResponse($url);
+            return $response;
+        }
+        
+        else {
+            throw new AccessDeniedException('You do not have access to this section.');
+        } 
+    }
+    
+    public function refuseInvitationAction($id)
+    {
+        $d = $this->getDoctrine();
+        
+        $invitation = $d->getRepository('ClcColocBundle:invitation')
+                        ->find($id);
+        
+        $repository = $d->getRepository('ClcUserBundle:User');
+        $user = $repository->findOneBy(array('email' => $invitation->getEmail()));
+        
+        if ($user == $this->getUser()) {
+        
+            $em = $d->getEntityManager();
+            $em->remove($invitation);
+            $em->flush();
+            
+            $route = 'clc_dashboard_homepage';
+            $url = $this->container->get('router')->generate($route);
+            $response = new RedirectResponse($url);
+            return $response;
+        }
+        
+        else {
+            throw new AccessDeniedException('You do not have access to this section.');
+        } 
     }
 }
