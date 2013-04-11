@@ -34,10 +34,19 @@ class ExpensemanagerController extends Controller
         $expense->setAddedDate(new \DateTime('today'));
         $expense->setDate(new \DateTime('today'));
         
+        $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                    {
+                    return $ur->createQueryBuilder('u')
+                              ->where('u.coloc = :coloc')
+                              ->setParameter('coloc', $coloc)
+                              ->orderBy('u.nickname', 'ASC');
+                    };
+        
         $form = $this->createFormBuilder($expense)
                      ->add('owner', 'entity', array(
-                            'class'    =>'ClcUserBundle:User', 
-                            'property' =>'nickname',
+                            'class'         =>'ClcUserBundle:User', 
+                            'property'      =>'nickname',
+                            'query_builder' => $usersQuery,
                           ))
                      ->add('name', 'text')
                      ->add('amount', 'integer', array(
@@ -52,13 +61,7 @@ class ExpensemanagerController extends Controller
                      ->add('users', 'entity', array(
                             'class'         => 'ClcUserBundle:User',
                             'property'      =>'nickname',
-                            'query_builder' => function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
-                                                {
-                                                return $ur->createQueryBuilder('u')
-                                                          ->where('u.coloc = :coloc')
-                                                          ->setParameter('coloc', $coloc)
-                                                          ->orderBy('u.username', 'ASC');
-                                                },
+                            'query_builder' => $usersQuery,
                             'multiple'      => 'true',
                             'expanded'      => 'true',
                             'required'      => 'true',

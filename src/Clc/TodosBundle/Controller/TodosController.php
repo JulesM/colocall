@@ -30,14 +30,23 @@ class TodosController extends Controller
         $task->setDueDate(new \DateTime('tomorrow'));
         $task->setAuthor($user);
         $task->setColoc($coloc);
+        
+        $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                    {
+                    return $ur->createQueryBuilder('u')
+                              ->where('u.coloc = :coloc')
+                              ->setParameter('coloc', $coloc)
+                              ->orderBy('u.nickname', 'ASC');
+                    };
 
         $form = $this->createFormBuilder($task)
             ->add('task', 'text')
             ->add('dueDate', 'date')
             ->add('owner', 'entity', array(
-                  'required'=>false,
-                  'class'=>'ClcUserBundle:User', 
-                  'property'=>'nickname',
+                  'required'      => false,
+                  'class'         => 'ClcUserBundle:User', 
+                  'property'      => 'nickname',
+                  'query_builder' => $usersQuery,
                 ))    
             ->getForm();
         
