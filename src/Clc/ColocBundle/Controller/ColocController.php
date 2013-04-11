@@ -67,6 +67,10 @@ class ColocController extends Controller
         $user = $this->getUser();
         $user->setColoc(null);
         
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->persist($user);
+        $em->flush();
+        
         return new RedirectResponse(
                 $this->container->get('router')->generate('fos_user_security_logout')
                 ); 
