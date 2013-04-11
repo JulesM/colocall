@@ -21,51 +21,70 @@
       
     <h1> {{ app.user.coloc.name }} </h1> 
       
-    <div id="coloc-left-box">
+    <div id="coloc-left-box" class="coloc-box">
         
-        <p>{{ app.user.coloc.address1 }}</p>
-        <p>{{ app.user.coloc.address2 }}</p>
-        <p>{{ app.user.coloc.zipcode }}
-           {{ app.user.coloc.city }}</p>
-        <p>{{ app.user.coloc.country }}</p>
-        
-        <button>Edit flatshare information</button>
-        
-    </div>
-
-    <div id="coloc-right-box">
-        <div id="coloc-right-top-box">
+        <div class="coloc-body">
+            
+            <p><u><b>Members</b></u></p>
             
             {% for user in users %}
 
               <div id="user-box">
-                  <img src="{{ asset(user.picture.path) }}" height="50px" width="50px" alt="">
+                  <img src="{{ asset(user.picture.path) }}" alt="">
                   <div id="user-presentation">
                       {{ user.firstname }} {{ user.lastname }} is <b>{{ user.nickname }}</b>
                   </div>
               </div>
 
             {% endfor %}
+        </div>
+                
+        <div class="coloc-footer">    
+            <a class="btn" href="{{ path('clc_coloc_leave_flatshare') }}"> Leave this Flatshare </a>
+        </div>
             
-            <a href="{{ path('clc_coloc_leave_flatshare') }}"> Leave this flatshare </a>
+    </div>
+
+    <div id="coloc-right-box">
+        <div id="coloc-right-top-box" class="coloc-box">
+            
+            <div class="coloc-body">
+                <p><u><b>Flatshare address</b></u></p>
+
+                <p>{{ app.user.coloc.address1 }}</p>
+                <p>{{ app.user.coloc.address2 }}</p>
+                <p>{{ app.user.coloc.zipcode }}
+                   {{ app.user.coloc.city }}</p>
+                <p>{{ app.user.coloc.country }}</p>
+            </div>
+            
+            <div class="coloc-footer">
+                <button class="btn">Edit Flatshare Information</button>
+            </div>
             
         </div>
-        <div id="coloc-right-bottom-box">
+        <div id="coloc-right-bottom-box" class="coloc-box">
             
-            {% if invitations|length == 0 %}
-                <p>There is no pending invitation</p>
-            {%else %}
-                <p>There are {{ invitations|length }} pending invitations to the following emails:</p>
-                
-                {% for invitation in invitations %}
-                    <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
-                {% endfor %}
-            {% endif %}
+            <div class="coloc-body">
+                {% if invitations|length == 0 %}
+                    <p><u><b>There is no pending invitation</b></u></p>
+                {%else %}
+                    <p><u><b>There are 
+                             {{ invitations|length }} 
+                             pending invitations to the following emails:
+                    </b></u></p>
+
+                    {% for invitation in invitations %}
+                        <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
              
-            {% include "ClcColocBundle:Invitation:sendInvitationModal.html.twig" %}
-                    
-            <button class="btn btn-primary" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</button>
-            
+            <div class="coloc-footer">        
+                {% include "ClcColocBundle:Invitation:sendInvitationModal.html.twig" %}
+                <button class="btn" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</button>
+            </div>
+                
         </div>
     </div>
   </div>
