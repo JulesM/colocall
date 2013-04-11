@@ -12,8 +12,8 @@ class Balance {
         
         foreach ($users as $u){
             $balance = $this->getBalance($u);
-            $name = $u->getUsername();
-            $balances[$name] = $balance;
+            $nickname = $u->getNickname();
+            $balances[$nickname] = $balance;
         }
         
         return $balances;
@@ -55,8 +55,8 @@ class Balance {
         
         foreach ($users as $u){
             $activeBalance = $this->getActiveBalance($u);
-            $name = $u->getUsername();
-            $activeBalances[$name] = $activeBalance;
+            $nickname = $u->getNickname();
+            $activeBalances[$nickname] = $activeBalance;
         }
         
         return $activeBalances;

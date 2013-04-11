@@ -37,7 +37,7 @@ class TodosController extends Controller
             ->add('owner', 'entity', array(
                   'required'=>false,
                   'class'=>'ClcUserBundle:User', 
-                  'property'=>'username',
+                  'property'=>'nickname',
                 ))    
             ->getForm();
         
@@ -76,7 +76,7 @@ class TodosController extends Controller
             ->add('owner', 'entity', array(
                 'required'=>false,
                 'class'=>'ClcUserBundle:User', 
-                'property'=>'username',
+                'property'=>'nickname',
                 ))    
             ->getForm();
         
