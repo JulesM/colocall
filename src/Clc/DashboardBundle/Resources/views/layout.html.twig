@@ -31,21 +31,15 @@
           <div id="expense-dashboard-container" class="dashboard-container">
                       <div id="expense-dashboard-container" class="dashboard-container">
           <div id="expense-left">
-            <div id="expense-header">
-                <h1 class="expense-header-left">Balance</h1>
-            </div>
+              <div id="expense-header">
+                  <h1 class="expense-header-left">Balance</h1>
+              </div>
 
-            <div id="expense-body"> 
-                
-          <div>
-              {% for key,value in current_balances %}
-                
-                <p>{{ key }}'s balance is {{ value }} €</p>
-                
-              {% endfor %}
-          </div>
-                
-            </div>
+              <div id="expense-body"> 
+                  <div id="bar-chart">
+                      {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : current_balances } %}
+                  </div>
+              </div>
           </div>
        
           <div id="expense-right">

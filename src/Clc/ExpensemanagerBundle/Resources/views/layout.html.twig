@@ -53,13 +53,9 @@
             </div>
 
             <div id="expense-body"> 
-                
-                {% for key,value in balances %}
-                
-                <p>{{ key }}'s balance is {{ value }} €</p>
-                
-                {% endfor %}
-                
+                <div id="bar-chart">
+                    {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : balances } %}
+                </div>
             </div>
           </div>
        
