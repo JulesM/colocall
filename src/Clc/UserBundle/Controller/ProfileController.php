@@ -80,7 +80,10 @@ class ProfileController extends Controller
                 $em->persist($user);
                 $em->flush();
 
-                return $this->profileAction();
+                $route = 'clc_user_profile';
+                $url = $this->container->get('router')->generate($route);
+                $response = new RedirectResponse($url);
+                return $response;
             }
         }
 

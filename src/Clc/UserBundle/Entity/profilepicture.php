@@ -28,7 +28,9 @@ class profilepicture
     public $path;
     
     /**
-     * @Assert\File(maxSize="6000000")
+     * @Assert\File(
+     *      maxSize="6000000"
+     * )
      */
     public $file;
 
@@ -96,17 +98,44 @@ class profilepicture
         }
 
         $extension=strrchr($this->file->getClientOriginalName(),'.');
+        $tempname = 'temp'.$user->getId().$extension;
         $newname = $user->getId().$extension;
 
-        // la méthode « move » prend comme arguments le répertoire cible et
-        // le nom de fichier cible où le fichier doit être déplacé
-        $this->file->move($this->getUploadRootDir(), $newname);
+        $this->file->move($this->getUploadRootDir(), $tempname);
 
-        // définit la propriété « path » comme étant le nom de fichier où vous
-        // avez stocké le fichier
-        $this->path = 'uploads/profilepictures/'.$newname;
-
-        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        $temppath = 'uploads/profilepictures/'.$tempname;
+        $newpath = 'uploads/profilepictures/'.$newname;
+        
+        $this->compress_image($temppath,$newpath);
+        $this->path = $newpath;
+        
+        unlink($temppath);
         $this->file = null;
     }
+    
+    function compress_image($source_url, $destination_url) 
+        {
+            $info = getimagesize($source_url);
+            list ($width, $height) = getimagesize($source_url); 
+
+            if ($info['mime'] == 'image/jpeg') $image = imagecreatefromjpeg($source_url);
+            elseif ($info['mime'] == 'image/gif') $image = imagecreatefromgif($source_url);
+            elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source_url);
+            
+            $min = min($width, $height);
+            
+            if ($min == $width) {
+                $a = 0;
+                $b = ($height-$width)/2;
+            }
+            
+            else {
+                $a = ($width-$height)/2;
+                $b = 0;
+            }
+            
+            $new_image = imagecreatetruecolor( 160, 160 );
+            imagecopyresampled($new_image, $image, 0,0,$a,$b, 160, 160, $width-$a, $height-$b);
+            imagejpeg($new_image, $destination_url, 50);
+        }
 }
