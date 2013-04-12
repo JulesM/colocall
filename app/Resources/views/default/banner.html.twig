@@ -27,7 +27,10 @@
         </div>
     
         <div id="name_button">
-            <a class="btn btn-link" href="{{ path('clc_user_profile') }}">{{ app.user.nickname }}</a>        
+            <a class="btn btn-link" href="{{ path('clc_user_profile') }}">
+                <img src="{{ asset(app.session.get('path')) }}" height="26px" width="26px" alt="">
+                {{ app.user.nickname }}
+            </a>        
         </div>
 
     {% else %}

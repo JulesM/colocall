@@ -13,6 +13,8 @@ class DashboardController extends Controller
         $user = $this->getUser();
         $coloc = $user->getColoc();
         $invitations = $this->container->get('clc_dashboard.invitation')->getInvitations($user);
+        $path = $user->getPicture()->getPath();
+        $this->container->get('request')->getSession()->set('path', $path);
         
         if ($coloc == null) {
             if ($invitations == null) {
