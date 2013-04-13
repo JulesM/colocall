@@ -303,6 +303,7 @@
 [2013-04-08 11:26:19] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/app/cache/prod/classes.php line 5121 [] []
 [2013-04-08 11:29:01] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/app/cache/prod/classes.php line 5121 [] []
 <<<<<<< HEAD
+<<<<<<< HEAD
 [2013-04-10 15:11:32] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 [2013-04-10 15:12:22] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 [2013-04-10 15:15:45] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/app/cache/prod/classes.php line 5121 [] []
@@ -383,6 +384,8 @@
 [2013-04-10 18:51:54] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 [2013-04-10 18:52:24] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /Applications/MAMP/htdocs/colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 =======
+=======
+>>>>>>> up
 [2013-04-09 21:04:06] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 [2013-04-09 21:04:52] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/EventListener/RouterListener.php line 92 [] []
 [2013-04-09 21:05:08] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/app/cache/prod/classes.php line 5121 [] []
@@ -425,4 +428,7 @@
 [2013-04-09 21:37:26] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/app/cache/prod/classes.php line 5121 [] []
 [2013-04-09 21:37:40] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/app/cache/prod/classes.php line 5121 [] []
 [2013-04-09 21:39:23] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /uploads/profilepictures/2.JPG" (uncaught exception) at /Applications/MAMP/htdocs/Colocall/app/cache/prod/classes.php line 5121 [] []
+<<<<<<< HEAD
 >>>>>>> cf todos
+=======
+>>>>>>> up
