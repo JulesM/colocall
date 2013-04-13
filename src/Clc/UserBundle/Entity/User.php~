@@ -71,7 +71,7 @@ class User extends BaseUser
     protected $comment;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\profilepicture", cascade={"all"})
      */
     protected $picture;
     

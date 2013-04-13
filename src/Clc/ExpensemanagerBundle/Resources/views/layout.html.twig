@@ -53,13 +53,9 @@
             </div>
 
             <div id="expense-body"> 
-                
-                {% for key,value in balances %}
-                
-                <p>{{ key }}'s balance is {{ value }} €</p>
-                
-                {% endfor %}
-                
+                <div id="bar-chart">
+                    {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : balances } %}
+                </div>
             </div>
           </div>
        
@@ -136,7 +132,7 @@
               {% for expense in forme_expense %}
 
                 <tr>
-                  <td>{{ expense.owner }}</td>   
+                  <td>{{ expense.owner.nickname }}</td>   
                   <td id="task">{{ expense.name }}</td>
                   <td>{{ expense.amount }}€</td>
                   <td><i class="icon-time"></i>{{ expense.date|date("d/m") }}</td>

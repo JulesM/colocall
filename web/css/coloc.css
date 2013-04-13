@@ -17,37 +17,69 @@
 #coloc-left-box{
     display: inline-block;
     width: 48%;
-    border: solid 1px;
-    vertical-align: top;
-    height: 100%;
+    height: 400px;
 }
 
 #coloc-right-box{
     display: inline-block;
     float:right;
     width: 48%;
-    vertical-align: top;
-    height: 100%;
+    height: 400px;
 }
 
 #coloc-right-top-box{
-    border: solid 1px;
-    
+    height: 58%;
+    vertical-align: top;
+    border: solid 1px transparent;
 }
 
 #coloc-right-bottom-box{
-    border: solid 1px;
-    margin-top: 10px;
-    
+    height: 38%;
+    margin-top: 4%;
 }
+
+.coloc-box{
+    position: relative;
+    background: #f9f9f9;
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.coloc-body{
+    padding: 10px;
+}
+
+.coloc-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgb(247,249,250);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #CFD5D9;
+    padding: 15px 0;
+ }
 
 /* --- Left box css --- */
 
 #user-box{
     margin-top: 10px;
-    margin-left: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 40px;
 }
 
-#user-presentation{
+#user-box img{
+    vertical-align: middle;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+#user-box #user-presentation{
     display: inline-block;
+    vertical-align: middle;
+    margin-left: 5%;
 }

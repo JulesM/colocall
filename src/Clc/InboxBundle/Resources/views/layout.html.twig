@@ -35,7 +35,7 @@
               
             <div class="chat-box">
                 <div id="author-box"> 
-                <p id="message-author"> {{ message.author }} </p> 
+                <p id="message-author"> {{ message.author.nickname }} </p> 
                 <p id="message-date"> {{ message.date|date("d/m") }}</p> 
                 </div>
                 <p> <i class="icon-quote-left"></i>{{ message.content }} </p>

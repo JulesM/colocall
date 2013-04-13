@@ -15,3 +15,7 @@ clc_expensemanager_remove:
 clc_expensemanager_applypayback:
     pattern: /payback
     defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:applyPayback }
+    
+clc_expensemanager_balancechart:
+    pattern: /chart
+    defaults: { _controllre: ClcDashboardBundle:Chart:displayBarChart }

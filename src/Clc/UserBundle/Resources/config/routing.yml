@@ -4,10 +4,10 @@ clc_user_profile:
     pattern:  /profile
     defaults: { _controller: ClcUserBundle:Profile:profile }    
     
-clc_user_editprofile:
+clc_user_edit_profile:
     pattern:  /profile/edit
     defaults: { _controller: ClcUserBundle:Profile:editProfile }
     
-clc_user_editprofilepicture:
+clc_user_edit_profilepicture:
     pattern:  /profile/edit/picture
     defaults: { _controller: ClcUserBundle:Profile:editProfilePicture }

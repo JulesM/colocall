@@ -34,15 +34,24 @@ class ExpensemanagerController extends Controller
         $expense->setAddedDate(new \DateTime('today'));
         $expense->setDate(new \DateTime('today'));
         
+        $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                    {
+                    return $ur->createQueryBuilder('u')
+                              ->where('u.coloc = :coloc')
+                              ->setParameter('coloc', $coloc)
+                              ->orderBy('u.nickname', 'ASC');
+                    };
+        
         $form = $this->createFormBuilder($expense)
                      ->add('owner', 'entity', array(
-                            'class'    =>'ClcUserBundle:User', 
-                            'property' =>'username',
+                            'class'         =>'ClcUserBundle:User', 
+                            'property'      =>'nickname',
+                            'query_builder' => $usersQuery,
                           ))
                      ->add('name', 'text')
                      ->add('amount', 'integer', array(
-                            'attr'     => array(
-                             'prepend_input' => '€'
+                            'attr' => array(
+                            'prepend_input' => '€'
                             )
                           ))
                      ->add('date', 'date', array(
@@ -50,17 +59,12 @@ class ExpensemanagerController extends Controller
                             'widget'   =>'choice',
                      ))
                      ->add('users', 'entity', array(
-                            'class'    => 'ClcUserBundle:User', 
-                            'query_builder' => function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
-                            {
-                                return $ur->createQueryBuilder('u')
-                                          ->where('u.coloc = :coloc')
-                                          ->setParameter('coloc', $coloc)
-                                          ->orderBy('u.username', 'ASC');
-                            },
-                            'multiple' => 'true',
-                            'expanded' => 'true',
-                            'required' => 'true',
+                            'class'         => 'ClcUserBundle:User',
+                            'property'      =>'nickname',
+                            'query_builder' => $usersQuery,
+                            'multiple'      => 'true',
+                            'expanded'      => 'true',
+                            'required'      => 'true',
                           ))
                      ->getForm();
         
