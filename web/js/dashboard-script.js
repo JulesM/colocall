@@ -35,7 +35,7 @@ $( "#accordion1" ).accordion({
 
 $(function(){
     $('.shopping-lower').slimScroll({
-        height: '170px',
+        height: '218px',
         alwaysVisible: false,
         disableFadeOut: false
     });

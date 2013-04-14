@@ -23,6 +23,10 @@
     background: url('../img/dashboard/expense.png') no-repeat scroll 0% 0% transparent;
 }
 
+#expense-body{
+    height: 290px;
+}
+
 #bar-chart{
     margin-left: 15px;
     margin-top: -80px;
@@ -32,6 +36,61 @@
     width: 689px;
     margin-left: auto;
     margin-right: auto; 
+}
+#expense-dashboard-container{
+    width: 689px;
+    height: 380px;
+    background: url('../img/dashboard/expense.png') no-repeat scroll 0% 0% transparent;
+}
+
+#new-expense-left{
+    float: left;
+    top: 0px;
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+}
+
+#new-expense-right{
+    float: right;
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+}
+
+#expense-header{
+    height: 90px;
+    padding-top: 20px;
+    background: transparent;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#expense-header h1{
+    font-family: sonora;
+    text-align: center;
+    color:black;
+    font-size: 35px;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15);
+}
+
+.expense-header-left{
+    text-align: right;;
+}
+
+.expense-header-right{
+    text-align: left;
+}
+
+#expense-body{
+    height: 290px;
+}
+
+#bar-chart{
+    margin-left: 15px;
+    margin-top: -80px;
 }
 
 .expense-list{

@@ -21,8 +21,8 @@ body{
 }
 
 #welcome-container{
-    width: 689px;
-    min-width: 689px;
+    width: 684px;
+    min-width: 684px;
     height: 60px;
     margin-left: auto;
     margin-right: auto;
@@ -84,37 +84,54 @@ body{
 #expense-dashboard-container{
     width: 689px;
     height: 380px;
-    background: url('../img/dashboard/expense.png') no-repeat scroll 0% 0% transparent;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background: url("../img/dashboard/small-dash-bckgd.png") repeat-x scroll 0% 0% rgb(240, 240, 240);
 }
 
 #expense-left{
     float: left;
     top: 0px;
-    width: 49%;
-    height: 100%;
+    width: 48%;
+    height: 300px;
     display: inline-block;
+    box-shadow:inset  0px 1px 2px rgba(0, 0, 0, 0.2);   
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #expense-right{
     float: right;
-    width: 49%;
-    height: 100%;
+    width: 48%;
+    height: 300px;
     display: inline-block;
+    box-shadow:inset  0px 1px 2px rgba(0, 0, 0, 0.2);   
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+   
 }
 
 #expense-header{
-    height: 90px;
-    padding-top: 20px;
+    height: 52px;
+    padding-top: 5px;
+    background: url("../img/dashboard/small-dash-bckgd.png") repeat-x scroll 0% 0% transparent;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #expense-header h1{
-    font-family: sonora;
-    text-align: center;
-    font-size: 35px;
+    font-family: 'Proxima-Bold';
+    color: white;
+    text-shadow: 0px 1px 0px black;
+    font-size: 25px;
     font-weight: normal;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15);
 }
 
 .expense-header-left{
@@ -123,15 +140,53 @@ body{
 
 .expense-header-right{
     text-align: left;
+    margin-bottom: 10px;
+}
+
+#expense-subheader{
+    height: 30px;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: -5px;
+}
+
+#expense-subheader h1{
+    font-family: Georgia;
+    color: rgb(236, 106, 66);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.expense-subheader-left{
+    text-align: right;;
+}
+
+.expense-subheader-right{
+    text-align: left;
 }
 
 #expense-body{
     height: 290px;
+    padding-top: 10px;
 }
+
+#expense-body table tr{
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+#mini-list-cost{     
+    border-top: medium none;
+    color:rgb(236, 106, 66);
+    font-weight: bold;
+}
+
 
 #bar-chart{
     margin-left: 15px;
-    margin-top: -80px;
+    margin-top: -60px;
 }
 
 .ui-accordion-content {
@@ -258,8 +313,8 @@ body{
 
 .small-dashboard-container{
     display: inline-block;
-    width: 319px;
-    height: 239px;
+    width: 338px;
+    height: 280px;
     margin-top: 20px;
     text-align: center;
     border-radius: 10px 10px 10px 10px ;
@@ -273,7 +328,6 @@ body{
 
 #small-dashboard-container-right{
         float: right;
-        margin-left: 5%;
 }
 
 .shopping-upper{
@@ -303,7 +357,7 @@ body{
 
 
 .shopping-lower{
-    height: 187px;
+    height: 220px;
     position: relative;
     overflow: scroll;
 }
@@ -323,6 +377,7 @@ body{
    font-size: 12px;
    font-style: italic;
    font-family: 'Georgia';
+   border-top: none;
 }
 
 #mini-shopping-list-item h3{
@@ -334,6 +389,7 @@ body{
    font-style: normal;
    color: black;
    font-family: 'Proxima-Regular';
+   border-top: none;
 }
 
 #todo-list-edit-comment-delete{
@@ -341,5 +397,6 @@ body{
     text-align: right;
     width: 80px;
     height: 100%;
+    border-top: none;
         
 }

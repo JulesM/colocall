@@ -51,7 +51,7 @@
                             </div>                        
                         </td>
                         <td id="task">{{ task.task }}</td>
-                        <td>{{ task.owner }}</td>
+                        <td id="task-owner">{{ task.owner }}</td>
                         <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
                         <td id="todo-list-edit-comment-delete">
                           <i class="icon-edit"></i>
@@ -79,7 +79,7 @@
       <div id="todos-toolbar-tab">
            <ul class="todo-filter-tab">
               <li class="add-todo"> 
-                  <button class="circle-button" href="#addtodomodal" data-toggle="modal"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
+                  <button class="circle-button" href="#addtodomodal" data-toggle="modal"><i class="icon-plus icon-muted"></i></button>
               </li>
               <li class="status-filter">
                   <div class="btn-group">
@@ -87,7 +87,7 @@
                   <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Pending</a>
                   </div>
               </li>
-              <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
+              <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white"></i></button></li>
           </ul>
                       
       </div>

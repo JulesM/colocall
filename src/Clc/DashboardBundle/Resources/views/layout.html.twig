@@ -28,11 +28,13 @@
       
   <div id="dashboard-content">
       <div id="overview-container">
-          <div id="expense-dashboard-container" class="dashboard-container">
-                      <div id="expense-dashboard-container" class="dashboard-container">
+          <div id="expense-dashboard-container" class="dashboard-container">   
+            <div id="expense-header">
+                <h1 class="expense-header-right">Expense Manager</h1>
+            </div>
           <div id="expense-left">
-              <div id="expense-header">
-                  <h1 class="expense-header-left">Balance</h1>
+              <div id="expense-subheader">
+                  <h1 class="expense-subheader-left">Balance</h1>
               </div>
 
               <div id="expense-body"> 
@@ -43,24 +45,25 @@
           </div>
        
           <div id="expense-right">
-            <div id="expense-header">
-                <h1 class="expense-header-right">Latest Expenses</h1>
+            <div id="expense-subheader">
+                <h1 class="expense-subheader-right">Latest Expenses</h1>
             </div>
 
             <div id="expense-body"> 
                 
           <div>
-            <table>
+            <table id="mini-shopping-list-table" class="table">
               <tbody>
 
                 {% for expense in latest_expenses %}
 
                 <tr>
-                  <td id="task">{{ expense.name }}</td>
-                  <td>{{ expense.amount }}€</td>
-                  <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                  <td id="mini-shopping-list-item">
+                      <h3>{{ expense.name }}</h3>
+                    <i class="icon-time"></i>{{ expense.date|date("d/m") }}
+                  </td>
+                  <td id="mini-list-cost">{{ expense.amount }}€</td>
                   <td id="todo-list-edit-comment-delete">
-                    <i class="icon-eye-open"></i>
                     <i class="icon-edit"></i>
                     <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
                       <i class="icon-trash"></i>
@@ -78,13 +81,12 @@
             </div>
           </div>
             
-        </div>
           </div>
 
 
           <div id="small-dashboard-container-left" class="small-dashboard-container" >
               <div class="shopping-upper">
-                  <p>To-dos  <i class="icon-chevron-right"></i></p>
+                  <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
               </div>
               <div class="shopping-lower">
                   <table id="mini-shopping-list-table" class="table">
