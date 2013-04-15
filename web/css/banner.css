@@ -14,7 +14,7 @@ root {
 
 #banner{
     height: 40px;
-    width: 800px;
+    width: 850px;
     margin-right: auto;
     margin-left: auto; 
 }
@@ -53,7 +53,7 @@ root {
 
 #banner2{
     display: inline-block;
-    width: 450px;
+    width: 500px;
     height: 100%;
     vertical-align: top;
     float:right;
@@ -62,6 +62,10 @@ root {
 
 #logo{
     height: 38px;
+}
+
+#banner2 #login-box{
+    margin-top: 5px;
 }
 
 #banner2 #remember_me{
@@ -88,14 +92,17 @@ root {
     margin-left: 5px;
 }
 
-#name_button{
+.banner-button{
     display: inline-block;
     float: right;
-    margin-right: 10px;
-    padding-top: 5px;
-    color: black;
     height: 100%;
-    max-width: 204px;
+    vertical-align: middle;
+}
+
+#name_button{
+    margin-right: 10px;
+    color: black;
+    max-width: 290px;
 }
 
 #name_button a{
@@ -104,40 +111,49 @@ root {
     font-size: 20px;
 }
 
-#name_button img{
+#name_button a img{
+    display: inline-block;
+    vertical-align: top;
     height: 26px;
     width: 26px;
     margin-right: 10px;
-    margin-top: -2px;
+    margin-top: auto;;
     box-shadow: 0 1px 2px rgba(0,0,0,0.5);
     border: 1px solid rgba(0,0,0,0.5);
 }
 
-#home_button{
+#name_button a p{
     display: inline-block;
-    float: right;
-    margin-right: 10px;
-    padding-top: 5px;
+    margin-top: 3px;
+}
+
+#home_button{
+    margin-right: 20px;
     color: black;
     height: 100%;
 }
 
 #home_button a{
+    height: 100%;
+    margin-top: 3px;
     text-decoration: none;
     color: black;
     font-size: 20px;
 }
 
 #settings_button{
-    display: inline-block;
-    float: right;
     margin-right: 70px;
-    padding-top: 10px;
     font-size: 20px;
+    padding-top: 8px;
+}
+
+#settings_button .dropdown{
     height: 100%;
 }
 
 #settings_dropdown_button{
+    vertical-align: bottom;
+    height: 100%;
     text-decoration: none;
     color: black;
 }
