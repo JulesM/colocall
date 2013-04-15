@@ -51,7 +51,7 @@
                             </div>                        
                         </td>
                         <td id="task">{{ task.task }}</td>
-                        <td id="task-owner">{{ task.owner }}</td>
+                        <td id="task-owner">{{ task.owner.nickname }}</td>
                         <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
                         <td id="todo-list-edit-comment-delete">
                           <i class="icon-edit"></i>
@@ -118,6 +118,9 @@
               </ul>
           </section>
       </div>
+          
+      {% include ":default:floatingToolbar.html.twig" %}
+          
   </div>
   
 {% endblock %}

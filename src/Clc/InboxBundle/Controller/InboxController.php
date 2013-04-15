@@ -11,6 +11,7 @@ class InboxController extends Controller
     {
         return $this->render('ClcInboxBundle::layout.html.twig', array(
             'message_list' => $this->getMessagesAction(),
+            'pictures'    => $this->getProfilePicturesAction()
         ));
     }
     
@@ -60,5 +61,19 @@ class InboxController extends Controller
         return $this->render('ClcInboxBundle:Default:addmessage.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+    
+    public function getProfilePicturesAction()
+    {
+        $users = $this->getUser()->getColoc()->getUsers();
+        $pictures = array();
+        
+        foreach ($users as $user) {
+            $a = $user->getId();
+            $b = $user->getPicture()->getPath();
+            $pictures[$a] = $b;
+        }
+            
+        return $pictures;
     }
 }

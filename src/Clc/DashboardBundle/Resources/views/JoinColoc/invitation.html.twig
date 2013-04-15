@@ -19,7 +19,9 @@
             <a class="btn btn-success" href="{{ path('clc_coloc_accept_invitation', {'id' : invitation.id}) }}">
                 Accept
             </a>
-            <button class="btn btn-warning">Refuse</button>
+            <button class="btn btn-warning" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">
+                Refuse
+            </button>
         
         {% endfor %}
         

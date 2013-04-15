@@ -15,7 +15,13 @@
          </div>                        
      </td>
      <td id="task">{{ task.task }}</td>
+     
+     {% if task.owner != null %}
      <td>{{ task.owner.nickname }}</td>
+     {% else %}
+     <td></td>
+     {% endif %}
+     
      <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
      <td id="todo-list-edit-comment-delete">
        <a href="#edittodomodal{{task.id}}" data-toggle="modal">

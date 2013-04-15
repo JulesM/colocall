@@ -6,14 +6,103 @@
         Style of the inbox bundle html pages
 */
 
+#inbox-content h3{
+    height: 30px;
+    text-align: center;
+    font-family: 'Oswald-strong';
+    text-shadow: 1px 1px;
+}
+
+/* --- Chat --- */
+
 #chat-content{
     display: inline-block;
     width: 55%;
     margin-left: 3%;
-    min-height: 500px;
+    margin-top: 10px;
+    height: 500px;
     background-color: rgb(239, 241, 243);
     box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 5px;
 }
+
+#inbox-messages-box{
+    height: 370px;
+}
+
+#chat-box{
+    margin-bottom: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#author-box{
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    height: 30px;
+    background: transparent;
+}
+
+#author-box img{
+    height: 20px;
+    width: 20px;
+    margin-top: -5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+#author-box #message-author{
+    display: inline-block;
+    height: 20px;
+    width: 70%;
+    margin-top: 5px;
+    font-family: 'Oswald-Regular';
+}
+
+#message-content-box{
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+    background: rgb(247,248,248);
+    border:  0.5px solid rgb(214, 216, 218);
+    border-radius: 5px 5px 5px 5px;
+}
+
+#message-content-box #message-text{
+    margin-left: 10px;
+    color: rgb(109, 109, 109);
+}
+
+#message-content-box #message-date{
+    float: right;
+    margin-right: 5px;
+    color: rgb(200, 200, 200);
+    font-size: 11px;
+}
+
+#add-message-box{
+    height: 100px;
+    vertical-align: bottom;
+    /*background: rgb(247,249,250);*/
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #CFD5D9;
+    padding-top: 7px;
+}
+
+#add-message-content{
+    display: inline-block;
+    width: 260px;
+    margin-left: 150px;
+}
+
+#add-message-button{
+    display: inline-block;
+}
+
+/* --- Notifications --- */
 
 #notifications-content{
     display: inline-block;
@@ -21,54 +110,7 @@
     vertical-align: top;
     float: right;
     margin-right: 3%;
-    min-height: 500px;
+    margin-top: 10px;
+    height: 500px;
     background: url('../img/lightlinenbckgd.png') no-repeat scroll 0% 0% transparent;
-}
-
-#inbox-messages-box{
-}
-
-#add-message-box{
-    vertical-align: bottom;
-    border-top: solid 1px;
-}
-
-.chat-box{
-    background: rgb(247,248,248);
-    border:  0.5px solid rgb(214, 216, 218);
-    margin-bottom: 10px;
-    border-radius: 0px 0px 5px 5px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.chat-box i{
-    color: rgb(216, 221, 224);
-    margin-right: 10px;
-}
-.chat-box p{
-    margin-left: 10px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: rgb(109, 109, 109);
-}
-#author-box{
-    background: rgb(255,255,255);
-    border-bottom:  0.5px solid rgb(214, 216, 218);   
-    margin-left: 0px;
-    width: 100%;
-    display: inline-block;
-}
-
-#message-author{
-    color: rgb(238,106,66);
-    width: 70%;
-    display: inline-block;
-}
-
-#message-date{
-    text-align: right;
-    width: 24%;
-    display: inline-block;
-    color: rgb(200, 200, 200);
 }

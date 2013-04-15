@@ -101,4 +101,45 @@ class InvitationController extends Controller
             throw new AccessDeniedException('You do not have access to this section.');
         } 
     }
+    
+    public function removeInvitationAction($id)
+    {
+        $d = $this->getDoctrine();
+        
+        $invitation = $d->getRepository('ClcColocBundle:invitation')
+                        ->find($id);
+        
+        $repository = $d->getRepository('ClcUserBundle:User');
+        $user = $repository->findOneBy(array('email' => $invitation->getEmail()));
+        
+        $usersArray =$this->getUser()->getColoc()->getUsers()->toArray();
+        
+        if (in_array($this->getUser(), $usersArray)) {
+        
+            $em = $d->getEntityManager();
+            $em->remove($invitation);
+            $em->flush();
+
+            $route = 'clc_coloc_homepage';
+            $url = $this->container->get('router')->generate($route);
+            $response = new RedirectResponse($url);
+            return $response;
+        }
+        
+        elseif ($user == $this->getUser()){
+            
+            $em = $d->getEntityManager();
+            $em->remove($invitation);
+            $em->flush();
+
+            $route = 'clc_dashboard_homepage';
+            $url = $this->container->get('router')->generate($route);
+            $response = new RedirectResponse($url);
+            return $response;
+        }
+        
+        else {
+            throw new AccessDeniedException('You do not have access to this section.');
+        }
+    }
 }

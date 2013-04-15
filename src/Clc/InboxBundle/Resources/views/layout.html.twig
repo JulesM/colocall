@@ -33,13 +33,18 @@
 
               {% for message in message_list %}
               
-            <div class="chat-box">
-                <div id="author-box"> 
-                <p id="message-author"> {{ message.author.nickname }} </p> 
-                <p id="message-date"> {{ message.date|date("d/m") }}</p> 
+                <div id="chat-box">
+                    <div id="author-box">
+                        <img src="{{ asset(message.author.picture.path) }}">
+                        <p id="message-author"> {{ message.author.nickname }} </p> 
+                    </div>
+                    <div id="message-content-box">
+                        <div id="message-text">{{ message.content }} 
+                            <p id="message-date"> {{ message.date|date("d/m") }}</p>
+                        </div>
+                    </div>
                 </div>
-                <p> <i class="icon-quote-left"></i>{{ message.content }} </p>
-            </div>
+              
               {% endfor %}
 
           </div>

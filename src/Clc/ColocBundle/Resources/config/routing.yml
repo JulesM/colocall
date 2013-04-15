@@ -18,4 +18,8 @@ clc_coloc_new_invitation:
     
 clc_coloc_accept_invitation:
     pattern: /accept/{id}
-    defaults: { _controller: ClcColocBundle:Invitation:acceptInvitation } 
+    defaults: { _controller: ClcColocBundle:Invitation:acceptInvitation }
+    
+clc_coloc_remove_invitation:
+    pattern: /remove/{id}
+    defaults: { _controller: ClcColocBundle:Invitation:removeInvitation }

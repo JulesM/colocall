@@ -25,18 +25,20 @@
         
         <div class="coloc-body">
             
-            <p><u><b>Members</b></u></p>
+            <h3>Members of this flatshare</h3>
             
-            {% for user in users %}
+            <div id="members-box">
+                {% for user in users %}
 
-              <div id="user-box">
-                  <img src="{{ asset(user.picture.path) }}" alt="">
-                  <div id="user-presentation">
-                      {{ user.firstname }} {{ user.lastname }} is <b>{{ user.nickname }}</b>
+                  <div id="user-box">
+                      <img src="{{ asset(user.picture.path) }}" alt="">
+                      <div id="user-presentation">
+                          {{ user.firstname }} {{ user.lastname }} is <b>{{ user.nickname }}</b>
+                      </div>
                   </div>
-              </div>
 
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
                 
         <div class="coloc-footer">    
@@ -49,7 +51,7 @@
         <div id="coloc-right-top-box" class="coloc-box">
             
             <div class="coloc-body">
-                <p><u><b>Flatshare address</b></u></p>
+                <h3>Flatshare address</h3>
 
                 <p>{{ app.user.coloc.address1 }}</p>
                 <p>{{ app.user.coloc.address2 }}</p>
@@ -59,7 +61,7 @@
             </div>
             
             <div class="coloc-footer">
-                <button class="btn">Edit Flatshare Information</button>
+                <a class="btn">Edit Flatshare Information</a>
             </div>
             
         </div>
@@ -67,22 +69,23 @@
             
             <div class="coloc-body">
                 {% if invitations|length == 0 %}
-                    <p><u><b>There is no pending invitation</b></u></p>
+                    <h4>There is no pending invitation</h4>
                 {%else %}
-                    <p><u><b>There are 
+                    <h4>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
                              {{ invitations|length }} 
-                             pending invitations to the following emails:
-                    </b></u></p>
+                             pending invitations for :
+                    </h4>
 
                     {% for invitation in invitations %}
                         <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
+                        <a id="cross-button" type="button" class="close" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">×</a>
                     {% endfor %}
                 {% endif %}
             </div>
              
             <div class="coloc-footer">        
                 {% include "ClcColocBundle:Invitation:sendInvitationModal.html.twig" %}
-                <button class="btn" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</button>
+                <a class="btn" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</a>
             </div>
                 
         </div>

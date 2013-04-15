@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 $(function(){
     $('#inbox-messages-box').slimScroll({
-        height: '450px',
+        height: '370px',
         start: 'bottom'
     });
 });
