@@ -91,6 +91,11 @@ class User extends BaseUser
     protected $ForMeExpenses;
     
     /**
+     * @ORM\ManyToMany(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="users", cascade={"persist"})
+     */
+    protected $notifications;
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -434,5 +439,38 @@ class User extends BaseUser
         $this->setUsernameCanonical($emailCanonical);
 
         return parent::setEmailCanonical($emailCanonical);
+    }
+
+    /**
+     * Add notifications
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notifications
+     * @return User
+     */
+    public function addNotification(\Clc\InboxBundle\Entity\notification $notifications)
+    {
+        $this->notifications[] = $notifications;
+    
+        return $this;
+    }
+
+    /**
+     * Remove notifications
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notifications
+     */
+    public function removeNotification(\Clc\InboxBundle\Entity\notification $notifications)
+    {
+        $this->notifications->removeElement($notifications);
+    }
+
+    /**
+     * Get notifications
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getNotifications()
+    {
+        return $this->notifications;
     }
 }

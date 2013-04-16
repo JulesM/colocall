@@ -30,8 +30,6 @@ root {
     border-style: solid;
     border-color: #d5d5d5 #d2d2d2 #cdcdcd;
     zoom: 1;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     background: #fafafa;
     background-image: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
     background-image: -moz-linear-gradient(top, #fcfcfc, #f0f0f0);

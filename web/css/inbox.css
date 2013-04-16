@@ -28,6 +28,7 @@
 
 #inbox-messages-box{
     height: 370px;
+    border-top: 1px solid #CFD5D9;
 }
 
 #chat-box{
@@ -65,14 +66,12 @@
     display: inline-block;
     vertical-align: top;
     width: 75%;
-    background: rgb(247,248,248);
     border:  0.5px solid rgb(214, 216, 218);
     border-radius: 5px 5px 5px 5px;
 }
 
 #message-content-box #message-text{
     margin-left: 10px;
-    color: rgb(109, 109, 109);
 }
 
 #message-content-box #message-date{
@@ -113,4 +112,6 @@
     margin-top: 10px;
     height: 500px;
     background: url('../img/lightlinenbckgd.png') no-repeat scroll 0% 0% transparent;
+    box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 5px;
 }

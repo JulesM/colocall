@@ -100,4 +100,50 @@ class message
     {
         return $this->content;
     }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return message
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set coloc
+     *
+     * @param \Clc\ColocBundle\Entity\coloc $coloc
+     * @return message
+     */
+    public function setColoc(\Clc\ColocBundle\Entity\coloc $coloc = null)
+    {
+        $this->coloc = $coloc;
+    
+        return $this;
+    }
+
+    /**
+     * Get coloc
+     *
+     * @return \Clc\ColocBundle\Entity\coloc 
+     */
+    public function getColoc()
+    {
+        return $this->coloc;
+    }
 }

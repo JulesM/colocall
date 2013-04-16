@@ -1,0 +1,16 @@
+{# src/Clc/InboxBundle/Resources/views/Notifications/expenseNotification.html.twig  #}
+
+<a href="{{ path('clc_expensemanager_homepage') }}">
+    <div class="notification-box">
+        <div class="notification-left">
+            <i class="icon-bookmark"></i>
+        </div>
+        <div class="notification-center">
+            <b>{{ notification.author.nickname }}</b> added an expense you are tagged in :<br>
+            '{{ notification.expense.name }}' - {{ notification.expense.amount }}€
+        </div>
+        <div class="notification-right">
+            {{ notification.date|date("d/m") }}
+        </div>
+    </div>
+</a>

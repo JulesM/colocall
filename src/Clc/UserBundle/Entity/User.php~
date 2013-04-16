@@ -91,6 +91,11 @@ class User extends BaseUser
     protected $ForMeExpenses;
     
     /**
+     * @ORM\ManyToMany(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="users", cascade={"persist"})
+     */
+    protected $notifications;
+    
+    /**
      * Get id
      *
      * @return integer 

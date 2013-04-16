@@ -1,0 +1,58 @@
+/* 
+    Document   : notification
+    Created on : 16 avr. 2013, 11:54:50
+    Author     : julesmarcilhacy
+    Description:
+        Notification design
+*/
+
+.notification-box{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d5d5d5 #d2d2d2 #cdcdcd;
+    border-radius: 5px;
+    zoom: 1;
+    background: #fafafa;
+    background-image: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
+    background-image: -moz-linear-gradient(top, #fcfcfc, #f0f0f0);
+    background-image: -o-linear-gradient(top, #fcfcfc, #f0f0f0);
+    background-image: linear-gradient(to bottom, #fcfcfc, #f0f0f0);
+    -webkit-box-shadow: inset 0 0 0 1px #fafafa;
+    box-shadow: inset 0 0 0 1px #fafafa;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    font-family: 'Oswald-light';
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.notification-box:hover{
+    color: rgba(0, 0, 0, 10);
+}
+
+.notification-left{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 10%;
+}
+
+.notification-center{
+    display: inline-block;
+    vertical-align: middle;
+    width: 75%;
+    height: 100%;
+    border-left: solid 2px #d5d5d5;
+    border-right: solid 2px #d5d5d5;
+    padding: 2px 2px 2px 5px;
+}
+
+.notification-right{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 10%;
+}
+

@@ -9,6 +9,7 @@
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('css/inbox.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('css/notification.css') }}" type="text/css" />
 {% endblock %}
   
 {% block javascripts %}
@@ -38,7 +39,14 @@
                         <img src="{{ asset(message.author.picture.path) }}">
                         <p id="message-author"> {{ message.author.nickname }} </p> 
                     </div>
-                    <div id="message-content-box">
+                        
+                    {% if message.author == app.user %}<div id="message-content-box" 
+                                                             style="background: rgb(247,248,248);
+                                                                    color: rgb(109, 109, 109);">
+                    {% else %}<div id="message-content-box" 
+                                   style="background: rgb(247,248,220);
+                                          color: rgb(109, 109, 150);">
+                    {% endif %}
                         <div id="message-text">{{ message.content }} 
                             <p id="message-date"> {{ message.date|date("d/m") }}</p>
                         </div>
@@ -60,6 +68,22 @@
           <h3>Your notifications</h3>
           
           <div id="notification-messages-box">
+              
+              {% for notification in notifications %}
+              
+                {% if notification.category == 1 %}
+                    {% include "ClcInboxBundle:Notifications:expenseNotification.html.twig" %}
+                {% elseif notification.category == 2 %}
+                    {% include "ClcInboxBundle:Notifications:paybackNotification.html.twig" %}
+                {% elseif notification.category == 3 %}
+                    {% include "ClcInboxBundle:Notifications:taskNotification.html.twig" %}
+                {% elseif notification.category == 4 %}
+                    {% include "ClcInboxBundle:Notifications:itemNotification.html.twig" %}
+                {% else %}
+                {% endif %}
+              
+              {% endfor %}
+              
           </div>
       </div>    
   </div>

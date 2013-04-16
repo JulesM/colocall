@@ -11,7 +11,8 @@ class InboxController extends Controller
     {
         return $this->render('ClcInboxBundle::layout.html.twig', array(
             'message_list' => $this->getMessagesAction(),
-            'pictures'    => $this->getProfilePicturesAction()
+            'pictures'     => $this->getProfilePicturesAction(),
+            'notifications'=> $this->getUser()->getNotifications()
         ));
     }
     

@@ -1,0 +1,16 @@
+{# src/Clc/InboxBundle/Resources/views/Notifications/itemNotification.html.twig  #}
+
+<a href="{{ path('clc_shoppinglist_homepage', { 'state': 0} ) }}">
+    <div class="notification-box">
+        <div class="notification-left">
+            <i class="icon-shopping-cart"></i>
+        </div>
+        <div class="notification-center">
+            <b>{{ notification.author.nickname }}</b> added an item to the Shopping list :<br>
+            '{{ notification.item.name }}'
+        </div>
+        <div class="notification-right">
+            {{ notification.date|date("d/m") }}
+        </div>
+    </div>
+</a>
