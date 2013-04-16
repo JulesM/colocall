@@ -1,0 +1,32 @@
+{# src/Clc/ColocBundle/Resources/views/Statistics/layout.html.twig  #}
+
+{% extends '::base.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - Statistics
+{% endblock %}
+  
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/stats.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+  
+  <div id="stat-content">
+      
+      <div class="stat-box">
+          <p>There are no statistics available for now, 
+             but please let us now what kind of stats 
+             you would like to see in this section</p>
+      </div>
+      
+      <div class="stat-box">
+          
+          {% render "ClcColocBundle:Statistics:feedback" %}
+          
+      </div>
+      
+  </div>
+  
+{% endblock %}

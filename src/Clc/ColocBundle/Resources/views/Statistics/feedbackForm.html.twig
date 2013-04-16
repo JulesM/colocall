@@ -1,0 +1,16 @@
+{# src/Clc/ColocBundle/Resources/views/Statistics/feedbackForm.html.twig  #}
+
+<form action="{{ path('clc_coloc_statistics_feedback') }}" method="post" {{ form_enctype(form) }}>
+
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.text, ' Suggestion ') }}
+        {{ form_errors(form.text) }}
+        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%;' } }) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-danger" type="submit" value="Send Suggestion"/>
+</form>

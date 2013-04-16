@@ -27,3 +27,11 @@ clc_coloc_accept_invitation:
 clc_coloc_remove_invitation:
     pattern: /remove/{id}
     defaults: { _controller: ClcColocBundle:Invitation:removeInvitation }
+    
+clc_coloc_statistics:
+    pattern: /statistics
+    defaults: { _controller: ClcColocBundle:Statistics:index }
+  
+clc_coloc_statistics_feedback:
+    pattern: /statistics/feedback
+    defaults: { _controller: ClcColocBundle:Statistics:feedback }
