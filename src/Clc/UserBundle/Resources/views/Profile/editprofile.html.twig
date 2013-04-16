@@ -16,10 +16,17 @@
   {% endblock %}
       
     {% block nickname %}
+        
+        <h3> Edit your profile </h3>
     
-        {{ form_label(form.nickname) }}
-        {{ form_errors(form.nickname) }}
-        {{ form_widget(form.nickname) }}
+        <div class="details">
+            <i class="icon-star-empty"></i> 
+            <p id="static-details">Username</p>
+            <p>{{ form_errors(form.nickname) }}
+               {{ form_widget(form.nickname) }}
+            </p> 
+        </div>
+        
     
     {% endblock %}
         
@@ -50,7 +57,14 @@
     {% block birthday %}  
 
         {{ form_errors(form.birthday) }}
-        {{ form_widget(form.birthday) }}
+        {{ form_widget(form.birthday, { 'attr': 
+                                                { 'style' : 'display: inline-block;
+                                                             width: 60%;
+                                                             text-align: left;
+                                                             margin-top: -25px;
+                                                             margin-left: -10px;
+                                      ' } }
+                      ) }}
 
     {% endblock %}
     
@@ -75,6 +89,6 @@
     {% endblock %}
 
 {% block footer %}
-    <input class="btn btn-success" type="submit"/>
+    <input class="btn btn-success" type="submit" value="Save Changes"/>
 </form>
 {% endblock %}

@@ -28,7 +28,12 @@ class ProfileController extends Controller
                      ->add('firstname', 'text')
                      ->add('lastname', 'text')
                      ->add('nationality','text')
-                     ->add('birthday','birthday')
+                     ->add('birthday', 'birthday', array(
+                                'format' => 'dd - MMMM - yyyy',
+                                'widget' => 'choice',
+                                'pattern' => "{{ day }}/{{ month }}/{{ year }}",
+                                'years' => range(date('Y'), date('Y')-70)
+                            ))  
                      ->add('phone','integer')
                      ->add('comment','textarea')
                      ->getForm();
