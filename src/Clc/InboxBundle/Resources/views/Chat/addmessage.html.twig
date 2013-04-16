@@ -6,7 +6,7 @@
 
     <div id="add-message-content">
         {{ form_errors(form.content) }}
-        {{ form_widget(form.content) }}
+        {{ form_widget(form.content, { 'attr': { 'style' : 'width: 90%; height: 80%;' } }) }}
     </div>
 
     {{ form_rest(form) }}

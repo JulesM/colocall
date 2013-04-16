@@ -59,7 +59,7 @@ class InboxController extends Controller
             }
         }
         
-        return $this->render('ClcInboxBundle:Default:addmessage.html.twig', array(
+        return $this->render('ClcInboxBundle:Chat:addmessage.html.twig', array(
             'form' => $form->createView(),
         ));
     }
