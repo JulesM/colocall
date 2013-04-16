@@ -2,28 +2,26 @@
 
 {% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
 
-{% block content %}
+{% block headerBlock %}
+    <h3> Hello {{ app.user.nickname }}, you have {{ invitations|length }} invitation(s) to join a flatshare :</h3>
+{% endblock %}
 
-    <div class="span8 offset2" id="header-box">
-    </div>
-
-    <div class="span8 offset2" id="invitation-box">
-        
-        <h3> Hello {{ app.user.nickname }}, you have {{ invitations|length }} invitation(s) to join a flatshare</h3>
-        
-        {% for invitation in invitations %}
-                  
+{% block secondBlock %}
+    
+    {% for invitation in invitations %}
+        <div class="span8 offset2" id="invitation-box">         
             <div>{{invitation.author.nickname}} ({{invitation.author.firstname}} {{invitation.author.lastname}})
-                 invites you to join <b>{{invitation.coloc.name}}</b>
+                 invites you to join <b>{{invitation.coloc.name}}</b> - {{invitation.date|date("d/m")}}
             </div>
-            <a class="btn btn-success" href="{{ path('clc_coloc_accept_invitation', {'id' : invitation.id}) }}">
-                Accept
-            </a>
-            <button class="btn btn-warning" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">
-                Refuse
-            </button>
+            <div id="invitation-buttons">
+                <a class="btn btn-success" href="{{ path('clc_coloc_accept_invitation', {'id' : invitation.id}) }}">
+                    Accept
+                </a>
+                <a class="btn btn-warning" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">
+                    Refuse
+                </a>
+            </div>
+        </div>
+    {% endfor %}
         
-        {% endfor %}
-        
-    </div>
 {% endblock %}

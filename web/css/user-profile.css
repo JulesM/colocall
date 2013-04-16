@@ -103,3 +103,13 @@
     font-family: 'oswald-stencil';
     letter-spacing: 0.08em;
 }
+
+#profile-content h1{
+    width: 100%;
+    border-bottom: 1px solid #c4c6ca;
+    color: grey;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    font-family: 'oswald-regular';
+    letter-spacing: 0.08em;
+}

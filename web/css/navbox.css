@@ -257,3 +257,12 @@ table {
     font-family: 'Oswald-regular';
     color: red;
 }
+
+/* --- empty Navbox --- */
+
+#empty-navbox{
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

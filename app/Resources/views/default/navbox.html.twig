@@ -2,10 +2,10 @@
 
 {% if app.user.coloc == null %}
 
-    <p>You need to 
+    <div id="empty-navbox">You need to 
        <a href="{{ path('clc_dashboard_homepage') }}">join a flatshare</a>
        to enjoy all functionalities of Coloc'all
-    </p>
+    </div>
 
 {% else %}
 

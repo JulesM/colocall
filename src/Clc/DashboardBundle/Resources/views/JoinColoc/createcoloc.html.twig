@@ -4,14 +4,17 @@
 
 {% block content %}
 
-    <div class="span8 offset2" id="header-box">
-        <p>Hello {{ app.user.nickname }} you do not have any invitation to join a flatshare right now</p>
-        <p>Wait for an invitation or create a flatshare right now !</p>
-    </div>
+    {% block headerBlock %}
+        <p>Hello <b>{{ app.user.nickname }}</b> you do not have any invitation to join a flatshare right now</p>
+        <p>Wait for an <b>invitation</b> or <b>create</b> a flatshare right now !</p>
+    {% endblock %}
+    
+    {% block secondBlock %}
+        <div class="span8 offset2 join-box" id="form-box">
 
-    <div class="span8 offset2" id="form-box">
+            {% render 'ClcColocBundle:Coloc:new' %}
+
+        </div>
+    {% endblock %}
         
-        {% render 'ClcColocBundle:Coloc:new' %}
-        
-    </div>
 {% endblock %}

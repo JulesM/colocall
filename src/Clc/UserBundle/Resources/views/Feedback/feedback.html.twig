@@ -2,6 +2,12 @@
 
 <div id="feedback-box">
     
-    {% render "ClcUserBundle:User:feedback" %}
+    {% if app.user.coloc == null %}
+    
+    {% else %}
+    
+        {% render "ClcUserBundle:User:feedback" %}
+    
+    {% endif %}
     
 </div>

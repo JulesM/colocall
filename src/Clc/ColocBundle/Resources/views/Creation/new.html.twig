@@ -5,42 +5,42 @@
     {{ form_errors(form) }}
 
     <div>
-        {{ form_label(form.name) }}
-        {{ form_errors(form.name) }}
-        {{ form_widget(form.name) }}
+        <div class="coloc-form-label">{{ form_label(form.name) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.name) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.name) }}</div>
     </div>
     
     <div>
-        {{ form_label(form.address1) }}
-        {{ form_errors(form.address1) }}
-        {{ form_widget(form.address1) }}
+        <div class="coloc-form-label">{{ form_label(form.address1) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.address1) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.address1) }}</div>
     </div>
     
     <div>
-        {{ form_label(form.address2) }}
-        {{ form_errors(form.address2) }}
-        {{ form_widget(form.address2) }}
+        <div class="coloc-form-label">{{ form_label(form.address2) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.address2) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.address2) }}</div>
     </div>
     
     <div>
-        {{ form_label(form.zipcode) }}
-        {{ form_errors(form.zipcode) }}
-        {{ form_widget(form.zipcode) }}
+        <div class="coloc-form-label">{{ form_label(form.zipcode) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.zipcode) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.zipcode) }}</div>
     </div>
     
     <div>
-        {{ form_label(form.city) }}
-        {{ form_errors(form.city) }}
-        {{ form_widget(form.city) }}
+        <div class="coloc-form-label">{{ form_label(form.city) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.city) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.city) }}</div>
     </div>
     
     <div>
-        {{ form_label(form.country) }}
-        {{ form_errors(form.country) }}
-        {{ form_widget(form.country) }}
+        <div class="coloc-form-label">{{ form_label(form.country) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.country) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.country) }}</div>
     </div>
 
     {{ form_rest(form) }}
 
-    <input class="btn btn-success" type="submit"/>
+    <input class="btn btn-success" id="create-button" type="submit" value="Create Flatshare"/>
 </form>

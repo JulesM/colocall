@@ -7,6 +7,17 @@
 {% endblock %}   
     
 {% block mainbox %}
-    {% block content %} 
-    {% endblock %}
-{% endblock mainbox %}
+    
+    <div id="join-coloc-content">
+    
+        <div class="span8 offset2 join-box" id="header-box">
+            {% block headerBlock %} 
+            {% endblock %}
+        </div>
+
+        {% block secondBlock %}
+        {% endblock %}
+    
+    </div>    
+        
+{% endblock %}
