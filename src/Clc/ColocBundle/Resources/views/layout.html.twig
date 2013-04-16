@@ -18,8 +18,9 @@
 {% block body %}
   
   <div id="coloc-content">
-      
-    <h1> {{ app.user.coloc.name }} </h1> 
+   
+    <h1> {{ app.user.coloc.name }} </h1>
+
       
     <div id="coloc-left-box" class="coloc-box">
         
@@ -42,7 +43,7 @@
         </div>
                 
         <div class="coloc-footer">    
-            <a class="btn" href="{{ path('clc_coloc_leave_flatshare') }}"> Leave this Flatshare </a>
+            <a class="btn" href="#"> Leave this Flatshare </a>
         </div>
             
     </div>
@@ -52,16 +53,18 @@
             
             <div class="coloc-body">
                 <h3>Flatshare address</h3>
-
+                
+                
                 <p>{{ app.user.coloc.address1 }}</p>
                 <p>{{ app.user.coloc.address2 }}</p>
-                <p>{{ app.user.coloc.zipcode }}
-                   {{ app.user.coloc.city }}</p>
+                <p>{{ app.user.coloc.zipcode }}{{ app.user.coloc.city }}</p>
                 <p>{{ app.user.coloc.country }}</p>
+                
             </div>
             
             <div class="coloc-footer">
-                <a class="btn">Edit Flatshare Information</a>
+                {% include "ClcColocBundle:Creation:editColocModal.html.twig" %}
+                <a class="btn" href="#editColocModal" data-toggle="modal">Edit Flatshare Information</a>
             </div>
             
         </div>

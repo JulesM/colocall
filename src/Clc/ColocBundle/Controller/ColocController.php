@@ -38,13 +38,47 @@ class ColocController extends Controller
                 $em->persist($coloc);
                 $em->flush();
                 
-                $url = $this->get('router')->generate('clc_dashboard_homepage');
+                $url = $this->get('router')->generate('clc_coloc_homepage');
                 return $this->redirect($url);
             }
         }
                 
         return $this->render('ClcColocBundle:Creation:new.html.twig', array(
             'form' => $form->createView(),
+        ));
+    }
+    
+    public function editAction()
+    {
+        $coloc = $this->getUser()->getColoc();
+        
+        $form = $this->createFormBuilder($coloc)
+                     ->add('name', 'text')
+                     ->add('address1', 'text')
+                     ->add('address2', 'text', array('required' => false))
+                     ->add('zipcode', 'integer')
+                     ->add('city', 'text')
+                     ->add('country', 'text')
+                     ->getForm();
+        
+        $request = $this->get('request');
+        
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($coloc);
+                $em->flush();
+                
+                $url = $this->get('router')->generate('clc_coloc_homepage');
+                return $this->redirect($url);
+            }
+        }
+                
+        return $this->render('ClcColocBundle:Creation:edit.html.twig', array(
+            'form'        => $form->createView(),
         ));
     }
     

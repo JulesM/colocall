@@ -8,6 +8,10 @@ clc_coloc_new:
     pattern: /new
     defaults: { _controller: ClcColocBundle:Coloc:new }
     
+clc_coloc_edit:
+    pattern: /edit
+    defaults: { _controller: ClcColocBundle:Coloc:edit }
+    
 clc_coloc_leave_flatshare:
     pattern: /leave
     defaults: { _controller: ClcColocBundle:Coloc:leaveFlatshare }

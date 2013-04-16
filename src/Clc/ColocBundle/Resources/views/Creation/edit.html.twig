@@ -1,0 +1,46 @@
+{# src/Clc/ColocBundle/Resources/views/Creation/edit.html.twig #}
+
+<form action="{{ path('clc_coloc_new') }}" method="post" {{ form_enctype(form) }}>
+   
+    {{ form_errors(form) }}
+
+    <div>    
+        <div class="coloc-edit coloc-label">{{ form_label(form.name) }}</div>
+        <div class="coloc-edit">{{ form_errors(form.name) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.name) }}</div>
+    </div>
+   
+    <div>
+        <div class="coloc-edit coloc-label">{{ form_label(form.address1, 'Address line 1') }}</div>
+        <div class="coloc-edit">{{ form_errors(form.address1) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.address1) }}</div>
+    </div>
+    
+    <div>
+        <div class="coloc-edit coloc-label">{{ form_label(form.address2, 'Address line 2') }}</div>
+        <div class="coloc-edit">{{ form_errors(form.address2) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.address2) }}</div>
+    </div>
+    
+    <div>
+        <div class="coloc-edit coloc-label">{{ form_label(form.zipcode) }}</div>
+        <div class="coloc-edit">{{ form_errors(form.zipcode) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.zipcode) }}</div>
+    </div>
+    
+    <div>
+        <div class="coloc-edit coloc-label">{{ form_label(form.city) }}</div>
+        <div class="coloc-edit">{{ form_errors(form.city) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.city) }}</div>
+    </div>
+    
+    <div>
+        <div class="coloc-edit coloc-label">{{ form_label(form.country) }}</div>
+        <div class="coloc-edit">{{ form_errors(form.country) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.country) }}</div>
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" type="submit" value="Save Changes"/>
+</form>
