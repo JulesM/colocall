@@ -5,7 +5,7 @@
     {{ form_errors(form) }}
 
     <div>
-        {{ form_label(form.category, 'Please give us feedback to help us improve the website') }}
+        {{ form_label(form.category, 'Please give us feedback') }}
         {{ form_errors(form.category) }}
         {{ form_widget(form.category, { 'attr': { 'style' : 'width: 120px;' } }) }}
     </div>
@@ -13,7 +13,7 @@
     <div>
         {{ form_label(form.text, ' ') }}
         {{ form_errors(form.text) }}
-        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%;' } }) }}
+        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%; margin-top: -10px;' } }) }}
     </div>
 
     {{ form_rest(form) }}
