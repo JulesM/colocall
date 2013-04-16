@@ -15,7 +15,8 @@ root {
     display: block;
 }
 
-/*---NavBox---*/
+/*--- NavBox ---*/
+
 #leftbox {
     display: inline-block;
     vertical-align: top;
@@ -124,6 +125,8 @@ border-bottom: 1px dotted rgb(204, 204, 204);
 .nav i{
     font-size: 1.3em;
 }
+
+
 /*Test*/
 
 
@@ -243,3 +246,13 @@ table {
   text-shadow: 0 1px rgba(255, 255, 255, 0.3);
 }
 
+/* --- Feedback Form --- */
+
+#feedback-box{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Oswald-regular';
+}

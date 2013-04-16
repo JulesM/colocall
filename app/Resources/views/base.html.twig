@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/base.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/navbox.css') }}" type="text/css" />
-
-    
+    <link rel="stylesheet" href="{{ asset('css/navbox.css') }}" type="text/css" />  
 {% endblock %}
 
 {% block javascripts %}
@@ -23,6 +21,8 @@
     <div id="mainbox">
             <div id="leftbox">
                 {% include ":default:navbox.html.twig" %}
+                    
+                {% include "ClcUserBundle:Feedback:feedback.html.twig" %}
             </div>   
         
             <div id="content">

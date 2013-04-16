@@ -11,3 +11,7 @@ clc_user_edit_profile:
 clc_user_edit_profilepicture:
     pattern:  /profile/edit/picture
     defaults: { _controller: ClcUserBundle:Profile:editProfilePicture }
+    
+clc_user_feedback:
+    pattern: /feedback
+    defaults: { _controller: ClcUserBundle:User:feedback }

@@ -1,0 +1,22 @@
+{# src/Clc/Resources/views/Feedback/feedbackForm.html.twig #}
+
+<form action="{{ path('clc_user_feedback') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.category, 'Please give us feedback to help us improve the website') }}
+        {{ form_errors(form.category) }}
+        {{ form_widget(form.category, { 'attr': { 'style' : 'width: 120px;' } }) }}
+    </div>
+
+    <div>
+        {{ form_label(form.text, ' ') }}
+        {{ form_errors(form.text) }}
+        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%;' } }) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-warning" type="submit" value="Feedback"/>
+</form>
