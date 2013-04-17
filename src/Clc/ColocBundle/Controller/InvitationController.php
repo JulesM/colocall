@@ -35,6 +35,14 @@ class InvitationController extends Controller
                 $em->persist($invitation);
                 $em->flush();
                 
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('Your invitation was sent succesfully !')
+                    ->setFrom('jules@colocall.co')
+                    ->setTo('jules.marcilhacy@gmail.com')
+                    ->setBody($this->renderView(':default:floatingToolbar.html.twig'))
+                ;
+                $this->get('mailer')->send($message);
+                
                 $url = $this->getRequest()->headers->get("referer");
                 return $this->redirect($url);
             }

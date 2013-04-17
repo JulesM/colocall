@@ -53,11 +53,12 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+    transport:  smtp
+    encryption: ssl
+    auth_mode:  login
+    host:       mail.gandi.net
+    username:   jules@colocall.co
+    password:   Kata1009
     
 # FOSUserBundle Configuration (from SDZ)
 fos_user:
@@ -68,8 +69,8 @@ fos_user:
     use_username_form_type: true
     model_manager_name:     null  # change it to the name of your entity/document manager if you don't want to use the default one.
     from_email:
-        address:        webmaster@example.com
-        sender_name:    Admin
+        address:        jules@colocall.co
+        sender_name:    Jules
     profile:
         form:
             type:               fos_user_profile
@@ -81,11 +82,8 @@ fos_user:
             name:               fos_user_change_password_form
             validation_groups:  [ChangePassword, Default]
     registration:
-        confirmation:
-            from_email: # Use this node only if you don't want the global email address for the confirmation email
-                address:        ...
-                sender_name:    ...
-            enabled:    false # change to true for required email confirmation
+        confirmation:    
+            enabled:    true # change to true for required email confirmation
             template:   FOSUserBundle:Registration:email.txt.twig
         form:
             type:               clc_user_registration
@@ -104,7 +102,7 @@ fos_user:
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword, Default]
     service:
-        mailer:                 fos_user.mailer.default
+        mailer:                 fos_user.mailer.twig_swift
         email_canonicalizer:    fos_user.util.canonicalizer.default
         username_canonicalizer: fos_user.util.canonicalizer.default
         token_generator:        fos_user.util.token_generator.default
