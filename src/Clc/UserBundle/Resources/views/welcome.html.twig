@@ -16,8 +16,7 @@
                     <div id="middle_block1">
                         <div id="catchphrase_box">
                             <div id="catchphrase1">
-                                <p>Live Together,<br><br><br><br>
-                                   Live Better</p>
+                                <p>Make Life in your Flatshare Easier</p>
                             </div>
                             <div id="catchphrase2">
                                <p>Start Using <strong>Coloc'all,</strong><br><br><br>
@@ -32,10 +31,19 @@
                                     New on Coloc'all ? Sign up for free !
                                     </div>
                                 </legend>
+                                    
+                                <div id="register-form">
 
                                   {% render "FOSUserBundle:Registration:register" %}
 
+                                </div>    
                             </div>
+                            
+                            <p id="or">OR</p>
+                            <button id="facebook-button" class="btn btn-primary">
+                                Log in with facebook
+                            </button>    
+                                
                         </div>
                     </div>
                 </div>
@@ -51,8 +59,9 @@
                         <div id="feature" class="span4">
                             <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px" alt="">
                             <h3>Manage Your Expenses</h3>
-                            <p>Coloc'all manages your social money so you can share your life easily with your flatmates and friends. <br> 
-                                Add your latest expenses in a jiffy!</br>
+                            <p>Share your common Expenses</p>
+                            <p>Keep track of your Social Debts</p>
+                            <p>Analyze your Spendings</p>
                                 </p>
                         </div>
 
@@ -60,16 +69,18 @@
                         <div id="feature" class="span4">
                             <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
                             <h3>Payback Your Friends Online</h3>
-                            <p>Don't bother thinking how you'll pay back your friends. <br>
-                                Coloc'all does it for you, </br> in the easiest possible way!</br></p>
+                            <p>Get current Balances</p>
+                            <p>Request a Payback at any time</p>
+                            <p>Payback online with a Click</p>
                         </div>
 
 
                         <div id="feature" class="span4">
                             <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
                             <h3>Manage Your To-dos & Lists</h3>
-                            <p>Make sure everyone knows what's on the agenda using Coloc'all dynamic social To-dos and Shopping Lists.</br>
-                              </br></p>
+                            <p>Share To-dos in the common Agenda</p>
+                            <p>Make sure to-dos are done</p>
+                            <p>Add items to your dynamic Shopping List</p>
                         </div>
                     </div>
 
@@ -85,8 +96,12 @@
                               <div class="active item">
                                   <div id="item_container">
                                     <div id="text">
-                                      <h3>Manage your common expenses</h3>    
-                                      <p>Track all your expenses and know what you owe to whom at every time. Coloc'all keeps all your expenses in one place. Sharing expenses has never been so easy!</p>
+                                      <h3>Manage your common expenses</h3>
+                                      <p>- Share your common Expenses with your flatmates in a jiffy</p>
+                                      <p>- Keep track of your Social Debts and know what you owe to whom at every time</p>
+                                      <p>- Analyze your Spendings at the end of the month</p>
+                                      <p>Coloc'all keeps all your expenses in one place. Sharing expenses 
+                                          has never been so easy !</p>
                                     </div>
                                     <div id="pic">
                                         <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="">
@@ -98,8 +113,11 @@
                                     <div id="pic">
                                     </div>
                                     <div id="text">
-                                        <h3>Payback your friends online</h3>    
-                                        <p> Not only can you see how much you owe or what you are owed, Coloc'all gives you the opportunity to pay back your friends instantly. No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back!</p>
+                                        <h3>Payback your friends online</h3>
+                                        <p>- Get current Balances of all flatshares</p>
+                                        <p>- Request a Payback instantly at any time</p>
+                                        <p>- Payback your friends instantly with a mere Click</p>
+                                        <p>No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back !</p>
                                     </div>
                                   </div>        
                               </div>
@@ -229,31 +247,34 @@
                 </div>
             </div>  
 
-            <div id="business-box" class="container-fluid">
-                <div id="ribbon_container2">
-                </div> 
-            <div id="block3" class="container">        
-                <div id="block3_container">
-                    <div class="whitebox" id="trialbox">
-                    </div>
-                    <div class="whitebox" id="lignboxleft">
-                    </div>
-                    <div id="timebox">
-                        <p>After 3 months</p>
-                    </div>
-                    <div class="whitebox" id="lignboxright">
-                    </div>
-                    <div class="whitebox" id="freebox">
-                    </div>
-                    <div class="whitebox" id="paybox">
-                    </div>
-                </div>               
+            <div id="ribbon_container2">
             </div>
+            
+          {#<div id="business-box" class="container-fluid">
+                 
+                <div id="block3" class="container">        
+                    <div id="block3_container">
+                        <div class="whitebox" id="trialbox">
+                        </div>
+                        <div class="whitebox" id="lignboxleft">
+                        </div>
+                        <div id="timebox">
+                            <p>After 3 months</p>
+                        </div>
+                        <div class="whitebox" id="lignboxright">
+                        </div>
+                        <div class="whitebox" id="freebox">
+                        </div>
+                        <div class="whitebox" id="paybox">
+                        </div>
+                    </div>               
+                </div>
+            </div>
+          #}
+        
+        </div>  
+    
+        <div id="footer" class="container-fluid">
+            {% include ":default:footer.html.twig" %}
         </div>
-    </div>  
-
-
-    <div id="footer" class="container-fluid">
-        {% include ":default:footer.html.twig" %}
-    </div>
 {% endblock %}

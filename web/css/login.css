@@ -11,7 +11,7 @@ body{
 #mainbox-bckgd{
     background-image: url('../img/visitor_homepage/Background/shaded-background.png');
     background-repeat: repeat-y;
-    min-width: 800px;
+    min-width: 800px; 
 }
 
 /* --- block 1 --- */
@@ -44,10 +44,9 @@ body{
 }
 
 #mainbox{ 
-    height: 68%;
+    height: 62%;
     width: 800px;
-    min-width: 800 px;
-    margin-top:100px;
+    margin-top:120px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -92,12 +91,13 @@ body{
 }
 
 #catchphrase1{
-    font-size: 60px;
+    font-size: 50px;
+    line-height: 70px;
     font-family: Oswald-Bold;
     color: #e34a25;
     text-align: center;
     height: 50%;
-    padding-top: 10%;
+    padding-top: 10px;
 }
 
 #catchphrase2{
@@ -105,6 +105,10 @@ body{
     font-family: Oswald-Light;
     text-align: center;
     height: 50%;
+}
+
+#catchphrase2 p{
+    margin-top: 30px;
 }
 
 #signin_box{
@@ -123,17 +127,25 @@ body{
     border-color: rgb(229, 229, 229);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 7%;
     border-radius: 10px;
 }
 
 #legend{
+    border-radius: 10px 10px 0 0;
     text-align: center;
     font-size: 19px;
     background-color: whitesmoke;
     font-family: 'Oswald-Regular';
 }
 
+#register-form{
+    height: 130px;
+}
+
+#register-form-content{
+    height:80px;;
+}
 #signin_box_content label{
     width: 30%;
     display: inline-block;
@@ -147,26 +159,33 @@ body{
 }
 
 #signin_box_footer{
-    border-top: solid 1px;
+    height: 50px;
+    border: solid 1px;
     border-color: rgb(229, 229, 229);
-    height: 20%;
+    border-radius: 0 0 10px 10px;
+    background-color: whitesmoke;
+    text-align: center;
 }
 
 #signin_box_content #register-button{
     margin-top: 10px;
-    margin-left: 10%;
     font-family: 'Oswald-Regular';
+    width: 50%;
 }
 
-#signin_box_content #or{
+#signin_box #or{
     display: inline-block;
+    margin-left: 25%;
+    margin-top: 30px;
+    font-size: 20px;
+    font-style: italic;
     font-family: 'Oswald-Regular';
 }
 
-#signin_box_footer #facebook-button{
-    margin-top: 10px;
+#signin_box #facebook-button{
+    margin-top: 25px;
     float:right;
-    margin-right: 10%;
+    margin-right: 20%;
     font-family: 'Oswald-Regular';
 }
 
@@ -183,10 +202,11 @@ body{
 
 #ribbon_container{
     width: 100%;
-    height: 14px;
+    height: 13px;
     margin-top: 20px;
     background-image: url('../img/visitor_homepage/orange-ribbon.jpg');
     background-repeat: repeat-x;
+    box-shadow: 0px 1px 4px #323232;
 }
 
 #ribbon_block2{
@@ -220,6 +240,7 @@ body{
 }
 
 #feature p{
+    font-size: 16px;
     font-family: 'Oswald-Regular';
 }
 
@@ -271,6 +292,7 @@ body{
     width: 58%;
     vertical-align: top;
     padding-left: 20px;
+    font-size: 16px;
 }
 
 .carousel-inner #pic{
@@ -318,15 +340,15 @@ body{
 
 #ribbon_container2{
     width: 100%;   
-    height: 17px;
+    height: 16px;
     margin-top: -10px;
     background-image: url('../img/visitor_homepage/ribbon_with_frange.png');
     background-repeat: repeat-x;
-    box-shadow: 0px 1px 1px #323232;
+    box-shadow: 0px 4px 8px #323232;
 }
 
 /* --- block 3 --- */
-
+/*
 #business-box{
     
     height: 540px;
@@ -388,3 +410,4 @@ body{
     width: 68%;
     margin-top: 30px;
 }
+*/
