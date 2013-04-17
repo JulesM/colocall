@@ -58,7 +58,7 @@ swiftmailer:
     auth_mode:  login
     host:       mail.gandi.net
     username:   jules@colocall.co
-    password:   Kata1009
+    password:   Carnac1956
     
 # FOSUserBundle Configuration (from SDZ)
 fos_user:
@@ -102,7 +102,7 @@ fos_user:
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword, Default]
     service:
-        mailer:                 fos_user.mailer.twig_swift
+        mailer:                 fos_user.mailer.default
         email_canonicalizer:    fos_user.util.canonicalizer.default
         username_canonicalizer: fos_user.util.canonicalizer.default
         token_generator:        fos_user.util.token_generator.default
