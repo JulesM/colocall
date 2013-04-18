@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             new Clc\TodosBundle\ClcTodosBundle(),
             new Clc\ShoppinglistBundle\ClcShoppinglistBundle(),
             new Clc\DashboardBundle\ClcDashboardBundle(),
-            new Clc\SecurityBundle\ClcSecurityBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Clc\UserBundle\ClcUserBundle(),
             new Clc\EventBundle\ClcEventBundle(),
