@@ -58,7 +58,7 @@ swiftmailer:
     auth_mode:  login
     host:       mail.gandi.net
     username:   jules@colocall.co
-    password:   Carnac1956
+    password:   Ozanam1956
     
 # FOSUserBundle Configuration (from SDZ)
 fos_user:
