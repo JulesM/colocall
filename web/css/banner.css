@@ -108,6 +108,8 @@ root {
     vertical-align: middle;
 }
 
+
+
 #name_button{
     margin-right: 10px;
     color: black;
@@ -138,7 +140,6 @@ root {
 
 #home_button{
     margin-right: 20px;
-    color: black;
     height: 100%;
 }
 
