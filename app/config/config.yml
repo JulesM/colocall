@@ -70,7 +70,7 @@ fos_user:
     model_manager_name:     null  # change it to the name of your entity/document manager if you don't want to use the default one.
     from_email:
         address:        jules@colocall.co
-        sender_name:    Jules
+        sender_name:    Jules from Coloc'all
     profile:
         form:
             type:               fos_user_profile
@@ -92,9 +92,6 @@ fos_user:
     resetting:
         token_ttl: 86400
         email:
-            from_email: # Use this node only if you don't want the global email address for the resetting email
-                address:        ...
-                sender_name:    ...
             template:   FOSUserBundle:Resetting:email.txt.twig
         form:
             type:               fos_user_resetting

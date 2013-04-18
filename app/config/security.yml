@@ -33,6 +33,10 @@ security:
             pattern:    ^/register
             anonymous:  ~
             
+        resetting_firewall:
+            pattern:    ^/resetting
+            anonymous:  ~
+            
         secured_area:
             pattern:    ^/
             anonymous:  false
