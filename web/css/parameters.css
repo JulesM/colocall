@@ -1,0 +1,32 @@
+/* 
+    Document   : parameters
+    Created on : 18 avr. 2013, 17:11:07
+    Author     : julesmarcilhacy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#parameters-page-content{
+    padding-top: 20px;
+}
+
+.parameters-container { 
+    margin: 25px auto; 
+    position: relative;                
+    width: 900px;
+}
+
+#parameters-content {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid #c4c6ca;
+    border-radius: 0 0 5px 5px;
+    background-image: -webkit-linear-gradient(bottom, #fcfcfc, #f0f0f0);
+    background-image: -moz-linear-gradient(bottom, #fcfcfc, #f0f0f0);
+    background-image: -o-linear-gradient(bottom, #fcfcfc, #f0f0f0);
+    background-image: linear-gradient(to top, #fcfcfc, #f0f0f0);
+    -webkit-box-shadow: inset 0 0 0 1px #fafafa; 
+}

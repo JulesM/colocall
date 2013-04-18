@@ -9,6 +9,10 @@ clc_beta_new:
 clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"
     prefix:   /user
+    
+clc_parameters:
+    resource: "@ClcParametersBundle/Resources/config/routing.yml"
+    prefix:   /parameters
 
 clc_coloc:
     resource: "@ClcColocBundle/Resources/config/routing.yml"

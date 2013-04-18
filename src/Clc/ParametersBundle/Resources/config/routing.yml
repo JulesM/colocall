@@ -1,0 +1,3 @@
+clc_parameters_homepage:
+    pattern:  /
+    defaults: { _controller: ClcParametersBundle:Parameters:index }

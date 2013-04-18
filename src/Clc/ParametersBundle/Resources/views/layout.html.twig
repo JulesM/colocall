@@ -1,0 +1,24 @@
+{# src/Clc/ParametersBundle/Resources/views/layout.html.twig #}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/parameters.css') }}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+  {{ parent() }} - Parameters
+{% endblock %}
+
+{% block body %}
+     
+    <div id="parameters-page-content">
+        <div class="parameters-container">
+            
+            {% render "FOSUserBundle:ChangePassword:changePassword" %}
+	    
+        </div>
+    </div>
+  
+{% endblock body %}  
