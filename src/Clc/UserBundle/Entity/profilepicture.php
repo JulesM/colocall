@@ -99,7 +99,7 @@ class profilepicture
 
         $extension=strrchr($this->file->getClientOriginalName(),'.');
         $tempname = 'temp'.$user->getId().$extension;
-        $newname = $user->getId().$extension;
+        $newname = $user->getId().'jpg';
 
         $this->file->move($this->getUploadRootDir(), $tempname);
 
