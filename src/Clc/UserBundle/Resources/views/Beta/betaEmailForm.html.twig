@@ -5,12 +5,12 @@
     {{ form_errors(form) }}
 
     <div class="beta-div">
-        <div id="beta-label">{{ form_label(form.email) }}</div>
+        <div id="beta-label">{{ form_label(form.email, 'Enter your email') }}</div>
         <div id="beta-errors">{{ form_errors(form.email) }}</div>
         <div id="beta-widget">{{ form_widget(form.email) }}</div>
    </div>
         
     {{ form_rest(form) }}
 
-    <input class="btn btn-warning beta-div" type="submit" value="Send"/>
+    <input class="btn btn-warning btn-small beta-div" type="submit" value="Send Request"/>
 </form>
