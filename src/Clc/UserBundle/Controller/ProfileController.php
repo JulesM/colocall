@@ -13,10 +13,9 @@ class ProfileController extends Controller
     public function profileAction()
     {
         $p = $this->getUser()->getPicture()->getPath();
-        
-        return $this->render('ClcUserBundle:profile:profile.html.twig', array(
-            'path' => $p,
-        ));
+        $this->container->get('request')->getSession()->set('path', $p);
+                
+        return $this->render('ClcUserBundle:profile:profile.html.twig');
     }
     
     public function editProfileAction()
