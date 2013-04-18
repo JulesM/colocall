@@ -5,6 +5,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/beta-box.css') }}" type="text/css" />
 {% endblock %}
 
 {% block mainbox %}
@@ -12,8 +13,19 @@
     <div id="signup-box" class="container-fluid">
         <div id="container-center-signup" class="container" >
             <div id="mainbox">
+                
+                <div id="beta-box">
+                    <div id="beta-phrase">
+                        <i class="icon-exclamation-sign"></i>
+                        This is a PRIVATE BETA VERSION, if you want to try it enter your email and wait for an aproval to register
+                    </div>
+                    <div id="beta-form">
+                        {% render "ClcUserBundle:Beta:emailForm" %}
+                    </div>
+                </div>
+                
                 <div id="middle_block1_ext">
-                    <div id="middle_block1">
+                   <div id="middle_block1">
                         <div id="catchphrase_box">
                             <div id="catchphrase1">
                                 <p>Make Life in your Flatshare Easier</p>
@@ -57,7 +69,7 @@
                 <div id="mainbox-body">    
                     <div id="feature-container">
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px" alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="">
                             <h3>Manage Your Expenses</h3>
                             <p>Share your common Expenses</p>
                             <p>Keep track of your Social Debts</p>
@@ -67,7 +79,7 @@
 
 
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-payback.png') }}" height="100px" width="100px"  alt="">
                             <h3>Payback Your Friends Online</h3>
                             <p>Get current Balances</p>
                             <p>Request a Payback at any time</p>
@@ -76,7 +88,7 @@
 
 
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/gandhi_round.png') }}" height="200px" width="200px"  alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="">
                             <h3>Manage Your To-dos & Lists</h3>
                             <p>Share To-dos in the common Agenda</p>
                             <p>Make sure to-dos are done</p>
@@ -125,13 +137,10 @@
                                   <div id="item_container">
                                     <div id="text">
                                         <h3>Manage your to-dos easily</h3>    
-                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                        <p>- Share To-dos in the common Agenda</p>
+                                        <p>- Follow the agenda and see what you have to do</p>
+                                        <p>- Check if tasks are late and tell your flatmates you take care of it</p>
+                                        <p>Coloc'all enables you to organize life easily and avoid any trouble due to forgettings</p> 
                                     </div>
                                     <div id="pic">
                                         <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-postit.jpg') }}" alt="">
@@ -144,27 +153,24 @@
                                     </div>
                                     <div id="text">
                                         <h3>Create dynamic shopping lists</h3>    
-                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                        <p>- Add missing items as soon as you lack one</p>
+                                        <p>- Download the Shopping List when you have time to go to the shop</p>
+                                        <p>- Tell your flatmates you filled the fridge</p>
+                                        <p>With coloc'all dynamic shopping list, you will never run out of milk for 3 weeks anymore</p>
                                     </div>
+                                    <div id="pic">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="">
+                                    </div>      
                                   </div>        
                               </div>
                               <div class="item">
                                   <div id="item_container">
                                     <div id="text">
                                       <h3>Host events with all your friends</h3>    
-                                      <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                      <p>- Create an event in your flatshare within Coloc'all</p>
+                                      <p>- Include your invitees in specific expense groups and lists</p>
+                                      <p>- Close the event and send notifications for paybakc to everyone</p>
+                                      <p>Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare</p>
                                     </div>
                                     <div id="pic">
                                         <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="">
@@ -177,13 +183,10 @@
                                     </div>
                                     <div id="text">
                                         <h3>Share tips with Coloc'all community</h3>    
-                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                        <p>- Share your experience with Coloc'all online community</p>
+                                        <p>- Be the flatshare of the month and earn prizes</p>
+                                        <p>- Attend social events with Coloc'all</p>
+                                        <p>Coloc'all is also a community of flatshares willing to meet with each other</p>
                                     </div>
                                   </div>        
                               </div>
@@ -191,13 +194,10 @@
                                   <div id="item_container">
                                     <div id="text">
                                         <h3>Get fun statistics on your flatshare</h3>    
-                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                        <p>- See of much you spend in booz each month</p>
+                                        <p>- Spot how late to-dos are usually done</p>
+                                        <p>- Analyze the change of your flatshare with your new female flatmate</p>
+                                        <p>Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff</p>
                                     </div>
                                     <div id="pic">
                                     </div> 
@@ -209,13 +209,10 @@
                                     </div>
                                     <div id="text">
                                         <h3>Enjoy life as you should</h3>    
-                                        <p> Lorem ipsum dolor sit amet,consectetur adipisicing elit, 
-                                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                                          officia deserunt mollit anim id est laborum.</p>
+                                        <p>- Be Happy</p>
+                                        <p>- Find Love</p>
+                                        <p>- Sleep well</p>
+                                        <p>Thanks to Coloc'all, you will have real matters to handle</p>
                                     </div>
                                   </div>        
                               </div>      

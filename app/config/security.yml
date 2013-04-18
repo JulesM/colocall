@@ -25,6 +25,10 @@ security:
             pattern:    ^/login$
             anonymous:  ~
             
+        beta_firewall:
+            pattern:    ^/beta$
+            anonymous:  ~
+            
         register_firewall:
             pattern:    ^/register
             anonymous:  ~

@@ -46,7 +46,7 @@ body{
 #mainbox{ 
     height: 62%;
     width: 800px;
-    margin-top:120px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -55,11 +55,15 @@ body{
 #mainbox-body{ 
     height: 68%;
     min-height: 1008px;
-    min-width: 768 px;
+    min-width: 768px;
     margin-top:auto;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
+}
+
+#beta-box{
+    height: 70px;
 }
 
 #middle_block1_ext{
@@ -67,10 +71,9 @@ body{
 /*    width: 800px;*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 10px;
     padding: 0.5% 0.5% 0.8% 0.5%;
     background-image: url('../img/visitor_homepage/Background/signin-box-strips.jpg');
-/*    box-shadow: 4px 4px 4px #d59392; */
 }
 
 #middle_block1{
@@ -215,7 +218,7 @@ body{
 }
 
 #feature-container{
-    height: 400px;
+    height: 350px;
     width: 100%;
     min-width: 724px;
     margin-top:50px;
@@ -225,7 +228,7 @@ body{
 
 #feature{
     display: inline-block;
-    height: 350px;
+    height: 100%;
     width: 25%;
     min-width: 200px;
     margin-left: 5%;
@@ -237,6 +240,7 @@ body{
     font-family: 'Oswald-Bold';
     color: #e34a25;
     font-weight: normal;
+    margin-top: 50px;
 }
 
 #feature p{
@@ -256,8 +260,7 @@ body{
     margin-left: 0px;
 }
 
-#caroussel-container-large{
-    
+#caroussel-container-large{  
   margin-left: 0px;  
 }
 
@@ -273,7 +276,7 @@ body{
     height: 250px;
     width: 80%;
     margin-left: 10%;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .carousel-inner #item_container h3{
@@ -303,17 +306,21 @@ body{
 }
 
 .carousel-control{
-    margin-top: 0px;
+    margin-top: -50px;
 }
 
 #indicators_container{
     height: 100px;
+    width: 120px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carousel-indicators{
     position: relative;
-    margin-left: 415px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carousel-indicators li{
@@ -334,7 +341,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    width: 100%px;
+    width: 100px;
     min-width: 724px;
 }
 

@@ -1,6 +1,8 @@
 /* web/css/footer.css*/
 
-footer { 
+footer {
+    background-color: white;
+    box-shadow: 0px 4px 8px grey inset;
     border-top: solid 1px;
     border-color: #a4a4a4;
     height: 100px;

@@ -125,4 +125,27 @@ class feedback
     {
         return $this->category;
     }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return feedback
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
 }
