@@ -59,7 +59,7 @@
                         {% for item in item_list %}  
 
                         <tr>
-                          <td id="check">
+                          <td><div id="check">
                             {# <a href="#" class="toggle">Toggle</a> #}
                                   
                                 {% if state == 0 %}
@@ -68,16 +68,16 @@
                                    <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
                                 {% endif %}
                                   
-                          </td>
-                          <td id="task">{{ item.name }}</td>
-                          <td>{{ item.author.nickname }}</td>
+                          </div></td>
+                          <td><div id="task">{{ item.name }}</div></td>
+                          <td><div id="task-owner">{{ item.author.nickname }}</div></td>
                           <td><i class="icon-time"></i>{{ item.addedDate|date("d/m")  }}</td>
-                          <td id="todo-list-edit-comment-delete">
+                          <td><div id="edit-delete">
                             <i class="icon-edit"></i>
                             <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
                               <i class="icon-trash"></i>
                             </a>
-                          </td>
+                          </div></td>
                         </tr>
                        
                         {% endfor %}  
