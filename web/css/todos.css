@@ -3,20 +3,14 @@
     background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
 }
+
+
 #todos-content{
     height: 100%;
     width: 100%;
     padding-top: 20px;
     position: relative;
     /*z-index:0;*/
-}
-#todos-table1-container{
-    /*height: 300px;*/
-    width: 640px;
-    min-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
 }
 #todos-toolbar-tab{
     width: 640px;
@@ -27,6 +21,14 @@
     text-align: center;
     
 }
+#todos-table1-container{
+    /*height: 300px;*/
+    width: 640px;
+    min-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
 
 #todos-table2-container{
     /*height: 300px;*/
@@ -34,6 +36,8 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
@@ -129,9 +133,23 @@ body {
   opacity: .3;
 }
 
+/*[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 2px;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}*/
+
 .icon-previous {
   background-position: -48px 0;
 }
+
 .icon-next {
   background-position: -60px 0;
 }
@@ -144,21 +162,55 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
 #task{
     width: 270px;
 }
+
 #task-owner{
     width: 120px;
 }
+
+#todo-list{
+    color: #047fc9;
+    font: 16px/20px "Proxima-Regular",Tahoma,Verdana,sans-serif;
+}
+
+
+#todo-list:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: 23px;
+  left: 35px;
+  width: 3px;
+  /*z-index: 1;*/
+  border: 1px solid #ffd5d5;
+  border-width: 0 1px;
+}
+
+tbody *{
+    vertical-align: middle;
+}
+
+#todo-list tbody td{
+    border-top: none;
+}
+
+#todo-list tr{
+    border: none;
+    border-bottom: 1px solid rgb(230, 235, 237);
+}
+
 #todo-list-edit-delete{
     text-align: right;
     width: 50px;
 }
+
 #todo-list-edit-delete i{
         color: rgb(139, 143, 151);
 }
-
-
 
 #todo-table-caption div{
     color: rgb(201, 25, 25);
@@ -227,6 +279,7 @@ body {
     padding-top: 3px;
     text-align:center;
 }
+
 .todo-filter-tab i{
     color: white;
     margin: auto;
@@ -238,9 +291,11 @@ body {
     list-style-type: none;
     height: 28px;
 }
+
 .todo-filter-tab li:first-child{
     border-right: 1px dashed #edd3b4;
 }
+
 .todo-filter-tab li:last-child{
     border-left: 1px dashed #edd3b4;
 }
@@ -259,6 +314,7 @@ body {
     margin: auto;
     display: inline-block;
 }
+
 .category-filter{
     width: 25%;
     display: inline-block;
@@ -266,7 +322,47 @@ body {
     padding-left: auto;
 }
 
+
+
 /*Slider*/
+
+.regular-checkbox {
+	display: none;
+        opacity: 0.8;
+}
+
+.regular-checkbox:hover{
+        opacity: 1;
+}
+
+.regular-checkbox + label {
+        margin-top: 2px;
+	display: inline;
+	float: middle;
+	width: 70px;
+	height: 24px;
+	background: no-repeat centeR;
+	display: inline-block;
+	position: relative;
+        top:0;
+	background-image: url(../img/chk_on.png);
+	cursor: pointer;
+        opacity: 1;
+        
+}
+
+.regular-checkbox + label:hover{
+        opacity: 1;
+}
+
+.regular-checkbox:checked + label {
+	background-image: url(../img/chk_off.png);
+
+}
+
+.regular-checkbox:checked + label:after {
+	background-image: url(../img/chk_on.png);
+}
 
 .todo-filter-tab li > p > img{
 	display: inline-block;
@@ -299,6 +395,7 @@ body {
     vertical-align: middle;
     text-align: center;
 }
+
 .square-button {
                width: 28px; 
                height: 28px; 
@@ -316,6 +413,7 @@ body {
                border-radius: 3px; 
                cursor: pointer; 
 }
+
 .square-button:hover {color: #888; text-shadow: 0px 1px 0px rgba(255,255,255,0.69); -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -o-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75);}
 .square-button:active {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53); border: 1px solid #d2d2d2; border-bottom: 1px solid #d8d8d8; -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -o-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20);}
 .square-button i{
