@@ -38,7 +38,7 @@ root {
 }
 
 #floating-toolbar{
-    height: 210px;
+    height: 220px;
     width: 120px;
     background: none repeat scroll 0% 0% white;
     transform: translate3d(0px, 0px, 0px);
@@ -58,6 +58,8 @@ root {
     font-size: 15px;
     text-align:center;
     margin-top: 10px;
+    margin-bottom:-10px;
+    
 }
 
 #floating-toolbar ul{
@@ -67,14 +69,13 @@ root {
 }
 
 #floating-toolbar li{
-    height: 40px;
+    height: 60px;
     width: 100%;
     border-bottom: 1px solid rgb(204, 204, 204);
     list-style: none;
     vertical-align: middle;
-    padding-top: 15px;
+    padding-top: 0px;
 }
-
 
 
 #floating-toolbar li:first-child{
@@ -83,16 +84,46 @@ root {
 
 #floating-toolbar li:last-child{
     border-bottom: none;
+    max-height: 45px;
+   
 }
 
 #floating-toolbar li a{
-    color: rgb(119, 119, 119);
+    color: rgb(119, 119, 119);  
+    vertical-align: middle;
+}
+
+#floating-toolbar li a:hover{
+    text-decoration:none;
+        transition: all 0.7s ease 0s;
+    /*text-shadow: 1px 0.5px 0px rgb(255, 255, 255), 1.5px 2px 0px rgba(0, 0, 0, 0.15);*/
+    color: black;
 }
 
 #floating-toolbar button{
     background-color: transparent;
     border: none;
     color: rgb(119, 119, 119);
+    height: 40px;
+    width: 100%;
+}
+
+#quick-link{
+    height: 60px;
+    width: 100%;
+    vertical-align: middle;
+    padding-top:20px;
+    margin-bottom:-20px;
+}
+
+.quick-link-last{
+    height: 45px;
+    max-height: 45px;
+}
+
+last-a{
+    height: 45px;
+    max-height: 45px;   
 }
 
 #floating-toolbar button:hover{

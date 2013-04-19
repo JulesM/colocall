@@ -41,6 +41,14 @@ $(function(){
     });
 });
 
+$(function(){
+    $('#expense-body-slimscroll').slimScroll({
+        height: '250px',
+        alwaysVisible: false,
+        disableFadeOut: false
+    });
+});
+
     $('#mini-shopping-list-table tbody tr').mouseenter(function() {
     $(this).css('background-color', 'rgba(255, 255, 255, 1)');
 
