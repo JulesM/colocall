@@ -3,7 +3,7 @@
 {% for task in coloc_task %}
 
     <tr id={{ task.task }}>
-     <td id="check">
+     <td><div id="check">
          <div class="btn-group">
 
              {% if state == 0 %}
@@ -13,17 +13,17 @@
              {% endif %}
 
          </div>                        
-     </td>
-     <td id="task">{{ task.task }}</td>
+     </div></td>
+     <td><div id="task">{{ task.task }}</div></td>
      
-     <td id="task-owner">
+     <td><div id="task-owner">
      {% if task.owner != null %}
      {{ task.owner.nickname }}
      {% else %}
      {% endif %}
-     </td>
+     </div></td>
              
-     <td id="date">
+     <td><div id="date">
          {% if state == 0 %}
              {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
                  overdue
@@ -35,16 +35,16 @@
          {% else %}
              <i class="icon-time"></i>{{ task.dueDate|date("d-m") }} 
          {% endif %}      
-     </td>
+     </div></td>
      
-     <td id="todo-list-edit-delete">
+     <td><div id="edit-delete">
        <a href="#edittodomodal{{task.id}}" data-toggle="modal">
          <i class="icon-edit"></i>
        </a>
        <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
          <i class="icon-trash"></i>
        </a>
-     </td>
+     </div></td>
     </tr>
 
     <!-- Edit Modal --> 

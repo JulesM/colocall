@@ -37,7 +37,9 @@
     margin-right: auto;
 }
 
-
+.table{
+    
+}
 
 body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
@@ -154,8 +156,12 @@ body {
   background-position: -60px 0;
 }
 
+td{
+    overflow: hidden;
+}
+
 #check{
-    width: 60px;
+    width: 45px;
     padding: 0;
     vertical-align: middle;
     text-align: center;
@@ -168,7 +174,16 @@ body {
 }
 
 #task-owner{
-    width: 120px;
+    width: 100px;
+}
+
+#edit-delete{
+    text-align: center;
+    width: 50px;
+}
+
+#edit-delete i{
+        color: rgb(139, 143, 151);
 }
 
 #todo-list{
@@ -203,14 +218,7 @@ tbody *{
     border-bottom: 1px solid rgb(230, 235, 237);
 }
 
-#todo-list-edit-delete{
-    text-align: right;
-    width: 50px;
-}
 
-#todo-list-edit-delete i{
-        color: rgb(139, 143, 151);
-}
 
 #todo-table-caption div{
     color: rgb(201, 25, 25);

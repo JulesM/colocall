@@ -43,7 +43,7 @@
                   
                   <thead>
                     <tr>
-                      <th>Check</th>
+                      <th></th>
                       <th>What</th>
                       <th>Who</th>
                       <th>When</th>
@@ -55,18 +55,18 @@
                       {% for task in user_task %}
 
                       <tr>
-                        <td id="check">
+                        <td><div id="check">
                             <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
-                        </td>
-                        <td id="task">{{ task.task }}</td>
-                        <td id="task-owner">{{ task.owner.nickname }}</td>
-                        <td id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
-                        <td id="todo-list-edit-delete">
+                        </div></td>
+                        <td><div id="task">{{ task.task }}</div></td>
+                        <td><div id="task-owner">{{ task.owner.nickname }}</div></td>
+                        <td><div id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</div></td>
+                        <td><div id="edit-delete">
                           <i class="icon-edit"></i>
                           <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
                             <i class="icon-trash"></i>
                           </a>
-                        </td>
+                        </div></td>
                       </tr>
 
                       {% endfor %}
@@ -118,7 +118,7 @@
                   
                   <thead>
                     <tr>
-                      <th>{% if state == 0 %}Check{% else %}{% endif %}</th>
+                      <th></th>
                       <th>What</th>
                       <th>Who</th>
                       <th>When</th>
