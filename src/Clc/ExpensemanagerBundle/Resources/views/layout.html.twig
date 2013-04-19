@@ -1,9 +1,9 @@
 {# src/Clc/ExpensemanagerBundle/Resources/views/layout.html.twig #}
 
-{# Variables disponibles dans cette page (entre parenthÃ¨ses les attributs des variables) :
-    - 'coloc_expense' tableau de dÃ©penses(name, amount, addedDate, date, active, author, owner, coloc, users)
-    - 'user_expense'  tableau de dÃ©penses(name, amount, addedDate, date, active, author, owner, coloc, users)
-    - 'forme_expense' tableau de dÃ©penses(name, amount, addedDate, date, active, author, owner, coloc, users)
+{# Variables disponibles dans cette page (entre parenthses les attributs des variables) :
+    - 'coloc_expense' tableau de dŽpenses(name, amount, addedDate, date, active, author, owner, coloc, users)
+    - 'user_expense'  tableau de dŽpenses(name, amount, addedDate, date, active, author, owner, coloc, users)
+    - 'forme_expense' tableau de dŽpenses(name, amount, addedDate, date, active, author, owner, coloc, users)
     - 'balances'      tableau de tableaux [user => balance]
     - 'last_payback'  Un payback(date, coloc, paymentsArray) // paymentsArray = [[payer1, amount1, receiver1] ... [payern, amountn, receivern]]
 #}
@@ -104,7 +104,7 @@
       <div id="expense-container">
         <div  id="personal-expense" class="expense-list">
           <div id="expense-list-header">             
-              <p>Me <i class="icon-chevron-right"></i> My Flatmates</p>
+              <p>Me <i class="icon-arrow-right"></i> <i class="icon-group icon-large" style="font-weight: normal"></i></p>
           </div>
                 
           <div id="expense-list-body">
@@ -121,7 +121,7 @@
                         <i class="icon-time"></i>I added it on {{ expense.date|date("d/m") }}
                     </div>
                   </td>
-                  <td><div id="expense-list-cost">{{ expense.amount }}â‚¬<div></td>
+                  <td><div id="expense-list-cost">{{ expense.amount }}Û<div></td>
                   <td>
                     <div id="expense-list-edit-delete">
                         <i class="icon-edit"></i>
@@ -143,7 +143,7 @@
         
         <div id="everyone-expense" class="expense-list">
           <div id="expense-list-header">
-              <p>My Flatmates <i class="icon-chevron-right"></i> Me</p>
+              <p>Others <i class="icon-arrow-right"></i> Me</p>
           </div>
           
           <div id="expense-list-body-slimscroll">
@@ -163,7 +163,7 @@
                         <i class="icon-time"></i>Added by <b>{{ expense.owner.nickname }}</b> on {{ expense.date|date("d/m") }}
                     </div>
                   </td>
-                  <td><div id="expense-list-cost">{{ expense.amount }}â‚¬<div></td>
+                  <td><div id="expense-list-cost">{{ expense.amount }}Û<div></td>
                   <td>
                     <div id="expense-list-edit-delete">
                         <i class="icon-edit"></i>
