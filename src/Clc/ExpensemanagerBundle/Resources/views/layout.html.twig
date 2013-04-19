@@ -44,7 +44,7 @@
                 <h1 class="expense-header-left">Balance</h1>
             </div>
 
-            <div id="expense-body"> 
+            <div id="expense-body-left" class="expense-body"> 
                 <div id="bar-chart">
                     {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : balances } %}
                 </div>
@@ -118,7 +118,7 @@
                   <td>
                     <div id="expense-list-item">
                         <h3>{{ expense.name }}</h3>
-                        <i class="icon-time"></i>{{ expense.date|date("d/m") }}
+                        <i class="icon-time"></i>I added it on {{ expense.date|date("d/m") }}
                     </div>
                   </td>
                   <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
@@ -160,7 +160,7 @@
                   <td>
                     <div id="expense-list-item">
                         <h3>{{ expense.name }}</h3>
-                        <i class="icon-time"></i>Added by {{ expense.owner.nickname }} on {{ expense.date|date("d/m") }}
+                        <i class="icon-time"></i>Added by <b>{{ expense.owner.nickname }}</b> on {{ expense.date|date("d/m") }}
                     </div>
                   </td>
                   <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>

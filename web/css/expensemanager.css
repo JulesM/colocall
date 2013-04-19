@@ -6,6 +6,11 @@
         Purpose of the stylesheet follows.
 */
 
+#mainbox{
+    max-height: 860px;
+    overflow: hidden;
+}
+
 #expense-content{
     background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
@@ -89,6 +94,8 @@
     height: 290px;
     text-align: center;
 }
+
+
 
 #expense-body-right{
     width: 278px;
@@ -227,6 +234,7 @@
     padding-left: 6px;
     padding-right: 8px;
     padding-top: 8px;
+    border-top: 1px solid #DDDDDD;
 }
 
 #expense-list-body table tr td:last-child{
@@ -236,6 +244,8 @@
 
 #expense-list-item{
     width: 200px;
+        font-size: 10px;
+    color: grey;
 }
 
 #expense-list-item h3{

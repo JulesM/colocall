@@ -23,7 +23,7 @@ $(function(){
         
         $(function(){
     $('#expense-list-body-slimscroll').slimScroll({
-        height: '370px',     
+        height: '343px',     
         alwaysVisible: false,
         disableFadeOut: false
      });
@@ -32,7 +32,7 @@ $(function(){
 
 $(function(){
     $('#expense-list-body').slimScroll({
-        height: '370px',     
+        height: '343px',     
         alwaysVisible: false,
         disableFadeOut: false
         });
