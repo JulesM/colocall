@@ -16,14 +16,28 @@
      </td>
      <td id="task">{{ task.task }}</td>
      
+     <td id="task-owner">
      {% if task.owner != null %}
-     <td>{{ task.owner.nickname }}</td>
+     {{ task.owner.nickname }}
      {% else %}
-     <td></td>
      {% endif %}
+     </td>
+             
+     <td>
+         {% if state == 0 %}
+             {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
+                 overdue
+             {% elseif task.dueDate|date("m/d") == "now"|date("m/d") %}
+                 today
+             {% else %}
+                 <i class="icon-time"></i>{{ task.dueDate|date("d/m") }}
+             {% endif %}
+         {% else %}
+             <i class="icon-time"></i>{{ task.dueDate|date("d-m") }} 
+         {% endif %}      
+     </td>
      
-     <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
-     <td id="todo-list-edit-comment-delete">
+     <td id="todo-list-edit-delete">
        <a href="#edittodomodal{{task.id}}" data-toggle="modal">
          <i class="icon-edit"></i>
        </a>

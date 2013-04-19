@@ -31,7 +31,7 @@
       <div id="todos-table1-container">
           <section class="todo">
               
-              <table id="todo-list" class="table">
+              <table id="todo-list" class="table table-hover">
                    
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
@@ -40,20 +40,28 @@
                           </div>
                       </div>
                   </caption>
+                  
+                  <thead>
+                    <tr>
+                      <th>Check</th>
+                      <th>What</th>
+                      <th>Who</th>
+                      <th>When</th>
+                      <th>Edit</th>
+                    </tr>
+                  </thead>
                  
                   <tbody>
                       {% for task in user_task %}
 
                       <tr>
                         <td id="check">
-                            <div class="btn-group">
-                                <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
-                            </div>                        
+                            <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
                         </td>
                         <td id="task">{{ task.task }}</td>
                         <td id="task-owner">{{ task.owner.nickname }}</td>
                         <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
-                        <td id="todo-list-edit-comment-delete">
+                        <td id="todo-list-edit-delete">
                           <i class="icon-edit"></i>
                           <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
                             <i class="icon-trash"></i>
@@ -83,8 +91,8 @@
               </li>
               <li class="status-filter">
                   <div class="btn-group">
-                  <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Checked</a>
-                  <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Pending</a>
+                    <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Checked</a>
+                    <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Pending</a>
                   </div>
               </li>
               <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white"></i></button></li>
@@ -94,7 +102,7 @@
     
       <div id="todos-table2-container">
           <section class="todo">
-              <table id="todo-list" class="table">
+              <table id="todo-list" class="table table-hover">
                   
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
@@ -107,6 +115,16 @@
                           </div>
                       </div>
                   </caption>
+                  
+                  <thead>
+                    <tr>
+                      <th>{% if state == 0 %}Check{% else %}{% endif %}</th>
+                      <th>What</th>
+                      <th>Who</th>
+                      <th>When</th>
+                      <th>Edit</th>
+                    </tr>
+                  </thead>
                         
                   <tbody>
                       {% include "ClcTodosBundle:Default:dynamicTable.html.twig" %} 

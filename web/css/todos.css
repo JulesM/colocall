@@ -98,89 +98,6 @@ body {
   border-top: 0;
 }
 
-.todo-list {
-  border: 1px solid #e6ebed;
-}
-.todo-list:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 35px;
-  width: 3px;
-  /*z-index: 2;*/
-  border: 1px solid #f2e3df;
-  border-width: 0 1px;
-}
-.todo-list li {
-  position: relative;
-  padding: 7px 15px 7px 50px;
-  line-height: 21px;
-  font-size: 12px;
-  color: #8b8f97;
-  border-bottom: 1px solid #e6ebed;
-}
-.todo-list .toggle {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 35px;
-  font: 0/0 serif;
-  text-shadow: none;
-  color: transparent;
-}
-.todo-list .toggle:before {
-  content: '';
-  position: absolute;
-  top: 9px;
-  left: 9px;
-  width: 15px;
-  height: 15px;
-  background: #faf9f9;
-  border: 1px solid #6bb3ca;
-  border-radius: 2px;
-  -webkit-transition: box-shadow 0.2s;
-  -moz-transition: box-shadow 0.2s;
-  -o-transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s;
-  -webkit-box-shadow: 0 1px 1px #dfecf4;
-  box-shadow: 0 1px 1px #dfecf4;
-}
-.todo-list .toggle:hover:before {
-  -webkit-box-shadow: 0 0 3px #6bb3ca;
-  box-shadow: 0 0 3px #6bb3ca;
-}
-.todo-list .done .toggle:before, .todo-list .toggle:active:before {
-  border-color: silver #cccccc #d8d8d8;
-  background: #fdfcfc url("../img/sprite.png") 2px 2px no-repeat;
-  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 0 5px 5px rgba(0, 0, 0, 0.05);
-}
-
-.todo-controls {
-  margin: 0 15px 12px 50px;
-  height: 12px;
-}
-.todo-controls li {
-  float: left;
-}
-.todo-controls li + li {
-  margin-left: 10px;
-}
-.todo-controls .right {
-  float: right;
-}
-.todo-controls a {
-  display: block;
-  margin: 0;
-  opacity: .6;
-}
-.todo-controls a:hover {
-  opacity: 1;
-}
-
 .todo-pagination {
   margin: -12px 12px 0 50px;
   height: 22px;
@@ -229,38 +146,12 @@ body {
   color: transparent;
 }*/
 
-.icon-check {
-  background-position: 0 0;
-}
-
-.icon-add {
-  background-position: -12px 0;
-}
-
-.icon-delete {
-  background-position: -24px 0;
-}
-
-.icon-settings {
-  background-position: -36px 0;
-}
-
 .icon-previous {
   background-position: -48px 0;
 }
 
 .icon-next {
   background-position: -60px 0;
-}
-
-
-.todo-list td {
-  position: relative;
-  padding: 7px 15px 7px 50px;
-  line-height: 21px;
-  font-size: 12px;
-  color: #8b8f97;
-  border-bottom: 1px solid #e6ebed;
 }
 
 #check{
@@ -274,11 +165,10 @@ body {
 
 #task{
     width: 270px;
-    min-width: 270px;
 }
 
 #task-owner{
-    max-width: 120px;
+    width: 120px;
 }
 
 #todo-list{
@@ -304,10 +194,6 @@ tbody *{
     vertical-align: middle;
 }
 
-#todo-comment i{
-    color: grey;
-}
-
 #todo-list tbody td{
     border-top: none;
 }
@@ -317,12 +203,12 @@ tbody *{
     border-bottom: 1px solid rgb(230, 235, 237);
 }
 
-#todo-list-edit-comment-delete{
+#todo-list-edit-delete{
     text-align: right;
-    width: 60px;
+    width: 50px;
 }
 
-#todo-list-edit-comment-delete i{
+#todo-list-edit-delete i{
         color: rgb(139, 143, 151);
 }
 
@@ -346,15 +232,12 @@ tbody *{
 }
 
 #all-todos-caption{
-    width: 150px; 
+    width: 200px; 
     display: inline-block; 
     padding-top: 0; 
     margin-left: 68px;
     float: left;
 }
-
-
-
 
 #todo-filter-tab-container{
     width: 100%;
@@ -366,7 +249,6 @@ tbody *{
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .todo-filter-tab{
     display: inline-block;
@@ -428,7 +310,7 @@ tbody *{
 
 .status-filter{
     width: 48%;
-    float:middle;
+    float: middle;
     margin: auto;
     display: inline-block;
 }
@@ -539,170 +421,4 @@ tbody *{
     text-shadow: 0px _1px rgb(0,0,0);
     vertical-align: middle;
     text-align: center;
-}
-
-
-/*Switch*/
-
-
-.settings-form {
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
-}
-
-.settings-form > label {
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-
-.settings-form input {
-  display: none;
-}
-
-
-
-.settings-switch {
-  float: left;
-  margin-left: 18px;
-  padding: 1px;
-  width: 60px;
-  background-clip: padding-box;
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.28);
-  border-radius: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #9bc58e;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b5b5b5), color-stop(100%, #d5d5d5));
-  background-image: -webkit-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -moz-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -ms-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -o-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: linear-gradient(top, #b5b5b5, #d5d5d5);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px rgba(255, 255, 255, 0.4);
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  -ms-transition: all 0.15s ease-out;
-  -o-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-  background-image: url(../img/switchbox-bckgd.png);
-}
-input:checked + .settings-switch {
-  padding-left: 27px;
-  background-clip: border-box;
-  border-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.28);
-  background-color: #ea7d7d;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #417ece), color-stop(100%, #62a4ee));
-  background-image: -webkit-linear-gradient(top, #b64a4a, #ea7d7d);
-  background-image: -moz-linear-gradient(top, #b64a4a, #ea7d7d);
-  background-image: -ms-linear-gradient(top, #b64a4a, #ea7d7d);
-  background-image: -o-linear-gradient(top, #b64a4a, #ea7d7d);
-  background-image: linear-gradient(top, #b64a4a, #ea7d7d);
-  background-image: url(../img/switchbox-bckgd.png);
-}
-
-.settings-switch-handle {
-  display: block;
-  margin: 1px;
-  padding: 1px;
-  width: 26px;
-  height: 12px;
-  border-radius: 8px;
-  background-color: #fbfbfb;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfbfb), color-stop(100%, #d9d9d9));
-  background-image: -webkit-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -moz-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -ms-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -o-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: linear-gradient(top, #fbfbfb, #d9d9d9);
-  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px rgba(0, 0, 0, 0.1);
-}
-.settings-switch-handle:before, .settings-switch-handle:after {
-  content: '';
-  width: 11px;
-  height: 12px;
-  border-radius: 6px;
-}
-.settings-switch-handle:before {
-  float: left;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #dfdfdf;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #c4c4c4));
-  background-image: -webkit-linear-gradient(left, #dfdfdf, #c4c4c4);
-  background-image: -moz-linear-gradient(left, #dfdfdf, #c4c4c4);
-  background-image: -ms-linear-gradient(left, #dfdfdf, #c4c4c4);
-  background-image: -o-linear-gradient(left, #dfdfdf, #c4c4c4);
-  background-image: linear-gradient(left, #dfdfdf, #c4c4c4);
-}
-.settings-switch-handle:after {
-  float: right;
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #dfdfdf;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfdfdf), color-stop(100%, #c4c4c4));
-  background-image: -webkit-linear-gradient(right, #dfdfdf, #c4c4c4);
-  background-image: -moz-linear-gradient(right, #dfdfdf, #c4c4c4);
-  background-image: -ms-linear-gradient(right, #dfdfdf, #c4c4c4);
-  background-image: -o-linear-gradient(right, #dfdfdf, #c4c4c4);
-  background-image: linear-gradient(right, #dfdfdf, #c4c4c4);
-}
-
-/*Todo swith*/
-
-
-.todo-settings-switch {
-  float: left;
-  margin-left: 10px;
-  padding: 1px;
-  width: 40px;
-  /*background-clip: padding-box;*/
-    background-color: #9bc58e;
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b5b5b5), color-stop(100%, #d5d5d5));
-  background-image: -webkit-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -moz-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -ms-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: -o-linear-gradient(top, #b5b5b5, #d5d5d5);
-  background-image: linear-gradient(top, #b5b5b5, #d5d5d5);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px rgba(255, 255, 255, 0.4);
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  -ms-transition: all 0.15s ease-out;
-  -o-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-  background-image: url(../img/todo-switchbox-bckgd.png);
-}
-input:checked + .todo-settings-switch {
-  padding-left: 21px;
-  background-clip: padding-box;
-  border-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6);
-  background-color: #ea7d7d;
-  background-image: url(../img/todo-switchbox-bckgd.png);
-}
-
-.todo-settings-switch-handle {
-  display: block;
-  margin: 1px;
-  padding: 1px;
-  width: 12px;
-  height: 12px;
-  border-radius: 8px;
-  background-color: #fbfbfb;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfbfb), color-stop(100%, #d9d9d9));
-  background-image: -webkit-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -moz-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -ms-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: -o-linear-gradient(top, #fbfbfb, #d9d9d9);
-  background-image: linear-gradient(top, #fbfbfb, #d9d9d9);
-  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px rgba(0, 0, 0, 0.1);
 }
