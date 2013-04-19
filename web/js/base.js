@@ -22,6 +22,5 @@ $(window).scroll(function() {
     else {
         elm.css("position", "static");
     }
-});
-
+  });
 });
