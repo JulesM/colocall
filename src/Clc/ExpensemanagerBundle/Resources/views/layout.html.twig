@@ -23,16 +23,9 @@
 {% block javascripts %}
   {{ parent() }}
   <script type='text/javascript' src='{{ asset('js/expensemanager-script.js') }}'></script>
+  <script type='text/javascript' src='{{ asset('js/jquery.slimscroll.min.js') }}'></script>
   <script type="text/javascript">
-      
-    var div = document.getElementById('personal-expense');
-    var div1 = document.getElementById('everyone-expense');
-    
-    if (div.style.height>div1.style.height){
-        div1.style.height=div.offsetHeight+"px";
-    }else{
-        div.style.height=div1.offsetHeight+"px";
-    }
+
 
   </script>
 {% endblock %}  
@@ -69,41 +62,40 @@
                     <p>No Payback yet</p>
                 {% else %}
                     
-                    <table id="payback-table" class="table">
-                        <caption>
+                        <div>
                             <p id="payback-table-caption">Last payback on {{ last_payback.date|date("d/m") }}</p>
-                        </caption>
+                        </div>                    
+                    <div class="table-slimscroll">
+                    <table id="payback-table" class="table">
                         
                         <tbody>                          
                                     {% for payment in last_payback.paymentsArray %}
                             <tr>
-                                <td id="payback-sender">
-                                    <div>
+                                <td>
+                                    <div id="payback-sender">
                                         <p>{{ payment[0] }}</p> 
                                     </div>
                                 </td>
-                                <td id="payback-arrow">
-                                    <div>
+                                <td>
+                                    <div id="payback-arrow">
                                         <p> {{ payment[1] }}</p>
                                     </div>
                                 </td>
-                                <td id="payback-recipient">
-                                    <div>
+                                <td>
+                                    <div id="payback-recipient">
                                         <p>{{ payment[2] }}</p> 
                                     </div>                                
                                 </td>
                              </tr>
                                     {% endfor %}
                         </tbody>
-                     </table>   
+                     </table>  
+                     </div>
                 {% endif %}
-                        
-                        
-                        
-                    <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Apply Payback</a>
+                     
+            </div>   
+                    <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Suggest a Payback</a>
                
-                    
-            </div>
           </div>
             
         </div>
@@ -111,27 +103,32 @@
 
       <div id="expense-container">
         <div  id="personal-expense" class="expense-list">
-          <div id="expense-list-header">
+          <div id="expense-list-header">             
+              <p>Me <i class="icon-chevron-right"></i> My Flatmates</p>
           </div>
                 
           <div id="expense-list-body">
               
-            <table id="mini-shopping-list-table" class="table">
+            <table id="expense-list-table" class="table">
               <tbody>
 
                 {% for expense in user_expense %}
 
                 <tr>
-                  <td id="mini-shopping-list-item">
-                      <h3>{{ expense.name }}</h3>
-                    <i class="icon-time"></i>{{ expense.date|date("d/m") }}
+                  <td>
+                    <div id="expense-list-item">
+                        <h3>{{ expense.name }}</h3>
+                        <i class="icon-time"></i>{{ expense.date|date("d/m") }}
+                    </div>
                   </td>
-                  <td id="mini-list-cost">{{ expense.amount }}€</td>
-                  <td id="todo-list-edit-comment-delete">
-                    <i class="icon-edit"></i>
-                    <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                      <i class="icon-trash"></i>
-                    </a>
+                  <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
+                  <td>
+                    <div id="expense-list-edit-delete">
+                        <i class="icon-edit"></i>
+                        <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                        <i class="icon-trash"></i>
+                        </a>
+                    </div>
                   </td>
                 </tr>
 
@@ -146,28 +143,42 @@
         
         <div id="everyone-expense" class="expense-list">
           <div id="expense-list-header">
+              <p>My Flatmates <i class="icon-chevron-right"></i> Me</p>
           </div>
           
-          <div id="expense-list-body">
+          <div id="expense-list-body-slimscroll">
+          <div id="expense-list-body">       
 
           <table>
             <tbody>
 
               {% for expense in forme_expense %}
 
+
+                
                 <tr>
-                  <td>{{ expense.owner.nickname }}</td>   
-                  <td id="task">{{ expense.name }}</td>
-                  <td>{{ expense.amount }}€</td>
-                  <td><i class="icon-time"></i>{{ expense.date|date("d/m") }}</td>
-                  
+                  <td>
+                    <div id="expense-list-item">
+                        <h3>{{ expense.name }}</h3>
+                        <i class="icon-time"></i>Added by {{ expense.owner.nickname }} on {{ expense.date|date("d/m") }}
+                    </div>
+                  </td>
+                  <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
+                  <td>
+                    <div id="expense-list-edit-delete">
+                        <i class="icon-edit"></i>
+                        <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                        <i class="icon-trash"></i>
+                        </a>
+                    </div>
+                  </td>
                 </tr>
 
               {% endfor %}
                 
             </tbody>
           </table>
- 
+          </div>
           </div>
         </div>       
       </div>   

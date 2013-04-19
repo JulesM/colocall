@@ -9,4 +9,34 @@ $( "#accordion" ).accordion({
     collapsible: true 
       });
     });
+    
+$(function(){
+    $('.table-slimscroll').slimScroll({
+        height: '200px',     
+        alwaysVisible: false,
+        disableFadeOut: false
+    });
+});   
+
+        
+    
+        
+        $(function(){
+    $('#expense-list-body-slimscroll').slimScroll({
+        height: '370px',     
+        alwaysVisible: false,
+        disableFadeOut: false
+     });
+    }); 
+    
+
+$(function(){
+    $('#expense-list-body').slimScroll({
+        height: '370px',     
+        alwaysVisible: false,
+        disableFadeOut: false
+        });
+    }); 
+    
+
 });
