@@ -27,10 +27,10 @@
                     <button class="circle-button" href="#additemmodal" data-toggle="modal"><i class="icon-plus icon-muted" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button>
                 </li>
                 <li class="status-filter">
-                    <div class="btn-group">
-                    <a class="btn" href="{{ path('clc_shoppinglist_homepage', {'state' : 1}) }}">Checked</a>
-                    <a class="btn" href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}">Pending</a>
-                    </div>
+                  <div id="state-buttons">  
+                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 1}) }}"><div class="state-button">Checked</div></a>
+                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div class="state-button">Pending</div></a>
+                  </div>  
                 </li>
                 <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
             </ul>            
@@ -69,9 +69,12 @@
                                 {% endif %}
                                   
                           </div></td>
-                          <td><div id="task">{{ item.name }}</div></td>
-                          <td><div id="task-owner">{{ item.author.nickname }}</div></td>
-                          <td><i class="icon-time"></i>{{ item.addedDate|date("d/m")  }}</td>
+                          <td>
+                              <div id="shopping-list-item">
+                                <div id="item">{{ item.name }}</div>
+                                <div id="author-date"> Added by {{ item.author.nickname }} on {{ item.addedDate|date("d/m")  }}
+                              </div>
+                          </td>
                           <td><div id="edit-delete">
                             <i class="icon-edit"></i>
                             <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">

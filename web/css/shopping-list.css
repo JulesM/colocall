@@ -161,25 +161,24 @@ td{
 }
 
 #check{
-    width: 45px;
-    padding: 0;
     vertical-align: middle;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
 }
 
-#task{
-    width: 270px;
+#shopping-list-item{
+    width: 480px;
+    padding-left: 10px;
 }
 
-#task-owner{
-    width: 100px;
+#shopping-list-item #author-date{
+    font-size: 10px;
+    color: grey;
 }
-
 #edit-delete{
     text-align: center;
-    width: 50px;
+    width: 60px;
 }
 
 #edit-delete i{
@@ -237,6 +236,22 @@ tbody *{
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
 
+}
+#state-buttons{
+}
+.state-button{
+    display: inline-block;
+    color: #7c2a13;
+    text-shadow: 0px 0px 1px #4a1609;
+    height: 30px;
+    width:80px;
+    vertical-align: middle;
+    padding-top: 4px;
+    font-size: 20px;
+    font-family: 'proxima-bold'
+}
+
+.state-button:hover{ 
 }
 
 #all-todos-caption{
