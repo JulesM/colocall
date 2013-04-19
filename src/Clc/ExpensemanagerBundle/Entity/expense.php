@@ -75,6 +75,11 @@ class expense
      * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", inversedBy="ForMeExpenses", cascade={"persist"})
      */
     protected $users;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="expense", cascade={"persist", "remove"})
+     */
+    protected $notification;
 
     /**
      * Get id
@@ -314,5 +319,28 @@ class expense
     {
         $users = $this->getUsers();
         return $n = count($users);
+    }
+
+    /**
+     * Set notification
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notification
+     * @return expense
+     */
+    public function setNotification(\Clc\InboxBundle\Entity\notification $notification = null)
+    {
+        $this->notification = $notification;
+    
+        return $this;
+    }
+
+    /**
+     * Get notification
+     *
+     * @return \Clc\InboxBundle\Entity\notification 
+     */
+    public function getNotification()
+    {
+        return $this->notification;
     }
 }

@@ -52,7 +52,7 @@ class notification
     /**
      * @var \stdClass
      *
-     * @ORM\ManyToOne(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Clc\ExpensemanagerBundle\Entity\expense", inversedBy="notification", cascade={"persist"})
      */
     protected $expense;
 
