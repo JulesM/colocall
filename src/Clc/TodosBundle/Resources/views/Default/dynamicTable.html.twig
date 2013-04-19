@@ -23,7 +23,7 @@
      {% endif %}
      </td>
              
-     <td>
+     <td id="date">
          {% if state == 0 %}
              {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
                  overdue

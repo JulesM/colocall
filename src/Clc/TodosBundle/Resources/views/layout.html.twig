@@ -60,7 +60,7 @@
                         </td>
                         <td id="task">{{ task.task }}</td>
                         <td id="task-owner">{{ task.owner.nickname }}</td>
-                        <td><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
+                        <td id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</td>
                         <td id="todo-list-edit-delete">
                           <i class="icon-edit"></i>
                           <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">

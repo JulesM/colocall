@@ -38,16 +38,15 @@
       
         <div id="todos-table2-container">
             <section class="todo">
-                <table id="todo-list" class="table">
+                <table id="todo-list" class="table table-hover">
                      
                     <caption id="todo-table-caption">  
                         <div id="todo-filter-tab-container">
                             <div id="item-check" class="btn-group">
-                                <button class="btn"><i class="icon-check" style="font-size: 1.5em; vertical-align: middle; margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
                             </div> 
                             <div id="all-todos-caption">
                                 
-                                {% if state == 0 %} <p>What's missing?</p>
+                                {% if state == 0 %} <p>What's missing ?</p>
                                 {% else %}          <p>Recently bought</p>
                                 {% endif %}
                                 
