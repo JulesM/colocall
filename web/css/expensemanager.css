@@ -84,10 +84,83 @@
     text-align: left;
 }
 
-#expense-body{
+.expense-body{
     height: 290px;
+    text-align: center;
 }
 
+#expense-body-right{
+    width: 80%;
+    height: 60%;
+    margin-top: -20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow:inset  0px 1px 2px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px 10px 10px 10px;
+    padding-bottom: 5px;
+}
+
+#payback-table{
+    width: 270px;
+    max-width: 270px;
+}
+
+.table{
+    table-layout: fixed;
+}
+
+#payback-table-caption{
+    padding-top: 5px;
+    font-family: Georgia;
+    font-style: italic;
+    color: rgb(120, 120, 120);
+}
+
+#payback-sender{
+    width: 40%; 
+    overflow: hidden;
+}
+
+#payback-sender div{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    text-align: left;
+    
+}
+
+#payback-arrow{
+    width: 20%;
+    color: rgb(0, 102, 0);
+    font-weight: bold;
+}
+
+#payback-arrow div{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    vertical-align: middle;
+    background: url('../img/arrow.png') no-repeat scroll 0% 0% transparent;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+#payback-arrow div p{
+    vertical-align: middle;
+}
+
+#payback-recipient{
+    width: 40%;
+    overflow: hidden;
+}
+#payback-recipient div{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    text-align: right;
+    
+}
 #bar-chart{
     margin-left: 15px;
     margin-top: -80px;
@@ -100,18 +173,29 @@
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
     min-height:250px;
     width: 340px;
-    margin-top: 50px; 
+    margin-top: 30px; 
     display: inline-block;
     margin-bottom: 30px;
 }
 
 #expense-list-header{
-    height: 30px;
+    height: 52px;
+    width: 336px;
+    margin-left:auto;
+    margin-right: auto;
+    background: linear-gradient(to bottom, rgb(103, 109, 114), rgb(142, 153, 160)) repeat scroll 0% 0% rgb(142, 153, 160);
+    background: url('../img/tab-bckgd.png') repeat-x scroll 0% 0% transparent;
+    border-radius: 10px 10px 0px 0px ;
+    vertical-align: middle;
+    /*box-shadow:  0px 0px 0px 2px rgb(109, 109, 109), 0px 0px 0px 0.5px rgb(58, 52, 44);*/
+    box-shadow: rgb(218, 162, 115) 0px 0px 0px 0.5px, rgb(237, 211, 180) 0px 0px 0px 1px, rgb(172, 95, 75) 0px 0px 0px 1.5px, rgb(188, 130, 108) 0px 0px 0px 2px;
 }
 
 #expense-list-body{
     width: 100%;
     margin-bottom: 30px;
+    background: url('../img/Ppaper-bckgd.png') repeat-x scroll 0% 0% transparent;
+    
 }
 
 #expense-list-body table{
@@ -132,13 +216,4 @@
 #expense-list-body table tr td:last-child{
     text-align: right;
     color: rgb(139, 143, 151);
-}
-
-
-#accordion h3{
-    background: none;
-}
-
-#accordion div{
-    height: 20px;
 }

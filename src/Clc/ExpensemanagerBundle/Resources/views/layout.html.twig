@@ -43,8 +43,7 @@
   
   <div id="expense-content">
       
-    <button class="btn btn-primary" href="#addexpensemodal" data-toggle="modal"><i class="icon-bookmark icon-white"></i> Add Expense</button>
-    
+   
       <div id="overview-container">
         <div id="expense-dashboard-container" class="dashboard-container">
           <div id="new-expense-left">
@@ -64,22 +63,45 @@
                 <h1 class="expense-header-right">Payback</h1>
             </div>
 
-            <div id="expense-body"> 
-                
-                
-                
-                <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Apply Payback</a>
-                
+            <div id="expense-body-right" class="expense-body"> 
+              
                 {% if last_payback is null %}
                     <p>No Payback yet</p>
                 {% else %}
-                    <p>Last payback on {{ last_payback.date|date("d/m") }}</p>
                     
-                    {% for payment in last_payback.paymentsArray %}
-                        <p>{{ payment[0] }} paid {{ payment[1] }} to {{ payment[2] }}</p>
-                    {% endfor %}
+                    <table id="payback-table" class="table">
+                        <caption>
+                            <p id="payback-table-caption">Last payback on {{ last_payback.date|date("d/m") }}</p>
+                        </caption>
                         
+                        <tbody>                          
+                                    {% for payment in last_payback.paymentsArray %}
+                            <tr>
+                                <td id="payback-sender">
+                                    <div>
+                                        <p>{{ payment[0] }}</p> 
+                                    </div>
+                                </td>
+                                <td id="payback-arrow">
+                                    <div>
+                                        <p> {{ payment[1] }}</p>
+                                    </div>
+                                </td>
+                                <td id="payback-recipient">
+                                    <div>
+                                        <p>{{ payment[2] }}</p> 
+                                    </div>                                
+                                </td>
+                             </tr>
+                                    {% endfor %}
+                        </tbody>
+                     </table>   
                 {% endif %}
+                        
+                        
+                        
+                    <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Apply Payback</a>
+               
                     
             </div>
           </div>
@@ -93,18 +115,19 @@
           </div>
                 
           <div id="expense-list-body">
-
-            <table>
+              
+            <table id="mini-shopping-list-table" class="table">
               <tbody>
 
                 {% for expense in user_expense %}
 
                 <tr>
-                  <td id="task">{{ expense.name }}</td>
-                  <td>{{ expense.amount }}€</td>
-                  <td><i class="icon-time"></i> {{ expense.date|date("d/m") }}</td>
+                  <td id="mini-shopping-list-item">
+                      <h3>{{ expense.name }}</h3>
+                    <i class="icon-time"></i>{{ expense.date|date("d/m") }}
+                  </td>
+                  <td id="mini-list-cost">{{ expense.amount }}€</td>
                   <td id="todo-list-edit-comment-delete">
-                    <i class="icon-eye-open"></i>
                     <i class="icon-edit"></i>
                     <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
                       <i class="icon-trash"></i>
@@ -113,8 +136,9 @@
                 </tr>
 
                 {% endfor %}
+                
               </tbody>
-            </table>   
+            </table>
 
  
           </div>
