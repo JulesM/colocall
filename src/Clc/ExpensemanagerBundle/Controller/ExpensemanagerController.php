@@ -71,9 +71,10 @@ class ExpensemanagerController extends Controller
         $request = $this->get('request');
 
         if ($request->isMethod('POST')) {
+            
             $form->bind($request);
 
-            if ($form->isValid()) {
+            if ($form->isValid() and count($form->get('users')->getData()) > 0) {
                 
                 $notification = new \Clc\InboxBundle\Entity\notification;
                 $notification->setCategory(1)
@@ -93,6 +94,9 @@ class ExpensemanagerController extends Controller
                 $url = $this->getRequest()->headers->get("referer");
                 return $this->redirect($url);
             }
+            
+            $url = $this->getRequest()->headers->get("referer");
+            return $this->redirect($url);
         }
                 
         return $this->render('ClcExpensemanagerBundle:Default:new.html.twig', array(

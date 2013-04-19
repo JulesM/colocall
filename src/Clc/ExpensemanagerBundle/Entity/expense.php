@@ -73,6 +73,7 @@ class expense
     
     /**
      * @ORM\ManyToMany(targetEntity="Clc\UserBundle\Entity\User", inversedBy="ForMeExpenses", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
     protected $users;
     
