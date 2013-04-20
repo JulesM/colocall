@@ -23,4 +23,29 @@ $(window).scroll(function() {
         elm.css("position", "static");
     }
   });
+  
+  
+$(function(){ 
+    if ($(window).width()<800)
+    {
+    $("#leftbox").css("width","50px");
+    }
+});
+
+$(window).resize(function() {
+        var wi = $(window).width();
+        $("p.testp").text('Screen width is currently: ' + wi + 'px.');
+});
+
+    $(window).resize(function() {
+        var wi = $(window).width();
+ 
+         if (wi <= 767){
+            
+    $("#leftbox").css("width","50px");
+}
+        else {
+            $("#leftbox").css("width","15%");
+            }
+    }); 
 });

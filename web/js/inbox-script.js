@@ -12,5 +12,6 @@ $(function(){
     });
 });
 
+GlobalPageCount = 1;
 
 });
