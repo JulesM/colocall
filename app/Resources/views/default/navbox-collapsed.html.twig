@@ -1,0 +1,67 @@
+{# app/Resources/views/navbox.html.twig #}
+
+{% if app.user.coloc == null %}
+
+    <div id="empty-navbox">You need to 
+       <a href="{{ path('clc_dashboard_homepage') }}">join a flatshare</a>
+       to enjoy all functionalities of Coloc'all
+    </div>
+
+{% else %}
+
+    <div id="nav_container1">
+        <div id="user">
+            <a href="{{ path('clc_dashboard_homepage') }}">  
+                <img src="{{ asset('img/avatar.png') }}">
+            </a>
+        </div>
+    </div>
+
+
+
+    <div id="nav_container2">
+        <ul class="nav nav-pills nav-stacked" id="nav">
+            <li>
+                <a id="navbox-link-1" href="{{ path('clc_inbox_homepage') }}">
+                    <div id="p"><i id="icon" class="icon-inbox"></i></div>
+                </a>
+            </li>
+            <li>
+                <a id="navbox-link-2" href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}">
+                    <div id="p"><i class="icon-tags"></i></div>
+                </a>
+            </li>
+            <li>
+                <a id="navbox-link-3" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">
+                    <div id="p"><i class="icon-calendar"></i></div>
+                </a>
+            </li>
+            <li>
+                <a id="navbox-link-4" href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}">
+                    <div id="p"><i class="icon-list"></i></div>
+                </a>
+            </li>
+            <li>
+                <a id="navbox-link-5" href="{{ path('clc_coloc_homepage') }}">
+                    <div id="p"><i class="icon-cog"></i></div>
+                </a>
+            </li>
+            <li>
+                <a id="navbox-link-6" href="{{ path('clc_coloc_statistics') }}">
+                    <div id="p"><i class="icon-signal"></i></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="nav_container3">
+        <div id="nav_container3_bis">
+            <a href="{{ path('clc_event_homepage') }}">
+                <div id="p">
+                    <i class="icon-plus-sign"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+{% endif %}

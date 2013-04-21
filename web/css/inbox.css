@@ -5,12 +5,16 @@
     Description:
         Style of the inbox bundle html pages
 */
+#inbox-content{
+    min-width: 940px;
+}
+
 
 #inbox-content h3{
     height: 30px;
     text-align: center;
-    font-family: 'Oswald-strong';
-    text-shadow: 1px 1px;
+    font-family: 'Proxima-Regular';
+    text-shadow: 1px 1px white;
 }
 
 /* --- Chat --- */
@@ -66,7 +70,7 @@
     height: 20px;
     width: 70%;
     margin-top: 5px;
-    font-family: 'Oswald-Regular';
+    font-family: 'Proxima-Regular';
 }
 
 #message-content-box{
@@ -116,7 +120,7 @@
 
 #notifications-content{
     display: inline-block;
-    width: 35%;
+    width: 360px;;
     vertical-align: top;
     float: right;
     margin-right: 3%;

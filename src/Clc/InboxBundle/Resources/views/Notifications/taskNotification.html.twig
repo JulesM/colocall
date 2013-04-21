@@ -1,19 +1,29 @@
 {# src/Clc/InboxBundle/Resources/views/Notifications/expenseNotification.html.twig  #}
 
 <a href="{{ path('clc_todos_homepage', { 'state': 0} ) }}">
-    <div class="notification-box">
-        <div class="notification-left">
-            <i class="icon-ok"></i>
-        </div>
+      <table class="notification-box">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="notification-left">
+                        <i class="icon-ok"></i>
+                    </div>
+                <td/>
+                <td>
         <div class="notification-center">
-            <b>{{ notification.author.nickname }}</b> added a task :<br>
+            <b>{{ notification.author.nickname }}</b> added a task:<br>
             '{{ notification.task.task }}' for {{ notification.task.dueDate|date("d/m") }}
             <br> {% if notification.task.owner == null %} No one is assigned yet
                  {% else %} <b>{{ notification.task.owner.nickname }}</b> is assigned
                  {% endif %}
         </div>
-        <div class="notification-right">
-            {{ notification.date|date("d/m") }}
-        </div>
-    </div>
+                </td>
+                <td>
+                    <div class="notification-right">
+                        {{ notification.date|date("d/m") }}
+                    </div>
+                </td>
+        </tr>
+        </tbody>
+    </table>        
 </a>

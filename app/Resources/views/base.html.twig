@@ -19,11 +19,15 @@
     
 <div id="pseudocontainer">    
     <div id="mainbox">
-            <div id="leftbox">
+            <div id="leftbox" class="fullscreen-navbox">
                 {% include ":default:navbox.html.twig" %}
                     
                 {% include "ClcUserBundle:Feedback:feedback.html.twig" %}
-            </div>   
+            </div> 
+            
+            <div id="leftbox" class="collapsed-navbox">
+                {% include ":default:navbox-collapsed.html.twig" %}                   
+            </div>  
         
             <div id="content">
                 {% block body %}
