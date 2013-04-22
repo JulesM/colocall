@@ -31,132 +31,129 @@
   {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
   {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
       
-  <div id="dashboard-content">
-      <div id="overview-container">
-          <div id="expense-dashboard-container" class="dashboard-container">   
+<div id="dashboard-content">
+    
+    <h1 id="dashboard-title">DASHBOARD</h1>
+    
+    <div id="overview-container">
+        <div id="expense-dashboard-container" class="dashboard-container">   
             <div id="expense-header">
-                <h1 class="expense-header-right">Expense Manager</h1>
+                <p>Expense Manager <i class="icon-chevron-right"></i></h1>
             </div>
-          <div id="expense-left">
-              <div id="expense-subheader">
-                  <h1 class="expense-subheader-left">Balance</h1>
-              </div>
+            <div id="expense-left">
+                <div class="expense-subheader">
+                    <h1 id="expense-subheader-left">Current Balances</h1>
+                </div>
 
-              <div id="expense-body"> 
-                  <div id="bar-chart">
-                      {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : current_balances } %}
-                  </div>
-              </div>
-          </div>
+                <div id="expense-body"> 
+                    <div id="bar-chart">
+                        {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : current_balances } %}
+                    </div>
+                </div>
+            </div>
        
-          <div id="expense-right">
-            <div id="expense-subheader">
-                <h1 class="expense-subheader-right">Latest Expenses</h1>
+            <div id="expense-right">
+                <div class="expense-subheader">
+                    <h1 id="expense-subheader-right">Latest Expenses</h1>
+                </div>
+
+                <div id="expense-body"> 
+                    <div id="expense-body-slimscroll">
+                        <table id="mini-shopping-list-table" class="table">
+                            <tbody>
+
+                                {% for expense in latest_expenses %}
+
+                                    <tr>
+                                      <td id="mini-shopping-list-item">
+                                          <h3>{{ expense.name }}</h3>
+                                          <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.author.nickname }}
+                                      </td>
+                                      <td id="mini-list-cost">{{ expense.amount }}€</td>
+                                      <td id="todo-list-edit-comment-delete">
+                                        <i class="icon-edit"></i>
+                                        <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                                          <i class="icon-trash"></i>
+                                        </a>
+                                      </td>
+                                    </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="small-dashboard-container-left" class="small-dashboard-container" >
+            <div class="shopping-upper">
+                <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
+            </div>
+            <div class="shopping-lower">
+                <table id="mini-shopping-list-table" class="table">
+                    <tbody>
+
+                        {% for todo in my_todos %}
+
+                          <tr>
+                            <td id="mini-shopping-list-item">
+                              <h3>{{ todo.task }}</h3>
+                              <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
+                            </td>
+                            <td id="todo-list-edit-comment-delete">
+                              <i class="icon-eye-open"></i>
+                              <i class="icon-edit"></i>
+                              <a href="#">
+                                <i class="icon-trash"></i>
+                              </a>
+                            </td>
+                          </tr>
+
+                        {% endfor %} 
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="small-dashboard-container-right" class="small-dashboard-container">
+            <div class="shopping-upper">
+                <p>Shopping List <i class="icon-chevron-right"></i></p>
             </div>
 
-            <div id="expense-body"> 
-                
-          <div id="expense-body-slimscroll">
-            <table id="mini-shopping-list-table" class="table">
-              <tbody>
+            <div class="shopping-lower">
+                <table id="mini-shopping-list-table" class="table">
+                    <tbody>
 
-                {% for expense in latest_expenses %}
+                        {% for item in shopping_list %}
 
-                <tr>
-                  <td id="mini-shopping-list-item">
-                      <h3>{{ expense.name }}</h3>
-                    <i class="icon-time"></i>{{ expense.date|date("d/m") }}
-                  </td>
-                  <td id="mini-list-cost">{{ expense.amount }}€</td>
-                  <td id="todo-list-edit-comment-delete">
-                    <i class="icon-edit"></i>
-                    <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                      <i class="icon-trash"></i>
-                    </a>
-                  </td>
-                </tr>
+                          <tr>
+                            <td id="mini-shopping-list-item">
+                              <h3>{{ item.name }}</h3>
+                              <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
+                            </td>
+                            <td id="todo-list-edit-comment-delete">
+                              <i class="icon-eye-open"></i>
+                              <i class="icon-edit"></i>
+                              <a href="#">
+                                <i class="icon-trash"></i>
+                              </a>
+                            </td>
+                          </tr>
 
-                {% endfor %}
-                
-              </tbody>
-            </table>
-              
-          </div>
-                    
+                        {% endfor %} 
+
+                    </tbody>
+                </table>      
             </div>
-          </div>
-            
-          </div>
-
-
-          <div id="small-dashboard-container-left" class="small-dashboard-container" >
-              <div class="shopping-upper">
-                  <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
-              </div>
-              <div class="shopping-lower">
-                  <table id="mini-shopping-list-table" class="table">
-                      <tbody>
-                          
-                          {% for todo in my_todos %}
-
-                              <tr>
-                                <td id="mini-shopping-list-item">
-                                  <h3>{{ todo.task }}</h3>
-                                  <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
-                                </td>
-                                <td id="todo-list-edit-comment-delete">
-                                  <i class="icon-eye-open"></i>
-                                  <i class="icon-edit"></i>
-                                  <a href="#">
-                                    <i class="icon-trash"></i>
-                                  </a>
-                                </td>
-                              </tr>
-                            
-                          {% endfor %} 
-                          
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-
-          <div id="small-dashboard-container-right" class="small-dashboard-container">
-              <div class="shopping-upper">
-                  <p>Shopping List <i class="icon-chevron-right"></i></p>
-                        
-              </div>
-              
-              <div class="shopping-lower">
-                  <table id="mini-shopping-list-table" class="table">
-                      <tbody>
-                          
-                          {% for item in shopping_list %}
-
-                              <tr>
-                                <td id="mini-shopping-list-item">
-                                  <h3>{{ item.name }}</h3>
-                                  <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
-                                </td>
-                                <td id="todo-list-edit-comment-delete">
-                                  <i class="icon-eye-open"></i>
-                                  <i class="icon-edit"></i>
-                                  <a href="#">
-                                    <i class="icon-trash"></i>
-                                  </a>
-                                </td>
-                              </tr>
-                            
-                          {% endfor %} 
-                          
-                      </tbody>
-                  </table>      
-              </div>
-          </div>
-      </div>
+        </div>
+    </div>
           
-      {% include ":default:floatingToolbar.html.twig" %}
+    {% include ":default:floatingToolbar.html.twig" %}
           
-  </div>
+</div>
 
 {% endblock %}
      

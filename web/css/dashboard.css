@@ -9,69 +9,28 @@ body{
     padding-right: 0px;
 }
 
-
-/* --- Top box --- */
-
 #dashboard-content{
     background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
     width: 100%;
     height: 100%;
-    padding-top: 20px;
 }
 
-#welcome-container{
-    width: 684px;
-    min-width: 684px;
-    height: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-
-#welcome-box{
-    height: 60px;
-    padding-top: 1%;
-    margin-bottom: 10px;
-}
-
-#welcome-box h1{   
+#dashboard-title{
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    height: 35px;
     text-align: center;
-    font-family: 'Oswald-Regular';
-    color: #555555;
-    text-shadow: 1px 1px 1px #888;
-    color: black;
-    text-shadow: 0px 1px 0px white;
+    font-family: 'proxima-regular';
+    color:black;
+    font-size: 32px;
+    font-weight: normal;
+    text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15);
 }
-
-#welcome-overview{
-    height:  60%;
-    text-align: center;
-}
-
-#quicklink-toolbar{
-    height: 80px;
-    width: 636px;
-    margin-left: 18px;;
-    margin-right: auto;
-    margin-top: 80px;
-    display: inline;
-}
-
-#quicklink-toolbar button{
-    width: 151px;
-    margin-left: 8px;
-    display: inline;
-    vertical-align: top;
-    margin-top: 0px;
-}
-
-/* --- Bottom box --- */
 
 #overview-container{
     height: 100%;
     width: 684px;
-    min-width: 684px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -80,6 +39,8 @@ body{
     height: 239px;
     width: 69%;
 }
+
+/* --- Expense - Box --- */
 
 #expense-dashboard-container{
     width: 689px;
@@ -123,15 +84,22 @@ body{
     border-radius: 10px 10px 0px 0px;
 }
 
-#expense-header h1{
+#expense-header p{
+    height: 100%;
+    padding-top: 16px;
+    text-align: left;
+    margin-left: 15px;
+    vertical-align: middle;
     font-family: 'Proxima-Bold';
     color: white;
     text-shadow: 0px 1px 0px black;
     font-size: 25px;
     font-weight: normal;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+#expense-header p i{
+    float: right;
+    margin-right: 20px;
 }
 
 .expense-header-left{
@@ -143,13 +111,13 @@ body{
     margin-bottom: 10px;
 }
 
-#expense-subheader{
+.expense-subheader{
     height: 30px;
     border-radius: 10px 10px 0px 0px;
     margin-top: -5px;
 }
 
-#expense-subheader h1{
+.expense-subheader h1{
     font-family: Georgia;
     color: rgb(236, 106, 66);
     font-size: 20px;
@@ -160,17 +128,14 @@ body{
     margin-right: auto;
 }
 
-.expense-subheader-left{
-    text-align: right;;
-}
-
-.expense-subheader-right{
-    text-align: left;
-}
-
 #expense-body{
     height: 290px;
     padding-top: 10px;
+}
+
+#bar-chart{
+    margin-left: 15px;
+    margin-top: -60px;
 }
 
 #expense-body table tr{
@@ -183,95 +148,9 @@ body{
     font-weight: bold;
 }
 
-
-#bar-chart{
-    margin-left: 15px;
-    margin-top: -60px;
-}
-
-.ui-accordion-content {
-    height: 80px;
-}
-
-.expense-upper{
-    background: url('../img/dashboard/expense-post-upper.png') no-repeat scroll 0% 0% transparent;
-    height: 15px;
-/*    margin-top: 50px;*/
-    top: 0px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    border: 0px none;
-
-}
-
 .shopping-upper p i{
     float: right;
     margin-right: 20px;
-}
-
-/*.expense-left-tag{
-    background: url('../img/dashboard/ribbon_left.png') no-repeat scroll 0% 0% transparent;
-    width: 7px;
-    height: 64px;
-    position: relative;
-    left: -6px;
-    top: 79px;
-}*/
-
-.expense-middle-tag{
-    background: url('../img/dashboard/new-ribbon.png') no-repeat scroll 0% 0% transparent;
-    width: 110%;
-    margin-left: -1.5%;
-    height: 57px;
-    vertical-align: middle;
-    padding-top: 7px;
-}
-
-.expense-middle-tag h1{
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: left;
-    margin-left: 10px;
-    font-family: 'Oswald-Regular';
-    color: white;
-    text-shadow: 0px 1px 0px black;
-    font-size: 30px;
-    font-weight: normal;
-    vertical-align: middle;
-}
-
-
-
-
-/*.expense-right-tag{
-    background: url('../img/dashboard/ribbon_right.png') no-repeat scroll 0% 0% transparent;
-    width: 14px;
-    height: 57px;
-    position: relative;
-    right: -688px;
-    top: 136px;
-}*/
-
-.expense-middle{
-    background: url('../img/dashboard/expense-post-middle.png') repeat scroll 0% 0% transparent;
-    min-height: 200px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    border: 0px none;
-
-}
-
-.expense-lower{
-    background: url('../img/dashboard/expense-post-lower.png') no-repeat scroll 0% 0% transparent;
-    height: 30px;
-    width: 100%;
-    top: -2px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px none;
-
 }
 
 #to-do-dashboard-container{
@@ -337,7 +216,6 @@ body{
     background: url('../img/dashboard/small-dash-bckgd.png') repeat-x scroll 0% 0% transparent;
     border-radius: 10px 10px 0px 0px ;
     vertical-align: middle;
-    /*box-shadow:  0px 0px 0px 2px rgb(109, 109, 109), 0px 0px 0px 0.5px rgb(58, 52, 44);*/
     box-shadow: 0px 0px 0px -1px rgb(104, 104, 104), 0px 0px 0px -2px rgb(58, 43, 45);
 }
 
