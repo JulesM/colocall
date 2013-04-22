@@ -22,10 +22,10 @@ class UserController extends Controller
         $form = $this->createFormBuilder($feedback)
                      ->add('category', 'choice', array(
                             'choices' => array(
+                                'bug'        => 'Bug',
                                 'suggestion' => 'Suggestion',
+                                'design'     => 'Design',
                                 'question'   => 'Question',
-                                'bug'        => 'Bug'
-                                
                             )))
                      ->add('text', 'textarea')
                      ->getForm();
