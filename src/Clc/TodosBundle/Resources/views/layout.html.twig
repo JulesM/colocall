@@ -41,36 +41,48 @@
                       </div>
                   </caption>
                   
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>What</th>
-                      <th>Who</th>
-                      <th>When</th>
-                      <th>Edit</th>
-                    </tr>
-                  </thead>
-                 
-                  <tbody>
-                      {% for task in user_task %}
-
+                  {% if user_task == null %}
+                    <tbody>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>You do not have any pending to-do</td>
+                         </tr>
+                    </body>
+                  {% else %}
+                    
+                    <thead>
                       <tr>
-                        <td><div id="check">
-                            <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
-                        </div></td>
-                        <td><div id="task">{{ task.task }}</div></td>
-                        <td><div id="task-owner">{{ task.owner.nickname }}</div></td>
-                        <td><div id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</div></td>
-                        <td><div id="edit-delete">
-                          <i class="icon-edit"></i>
-                          <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
-                            <i class="icon-trash"></i>
-                          </a>
-                        </div></td>
+                        <th></th>
+                        <th>What</th>
+                        <th>Who</th>
+                        <th>When</th>
+                        <th>Edit</th>
                       </tr>
+                    </thead>
 
-                      {% endfor %}
-                  </tbody>
+                    <tbody>
+                        {% for task in user_task %}
+
+                        <tr>
+                          <td><div id="check">
+                              <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
+                          </div></td>
+                          <td><div id="task">{{ task.task }}</div></td>
+                          <td><div id="task-owner">{{ task.owner.nickname }}</div></td>
+                          <td><div id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</div></td>
+                          <td><div id="edit-delete">
+                            <i class="icon-edit"></i>
+                            <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
+                              <i class="icon-trash"></i>
+                            </a>
+                          </div></td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
+                    
+                  {% endif %}
                   
               </table>      
 
@@ -90,9 +102,9 @@
                   <button class="circle-button" href="#addtodomodal" data-toggle="modal"><i class="icon-plus icon-muted"></i></button>
               </li>
               <li class="status-filter">
-                  <div class="btn-group">
-                    <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 1}) }}">Checked</a>
-                    <a class="btn" href="{{ path('clc_todos_homepage', {'state' : 0}) }}">Pending</a>
+                  <div id="state-buttons">
+                    <a href="{{ path('clc_todos_homepage', {'state' : 1}) }}"><div class="state-button">Done</div></a>
+                    <a href="{{ path('clc_todos_homepage', {'state' : 0}) }}"><div class="state-button">Pending</div></a>
                   </div>
               </li>
               <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white"></i></button></li>
@@ -116,20 +128,34 @@
                       </div>
                   </caption>
                   
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>What</th>
-                      <th>Who</th>
-                      <th>When</th>
-                      <th>Edit</th>
-                    </tr>
-                  </thead>
-                        
-                  <tbody>
-                      {% include "ClcTodosBundle:Default:dynamicTable.html.twig" %} 
-                  </tbody>
-              </table>      
+                  {% if coloc_task == null %}
+                    <tbody>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>You do not have any pending to-do</td>
+                         </tr>
+                    </body>
+                  {% else %}
+                  
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>What</th>
+                        <th>Who</th>
+                        <th>When</th>
+                        <th>Edit</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                        {% include "ClcTodosBundle:Default:dynamicTable.html.twig" %} 
+                    </tbody>
+                    
+                  {% endif %}  
+                    
+              </table>
+                  
                <ul class="todo-pagination">
                   <li class="previous"><span><i class="icon-previous"></i> Previous</span></li>
                   <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>

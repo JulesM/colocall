@@ -59,29 +59,37 @@
 
                 <div id="expense-body"> 
                     <div id="expense-body-slimscroll">
-                        <table id="mini-shopping-list-table" class="table">
-                            <tbody>
+                        
+                        {% if latest_expenses == null %}
+                            You were not tagged in any expense of this flatshare
+                        {% else %}
+                        
+                            <table id="mini-shopping-list-table" class="table">
+                                <tbody>
 
-                                {% for expense in latest_expenses %}
+                                    {% for expense in latest_expenses %}
 
-                                    <tr>
-                                      <td id="mini-shopping-list-item">
-                                          <h3>{{ expense.name }}</h3>
-                                          <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.author.nickname }}
-                                      </td>
-                                      <td id="mini-list-cost">{{ expense.amount }}€</td>
-                                      <td id="todo-list-edit-comment-delete">
-                                        <i class="icon-edit"></i>
-                                        <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                                          <i class="icon-trash"></i>
-                                        </a>
-                                      </td>
-                                    </tr>
+                                        <tr>
+                                          <td id="mini-shopping-list-item">
+                                              <h3>{{ expense.name }}</h3>
+                                              <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.author.nickname }}
+                                          </td>
+                                          <td id="mini-list-cost">{{ expense.amount }}€</td>
+                                          <td id="todo-list-edit-comment-delete">
+                                            <i class="icon-edit"></i>
+                                            <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                                              <i class="icon-trash"></i>
+                                            </a>
+                                          </td>
+                                        </tr>
 
-                                {% endfor %}
+                                    {% endfor %}
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                            
+                        {% endif %}
+                            
                     </div>
                 </div>
             </div>
@@ -92,29 +100,37 @@
                 <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
             </div>
             <div class="shopping-lower">
-                <table id="mini-shopping-list-table" class="table">
-                    <tbody>
+                
+                {% if my_todos == null %}
+                    You do not have any pending To-do
+                {% else %}
+                
+                    <table id="mini-shopping-list-table" class="table">
+                        <tbody>
 
-                        {% for todo in my_todos %}
+                            {% for todo in my_todos %}
 
-                          <tr>
-                            <td id="mini-shopping-list-item">
-                              <h3>{{ todo.task }}</h3>
-                              <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
-                            </td>
-                            <td id="todo-list-edit-comment-delete">
-                              <i class="icon-eye-open"></i>
-                              <i class="icon-edit"></i>
-                              <a href="#">
-                                <i class="icon-trash"></i>
-                              </a>
-                            </td>
-                          </tr>
+                              <tr>
+                                <td id="mini-shopping-list-item">
+                                  <h3>{{ todo.task }}</h3>
+                                  <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
+                                </td>
+                                <td id="todo-list-edit-comment-delete">
+                                  <i class="icon-eye-open"></i>
+                                  <i class="icon-edit"></i>
+                                  <a href="#">
+                                    <i class="icon-trash"></i>
+                                  </a>
+                                </td>
+                              </tr>
 
-                        {% endfor %} 
+                            {% endfor %} 
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                    
+                {% endif %} 
+                    
             </div>
         </div>
 
@@ -124,29 +140,37 @@
             </div>
 
             <div class="shopping-lower">
-                <table id="mini-shopping-list-table" class="table">
-                    <tbody>
+                
+                {% if shopping_list == null %}
+                    The Shopping List is empty
+                {% else %}
+                    
+                    <table id="mini-shopping-list-table" class="table">
+                        <tbody>
 
-                        {% for item in shopping_list %}
+                            {% for item in shopping_list %}
 
-                          <tr>
-                            <td id="mini-shopping-list-item">
-                              <h3>{{ item.name }}</h3>
-                              <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
-                            </td>
-                            <td id="todo-list-edit-comment-delete">
-                              <i class="icon-eye-open"></i>
-                              <i class="icon-edit"></i>
-                              <a href="#">
-                                <i class="icon-trash"></i>
-                              </a>
-                            </td>
-                          </tr>
+                              <tr>
+                                <td id="mini-shopping-list-item">
+                                  <h3>{{ item.name }}</h3>
+                                  <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
+                                </td>
+                                <td id="todo-list-edit-comment-delete">
+                                  <i class="icon-eye-open"></i>
+                                  <i class="icon-edit"></i>
+                                  <a href="#">
+                                    <i class="icon-trash"></i>
+                                  </a>
+                                </td>
+                              </tr>
 
-                        {% endfor %} 
+                            {% endfor %} 
 
-                    </tbody>
-                </table>      
+                        </tbody>
+                    </table>
+                    
+                {% endif %}
+                    
             </div>
         </div>
     </div>
