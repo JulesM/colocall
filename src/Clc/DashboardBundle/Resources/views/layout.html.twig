@@ -12,6 +12,11 @@
 {% block title %}
   {{ parent() }} - Dashboard
 {% endblock %}
+  
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" type="text/css" />
+{% endblock %}
       
 {% block javascripts %}
   {{ parent() }}
