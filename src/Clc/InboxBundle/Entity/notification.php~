@@ -59,21 +59,21 @@ class notification
     /**
      * @var \stdClass
      *
-     * @ORM\ManyToOne(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", inversedBy="notification", cascade={"persist"})
      */
     protected $payback;
 
     /**
      * @var \stdClass
      *
-     * @ORM\ManyToOne(targetEntity="Clc\TodosBundle\Entity\task", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\TodosBundle\Entity\task", inversedBy="notification", cascade={"persist"})
      */
     protected $task;
 
     /**
      * @var \stdClass
      *
-     * @ORM\ManyToOne(targetEntity="Clc\ShoppinglistBundle\Entity\item", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\ShoppinglistBundle\Entity\item", inversedBy="notification", cascade={"persist"})
      */
     protected $item;
     

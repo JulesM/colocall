@@ -70,6 +70,11 @@ class task
     protected $coloc;
     
     /**
+     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="task", cascade={"persist", "remove"})
+     */
+    protected $notification;
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -238,5 +243,28 @@ class task
     public function getState()
     {
         return $this->state;
+    }
+
+    /**
+     * Set notification
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notification
+     * @return task
+     */
+    public function setNotification(\Clc\InboxBundle\Entity\notification $notification = null)
+    {
+        $this->notification = $notification;
+    
+        return $this;
+    }
+
+    /**
+     * Get notification
+     *
+     * @return \Clc\InboxBundle\Entity\notification 
+     */
+    public function getNotification()
+    {
+        return $this->notification;
     }
 }

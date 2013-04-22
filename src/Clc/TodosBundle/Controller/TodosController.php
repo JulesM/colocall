@@ -84,30 +84,26 @@ class TodosController extends Controller
     
     public function editAction($id)
     {
-        $task = $this->getDoctrine()
-                     ->getRepository('ClcTodosBundle:task')
-                     ->find($id);
+        $em = $this->getDoctrine()->getEntityManager();
+        $task = $em->getRepository('ClcTodosBundle:task')->find($id);
         
-        $task->setDate(new \DateTime('today'));
-
         $form = $this->createFormBuilder($task)
-            ->add('task', 'text')
-            ->add('dueDate', 'date')
-            ->add('owner', 'entity', array(
-                'required'=>false,
-                'class'=>'ClcUserBundle:User', 
-                'property'=>'nickname',
-                ))    
-            ->getForm();
+                     ->add('task', 'text')
+                     ->add('dueDate', 'date')
+                     ->add('owner', 'entity', array(
+                            'required'=>false,
+                            'class'=>'ClcUserBundle:User', 
+                            'property'=>'nickname',
+                            ))    
+                     ->getForm();
         
         $request = $this->get('request');
 
         if ($request->isMethod('POST')) {
             $form->bind($request);
-
+            
             if ($form->isValid()) {
                 
-                $em = $this->getDoctrine()->getManager();
                 $em->persist($task);
                 $em->flush();
                 

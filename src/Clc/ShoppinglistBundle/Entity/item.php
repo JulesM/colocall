@@ -67,6 +67,11 @@ class item
      * @ORM\Column(name="doneDate", type="date", nullable=true)
      */
     protected $doneDate;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="item", cascade={"persist", "remove"})
+     */
+    protected $notification;
 
     /**
      * Get id
@@ -237,5 +242,28 @@ class item
     public function getDoneDate()
     {
         return $this->doneDate;
+    }
+
+    /**
+     * Set notification
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notification
+     * @return item
+     */
+    public function setNotification(\Clc\InboxBundle\Entity\notification $notification = null)
+    {
+        $this->notification = $notification;
+    
+        return $this;
+    }
+
+    /**
+     * Get notification
+     *
+     * @return \Clc\InboxBundle\Entity\notification 
+     */
+    public function getNotification()
+    {
+        return $this->notification;
     }
 }

@@ -70,14 +70,44 @@
                           </div></td>
                           <td><div id="task">{{ task.task }}</div></td>
                           <td><div id="task-owner">{{ task.owner.nickname }}</div></td>
-                          <td><div id="date"><i class="icon-time"></i> {{ task.dueDate|date("d/m") }}</div></td>
+                          <td><div id="date">
+                                {% if state == 0 %}
+                                    {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
+                                        overdue
+                                    {% elseif task.dueDate|date("m/d") == "now"|date("m/d") %}
+                                        today
+                                    {% else %}
+                                        <i class="icon-time"></i>{{ task.dueDate|date("d/m") }}
+                                    {% endif %}
+                                {% else %}
+                                    <i class="icon-time"></i>{{ task.dueDate|date("d-m") }} 
+                                {% endif %}      
+                              </div></td>
                           <td><div id="edit-delete">
-                            <i class="icon-edit"></i>
+                            <a href="#edittodomodal{{task.id}}" data-toggle="modal">
+                                <i class="icon-edit"></i>
+                            </a>
                             <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
                               <i class="icon-trash"></i>
                             </a>
                           </div></td>
                         </tr>
+                        
+                        <!-- Edit Modal --> 
+                        <div id="edittodomodal{{task.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 id="myModalLabel">Edit To-do</h3>
+                            </div>
+                        <div class="modal-body">
+
+                        {% render 'ClcTodosBundle:Todos:edit' with {'id': task.id} %}
+
+                        </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                            </div>
+                        </div>
 
                         {% endfor %}
                     </tbody>

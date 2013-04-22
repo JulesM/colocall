@@ -39,6 +39,11 @@ class payback
      * @ORM\Column(name="paymentsArray", type="array")
      */
     protected $paymentsArray;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="payback", cascade={"persist", "remove"})
+     */
+    protected $notification;
 
     /**
      * Get id
