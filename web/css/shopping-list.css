@@ -229,14 +229,11 @@ tbody *{
 .btn-group btn{
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
+}
 
-}
-#state-buttons{
-}
 .state-button{
     display: inline-block;
     color: #7c2a13;
-    text-shadow: 0px 0px 1px #4a1609;
     height: 30px;
     width:80px;
     vertical-align: middle;
@@ -245,7 +242,12 @@ tbody *{
     font-family: 'proxima-bold'
 }
 
-.state-button:hover{ 
+.state-button:hover{
+    text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15); 
+}
+
+.state-button:active{
+    margin-top: 1px;
 }
 
 #all-todos-caption{

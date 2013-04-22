@@ -28,8 +28,8 @@
                 </li>
                 <li class="status-filter">
                   <div id="state-buttons">  
-                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 1}) }}"><div class="state-button">Checked</div></a>
-                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div class="state-button">Pending</div></a>
+                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 1}) }}"><div class="state-button">Bought</div></a>
+                    <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div class="state-button">Missing</div></a>
                   </div>  
                 </li>
                 <li class="category-filter"><button class="square-button"><i class="icon-list-ul icon-white" style="color: rgb(88, 104, 120); text-shadow: 0px 1px rgb(255, 255, 255);"></i></button></li>
@@ -60,13 +60,12 @@
 
                         <tr>
                           <td><div id="check">
-                            {# <a href="#" class="toggle">Toggle</a> #}
                                   
-                                {% if state == 0 %}
-                                   <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
-                                {% else %}   
-                                   <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
-                                {% endif %}
+                            {% if state == 0 %}
+                               <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+                            {% else %}   
+                               <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
+                            {% endif %}
                                   
                           </div></td>
                           <td>

@@ -21,6 +21,26 @@
     text-align: center;
     
 }
+
+.state-button{
+    display: inline-block;
+    color: #7c2a13;
+    height: 30px;
+    width:80px;
+    vertical-align: middle;
+    padding-top: 4px;
+    font-size: 20px;
+    font-family: 'proxima-bold'
+}
+
+.state-button:hover{
+    text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15); 
+}
+
+.state-button:active{
+    margin-top: 1px;
+}
+
 #todos-table1-container{
     /*height: 300px;*/
     width: 640px;
