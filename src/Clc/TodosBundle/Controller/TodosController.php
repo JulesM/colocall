@@ -43,10 +43,10 @@ class TodosController extends Controller
             ->add('task', 'text')
             ->add('dueDate', 'date')
             ->add('owner', 'entity', array(
-                  'required'      => false,
                   'class'         => 'ClcUserBundle:User', 
                   'property'      => 'nickname',
                   'query_builder' => $usersQuery,
+                  'required'      => false,
                 ))    
             ->getForm();
         
