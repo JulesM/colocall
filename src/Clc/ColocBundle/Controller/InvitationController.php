@@ -35,16 +35,25 @@ class InvitationController extends Controller
                 $em->persist($invitation);
                 $em->flush();
                 
+                $email = $invitation->getEmail();
+                
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Tou received an invitation to use Coloc\'all')
+                    ->setSubject('You received an invitation to join Coloc\'all !')
                     ->setFrom('webmaster@colocall.co')
-                    ->setTo($invitation->getEmail())
-                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user)))
+                    ->setTo($email)
+                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user, 'email' => $email)))
                 ;
                 $this->get('mailer')->send($message);
                 
                 $url = $this->getRequest()->headers->get("referer");
                 return $this->redirect($url);
+                
+                /*$message = \Swift_Message::newInstance()
+                    ->setSubject('Tou received an invitation to use Coloc\'all')
+                    ->setFrom('webmaster@colocall.co')
+                    ->setTo($invitation->getEmail())
+                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user)))
+                ;*/
             }
         }
         

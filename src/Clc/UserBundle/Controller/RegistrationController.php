@@ -23,6 +23,8 @@ class RegistrationController extends BaseController
                        ->find(1);
         
         $user->setPicture($picture);
+        $em->persist($user);
+        $em->flush();
         
         //check if user accepted as Beta tester
         /*$repository = $em ->getRepository('ClcUserBundle:betaUser');
