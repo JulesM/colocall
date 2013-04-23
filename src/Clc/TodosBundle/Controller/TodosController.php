@@ -40,15 +40,15 @@ class TodosController extends Controller
                     };
 
         $form = $this->createFormBuilder($task)
-            ->add('task', 'text')
-            ->add('dueDate', 'date')
-            ->add('owner', 'entity', array(
-                  'required'      => false,
-                  'class'         => 'ClcUserBundle:User', 
-                  'property'      => 'nickname',
-                  'query_builder' => $usersQuery,
-                ))    
-            ->getForm();
+                     ->add('task', 'text')
+                     ->add('dueDate', 'date')
+                     ->add('owner', 'entity', array(
+                            'required'      => false,
+                            'class'         => 'ClcUserBundle:User', 
+                            'property'      => 'nickname',
+                            'query_builder' => $usersQuery,
+                         ))    
+                     ->getForm();
         
         $request = $this->get('request');
 
@@ -104,11 +104,11 @@ class TodosController extends Controller
             
             if ($form->isValid()) {
                 
-                $em->persist($task);
                 $em->flush();
                 
-                $url = $this->getRequest()->headers->get("referer");
-                return $this->redirect($url);
+                return new RedirectResponse(
+                $this->container->get('router')->generate('clc_todos_homepage', array('state' => 0))
+                );
             }
         }
         

@@ -10,7 +10,11 @@ clc_todos_new:
     
 clc_todos_edit:
     pattern: /edit/{id}
-    defaults: { _controller: ClcTodosBundle:Todos:edit }    
+    defaults: { _controller: ClcTodosBundle:Todos:edit }
+    
+clc_todos_edit_success:
+    pattern:  /{state}/{id}
+    defaults: { _controller: ClcTodosBundle:Todos:index }
     
 clc_todos_remove:
     pattern: /remove/{id}
