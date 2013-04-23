@@ -131,7 +131,7 @@
                       <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
                       <td>
                         <div id="expense-list-edit-delete">
-                            <i class="icon-edit"></i>
+                            {#<i class="icon-edit"></i>#}
                             <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
                             <i class="icon-trash"></i>
                             </a>
@@ -180,7 +180,7 @@
                         <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
                         <td>
                           <div id="expense-list-edit-delete">
-                              <i class="icon-edit"></i>
+                              {#<i class="icon-edit"></i>#}
                               <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
                               <i class="icon-trash"></i>
                               </a>

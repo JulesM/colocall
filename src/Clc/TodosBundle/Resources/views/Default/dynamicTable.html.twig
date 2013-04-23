@@ -38,16 +38,16 @@
      </div></td>
      
      <td><div id="edit-delete">
-       <a href="#edittodomodal{{task.id}}" data-toggle="modal">
+       {#<a href="#edittodomodal{{task.id}}" data-toggle="modal">
          <i class="icon-edit"></i>
-       </a>
+       </a>#}
        <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
          <i class="icon-trash"></i>
        </a>
      </div></td>
     </tr>
 
-    <!-- Edit Modal --> 
+    {#<!-- Edit Modal --> 
     <div id="edittodomodal{{task.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -61,7 +61,7 @@
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
-    </div>
+    </div>#}
    
   
 {% endfor %}
