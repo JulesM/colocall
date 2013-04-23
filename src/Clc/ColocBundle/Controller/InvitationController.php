@@ -36,10 +36,10 @@ class InvitationController extends Controller
                 $em->flush();
                 
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Your invitation was sent succesfully !')
-                    ->setFrom('jules@colocall.co')
-                    ->setTo('jules.marcilhacy@gmail.com')
-                    ->setBody($this->renderView(':default:floatingToolbar.html.twig'))
+                    ->setSubject('Tou received an invitation to use Coloc\'all')
+                    ->setFrom('webmaster@colocall.co')
+                    ->setTo($invitation->getEmail())
+                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user)))
                 ;
                 $this->get('mailer')->send($message);
                 
