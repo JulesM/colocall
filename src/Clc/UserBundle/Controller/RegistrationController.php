@@ -25,7 +25,7 @@ class RegistrationController extends BaseController
         $user->setPicture($picture);
         
         //check if user accepted as Beta tester
-        $repository = $em ->getRepository('ClcUserBundle:betaUser');
+        /*$repository = $em ->getRepository('ClcUserBundle:betaUser');
         $query = $repository->createQueryBuilder('b')
                             ->where('b.enabled = :enabled')
                             ->setParameter('enabled', true)
@@ -51,7 +51,7 @@ class RegistrationController extends BaseController
             
             $route = 'clc_welcome';
             
-        }
+        }*/
         
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
