@@ -60,7 +60,7 @@ class ExpensemanagerController extends Controller
                      ))
                      ->add('users', 'entity', array(
                             'class'         => 'ClcUserBundle:User',
-                            'property'      =>'nickname',
+                            'property'      => 'nickname',
                             'query_builder' => $usersQuery,
                             'multiple'      => 'true',
                             'expanded'      => 'true',
