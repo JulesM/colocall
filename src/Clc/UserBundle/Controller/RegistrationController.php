@@ -57,6 +57,7 @@ class RegistrationController extends BaseController
             throw new AccessDeniedException('This user does not have access to this section.');
         }
         
+        $route = 'clc_dashboard_homepage';
         $url = $this->container->get('router')->generate($route);
         $response = new RedirectResponse($url);
         return $response;
