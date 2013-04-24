@@ -60,7 +60,7 @@ class task
     protected $author;
   
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"}, cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist", "remove"})
      */
     protected $owner;
     
