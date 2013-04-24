@@ -20,7 +20,7 @@ clc_coloc:
 
 clc_dashboard:
     resource: "@ClcDashboardBundle/Resources/config/routing.yml"
-    prefix:   /dashboard
+    prefix:   /
 
 clc_inbox:
     resource: "@ClcInboxBundle/Resources/config/routing.yml"
