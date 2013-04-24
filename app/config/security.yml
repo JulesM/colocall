@@ -43,7 +43,7 @@ security:
             form_login:
                 login_path:   /login
                 check_path:   /login_check
-                default_target_path: /dashboard
+                default_target_path: /
                 provider: fos_userbundle
                 remember_me: true
             remember_me:
