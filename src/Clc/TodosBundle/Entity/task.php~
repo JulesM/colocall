@@ -60,7 +60,7 @@ class task
     protected $author;
   
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"}, cascade={"remove"})
      */
     protected $owner;
     
@@ -243,5 +243,28 @@ class task
     public function getState()
     {
         return $this->state;
+    }
+
+    /**
+     * Set notification
+     *
+     * @param \Clc\InboxBundle\Entity\notification $notification
+     * @return task
+     */
+    public function setNotification(\Clc\InboxBundle\Entity\notification $notification = null)
+    {
+        $this->notification = $notification;
+    
+        return $this;
+    }
+
+    /**
+     * Get notification
+     *
+     * @return \Clc\InboxBundle\Entity\notification 
+     */
+    public function getNotification()
+    {
+        return $this->notification;
     }
 }

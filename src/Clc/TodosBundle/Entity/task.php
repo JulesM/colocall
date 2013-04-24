@@ -70,7 +70,7 @@ class task
     protected $coloc;
     
     /**
-     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="task", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="Clc\InboxBundle\Entity\notification", mappedBy="task", cascade={"persist"})
      */
     protected $notification;
     
