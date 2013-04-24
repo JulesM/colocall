@@ -27,7 +27,7 @@ class Payback {
         foreach ($positive as $key1 => &$value1) {
             foreach ($negative as $key2 => &$value2) {
                 if ($value1 == -$value2) {
-                    $payments[] = [$key2, $value1, $key1];
+                    $payments[] = array($key2, $value1, $key1);
                     $positive[$key1] = 0;
                     $negative[$key2] = 0;
                 }
@@ -52,7 +52,7 @@ class Payback {
             $kb = key($b);
             $min = min($ca,-$cb);
             
-            $payments[] = [$kb, $min, $ka];
+            $payments[] = array($kb, $min, $ka);
             
             $a[$ka] -= $min;
             $b[$kb] += $min;

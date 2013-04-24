@@ -15,7 +15,7 @@ class ProfileController extends Controller
         $p = $this->getUser()->getPicture()->getPath();
         $this->container->get('request')->getSession()->set('path', $p);
                 
-        return $this->render('ClcUserBundle:profile:profile.html.twig');
+        return $this->render('ClcUserBundle:Profile:profile.html.twig');
     }
     
     public function editProfileAction()
@@ -54,7 +54,7 @@ class ProfileController extends Controller
             }
         }
                 
-        return $this->render('ClcUserBundle:profile:editprofile.html.twig', array(
+        return $this->render('ClcUserBundle:Profile:editprofile.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -91,7 +91,7 @@ class ProfileController extends Controller
             }
         }
 
-        return $this->render('ClcUserBundle:profile:pictureform.html.twig', array(
+        return $this->render('ClcUserBundle:Profile:pictureform.html.twig', array(
             'form' => $form->createView(),
                 ));
     }

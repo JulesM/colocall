@@ -15,7 +15,7 @@ class ChartController extends Controller
         $new_balances =array();
         
         foreach ($balancesArray as $key => $value) {
-            $new_balances[] = [$key, $value];
+            $new_balances[] = array($key, $value);
         }
         
         return $this->render('ClcExpensemanagerBundle:Chart:balanceBarChart.html.twig', array(
