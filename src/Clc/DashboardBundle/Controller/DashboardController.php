@@ -47,13 +47,18 @@ class DashboardController extends Controller
     
     private function getLatestExpensesAction()
     {
-        $my_expenses_collection = $this->getUser()->getMyExpenses();
-        $my_expenses = $my_expenses_collection->toArray();
+        $user = $this->getUser();
+        $my_expenses = $this->getUser()->getMyExpenses()->toArray();
+        $forme_expenses = $this->getUser()->getForMeExpenses()->toArray();
         
-        $forme_expenses_collection = $this->getUser()->getForMeExpenses();
-        $forme_expenses = $forme_expenses_collection->toArray();
+        $latest_expenses = $my_expenses;
         
-        $latest_expenses = array_merge($my_expenses, $forme_expenses);
+        foreach($forme_expenses as $expense) {
+            if ($expense->getOwner() == $user){
+            } else {
+                $latest_expenses[] = $expense;
+            } 
+        }
         
         $pb = $this->container->get('clc_expensemanager.payback');
         $latest_expenses_sorted = $pb->sortExpensesByDate($latest_expenses);
