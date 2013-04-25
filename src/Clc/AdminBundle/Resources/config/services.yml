@@ -1,0 +1,14 @@
+parameters:
+#    clc_admin.example.class: Clc\AdminBundle\Example
+
+services:
+    sonata.admin.tag:
+        class: Clc\AdminBundle\Admin\TagAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: posts, label: "Blog" }
+        arguments:
+            - ~
+            - Clc\AdminBundle\Entity\Course
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]

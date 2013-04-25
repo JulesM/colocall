@@ -1,0 +1,3 @@
+clc_admin_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ClcAdminBundle:Default:index }

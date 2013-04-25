@@ -29,6 +29,12 @@ class AppKernel extends Kernel
             new Clc\InboxBundle\ClcInboxBundle(),
             new Clc\ColocBundle\ClcColocBundle(),
             new Clc\ParametersBundle\ClcParametersBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Clc\AdminBundle\ClcAdminBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

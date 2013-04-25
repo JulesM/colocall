@@ -19,7 +19,12 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
-        "friendsofsymfony/user-bundle": "*"
+        "friendsofsymfony/user-bundle": "*",
+        "sonata-project/admin-bundle": "2.1.*@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "2.1.*@dev",
+        "sonata-project/intl-bundle": "2.1.*@dev",
+        "sonata-project/cache-bundle": "2.1.*@dev",
+        
     },
     "scripts": {
         "post-install-cmd": [
