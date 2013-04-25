@@ -28,7 +28,7 @@ $(window).scroll(function() {
   
   
 
-$(window).resize(function() {
+/*$(window).resize(function() {
         var wi = $(window).width();
         $("p.testp").text('Screen width is currently: ' + wi + 'px.');
 });
@@ -55,7 +55,7 @@ $(window).resize(function() {
             $("#leftbox").css("width","15%");
             $("#content").css("width","85%");            
             }
-    });
+    });*/
     
 
 
