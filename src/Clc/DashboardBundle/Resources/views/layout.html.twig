@@ -72,7 +72,7 @@
                                         <tr>
                                           <td id="mini-shopping-list-item">
                                               <h3>{{ expense.name }}</h3>
-                                              <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.author.nickname }}
+                                              <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.owner.nickname }}
                                           </td>
                                           <td id="mini-list-cost">{{ expense.amount }}€</td>
                                           <td id="todo-list-edit-comment-delete">
