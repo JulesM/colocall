@@ -2,13 +2,46 @@ parameters:
 #    clc_admin.example.class: Clc\AdminBundle\Example
 
 services:
-    sonata.admin.tag:
-        class: Clc\AdminBundle\Admin\TagAdmin
+    sonata.admin.feedback:
+        class: Clc\AdminBundle\Admin\feedback
         tags:
-            - { name: sonata.admin, manager_type: orm, group: posts, label: "Blog" }
+            - { name: sonata.admin, manager_type: orm, group: UserBundle, label: "Feedbacks" }
         arguments:
             - ~
-            - Clc\AdminBundle\Entity\Course
+            - Clc\UserBundle\Entity\feedback
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+            
+    sonata.admin.User:
+        class: Clc\AdminBundle\Admin\User
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: UserBundle, label: "Users" }
+        arguments:
+            - ~
+            - Clc\UserBundle\Entity\User
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+            
+    sonata.admin.coloc:
+        class: Clc\AdminBundle\Admin\coloc
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: ColocBundle, label: "Colocs" }
+        arguments:
+            - ~
+            - Clc\ColocBundle\Entity\coloc
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+
+    sonata.admin.invitation:
+        class: Clc\AdminBundle\Admin\invitation
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: ColocBundle, label: "Pending invitations" }
+        arguments:
+            - ~
+            - Clc\ColocBundle\Entity\invitation
             - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [ClcAdminBundle]]
