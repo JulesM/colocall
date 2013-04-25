@@ -157,15 +157,6 @@ root {
     text-decoration: none;
 }
 
-#content{
-    display: inline-block;
-    float: right;
-    width: 85%;
-    height: 100%;
-    min-height: 600px;
-    box-shadow: 0px 2px 2px #888;
-}
-
 [class^="icon-"] {
 margin-top: 0px;
 margin-right: 5px;

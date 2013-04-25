@@ -8,7 +8,7 @@ $(document).ready(function(){
     div.style.height = document.body.clientHeight + 'px';
     div1.style.height = div.style.height;
     var contentToRemove = document.querySelectorAll(".collapsed-navbox");
-    $(contentToRemove).hide(); 
+    $(contentToRemove).hide();
 
 
 var oritop = -100;
@@ -24,9 +24,7 @@ $(window).scroll(function() {
     else {
         elm.css("position", "static");
     }
-  });
-  
-  
+  });  
 
 /*$(window).resize(function() {
         var wi = $(window).width();
