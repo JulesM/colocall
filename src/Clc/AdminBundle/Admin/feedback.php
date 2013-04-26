@@ -18,7 +18,6 @@ class feedback extends Admin
         ->add('text')
         ->add('category')
         ->add('author')
-
       ;
     }
 

@@ -45,3 +45,48 @@ services:
             - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [ClcAdminBundle]]
+
+    sonata.admin.expense:
+        class: Clc\AdminBundle\Admin\expense
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Items, label: "Expenses" }
+        arguments:
+            - ~
+            - Clc\ExpensemanagerBundle\Entity\expense
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+            
+    sonata.admin.task:
+        class: Clc\AdminBundle\Admin\task
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Items, label: "To-dos" }
+        arguments:
+            - ~
+            - Clc\TodosBundle\Entity\task
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+        
+    sonata.admin.item:
+        class: Clc\AdminBundle\Admin\item
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Items, label: "Shopping items" }
+        arguments:
+            - ~
+            - Clc\ShoppinglistBundle\Entity\item
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+            
+    sonata.admin.notification:
+        class: Clc\AdminBundle\Admin\notification
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Other, label: "Notifications" }
+        arguments:
+            - ~
+            - Clc\InboxBundle\Entity\notification
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [ClcAdminBundle]]
+            
