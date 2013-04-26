@@ -56,7 +56,7 @@ swiftmailer:
     transport:  smtp
     encryption: ssl
     auth_mode:  login
-    host:       mail.gandi.net
+    host:       smtp.alwaysdata.com
     username:   jules@colocall.co
     password:   Ozanam1956
     
