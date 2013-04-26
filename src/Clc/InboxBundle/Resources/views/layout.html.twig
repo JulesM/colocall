@@ -30,30 +30,38 @@
       <div id="chat-content">
           <h3>Chat here with your flatmates</h3>
 
-          <div id="inbox-messages-box">
+          <div id="chat-messages-box">
+              
+              {% if message_list == null %}
+                  <div id="no-message">
+                      <p>Here is a chat to communicate with your flatmates about Coloc'all and other.</p>
+                      <p>Send a first message in the box below to start a conversation</p>
+                  </div>
+              {% else %}
 
-              {% for message in message_list %}
+                {% for message in message_list %}
+
+                  <div id="chat-box">
+                      <div id="author-box">
+                          <img src="{{ asset(message.author.picture.path) }}">
+                          <p id="message-author"> {{ message.author.nickname }} </p> 
+                      </div>
+
+                      <div id="message-content-box" 
+                           {% if message.author == app.user %}
+                           style="background: rgb(247,248,248); color: rgb(109, 109, 109);"
+                           {% else %}
+                           style="background: rgb(247,248,220); color: rgb(109, 109, 150);"
+                           {% endif %}>
+                          <div id="message-text">{{ message.content }} 
+                              <p id="message-date"> {{ message.date|date("d/m") }}</p>
+                          </div>
+                      </div>
+                  </div>
+
+                {% endfor %}
               
-                <div id="chat-box">
-                    <div id="author-box">
-                        <img src="{{ asset(message.author.picture.path) }}">
-                        <p id="message-author"> {{ message.author.nickname }} </p> 
-                    </div>
-                        
-                    {% if message.author == app.user %}<div id="message-content-box" 
-                                                             style="background: rgb(247,248,248);
-                                                                    color: rgb(109, 109, 109);">
-                    {% else %}<div id="message-content-box" 
-                                   style="background: rgb(247,248,220);
-                                          color: rgb(109, 109, 150);">
-                    {% endif %}
-                        <div id="message-text">{{ message.content }} 
-                            <p id="message-date"> {{ message.date|date("d/m") }}</p>
-                        </div>
-                    </div>
-                </div>
-              
-              {% endfor %}
+              {% endif %}
 
           </div>
 

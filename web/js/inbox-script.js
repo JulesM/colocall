@@ -6,8 +6,15 @@
 $(document).ready(function(){
 
 $(function(){
-    $('#inbox-messages-box').slimScroll({
+    $('#chat-messages-box').slimScroll({
         height: '370px',
+        start: 'bottom'
+    });
+});
+
+$(function(){
+    $('#notification-messages-box').slimScroll({
+        height: '440px',
         start: 'bottom'
     });
 });
