@@ -19,13 +19,17 @@ body{
 #dashboard-title{
     border-top: solid 1px;
     border-bottom: solid 1px;
-    height: 35px;
+    height: 63px;
+    width: 459px;
+    marin-left:auto;
+    margin-right: auto;
     text-align: center;
     font-family: 'proxima-regular';
     color:black;
     font-size: 32px;
     font-weight: normal;
     text-shadow: 1px 0.5px 0px #fff, 1.5px 2px 0px rgba(0,0,0,0.15);
+    background-image: url('../img/dashboard/dashboard.png');
 }
 
 #overview-container{
