@@ -16,6 +16,10 @@ body{
     height: 100%;
 }
 
+#dashboard-content a:hover{
+    text-decoration: none;
+}
+
 #dashboard-title{
     width: 100%;
     text-align: center;

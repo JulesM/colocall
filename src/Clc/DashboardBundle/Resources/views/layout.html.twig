@@ -38,10 +38,12 @@
     </div>
     
     <div id="overview-container">
-        <div id="expense-dashboard-container" class="dashboard-container">   
-            <div id="expense-header">
-                <p>Expense Manager <i class="icon-chevron-right"></i></h1>
-            </div>
+        <div id="expense-dashboard-container" class="dashboard-container">
+            <a href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}">
+                <div id="expense-header">
+                    <p>Expense Manager <i class="icon-chevron-right"></i></p>
+                </div>
+            </a>
             <div id="expense-left">
                 <div class="expense-subheader">
                     <h1 id="expense-subheader-left">Current Balances</h1>
@@ -102,9 +104,11 @@
         </div>
 
         <div id="small-dashboard-container-left" class="small-dashboard-container" >
-            <div class="shopping-upper">
-                <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
-            </div>
+            <a href="{{ path('clc_todos_homepage', {'state' : 0}) }}">
+                <div class="shopping-upper">
+                    <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
+                </div>
+            </a>
             <div class="shopping-lower">
                 
                 {% if my_todos == null %}
@@ -140,10 +144,11 @@
         </div>
 
         <div id="small-dashboard-container-right" class="small-dashboard-container">
-            <div class="shopping-upper">
-                <p>Shopping List <i class="icon-chevron-right"></i></p>
-            </div>
-
+            <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}">
+                <div class="shopping-upper">
+                    <p>Shopping List <i class="icon-chevron-right"></i></p>
+                </div>
+            </a>            
             <div class="shopping-lower">
                 
                 {% if shopping_list == null %}
