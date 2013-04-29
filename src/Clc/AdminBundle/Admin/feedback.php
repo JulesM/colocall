@@ -18,6 +18,7 @@ class feedback extends Admin
         ->add('text')
         ->add('category')
         ->add('author')
+        ->add('solved')
       ;
     }
 
@@ -28,6 +29,7 @@ class feedback extends Admin
         ->add('text')
         ->add('category')
         ->add('author')
+        ->add('solved')
       ;
     }
 
@@ -38,6 +40,7 @@ class feedback extends Admin
         ->add('text')
         ->add('category')
         ->add('author.nickname')
+        ->add('solved')
       ;
     }
 }

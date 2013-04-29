@@ -48,6 +48,13 @@ class feedback
     protected $author;
 
     /**
+     *@var boolean
+     *
+     *@ORM\Column(name="solved", type="boolean")
+     */
+    protected $solved;  
+
+    /**
      * Get id
      *
      * @return integer 
@@ -147,5 +154,28 @@ class feedback
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set solved
+     *
+     * @param boolean $solved
+     * @return feedback
+     */
+    public function setSolved($solved)
+    {
+        $this->solved = $solved;
+    
+        return $this;
+    }
+
+    /**
+     * Get solved
+     *
+     * @return boolean 
+     */
+    public function getSolved()
+    {
+        return $this->solved;
     }
 }
