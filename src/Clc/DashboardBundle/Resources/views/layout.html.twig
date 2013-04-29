@@ -33,159 +33,161 @@
       
 <div id="dashboard-content">
     
-    <div id="dashboard-title">
-        <img src="{{ asset('img/dashboard/dashboard.png') }}" height="20px" width="400px" alt="dashboard">
-    </div>
-    
-    <div id="overview-container">
-        <div id="expense-dashboard-container" class="dashboard-container">
-            <a href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}">
-                <div id="expense-header">
-                    <p>Expense Manager <i class="icon-chevron-right"></i></p>
-                </div>
-            </a>
-            <div id="expense-left">
-                <div class="expense-subheader">
-                    <h1 id="expense-subheader-left">Current Balances</h1>
-                </div>
+  <div id="dashboard-middle">
+      <div id="dashboard-title">
+          <img src="{{ asset('img/dashboard/dashboard.png') }}" height="20px" width="400px" alt="dashboard">
+      </div>
+      
+      <div id="overview-container">
+          <div id="expense-dashboard-container" class="dashboard-container">
+              <a href="{{ path('clc_expensemanager_homepage', {'state' : 0}) }}">
+                  <div id="expense-header">
+                      <p>Expense Manager <i class="icon-chevron-right"></i></p>
+                  </div>
+              </a>
+              <div id="expense-left">
+                  <div class="expense-subheader">
+                      <h1 id="expense-subheader-left">Current Balances</h1>
+                  </div>
 
-                <div id="expense-body"> 
-                    <div id="bar-chart">
-                        {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : current_balances } %}
-                    </div>
-                </div>
-            </div>
+                  <div id="expense-body"> 
+                      <div id="bar-chart">
+                          {% render 'ClcDashboardBundle:Chart:displayBarChart' with { 'balances' : current_balances } %}
+                      </div>
+                  </div>
+              </div>
+         
+              <div id="expense-right">
+                  <div class="expense-subheader">
+                      <h1 id="expense-subheader-right">Latest Expenses</h1>
+                  </div>
+
+                  <div id="expense-body"> 
+                      <div id="expense-body-slimscroll">
+                          
+                          {% if latest_expenses == null %}
+                              You were not tagged in any expense of this flatshare
+                          {% else %}
+                          
+                              <table id="mini-shopping-list-table" class="table">
+                                  <tbody>
+
+                                      {% for expense in latest_expenses %}
+
+                                          <tr>
+                                            <td id="mini-shopping-list-item">
+                                                <h3>{{ expense.name }}</h3>
+                                                <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.owner.nickname }}
+                                            </td>
+                                            <td id="mini-list-cost">{{ expense.amount }}€</td>
+                                            <td id="todo-list-edit-comment-delete">
+                                              {#<i class="icon-edit"></i>#}
+                                              {% if expense.active == 0 %}
+                                                  <i class="icon-ok"></i>
+                                              {% else %}
+                                                  <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                                                  <i class="icon-trash"></i>
+                                                  </a>
+                                              {% endif %}
+                                            </td>
+                                          </tr>
+
+                                      {% endfor %}
+
+                                  </tbody>
+                              </table>
+                              
+                          {% endif %}
+                              
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div id="small-dashboard-container-left" class="small-dashboard-container" >
+              <a href="{{ path('clc_todos_homepage', {'state' : 0}) }}">
+                  <div class="shopping-upper">
+                      <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
+                  </div>
+              </a>
+              <div class="shopping-lower">
+                  
+                  {% if my_todos == null %}
+                      You do not have any pending To-do
+                  {% else %}
+                  
+                      <table id="mini-shopping-list-table" class="table">
+                          <tbody>
+
+                              {% for todo in my_todos %}
+
+                                <tr>
+                                  <td id="mini-shopping-list-item">
+                                    <h3>{{ todo.task }}</h3>
+                                    <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
+                                  </td>
+                                  <td id="todo-list-edit-comment-delete">
+                                    {#<i class="icon-edit"></i>#}
+                                    <a href="#">
+                                      <i class="icon-trash"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+
+                              {% endfor %} 
+
+                          </tbody>
+                      </table>
+                      
+                  {% endif %} 
+                      
+              </div>
+          </div>
+
+          <div id="small-dashboard-container-right" class="small-dashboard-container">
+              <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}">
+                  <div class="shopping-upper">
+                      <p>Shopping List <i class="icon-chevron-right"></i></p>
+                  </div>
+              </a>            
+              <div class="shopping-lower">
+                  
+                  {% if shopping_list == null %}
+                      The Shopping List is empty
+                  {% else %}
+                      
+                      <table id="mini-shopping-list-table" class="table">
+                          <tbody>
+
+                              {% for item in shopping_list %}
+
+                                <tr>
+                                  <td id="mini-shopping-list-item">
+                                    <h3>{{ item.name }}</h3>
+                                    <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
+                                  </td>
+                                  <td id="todo-list-edit-comment-delete">
+                                    {#<i class="icon-edit"></i>#}
+                                    <a href="#">
+                                      <i class="icon-trash"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+
+                              {% endfor %} 
+
+                          </tbody>
+                      </table>
+                      
+                  {% endif %}
+                      
+              </div>
+          </div>
+      </div>
+  </div>
+
+  {% include ":default:floatingToolbar.html.twig" %} 
        
-            <div id="expense-right">
-                <div class="expense-subheader">
-                    <h1 id="expense-subheader-right">Latest Expenses</h1>
-                </div>
-
-                <div id="expense-body"> 
-                    <div id="expense-body-slimscroll">
-                        
-                        {% if latest_expenses == null %}
-                            You were not tagged in any expense of this flatshare
-                        {% else %}
-                        
-                            <table id="mini-shopping-list-table" class="table">
-                                <tbody>
-
-                                    {% for expense in latest_expenses %}
-
-                                        <tr>
-                                          <td id="mini-shopping-list-item">
-                                              <h3>{{ expense.name }}</h3>
-                                              <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.owner.nickname }}
-                                          </td>
-                                          <td id="mini-list-cost">{{ expense.amount }}€</td>
-                                          <td id="todo-list-edit-comment-delete">
-                                            {#<i class="icon-edit"></i>#}
-                                            {% if expense.active == 0 %}
-                                                <i class="icon-ok"></i>
-                                            {% else %}
-                                                <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
-                                                <i class="icon-trash"></i>
-                                                </a>
-                                            {% endif %}
-                                          </td>
-                                        </tr>
-
-                                    {% endfor %}
-
-                                </tbody>
-                            </table>
-                            
-                        {% endif %}
-                            
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="small-dashboard-container-left" class="small-dashboard-container" >
-            <a href="{{ path('clc_todos_homepage', {'state' : 0}) }}">
-                <div class="shopping-upper">
-                    <p>Your Pending To-dos  <i class="icon-chevron-right"></i></p>
-                </div>
-            </a>
-            <div class="shopping-lower">
-                
-                {% if my_todos == null %}
-                    You do not have any pending To-do
-                {% else %}
-                
-                    <table id="mini-shopping-list-table" class="table">
-                        <tbody>
-
-                            {% for todo in my_todos %}
-
-                              <tr>
-                                <td id="mini-shopping-list-item">
-                                  <h3>{{ todo.task }}</h3>
-                                  <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
-                                </td>
-                                <td id="todo-list-edit-comment-delete">
-                                  {#<i class="icon-edit"></i>#}
-                                  <a href="#">
-                                    <i class="icon-trash"></i>
-                                  </a>
-                                </td>
-                              </tr>
-
-                            {% endfor %} 
-
-                        </tbody>
-                    </table>
-                    
-                {% endif %} 
-                    
-            </div>
-        </div>
-
-        <div id="small-dashboard-container-right" class="small-dashboard-container">
-            <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}">
-                <div class="shopping-upper">
-                    <p>Shopping List <i class="icon-chevron-right"></i></p>
-                </div>
-            </a>            
-            <div class="shopping-lower">
-                
-                {% if shopping_list == null %}
-                    The Shopping List is empty
-                {% else %}
-                    
-                    <table id="mini-shopping-list-table" class="table">
-                        <tbody>
-
-                            {% for item in shopping_list %}
-
-                              <tr>
-                                <td id="mini-shopping-list-item">
-                                  <h3>{{ item.name }}</h3>
-                                  <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
-                                </td>
-                                <td id="todo-list-edit-comment-delete">
-                                  {#<i class="icon-edit"></i>#}
-                                  <a href="#">
-                                    <i class="icon-trash"></i>
-                                  </a>
-                                </td>
-                              </tr>
-
-                            {% endfor %} 
-
-                        </tbody>
-                    </table>
-                    
-                {% endif %}
-                    
-            </div>
-        </div>
-    </div>
-          
-    {% include ":default:floatingToolbar.html.twig" %}
-          
 </div>
 
 {% endblock %}

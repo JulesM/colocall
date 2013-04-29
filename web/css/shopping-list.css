@@ -12,6 +12,11 @@
     position: relative;
     /*z-index:0;*/
 }
+
+#todos-middle{
+    width: 90%;
+}
+
 #todos-toolbar-tab{
     width: 640px;
     height: 36px;

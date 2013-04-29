@@ -16,6 +16,10 @@
     background-repeat: repeat;
 }
 
+#expense-middle{
+    width: 90%;
+}
+
 #overview-container{
     margin-left: auto;
     margin-right: auto;

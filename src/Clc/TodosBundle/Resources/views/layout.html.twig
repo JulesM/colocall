@@ -28,6 +28,7 @@
 {% block body %}
   
   <div id="todos-content">
+    <div id="todos-middle">
       <div id="todos-table1-container">
           <section class="todo">
               
@@ -191,9 +192,10 @@
                   <li class="next"><a href="index.html">Next <i class="icon-next"></i></a></li>
               </ul>
           </section>
-      </div>
-          
-      {% include ":default:floatingToolbar.html.twig" %}
+      </div>  
+    </div>      
+      
+    {% include ":default:floatingToolbar.html.twig" %}
           
   </div>
   
