@@ -57,7 +57,7 @@
                 
                 <p>{{ app.user.coloc.address1 }}</p>
                 <p>{{ app.user.coloc.address2 }}</p>
-                <p>{{ app.user.coloc.zipcode }}{{ app.user.coloc.city }}</p>
+                <p>{{ app.user.coloc.zipcode }} {{ app.user.coloc.city }}</p>
                 <p>{{ app.user.coloc.country }}</p>
                 
             </div>
@@ -73,7 +73,7 @@
             <div class="coloc-body">
                 {% if invitations|length == 0 %}
                     <h4>There is no pending invitation</h4>
-                {%else %}
+                {% else %}
                     <h4>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
                              {{ invitations|length }} 
                              pending invitations for :
