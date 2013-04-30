@@ -4,7 +4,6 @@
     background-repeat: repeat;
 }
 
-
 #todos-content{
     height: 100%;
     width: 100%;
@@ -20,19 +19,10 @@
 #todos-toolbar-tab{
     width: 640px;
     height: 36px;
-    min-width: 640px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     
-}
-#todos-table1-container{
-    /*height: 300px;*/
-    width: 640px;
-    min-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
 }
 
 #todos-table2-container{
@@ -40,18 +30,6 @@
     width: 640px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.table{
-    
-}
-
-.container {
-  margin: 50px auto;
-  width: 380px;
-}
-.container .todo {
-  margin: 0 auto;
 }
 
 .todo {
@@ -280,7 +258,6 @@ tbody *{
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(4, 127, 201);
     background: url("../img/tab-bckgd.png") repeat scroll 0% 0% transparent;
 
     box-shadow:
@@ -300,20 +277,13 @@ tbody *{
   0 0 0 2px #bc826c;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
-    padding-top: 3px;
     text-align:center;
 }
 
-.todo-filter-tab i{
-    color: white;
-    margin: auto;
-    font-size: 1.8em;
-    float: middle;
-    
-}
 .todo-filter-tab li{
     list-style-type: none;
-    height: 28px;
+    height: 36px;
+    padding-top: 4px;
 }
 
 .todo-filter-tab li:first-child{
@@ -326,10 +296,9 @@ tbody *{
 
 .add-todo{
     width: 25%;
-    display: inline-block;
     float: left;
     margin: auto;
-    /*padding-left: 10px;*/
+    display: inline-block;
 }
 
 .status-filter{
@@ -341,99 +310,50 @@ tbody *{
 
 .category-filter{
     width: 25%;
-    display: inline-block;
     float: right;
-    padding-left: auto;
+    margin: auto;
+    display: inline-block;
 }
-
-
 
 /*Slider*/
 
-.regular-checkbox {
-	display: none;
-        opacity: 0.8;
-}
-
-.regular-checkbox:hover{
-        opacity: 1;
-}
-
-.regular-checkbox + label {
-        margin-top: 2px;
-	display: inline;
-	float: middle;
-	width: 70px;
-	height: 24px;
-	background: no-repeat centeR;
-	display: inline-block;
-	position: relative;
-        top:0;
-	background-image: url(../img/chk_on.png);
-	cursor: pointer;
-        opacity: 1;
-        
-}
-
-.regular-checkbox + label:hover{
-        opacity: 1;
-}
-
-.regular-checkbox:checked + label {
-	background-image: url(../img/chk_off.png);
-
-}
-
-.regular-checkbox:checked + label:after {
-	background-image: url(../img/chk_on.png);
-}
-
-.todo-filter-tab li > p > img{
-	display: inline-block;
-	float: middle;
-        position: relative;
-        margin: auto;
-}
 .circle-button {width: 28px; 
                height: 28px; 
                color: #a2421d; 
                font-size: 12px; 
-               display: inline; 
-               position: relative; 
-               margin: 0px 2px 0px 2px; 
-               background: #c87758; 
+               display: inline-block;
+               background: transparent; 
                outline: none; 
                border: 1px solid #a2421d; 
-               border-bottom: 1px solid #a2421d; 
                border-radius: 100%; 
-               cursor: pointer; 
- }
- circle-button i{
-               color: #a2421d;
+               cursor: pointer;
+               text-align: center;
+               position: relative;
  }
 .circle-button:hover {color: #888; text-shadow: 0px 1px 0px rgba(255,255,255,0.69); -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -o-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75);}
 .circle-button:active {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53); border: 1px solid #d2d2d2; border-bottom: 1px solid #d8d8d8; -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -o-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20);}
 .circle-button i{
+    font-size: 1.8em;
     color: #812f0f;
-    text-shadow: 0px _1px rgb(0,0,0);
-    vertical-align: middle;
-    text-align: center;
+    margin-left: -6px;
+}
+
+@-moz-document url-prefix() {
+  .circle-button i{
+      margin-left: 0;
+  }
 }
 
 .square-button {
-               width: 28px; 
-               height: 28px; 
+               width: 50px; 
+               height: 30px; 
                color: #a2421d;  
                text-shadow: 0px 1px 0px rgba(255,255,255,0.59); 
-               font-size: 12px; 
-               display: inline; 
-               position: relative; 
-               top: 0; 
+               font-size: 12px;
                margin: 0px 2px 0px 2px; 
-               background: #c87758; 
+               background: transparent; 
                outline: none; 
-               border: 1px solid #a2421d;  
-               border-bottom: 1px solid #a2421d; 
+               border: 1px solid #a2421d; 
                border-radius: 3px; 
                cursor: pointer; 
 }
@@ -441,8 +361,15 @@ tbody *{
 .square-button:hover {color: #888; text-shadow: 0px 1px 0px rgba(255,255,255,0.69); -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); -o-box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75); box-shadow: 0px 2px 2px rgba(0,0,0,0.027), inset 0px 1px 0px rgba(255,255,255,0.69), inset 0px -1px 0px rgba(0,0,0,0.0187), inset 0px 14px 13px rgba(255,255,255,0.75);}
 .square-button:active {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53); border: 1px solid #d2d2d2; border-bottom: 1px solid #d8d8d8; -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -o-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20);}
 .square-button i{
+    font-size: 1.8em;
     color: #812f0f;
-    text-shadow: 0px _1px rgb(0,0,0);
-    vertical-align: middle;
-    text-align: center;
+    margin-right: -1px;
 }
+
+@-moz-document url-prefix() {
+  .square-button i{
+      margin-right: 0;
+  }
+}
+
+
