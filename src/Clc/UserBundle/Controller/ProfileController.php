@@ -33,7 +33,7 @@ class ProfileController extends Controller
                                 'pattern' => "{{ day }}/{{ month }}/{{ year }}",
                                 'years' => range(date('Y'), date('Y')-70)
                             ))  
-                     ->add('phone','integer')
+                     ->add('phone','text')
                      ->add('comment','textarea')
                      ->getForm();
         
