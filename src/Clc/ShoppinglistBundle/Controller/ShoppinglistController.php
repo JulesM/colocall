@@ -122,4 +122,30 @@ class ShoppinglistController extends Controller
         $url = $this->getRequest()->headers->get("referer");
         return $this->redirect($url);
     }
+
+    public function receiveByEmailAction($state)
+    {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        $email = $user->getEmail();
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $query = $em->createquery(
+            'SELECT i FROM ClcShoppinglistBundle:item i WHERE i.coloc = :coloc AND i.state = :state ORDER BY i.addedDate DESC'
+        )->setParameter('coloc', $coloc)
+         ->setParameter('state', 0);
+
+        $shopping_list = $query->getResult();
+        
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Your Shopping List from Coloc\'all !')
+            ->setFrom('webmaster@colocall.co')
+            ->setTo($email)
+            ->setBody($this->renderView('ClcShoppinglistBundle:Default:shoppingListEmail.html.twig', array('user' => $user, 'shopping_list' => $shopping_list)))
+        ;
+        $this->get('mailer')->send($message);
+
+        $url = $this->getRequest()->headers->get("referer");
+        return $this->redirect($url);
+    }
 }

@@ -1,0 +1,11 @@
+Hello {{ user.nickname }},
+
+You requested the shopping list of your flatshare {{ user.coloc.name}}, find it below:
+
+{% for item in shopping_list %}
+- {{ item.name }}
+{% endfor %}
+
+Enjoy your shopping ;)
+
+Jules for Coloc'all

@@ -33,7 +33,7 @@
                     <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div class="state-button">Missing</div></a>
                   </div>  
                 </li>
-                <li class="category-filter"><button class="square-button" title="Receive shopping list by email"><i class="icon-envelope icon-white""></i></button></li>
+                <li class="category-filter"><div class="square-button"><a href="{{ path('clc_shoppinglist_receive', {'state' : state}) }}"title="Receive shopping list by email"><i class="icon-envelope icon-white""></i></a></div></li>
             </ul>            
         </div>
       

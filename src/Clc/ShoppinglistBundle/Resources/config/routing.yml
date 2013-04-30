@@ -11,12 +11,15 @@ clc_shoppinglist_new:
 clc_shoppinglist_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:remove }
-    
+
 clc_shoppinglist_check:
     pattern: /check/{id}
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:check }
-    
+
 clc_shoppinglist_uncheck:
     pattern: /uncheck/{id}
-    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:uncheck }    
-    
+    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:uncheck }
+
+clc_shoppinglist_receive:
+    pattern: /{state}/receive
+    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:receiveByEmail }
