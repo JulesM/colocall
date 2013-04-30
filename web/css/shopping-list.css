@@ -341,12 +341,6 @@ tbody *{
     margin-left: -6px;
 }
 
-@-moz-document url-prefix() {
-  .circle-button i{
-      margin-left: 0;
-  }
-}
-
 #todos-toolbar-tab a{
 }
 
@@ -373,12 +367,6 @@ tbody *{
     margin-right: -1px;
 }
 
-@-moz-document url-prefix() {
-  .square-button i{
-      margin-right: 0;
-  }
-}
-
 #new-line-content{
     display: inline-block;
     padding-top: 5px;
@@ -390,3 +378,18 @@ tbody *{
     margin-bottom: 11px;
     margin-left: 4px;
 }
+
+
+@-moz-document url-prefix() {
+  .circle-button i{
+      margin-left: 0;
+      margin-top: 2px;
+  }
+}
+
+@-moz-document url-prefix() {
+  .square-button i{
+      margin-right: 0;
+  }
+}
+

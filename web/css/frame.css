@@ -5,7 +5,9 @@ root {
 }
 
 
-/* --- framework --- */
+/* --- Polices --- */
+
+/* Oswald */
 
 @font-face { 
     font-family: 'Oswald-Regular';
@@ -18,22 +20,19 @@ root {
     src: url('polices/oswald/oswaldbold.ttf') format('truetype');}
 @font-face {    
     font-family: 'Oswald-Light';
-    src: url('polices/oswald/oswaldlight.ttf') format('truetype');
-}
+    src: url('polices/oswald/oswaldlight.ttf') format('truetype');}
+
+/* Proxima */
+
 @font-face { 
     font-family: 'Proxima-Regular';
-    src: url('polices/proxima/ProximaNova-Regular.otf') format('truetype');}
+    src: url('polices/proxima/ProximaNova-Regular.ttf') format('truetype');}
 @font-face {    
     font-family: 'Proxima-Bold';
-    src: url('polices/proxima/ProximaNova-Bold.otf') format('truetype');}
-@font-face {    
-    font-family: 'Oswald-Bold';
-    src: url('polices/oswald/oswaldbold.ttf') format('truetype');}
-@font-face {    
-    font-family: 'Oswald-Light';
-    src: url('polices/oswald/oswaldlight.ttf') format('truetype');
-}
+    src: url('polices/proxima/ProximaNova-Bold.ttf') format('truetype');}
+
+/* Sonora */
+
 @font-face {    
     font-family: 'Sonora';
-    src: url('polices/sonora/SonoraProOT-Light.otf') format('truetype');
-}
+    src: url('polices/sonora/SonoraProOT-Light.ttf') format('truetype');}

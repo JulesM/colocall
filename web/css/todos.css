@@ -423,9 +423,14 @@ tbody *{
 .circle-button:active {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53); border: 1px solid #d2d2d2; border-bottom: 1px solid #d8d8d8; -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -o-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20);}
 .circle-button i{
     color: #812f0f;
-    text-shadow: 0px _1px rgb(0,0,0);
-    vertical-align: middle;
-    text-align: center;
+    margin-left: -6px;
+}
+
+@-moz-document url-prefix() {
+  .circle-button i{
+      margin-left: 0;
+      margin-top: 2px;
+  }
 }
 
 .square-button {
@@ -438,7 +443,7 @@ tbody *{
                position: relative; 
                top: 0; 
                margin: 0px 2px 0px 2px; 
-               background: #c87758; 
+               background: transparent; 
                outline: none; 
                border: 1px solid #a2421d;  
                border-bottom: 1px solid #a2421d; 
@@ -450,7 +455,12 @@ tbody *{
 .square-button:active {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53); border: 1px solid #d2d2d2; border-bottom: 1px solid #d8d8d8; -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); -o-box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20); box-shadow: 0px 1px 0px rgba(255,255,255,0.58), inset 0px 1px 6px rgba(0,0,0,0.07), inset 0px -14px 13px rgba(255,255,255,0.20);}
 .square-button i{
     color: #812f0f;
-    text-shadow: 0px _1px rgb(0,0,0);
-    vertical-align: middle;
-    text-align: center;
+    margin-left: -6px;
+}
+
+@-moz-document url-prefix() {
+  .square-button i{
+      margin-left: 0;
+      margin-top: 2px;
+  }
 }

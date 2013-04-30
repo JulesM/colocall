@@ -104,10 +104,13 @@
         <div  id="personal-expense" class="expense-list">
           <div id="expense-list-header">             
               <p>
-                 Me 
+                 You 
                  <i class="icon-arrow-right" style="font-size: 24px;"></i>
                  <i class="icon-group icon-large" style="font-size: 24px;"></i>
               </p>
+              <div id="left-header-caption">
+                 Things you paid for ( you and ) others
+              </div>
           </div>
                 
           <div id="expense-list-body">
@@ -116,16 +119,19 @@
               You did not add any expense yet
             {% else %}
               
-                <table id="expense-list-table" class="table">
+                <table id="expense-list-table" class="table table-hover">
                   <tbody>
 
                     {% for expense in user_expense %}
 
-                    <tr>
+                    <tr {% if expense.active == 1 %} class="active-expense" {% else %} class="inactive-expense"{% endif %}>
                       <td>
                         <div id="expense-list-item">
                             <h3>{{ expense.name }}</h3>
-                            <i class="icon-time"></i>I added it on {{ expense.date|date("d/m") }}
+                            <i class="icon-time"></i>{{ expense.date|date("d/m") }} - 
+                            Added by <b>{% if expense.author == app.user %} you
+                                        {% else %} {{ expense.author.nickname }}
+                                        {% endif %}</b>
                         </div>
                       </td>
                       <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
@@ -158,8 +164,11 @@
               <p>
                  <i class="icon-group icon-large" style="font-size: 24px;"></i> 
                  <i class="icon-arrow-right" style="font-size: 24px;"></i>
-                 Me
+                 You
               </p>
+              <div id="right-header-caption">
+                 Things others paid for you
+              </div>
           </div>
           
           <div id="expense-list-body-slimscroll">
@@ -177,11 +186,12 @@
                       {% if expense.owner == app.user %}
                       {% else %}
                       
-                        <tr>
+                        <tr {% if expense.active == 1 %} class="active-expense" {% else %} class="inactive-expense"{% endif %}>
                           <td>
                             <div id="expense-list-item">
                                 <h3>{{ expense.name }}</h3>
-                                <i class="icon-time"></i>Added by <b>{{ expense.owner.nickname }}</b> on {{ expense.date|date("d/m") }}
+                                <i class="icon-time"></i>{{ expense.date|date("d/m") }} - 
+                                Paid by <b>{{ expense.owner.nickname }}</b>
                             </div>
                           </td>
                           <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>

@@ -200,7 +200,7 @@
 }
 
 #expense-list-header p{
-    height: 100%;
+    height: 14px;
     padding-top: 10px;
     vertical-align: middle;
     font-family: 'Proxima-Bold';
@@ -212,12 +212,17 @@
     vertical-align: middle;
 }
 
-.expense-list-header i{
-    float: right;
-    margin-right: 20px;
-    font-size: 24px;
+#expense-list-header #left-header-caption{
+    color: white;
+    font-size: 10px;
+    margin-left: 5px;
 }
 
+#expense-list-header #right-header-caption{
+    color: white;
+    font-size: 10px;
+    margin-left: 215px;
+}
 
 #expense-list-body{
     width: 100%;
@@ -225,7 +230,6 @@
 }
 
 #expense-list-body table{
-
     width: 100%;
 }
 
@@ -256,8 +260,6 @@
 
 #expense-list-item h3{
     border-top: medium none;
-    color: black;
-    font-family: 'Proxima-Regular';
     font-size: 15px;
     font-style: normal;
     line-height: 10px;
@@ -269,9 +271,27 @@
     border-top: medium none;
     color:rgb(236, 106, 66);
     font-weight: bold;
+    text-align: center;
 }
 
 #expense-list-edit-delete{
     width: 50px;
     float: right;
+}
+
+.active-expenses{
+}
+
+.active-expense h3{
+    color: black;
+    font-family: 'Proxima-Bold';
+}
+
+.inactive-expense h3{
+    color: grey;
+    font-family: 'Proxima-Regular';
+}
+
+.inactive-expense #expense-list-cost{
+    color: grey;
 }
