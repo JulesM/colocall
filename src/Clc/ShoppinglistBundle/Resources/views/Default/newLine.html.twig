@@ -1,0 +1,17 @@
+{# src/Clc/ShoppinglistBundle/Resources/views/Default/newLine.html.twig #}
+
+<form action="{{ path('clc_shoppinglist_new') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_errors(form) }}
+
+    <div id="new-line-content">
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name, 
+            { 'attr': { 'style' : 'width: 350px;',  'placeholder' : 'What is missing ?'}}) 
+        }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    <input class="btn btn-success" id="new-line-button" type="submit" value="Add item"/>
+</form>

@@ -31,7 +31,7 @@ class ShoppinglistController extends Controller
 
         $form = $this->createFormBuilder($item)
                      ->add('name', 'text')
-                     ->add('comment', 'text', array('required' => false) )  
+                     //->add('comment', 'text', array('required' => false) )  
                      ->getForm();
         
         $request = $this->get('request');
@@ -62,6 +62,55 @@ class ShoppinglistController extends Controller
         }
         
         return $this->render('ClcShoppinglistBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function newLineAction()
+    {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        
+        // initialisez simplement un objet $item
+        $item = new item();
+        $item->setState(0);
+        $item->setAddedDate(new \DateTime('today'));
+        $item->setAuthor($user);
+        $item->setColoc($coloc);
+
+        $form = $this->createFormBuilder($item)
+                     ->add('name', 'text')
+                     //->add('comment', 'text', array('required' => false) )  
+                     ->getForm();
+        
+        $request = $this->get('request');
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                
+                $notification = new \Clc\InboxBundle\Entity\notification;
+                $notification->setCategory(4)
+                             ->setAuthor($item->getAuthor())
+                             ->setDate(new \Datetime('now'))
+                             ->setItem($item)
+                             ->setActive(1);
+                
+                foreach ($coloc->getUsers() as $u) {
+                    $notification->addUser($u);
+                }
+                
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($notification);
+                $em->flush();
+                
+                $url = $this->getRequest()->headers->get("referer");
+                return $this->redirect($url);
+            }
+        }
+        
+        return $this->render('ClcShoppinglistBundle:Default:newLine.html.twig', array(
             'form' => $form->createView(),
         ));
     }

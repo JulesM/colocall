@@ -47,8 +47,11 @@
                             </div> 
                             <div id="all-todos-caption">
                                 
-                                {% if state == 0 %} <p>What's missing ?</p>
-                                {% else %}          <p>Recently bought</p>
+                                {% if state == 0 %} 
+                                
+                                  {% render 'ClcShoppinglistBundle:Shoppinglist:newLine' %}
+                                
+                                {% else %}<p>Recently bought</p>
                                 {% endif %}
                                 
                             </div>
