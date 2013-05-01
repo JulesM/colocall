@@ -18,7 +18,7 @@ class DashboardController extends Controller
         
         if ($coloc == null) {
             if ($invitations == null) {
-                return $this->render('ClcDashboardBundle:JoinColoc:createcoloc.html.twig');
+                return $this->render('ClcDashboardBundle:JoinColoc:noInvitation.html.twig');
             }
             else {
                 return $this->render('ClcDashboardBundle:JoinColoc:invitation.html.twig', array(
