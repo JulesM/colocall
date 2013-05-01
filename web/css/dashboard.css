@@ -186,7 +186,7 @@ body{
     font-family: 'Proxima-Regular';
 }
 
-.inactive-expense #expense-list-cost{
+.inactive-expense #expense-amount{
     color: grey;
 }
 
