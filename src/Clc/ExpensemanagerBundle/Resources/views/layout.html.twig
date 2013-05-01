@@ -77,7 +77,7 @@
                                 </td>
                                 <td>
                                     <div id="payback-arrow">
-                                        <p> {{ payment[1] }}</p>
+                                        <p> {{ payment[1] }}€</p>
                                     </div>
                                 </td>
                                 <td>
@@ -93,7 +93,10 @@
                 {% endif %}
                      
             </div>   
-                    <a class="btn btn-warning" href="{{ path('clc_expensemanager_applypayback') }}">Suggest a Payback</a>
+                    
+            {% include "ClcExpensemanagerBundle:Default:suggestPaybackModal.html.twig" %}
+
+            <a class="btn btn-warning" href="#suggestPaybackModal" data-toggle="modal">Suggest a Payback</a>
                
           </div>
             
@@ -178,7 +181,7 @@
                   You were not tagged in any expense yet
               {% else %}
 
-                <table>
+                <table class="table table-hover">
                   <tbody>
 
                     {% for expense in forme_expense %}

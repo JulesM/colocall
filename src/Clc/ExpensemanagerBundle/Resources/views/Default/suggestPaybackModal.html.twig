@@ -1,0 +1,23 @@
+{# src/Clc/DashboardBundle/resources/views/default/suggestPaybackModal.html.twig #}
+
+<!-- Suggest Payback Modal -->
+
+<div id="suggestPaybackModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Suggest a Payback to your flatmates</h3>
+    </div>
+    <div class="modal-body">
+
+        <div id="payback-modal-body">
+            <p>This will calculate who owes what to whom and <b>set all balances back to 0</b>.</p>
+            <p><b>You will not</b> be able to revert this payback !</p>
+            <p>Are you sure you want to apply a Payback ?</p>
+        </div>    
+
+        <div id="payback-modal-buttons">
+            <a class="btn btn-success" href="{{ path('clc_expensemanager_applypayback') }}">Yes</a>
+            <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+        </div>    
+    </div>
+</div>
