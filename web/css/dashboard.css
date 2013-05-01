@@ -148,10 +148,46 @@ body{
     border-top: 1px solid rgb(221, 221, 221);
 }
 
-#mini-list-cost{     
+#expense-name{
+    width: 100%;
+    color: rgb(103, 111, 127);
+    font-size: 12px;
+    font-style: italic;
+    font-family: 'Georgia';
+    border-top: none;
+}
+
+#expense-name h3{
+   margin: 0px;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   font-size: 15px;
+   line-height: 10px;
+   font-style: normal;
+   border-top: none;
+}
+
+#expense-amount{    
     border-top: medium none;
     color:rgb(236, 106, 66);
     font-weight: bold;
+}
+
+.active-expenses{
+}
+
+.active-expense h3{
+    color: black;
+    font-family: 'Proxima-Bold';
+}
+
+.inactive-expense h3{
+    color: grey;
+    font-family: 'Proxima-Regular';
+}
+
+.inactive-expense #expense-list-cost{
+    color: grey;
 }
 
 .shopping-upper p i{
@@ -256,31 +292,32 @@ body{
 
 
 #mini-shopping-list-item{
-   width: 100%;
-   color: rgb(103, 111, 127);
-   font-size: 12px;
-   font-style: italic;
-   font-family: 'Georgia';
-   border-top: none;
+    width: 100%;
+    color: rgb(103, 111, 127);
+    font-size: 12px;
+    font-style: italic;
+    font-family: 'Georgia';
+    border-top: none;
 }
 
 #mini-shopping-list-item h3{
-   margin: 0px;
-   margin-bottom: 5px;
-   margin-top: 5px;
-   font-size: 15px;
-   line-height: 10px;
-   font-style: normal;
-   color: black;
-   font-family: 'Proxima-Regular';
-   border-top: none;
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 10px;
+    font-style: normal;
+    color: black;
+    font-family: 'Proxima-Regular';
+    border-top: none;
 }
 
 #todo-list-edit-comment-delete{
     float: right;
     text-align: right;
-    width: 80px;
+    width: 40px;
     height: 100%;
     border-top: none;
+    color: grey;
         
 }

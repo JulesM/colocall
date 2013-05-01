@@ -25,11 +25,6 @@
 {% endblock %}      
 
 {% block body %}
-
-  {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
-  {% include "ClcExpensemanagerBundle:Default:requestpaybackmodal.html.twig" %}
-  {% include "ClcTodosBundle:Default:addtodomodal.html.twig" %}
-  {% include "ClcShoppinglistBundle:Default:additemmodal.html.twig" %}
       
 <div id="dashboard-content">
     
@@ -69,17 +64,20 @@
                               You were not tagged in any expense of this flatshare
                           {% else %}
                           
-                              <table id="mini-shopping-list-table" class="table">
+                              <table class="table table-hover">
                                   <tbody>
 
                                       {% for expense in latest_expenses %}
 
-                                          <tr>
-                                            <td id="mini-shopping-list-item">
+                                          <tr {% if expense.active == 1 %} class="active-expense" {% else %} class="inactive-expense"{% endif %}>
+                                            <td id="expense-name">
                                                 <h3>{{ expense.name }}</h3>
-                                                <i class="icon-time"></i>{{ expense.date|date("d/m") }} by {{ expense.owner.nickname }}
+                                                <i class="icon-time"></i>{{ expense.date|date("d/m") }} - Paid by 
+                                                <b>{% if expense.owner == app.user %} you
+                                                   {% else %} {{ expense.owner.nickname }}
+                                                   {% endif %}</b>
                                             </td>
-                                            <td id="mini-list-cost">{{ expense.amount }}€</td>
+                                            <td id="expense-amount">{{ expense.amount }}€</td>
                                             <td id="todo-list-edit-comment-delete">
                                               {#<i class="icon-edit"></i>#}
                                               {% if expense.active == 0 %}
