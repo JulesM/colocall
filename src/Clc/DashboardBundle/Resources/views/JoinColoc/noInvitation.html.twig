@@ -2,19 +2,16 @@
 
 {% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
 
-{% block content %}
+{% block contentBlock %}
 
-    {% block headerBlock %}
-        <p>Hello <b>{{ app.user.nickname }}</b> you do not have any invitation to join a flatshare right now</p>
-        <p>Wait for an <b>invitation</b> or <b>create</b> a flatshare right now !</p>
-    {% endblock %}
-    
-    {% block secondBlock %}
-        <div class="span8 offset2 join-box" id="form-box">
+	<div class="join-box" id="header-box">
+    	<p>Hello {{ app.user.nickname }} you do not have any invitation to join a flatshare</p>
+    	
+	</div>
 
-            {% render 'ClcColocBundle:Coloc:new' %}
+	<div id="create-a-flatshare">
+		<p>Wait for an <b>invitation</b> or <b>create</b> a flatshare right now !</p>
+		<a class="btn btn-large btn-success" href="{{ path('clc_dashboard_create_flatshare') }}">Create a Flatshare</a>
+	</div>
 
-        </div>
-    {% endblock %}
-        
 {% endblock %}

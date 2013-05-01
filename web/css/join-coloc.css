@@ -8,11 +8,8 @@
 
 #join-coloc-content{
     padding-top: 10px;
-    overflow: hidden;
-    min-width: 800px;
-    height: 100%;
+    min-height: 800px;
     background-image: url('../img/dashboard/retina_wood_@2X.png');
-    position: relative;
 }
 
 /* --- Creation part --- */
@@ -32,7 +29,7 @@
     -webkit-box-shadow: inset 0 0 0 1px #fafafa;
     box-shadow: inset 0 0 0 1px #fafafa;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
-    font-family: 'Oswald-light';
+    font-family: 'Oswald-Regular';
     font-size: 24px;
     color: rgba(0, 0, 0, 0.6);
     padding: 10px;
@@ -40,15 +37,92 @@
     text-align: center;
 }
 
+/* First page */
+
+#create-a-flatshare{
+    padding-top: 30px;
+    font-family: 'Oswald-Light';
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 35px;
+    text-align: center;
+}
+#create-a-flatshare .btn{
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Creation form */
+
 .coloc-form-label{
     display: inline-block;
-    width: 100px;
+    width: 150px;
     vertical-align: middle;
 }
 
-#create-button{
-    margin-left: 20px;
+.footer-buttons{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 40px;
+    padding-top: 20px;
 }
+
+#back-button{
+    float: left;
+}
+#create-button{
+    float: right;
+}
+
+/* --- Invite friends part --- */
+
+#invitations-box{
+}
+
+#careful-note{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#invitation-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+    font-family: 'Oswald-Regular';
+    font-size: 18px;
+}
+
+#remove-invitation-button{
+    font-family: 'Oswald-Bold';
+    font-size: 20px;
+    color: grey;
+    float: right;
+}
+
+#invite-friends-form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+}
+
+#friend-email{
+    display: inline-block;
+    padding-top: 5px;
+    margin-left: 70px;
+}
+
+#add-friend{
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+}
+
+#continue-button{
+    text-align: right;
+}
+
+/* --- Update profile part --- */
 
 /* --- Invitation part --- */
 

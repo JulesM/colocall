@@ -10,6 +10,52 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class InvitationController extends Controller
 {
+    public function inviteFlatmatesAction()
+    {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        
+        $invitation = new invitation();
+        $invitation->setAuthor($user);
+        $invitation->setColoc($coloc);
+        $invitation->setDate(new \DateTime('today'));
+        
+        $form = $this->createFormBuilder($invitation)
+                     ->add('email', 'email')         
+                     ->getForm();
+        
+        $request = $this->get('request');
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($invitation);
+                $em->flush();
+                
+                $email = $invitation->getEmail();
+                
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('You received an invitation to join Coloc\'all !')
+                    ->setFrom('webmaster@colocall.co')
+                    ->setTo($email)
+                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user, 'email' => $email)))
+                ;
+                $this->get('mailer')->send($message);
+                
+                $url = $this->getRequest()->headers->get("referer");
+                return $this->redirect($url);
+                
+            }
+        }
+        
+        return $this->render('ClcDashboardBundle:JoinColoc:inviteFlatmatesForm.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
     public function sendInvitationAction()
     {
         $user = $this->getUser();
@@ -48,12 +94,6 @@ class InvitationController extends Controller
                 $url = $this->getRequest()->headers->get("referer");
                 return $this->redirect($url);
                 
-                /*$message = \Swift_Message::newInstance()
-                    ->setSubject('Tou received an invitation to use Coloc\'all')
-                    ->setFrom('webmaster@colocall.co')
-                    ->setTo($invitation->getEmail())
-                    ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user)))
-                ;*/
             }
         }
         
@@ -81,7 +121,7 @@ class InvitationController extends Controller
             $em->remove($invitation);
             $em->flush();
             
-            $route = 'clc_dashboard_homepage';
+            $route = 'clc_dashboard_finish_register';
             $url = $this->container->get('router')->generate($route);
             $response = new RedirectResponse($url);
             return $response;
@@ -137,10 +177,8 @@ class InvitationController extends Controller
             $em->remove($invitation);
             $em->flush();
 
-            $route = 'clc_coloc_homepage';
-            $url = $this->container->get('router')->generate($route);
-            $response = new RedirectResponse($url);
-            return $response;
+            $url = $this->getRequest()->headers->get("referer");
+            return $this->redirect($url);
         }
         
         elseif ($user == $this->getUser()){
@@ -149,10 +187,8 @@ class InvitationController extends Controller
             $em->remove($invitation);
             $em->flush();
 
-            $route = 'clc_dashboard_homepage';
-            $url = $this->container->get('router')->generate($route);
-            $response = new RedirectResponse($url);
-            return $response;
+            $url = $this->getRequest()->headers->get("referer");
+            return $this->redirect($url);
         }
         
         else {

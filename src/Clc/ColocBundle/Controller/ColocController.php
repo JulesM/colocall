@@ -18,7 +18,7 @@ class ColocController extends Controller
             'pictures'    => $this->getProfilePicturesAction()
         ));
     }
-    
+
     public function newAction()
     {
         $coloc = new coloc();
@@ -38,13 +38,13 @@ class ColocController extends Controller
                 $em->persist($coloc);
                 $em->flush();
                 
-                $url = $this->get('router')->generate('clc_coloc_homepage');
+                $url = $this->get('router')->generate('clc_dashboard_invite_flatmates');
                 return $this->redirect($url);
             }
         }
-                
+
         return $this->render('ClcColocBundle:Creation:new.html.twig', array(
-            'form' => $form->createView(),
+        'form' => $form->createView(),
         ));
     }
     

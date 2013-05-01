@@ -5,19 +5,19 @@
     {{ form_errors(form) }}
 
     <div>
-        <div class="coloc-form-label">{{ form_label(form.name) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.name, 'Name of the flatshare') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.name) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.name) }}</div>
     </div>
     
     <div>
-        <div class="coloc-form-label">{{ form_label(form.address1) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.address1, 'Address, line 1') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.address1) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.address1) }}</div>
     </div>
     
     <div>
-        <div class="coloc-form-label">{{ form_label(form.address2) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.address2, 'Address, line 2') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.address2) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.address2) }}</div>
     </div>
@@ -42,5 +42,9 @@
 
     {{ form_rest(form) }}
 
-    <input class="btn btn-success" id="create-button" type="submit" value="Create Flatshare"/>
+    <div class="footer-buttons">
+        <a class="btn btn-large" id="back-button" href="{{ path('clc_dashboard_invite_flatmates') }}">Back</a>
+        <input class="btn btn-success btn-large" id="create-button" type="submit" value="Create Flatshare"/>
+    </div>
+
 </form>

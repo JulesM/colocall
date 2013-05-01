@@ -27,7 +27,6 @@ root {
     height: 100%;
     overflow: hidden;
     min-height: 600px;
-    
 }
 
 #content{
@@ -143,6 +142,13 @@ last-a{
     color: black;
 }
 
+/* --- Explainations --- */
+
+#explainations-container{
+    width: 80%;
+    min-width: 700px;
+    margin-top: 10px;
+}
 
 /* --- Expensemanager Bundle --- */
 

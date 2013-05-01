@@ -2,14 +2,14 @@
 
 {% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
 
-{% block headerBlock %}
-    <h3> Hello {{ app.user.nickname }}, you have {{ invitations|length }} invitation(s) to join a flatshare :</h3>
-{% endblock %}
+{% block contentBlock %}
 
-{% block secondBlock %}
+    <div class="join-box" id="header-box">
+        <h3> Hello {{ app.user.nickname }}, you have {{ invitations|length }} invitation(s) to join a flatshare :</h3>
+    </div>
     
     {% for invitation in invitations %}
-        <div class="span8 offset2" id="invitation-box">         
+        <div id="invitation-box">         
             <div>{{invitation.author.nickname}} ({{invitation.author.firstname}} {{invitation.author.lastname}})
                  invites you to join <b>{{invitation.coloc.name}}</b> - {{invitation.date|date("d/m")}}
             </div>

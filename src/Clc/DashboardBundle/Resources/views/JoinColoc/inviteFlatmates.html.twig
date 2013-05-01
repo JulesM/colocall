@@ -1,0 +1,37 @@
+{# src/Clc/DashboardBundle/Resources/views/JoinColoc/inviteFriends.html.twig #}
+
+{% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
+
+{% block contentBlock %}
+
+	<div class="join-box" id="header-box">
+    	<p>Invite your Flatmates !</p>
+	</div>
+
+    <div class="join-box" id="invitations-box">
+
+    	<div id="careful-note">
+    		Be careful, emails have to be exactly the ones your flatmates will use to register, otherwise they will not see your invitaion once registered
+    	</div>
+
+    	<div id="invitation-container">
+
+    		{% for invitation in invitations %}
+
+    		<p>{{ invitation.email }} <a class="btn btn-link" id="remove-invitation-button" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">x</a></p>
+
+    		{% endfor %}
+
+    	</div>
+
+    	<div>
+        	{% render 'ClcColocBundle:Invitation:inviteFlatmates' %}
+    	</div>
+
+    	<div id="continue-button">
+    		<a class="btn btn-warning" href="{{ path('clc_dashboard_finish_register') }}">Validate and continue</a>
+    	</div>
+
+    </div>
+
+{% endblock %}

@@ -3,3 +3,15 @@
 clc_dashboard_homepage:
     pattern:  /
     defaults: { _controller: ClcDashboardBundle:Dashboard:index }
+
+clc_dashboard_create_flatshare:
+    pattern: /create
+    defaults: { _controller: ClcDashboardBundle:Register:createFlatshare }
+
+clc_dashboard_invite_flatmates:
+    pattern: /invite
+    defaults: { _controller: ClcDashboardBundle:Register:inviteFlatmates }
+
+clc_dashboard_finish_register:
+    pattern: /complete/register
+    defaults: { _controller: ClcDashboardBundle:Register:finishRegister }

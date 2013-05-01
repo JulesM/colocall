@@ -1,0 +1,22 @@
+{# src/Clc/DashboardBundle/Resources/views/JoinColoc/inviteFriendsForm.html.twig #}
+
+<form action="{{ path('clc_coloc_invite_flatmates') }}" method="post" {{ form_enctype(form) }}>
+    <div id= "invite-friends-form">
+
+	    {{ form_errors(form) }}
+
+	    <div id="friend-email">
+	        {{ form_errors(form.email) }}
+	        {{ form_widget(form.email, 
+            { 'attr': { 'style' : 'width: 260px;',  'placeholder' : 'Enter here the email of your flatmate'}}) 
+        }}
+	    </div>
+
+	    {{ form_rest(form) }}
+
+	    <div id="add-friend">
+	    	<input class="btn btn-success" type="submit" value="Send Invitation"/>
+	    </div>
+
+	</div>
+</form>

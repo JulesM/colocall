@@ -19,6 +19,10 @@ clc_coloc_leave_flatshare:
 clc_coloc_new_invitation:
     pattern: /send/invitation
     defaults: { _controller: ClcColocBundle:Invitation:sendInvitation }
+
+clc_coloc_invite_flatmates:
+    pattern: /invite
+    defaults: { _controller: ClcColocBundle:Invitation:inviteFlatmates }
     
 clc_coloc_accept_invitation:
     pattern: /accept/{id}

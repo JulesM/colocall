@@ -1,0 +1,19 @@
+{# src/Clc/DashboardBundle/Resources/views/JoinColoc/createFlatshare.html.twig #}
+
+{% extends 'ClcDashboardBundle:JoinColoc:joincoloc.html.twig' %}
+
+{% block contentBlock %}
+
+	<div class="join-box" id="header-box">
+    	<p>Fill in the following form to create your flatshare</p>
+	</div>
+
+    <div class="join-box" id="form-box">
+
+    	<div>
+        	{% render 'ClcColocBundle:Coloc:new' %}
+    	</div>
+
+    </div>
+
+{% endblock %}
