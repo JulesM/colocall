@@ -1,0 +1,21 @@
+{% block subject %}
+{% autoescape false %}
+Confirmation of your registration
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+Hello {{ user.email }},
+
+To finish activating your account - please visit
+{{ confirmationUrl }}
+
+And then log in through the top bar login form.
+
+If you have any question do not hesitate to drop us an email.
+
+Best,
+Coloc'all team
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}
