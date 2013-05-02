@@ -49,11 +49,7 @@ class ExpensemanagerController extends Controller
                             'query_builder' => $usersQuery,
                           ))
                      ->add('name', 'text')
-                     ->add('amount', 'integer', array(
-                            'attr' => array(
-                            'prepend_input' => '€'
-                            )
-                          ))
+                     ->add('amount', 'integer')
                      ->add('date', 'date', array(
                             'input'    => 'datetime',
                             'widget'   =>'choice',

@@ -4,37 +4,46 @@
     
     {{ form_errors(form) }}
 
-    <div style="display: inline-block;">
-        {{ form_label(form.name) }}
-        {{ form_errors(form.name) }}
-        {{ form_widget(form.name) }}
+    <div style="display: inline-block; width: 50%; height: 350px;">
+
+        <div>
+            {{ form_label(form.name, 'Description of the expense') }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        
+        <div>
+            {{ form_label(form.owner, 'Who paid ?') }}
+            {{ form_errors(form.owner) }}
+            {{ form_widget(form.owner) }}
+        </div>
+        
+        <div>
+            {{ form_label(form.amount, 'How much was paid in total ?') }}
+            {{ form_errors(form.amount) }}
+            {{ form_widget(form.amount, { 'attr': { 'style' : 'width: 60px;' } }) }}
+        </div>
+        
+        <div>
+            {{ form_label(form.date, 'When ?') }}
+            {{ form_errors(form.date) }}
+            {{ form_widget(form.date) }}
+        </div>
+
     </div>
     
-    <div style="display: inline-block;">
-        {{ form_label(form.amount) }}
-        {{ form_errors(form.amount) }}
-        {{ form_widget(form.amount) }}
-    </div>
-    
-    <div style="display: inline-block;">
-        {{ form_label(form.owner) }}
-        {{ form_errors(form.owner) }}
-        {{ form_widget(form.owner) }}
-    </div>
-    
-    <div style="display: inline-block;">
-        {{ form_label(form.date) }}
-        {{ form_errors(form.date) }}
-        {{ form_widget(form.date) }}
-    </div>
-    
-    <div class="inline">
-        {{ form_label(form.users) }}
-        {{ form_errors(form.users) }}
-        {{ form_widget(form.users) }}
+    <div style="display: inline-block; width: 48%; height: 250px; float: right; padding-top: 2px;">
+        <div>
+            {{ form_label(form.users, 'Who is concerned ?') }}
+            {{ form_errors(form.users) }}
+            {{ form_widget(form.users) }}
+        </div>
+
+        {{ form_rest(form) }}
     </div>
 
-    {{ form_rest(form) }}
-
-    <input class="btn btn-success" type="submit" style="float: right; vertical-align: bottom;" />
+    <div style="text-align: center;">
+        <input class="btn btn-success" type="submit" style="margin-top: 5px;" value="Submit expense"/>
+    </div>
+    
 </form>
