@@ -97,15 +97,6 @@
     padding: 15px 0;
 }
 
-#profile-content h3{
-    width: 100%;
-    border-bottom: solid 1px darkgrey;
-    color: darkgrey;
-    margin-bottom: 20px;
-    font-family: 'oswald-stencil';
-    letter-spacing: 0.08em;
-}
-
 #profile-content h1{
     width: 100%;
     border-bottom: 1px solid #c4c6ca;

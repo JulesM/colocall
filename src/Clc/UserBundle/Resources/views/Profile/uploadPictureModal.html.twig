@@ -1,19 +1,20 @@
-{# empty Twig template #}
+{# src/Clc/userBundle/Resources/views/Profile/uploadPictureModal.html.twig #}
 
 <div id="profilePictureModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="profilePictureModalLabel">Change your Profile Picture</h3>
+        <h3 id="myModalLabel">Upload a new profile picture</h3>
     </div>
         
     <div class="modal-body">
+
         {% render 'ClcUserBundle:profile:editProfilePicture' %}
+
     </div>
         
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
     </div>
     
 </div>
