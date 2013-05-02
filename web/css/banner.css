@@ -67,6 +67,22 @@ root {
 #banner2 #login-box{
     height: 80%;
     margin-top: 4px;
+    width: 700px;
+}
+
+#login-box form{
+    display: inline-block;
+    width: 500px;
+}
+
+#login-box #login-errors{
+    display: inline-block; 
+    width: 180px;
+    margin-left: 10px;
+}
+
+#banner2 #email{
+    font-size: 12px;
 }
 
 #banner2 #remember_me{
