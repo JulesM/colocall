@@ -33,7 +33,19 @@
                     <a href="{{ path('clc_shoppinglist_homepage', {'state' : 0}) }}"><div class="state-button">Missing</div></a>
                   </div>  
                 </li>
-                <li class="category-filter"><div class="square-button"><a href="{{ path('clc_shoppinglist_receive', {'state' : state}) }}"title="Receive shopping list by email"><i class="icon-envelope icon-white""></i></a></div></li>
+                <li class="category-filter">
+                  <div class="btn-group">
+                    <a class="btn dropdown-toggle square-button" data-toggle="dropdown" href="#">
+                      <i class="icon-envelope"></i>
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <div id="square-button-text">
+                        <a href="{{ path('clc_shoppinglist_receive', {'state' : state}) }}">Receive shopping list by email</a>
+                      </div>
+                    </ul>
+                  </div>
+                </li>
             </ul>            
         </div>
       
