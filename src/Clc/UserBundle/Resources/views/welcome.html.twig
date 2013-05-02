@@ -28,21 +28,28 @@
                    <div id="middle_block1">
                         <div id="catchphrase_box">
                             <div id="catchphrase1">
-                                <p>Make Life in your Flatshare Easier</p>
+                                <p>Welcome on <strong>Coloc'all</strong></p>
                             </div>
                             <div id="catchphrase2">
-                               <p>Start Using <strong>Coloc'all,</strong><br><br><br>
-                                  Today</p>
+                               <p>Make life in your Flatshare easier</p>
+                            </div>
+                            <div id="catchphrase3">
+                               <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="75px" width="75px" alt="">
+                               <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="75px" width="75px"  alt="">
+                               <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="75px" width="75px"  alt="">
+                            </div>
+                            <div id="catchphrase4">
+                               <p>Manage Expenses</p>
+                               <p>Follow To-dos</p>
+                               <p>Share Shopping Lists</p>
                             </div>
                         </div>
 
                         <div id="signin_box">
-                          {% block registerBox %}
-
-                            <div id="signin_box_content">
+                          <div id="signin_box_content">
                                 <legend>
                                     <div id="legend">
-                                    New on Coloc'all ? Sign up for free !
+                                      Register for free !
                                     </div>
                                 </legend>
                                     
@@ -52,16 +59,17 @@
 
                                 </div>    
                             </div>
-                            
-                            <p id="or">OR</p>
-                            
-                            <button id="facebook-button" class="btn btn-primary">
-                                Log in with facebook
-                            </button>   
 
-                          {% endblock %} 
+                            {% block facebook %}
+                            
+                              <p id="or">OR</p>
+                              <button id="facebook-button" class="btn btn-primary">
+                                  Log in with facebook
+                              </button>
+
+                            {% endblock %}
+
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -77,27 +85,26 @@
                             <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="">
                             <h3>Manage Your Expenses</h3>
                             <p>Share your common Expenses</p>
-                            <p>Keep track of your Social Debts</p>
-                            <p>Analyze your Spendings</p>
-                                </p>
-                        </div>
-
-
-                        <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-payback.png') }}" height="100px" width="100px"  alt="">
-                            <h3>Payback Your Friends Online</h3>
-                            <p>Get current Balances</p>
+                            <p>Keep track of your current debts</p>
                             <p>Request a Payback at any time</p>
-                            <p>Payback online with a Click</p>
                         </div>
 
 
                         <div id="feature" class="span4">
                             <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="">
-                            <h3>Manage Your To-dos & Lists</h3>
+                            <h3>Follow Your To-dos</h3>
                             <p>Share To-dos in the common Agenda</p>
-                            <p>Make sure to-dos are done</p>
-                            <p>Add items to your dynamic Shopping List</p>
+                            <p>Edit assignees and due dates online</p>
+                            <p>Never forget what you commited to do</p>
+                        </div>
+
+
+                        <div id="feature" class="span4">
+                            <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="">
+                            <h3>Share Shopping Lists</h3>
+                            <p>Add items to the shopping list</p>
+                            <p>Receive the list by email upon request</p>
+                            <p>Let your flatmates know you filled the fridge</p>
                         </div>
                     </div>
 

@@ -73,6 +73,7 @@ root {
 #login-box form{
     display: inline-block;
     width: 475px;
+    font-family: 'Oswald-Regular';
 }
 
 #login-box #login-errors{
@@ -95,6 +96,7 @@ root {
 
 #banner2 form .btn{
     float: right;
+    font-family: 'Oswald-Regular';
 }
 
 #banner2 #email{
@@ -122,8 +124,6 @@ root {
     height: 100%;
     vertical-align: middle;
 }
-
-
 
 #name_button{
     margin-right: 10px;
