@@ -37,6 +37,8 @@
                         </div>
 
                         <div id="signin_box">
+                          {% block registerBox %}
+
                             <div id="signin_box_content">
                                 <legend>
                                     <div id="legend">
@@ -52,11 +54,14 @@
                             </div>
                             
                             <p id="or">OR</p>
+                            
                             <button id="facebook-button" class="btn btn-primary">
                                 Log in with facebook
-                            </button>    
-                                
+                            </button>   
+
+                          {% endblock %} 
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -117,6 +117,7 @@ body{
     display: inline-block;
     height: 100%;
     width: 49%;
+    vertical-align: middle;
 }
 
 #signin_box p{
@@ -189,6 +190,20 @@ body{
     float:right;
     margin-right: 20%;
     font-family: 'Oswald-Regular';
+}
+
+#confirmation-message-container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    border: solid 1px;
+    border-color: rgb(229, 229, 229);
+    border-radius: 10px;
+    padding: 15px;
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 26px
 }
 
 /* --- block 2 --- */
