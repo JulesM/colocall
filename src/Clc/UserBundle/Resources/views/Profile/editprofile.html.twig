@@ -36,14 +36,14 @@
     {% block firstname %} 
     
         {{ form_errors(form.firstname) }}
-        {{ form_widget(form.firstname) }}
+        {{ form_widget(form.firstname, { 'attr': { 'placeholder' : 'First Name' } }) }}
     
     {% endblock %}  
       
     {% block lastname %}  
     
         {{ form_errors(form.lastname) }}
-        {{ form_widget(form.lastname) }}
+        {{ form_widget(form.lastname, { 'attr': { 'placeholder' : 'Last Name' } }) }}
     
     {% endblock %}
     
