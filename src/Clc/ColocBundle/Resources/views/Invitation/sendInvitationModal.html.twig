@@ -1,16 +1,20 @@
 {# src/Clc/UserBundle/Resources/views/Invitation/sendinvitation.html.twig #}
 
 <div id="sendinvitationmodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="myModalLabel">Send an invitation to join the flatshare</h3>
     </div>
+
     <div class="modal-body">
 
         {% render 'ClcColocBundle:Invitation:sendInvitation' %}    
 
     </div>
+
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
+    
 </div>

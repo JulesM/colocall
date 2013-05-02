@@ -5,12 +5,12 @@
     {{ form_errors(form) }}
 
     <div>
-        {{ form_label(form.email) }}
+        {{ form_label(form.email, 'Enter the email of the person you want to invite in your flatshare') }}
         {{ form_errors(form.email) }}
         {{ form_widget(form.email) }}
     </div>
 
     {{ form_rest(form) }}
 
-    <input class="btn btn-success" type="submit"/>
+    <input class="btn btn-success" type="submit" value="Send invitation"/>
 </form>
