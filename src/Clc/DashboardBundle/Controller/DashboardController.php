@@ -12,19 +12,11 @@ class DashboardController extends Controller
     {
         $user = $this->getUser();
         $coloc = $user->getColoc();
-        $invitations = $this->container->get('clc_dashboard.invitation')->getInvitations($user);
         $path = $user->getPicture()->getPath();
         $this->container->get('request')->getSession()->set('path', $path);
         
         if ($coloc == null) {
-            if ($invitations == null) {
-                return $this->render('ClcDashboardBundle:JoinColoc:noInvitation.html.twig');
-            }
-            else {
-                return $this->render('ClcDashboardBundle:JoinColoc:invitation.html.twig', array(
-                    'invitations' => $invitations,
-                ));
-            }
+            return $this->joinColocAction($user);
         }
         
         else {
@@ -84,5 +76,18 @@ class DashboardController extends Controller
         $item_list = $sl->getByColoc($coloc, $state);
         
         return $item_list;
+    }
+
+    public function JoinColocAction($user)
+    {  
+        $invitations = $this->container->get('clc_dashboard.invitation')->getInvitations($user);
+
+        if ($invitations == null) {
+            return $this->render('ClcDashboardBundle:JoinColoc:noInvitation.html.twig');
+        }else {
+            return $this->render('ClcDashboardBundle:JoinColoc:invitation.html.twig', array(
+                'invitations' => $invitations,
+            ));
+        }
     }
 }

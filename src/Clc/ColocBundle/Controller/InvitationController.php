@@ -195,4 +195,33 @@ class InvitationController extends Controller
             throw new AccessDeniedException('You do not have access to this section.');
         }
     }
+
+    public function searchColocAction($flatshare)
+    {
+        $rp = $this->getDoctrine()->getRepository('ClcColocBundle:coloc');
+        $colocs = $rp->findBy(array('name' => $flatshare));
+
+        return $this->render('ClcDashboardBundle:JoinColoc:displayFlatshares.html.twig', array(
+            'colocs' => $colocs,
+        ));
+    }
+
+    public function joinColocAction($name)
+    {
+        $user = $this->getUser();
+
+        $rp = $this->getDoctrine()->getRepository('ClcColocBundle:coloc');
+        $coloc = $rp->findOneBy(array('name' => $name)); 
+
+        $user->setColoc($coloc);
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->persist($user);
+        $em->flush();
+
+        $route = 'clc_dashboard_finish_register';
+        $url = $this->container->get('router')->generate($route);
+        $response = new RedirectResponse($url);
+        return $response;
+    }
 }

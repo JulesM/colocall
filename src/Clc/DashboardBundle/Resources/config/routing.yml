@@ -15,3 +15,7 @@ clc_dashboard_invite_flatmates:
 clc_dashboard_finish_register:
     pattern: /complete/register
     defaults: { _controller: ClcDashboardBundle:Register:finishRegister }
+
+clc_dashboard_join_coloc:
+    pattern: /join/coloc/{name}
+    defaults: { _controller: ClcColocBundle:Invitation:joinColoc }

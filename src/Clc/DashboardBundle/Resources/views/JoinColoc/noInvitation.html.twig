@@ -6,12 +6,25 @@
 
 	<div class="join-box" id="header-box">
     	<p>Hello {{ app.user.nickname }} you do not have any invitation to join a flatshare</p>
-    	
 	</div>
 
 	<div id="create-a-flatshare">
-		<p>Wait for an <b>invitation</b> or <b>create</b> a flatshare right now !</p>
-		<a class="btn btn-large btn-success" href="{{ path('clc_dashboard_create_flatshare') }}">Create a Flatshare</a>
+		<a class="btn btn-large btn-success" href="{{ path('clc_dashboard_create_flatshare') }}">Create a virtual Flatshare right now</a>
+		<p>OR</p>
+
+		<div id="find-flatshare-container">
+			<div id="search-coloc">
+				<form method="get" action="{{ path('clc_dashboard_homepage') }}">
+					<p>
+						<input type="search" name="flatshare" id="flatshare" placeholder="Enter the exact name of the flatshare you want to join" style="width: 400px;"/>
+						<input type="submit" value="Search Flatshare" class="btn btn-warning" />
+					</p>
+				</form>
+			</div>
+			<div id="display-coloc">
+				{% render 'ClcColocBundle:Invitation:searchColoc' with { 'flatshare' : app.request.get('flatshare')}%}
+			</div>	
+		</div>	
 	</div>
 
 {% endblock %}
