@@ -39,7 +39,7 @@ class InvitationController extends Controller
                 
                 $message = \Swift_Message::newInstance()
                     ->setSubject('You received an invitation to join Coloc\'all !')
-                    ->setFrom('webmaster@colocall.co')
+                    ->setFrom('jules@colocall.co')
                     ->setTo($email)
                     ->setBody($this->renderView('ClcColocBundle:Invitation:invitationEmail.html.twig', array('sender' => $user, 'email' => $email)))
                 ;
