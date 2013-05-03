@@ -1,6 +1,14 @@
-{% for coloc in colocs %}
+{% if colocs == null %}
 
-<p>{{ coloc.name}} ({{ coloc.city }})</p>
-<p><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
+<p>If you received an invitation via email, the name of the flatshare is in it</p>
 
-{% endfor %}
+{% else %}
+
+	{% for coloc in colocs %}
+
+	<p>{{ coloc.name}} ({{ coloc.city }})</p>
+	<p><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
+
+	{% endfor %}
+
+{% endif %}
