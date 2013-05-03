@@ -26,35 +26,6 @@ class RegistrationController extends BaseController
         $em->persist($user);
         $em->flush();
         
-        //check if user accepted as Beta tester
-        /*$repository = $em ->getRepository('ClcUserBundle:betaUser');
-        $query = $repository->createQueryBuilder('b')
-                            ->where('b.enabled = :enabled')
-                            ->setParameter('enabled', true)
-                            ->getQuery();
-
-        $beta_list = $query->getResult();
-        $beta_emails = array();
-
-        foreach($beta_list as $beta_user) {
-            $beta_emails[] = $beta_user->getEmail();
-        }
-
-        if (in_array($user->getEmail(),$beta_emails)) {
-            $em->persist($user);
-            $em->flush();
-            
-            $route = 'clc_dashboard_homepage';
-            
-        } else {
-            $user->setPicture(null);
-            $em->remove($user);
-            $em->flush();
-            
-            $route = 'clc_welcome';
-            
-        }*/
-        
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }

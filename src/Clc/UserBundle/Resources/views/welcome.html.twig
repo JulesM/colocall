@@ -5,7 +5,6 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/beta-box.css') }}" type="text/css" />
 {% endblock %}
 
 {% block mainbox %}
@@ -14,15 +13,7 @@
         <div id="container-center-signup" class="container" >
             <div id="mainbox">
                 
-                {#<div id="beta-box">
-                    <div id="beta-phrase">
-                        <i class="icon-exclamation-sign"></i>
-                        This is a BETA VERSION
-                    </div>
-                    <div id="beta-form">
-                        {% render "ClcUserBundle:Beta:emailForm" %}
-                    </div>
-                </div>#}
+
                 
                 <div id="middle_block1_ext">
                    <div id="middle_block1">
@@ -71,6 +62,11 @@
 
                         </div>
                     </div>
+
+                <div id="beta-box">
+                    <p>This is a Beta version, for ANY issue or question, please send an email to</br><b>contact@colocall.co</b></p>
+                </div>
+
                 </div>
             </div>
         </div>
