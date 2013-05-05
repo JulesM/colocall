@@ -17,7 +17,8 @@ class UserController extends Controller
     {
         $feedback = new feedback();
         $feedback->setDate( new \DateTime('now'))
-                 ->setAuthor($this->getUser());
+                 ->setAuthor($this->getUser())
+                 ->setSolved(false);
         
         $form = $this->createFormBuilder($feedback)
                      ->add('category', 'choice', array(
