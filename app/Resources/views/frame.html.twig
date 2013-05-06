@@ -5,7 +5,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  
-    <title>{% block title %}Coloc'all{% endblock %}</title>
+    <title>{% block title %}Coloc'all, simplify life with your flatmates. We help you organize your shared appartment with an expense manager, to-dos and a dynamic shoppinglist. And much more to come.{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="description" content="Coloc'all makes life in your shared appartment easier. You can manage expenses, follow to-dos and share shopping lists very easily. And much more to come. Try it now, it is free."/>
+    <meta name="keywords" content="Coloc'all, colocall, flatshare, shared appartment, shared flat, flatmates, expense, to-do, shopping list, life, free, easy"/>
+    {% endblock %}
         
       <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
       <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
