@@ -4,8 +4,6 @@ body{
     background-image: url('../img/visitor_homepage/Background/Overview-bckgd-new.jpg');
     padding-left: 0px;
     padding-right: 0px;
-/*    background-size: 1400px 2000px;*/
-/*    background-repeat:repeat;*/
 }
 
 #mainbox-bckgd{
@@ -29,12 +27,8 @@ body{
     background-image: url('../img/signin_bckgd_image.jpg');
     background-repeat: repeat-x;
     height: 540px;
-/*    width: 1280px;
-    margin-left: -180px;*/
     margin-top: 1px;
-/*    box-shadow: 0px 2px 2px #d59392;*/
 }
-
 
 #container-center-signup{
     height: 100%;
@@ -66,7 +60,6 @@ body{
 
 #middle_block1_ext{
     height: 90%;
-/*    width: 800px;*/
     margin-left: auto;
     margin-right: auto;
     padding: 0.5% 0.5% 0.8% 0.5%;
@@ -93,6 +86,7 @@ body{
 
 #catchphrase1{
     font-size: 55px;
+    line-height: 65px;
     line-height: 70px;
     font-family: 'Oswald-Bold';
     color: #e34a25;
