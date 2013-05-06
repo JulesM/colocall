@@ -20,8 +20,26 @@
       {% block stylesheets %}  
       
       {% endblock %}
-      
-      <script type="text/javascript">
+
+  </head>
+ 
+  <body>
+
+    <div class="container-fluid" id="banner-container">
+      <div id="banner">
+
+          {% include ":default:banner.html.twig" %}
+
+      </div>
+    </div>
+
+    {% block mainbox %}
+    
+    {% endblock mainbox %}
+ 
+  {% block javascripts %}
+
+    <script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-40408727-1']);
@@ -33,25 +51,7 @@
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
-      </script>
-
-  </head>
- 
-  <body>
-
-        <div class="container-fluid" id="banner-container">
-                <div id="banner">
-
-                    {% include ":default:banner.html.twig" %}
-
-                </div>
-        </div>
-
-        {% block mainbox %}
-        
-        {% endblock mainbox %}
- 
-  {% block javascripts %}
+    </script>
           
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
@@ -60,6 +60,14 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+    <script src="js/cufon-yui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/oswaldregular.font.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/oswaldbold.font.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/oswaldlight.font.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ProximaNova-Regular.font.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ProximaNova-Bold.font.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/SonoraProOT-Light.font.js" type="text/javascript" charset="utf-8"></script>
 
   {% endblock %}
  

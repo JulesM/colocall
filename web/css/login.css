@@ -91,7 +91,7 @@ body{
 
 #catchphrase1 h1{
     font-size: 50px;
-    font-family: 'Oswald-Bold';
+    font-family: 'Oswald-Regular';
     color: #e34a25;
 }    
 
@@ -100,7 +100,7 @@ body{
 }
 
 #catchphrase2 h2{
-    font-size: 38px;
+    font-size: 36px;
 }   
 
 #catchphrase3{
