@@ -7,12 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Clc\UserBundle\Entity\feedback;
 
 class UserController extends Controller
-{
-    public function welcomeAction()
-    {
-        return $this->render('ClcUserBundle::welcome.html.twig');
-    }
-    
+{   
     public function feedbackAction()
     {
         $feedback = new feedback();

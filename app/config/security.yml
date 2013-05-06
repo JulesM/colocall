@@ -25,12 +25,16 @@ security:
             pattern:    ^/login$
             anonymous:  ~
             
-        beta_firewall:
-            pattern:    ^/beta$
+        about_firewall:
+            pattern:    ^/about$
             anonymous:  ~
             
         register_firewall:
             pattern:    ^/register
+            anonymous:  ~
+
+        how_firewall:
+            pattern:    ^/how$
             anonymous:  ~
             
         resetting_firewall:
@@ -54,6 +58,8 @@ security:
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/about$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/how$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }

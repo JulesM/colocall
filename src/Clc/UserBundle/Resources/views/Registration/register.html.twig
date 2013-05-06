@@ -1,0 +1,9 @@
+{% for key, message in app.session.getFlashes() %}
+	<div class="{{ key }}">
+	    {{ message|trans({}, 'FOSUserBundle') }}
+	</div>
+{% endfor %}
+
+{% block fos_user_content %}
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}

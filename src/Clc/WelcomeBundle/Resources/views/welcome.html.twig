@@ -1,0 +1,39 @@
+{# app/Resources/views/frame.html.twig #}
+ 
+{# On étend notre layout à frame #}
+{% extends "::frame.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/login-links.css') }}" type="text/css" />
+{% endblock %}
+
+{% block mainbox %}
+    
+    {% block welcome %}
+    {% endblock welcome %}
+
+    <!-- Add Expense Modal -->
+
+	<div id="howitworksmodal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        <h3 id="myModalLabel">How does it work ?</h3>
+	    </div>
+	    <div class="modal-body">
+
+			<img src="{{ asset('img/visitor_homepage/How/infographic.jpg') }}" alt="Coloc'all infographic">
+
+	    </div>
+	    <div class="modal-footer">
+	        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	    </div>
+	</div>
+
+
+
+    <div id="footer" class="container-fluid">
+        {% include ":default:footer.html.twig" %}
+    </div>
+
+{% endblock %}

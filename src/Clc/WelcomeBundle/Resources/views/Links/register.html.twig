@@ -1,0 +1,26 @@
+{% extends "ClcWelcomeBundle::welcome.html.twig" %}
+
+{% block welcome %}
+
+<div class="links-page">
+
+<div class="links-container" class="container">
+
+<h1>Register here in a few steps</h1>
+
+<h3>1. Enter your email and choose a password</h3>
+
+{% render 'FOSUserBundle:Registration:register' %}
+
+<h3>2. Check your emails and activate your account</h3>
+
+{% block step2 %}
+{% endblock %}
+
+<h3>3. Login in the home page and join a flatshare or create one</h3>
+
+</div>
+
+</div>
+
+{% endblock %}

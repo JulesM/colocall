@@ -1,16 +1,7 @@
-{# src/Clc/UserBundle/Resources/views/Registration/checkEmail.htmltwig #}
+{% extends "ClcWelcomeBundle:Links:register.html.twig" %}
 
-{% extends "ClcUserBundle::welcome.html.twig" %}
-
-{% block facebook %}
-
-	<div id="confirmation-message-container">
-		<p>A confirmation email has been sent. You must click on the link in the email to activate your account
-		and then login in the top banner</p>
+{% block step2 %}
 	
-		<div id="ok-button">
-			<a class="btn btn-success btn-mini" href="{{ path('clc_welcome') }}">OK</a>
-		</div>
-	</div>
-
-{% endblock %}
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+    
+{% endblock  %}

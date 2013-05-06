@@ -1,14 +1,7 @@
-{# app/Resources/views/frame.html.twig #}
- 
-{# On étend notre layout à frame #}
-{% extends "::frame.html.twig" %}
+{% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />
-{% endblock %}
+{% block welcome %}
 
-{% block mainbox %}
-    
     <div id="signup-box" class="container-fluid">
         <div id="container-center-signup" class="container" >
             <div id="mainbox">
@@ -38,31 +31,47 @@
                           <div id="signin_box_content">
                                 <legend>
                                     <div id="legend">
-                                      Register for free !
+                                      Login Here
                                     </div>
                                 </legend>
                                     
-                                <div id="register-form">
+                                <div id="login-form">
 
-                                  {% render "FOSUserBundle:Registration:register" %}
+                                	{% render 'FOSUserBundle:Security:login' %}
 
-                                </div>    
+                                </div> 
+
+                                <div id="login-footer">
+                                	<div class="login-footer-link">
+	                                	<a class="btn btn-link" href="">Not yet a user ?</a>
+	                                </div>
+	                                <div class="login-footer-link">   
+	                                    <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
+	                                </div>
+        						</div>
+							        <!-- change password modal -->
+							        <div id="changePasswordModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							            <div class="modal-header">
+							                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							                <h3 id="myModalLabel">Enter your email to get a new password</h3>
+							            </div>
+							            <div class="modal-body">
+
+							                {% render 'FOSUserBundle:Resetting:request' %}
+
+							            </div>
+							            <div class="modal-footer">
+							                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							            </div>
+							        </div>
+
                             </div>
-
-                            {% block facebook %}
-                            
-                              <p id="or">OR</p>
-                              <button id="facebook-button" class="btn btn-primary">
-                                  Log in with facebook
-                              </button>
-
-                            {% endblock %}
 
                         </div>
                     </div>
 
                 <div id="beta-box">
-                    <p>This is a Beta version, for ANY issue or question, please send an email to</br><b>contact@colocall.co</b></p>
+                    <p>This is a Beta version, for ANY issue or question, please send an email to <b>contact@colocall.co</b></p>
                 </div>
 
                 </div>
@@ -254,32 +263,7 @@
 
             <div id="ribbon_container2">
             </div>
-            
-          {#<div id="business-box" class="container-fluid">
-                 
-                <div id="block3" class="container">        
-                    <div id="block3_container">
-                        <div class="whitebox" id="trialbox">
-                        </div>
-                        <div class="whitebox" id="lignboxleft">
-                        </div>
-                        <div id="timebox">
-                            <p>After 3 months</p>
-                        </div>
-                        <div class="whitebox" id="lignboxright">
-                        </div>
-                        <div class="whitebox" id="freebox">
-                        </div>
-                        <div class="whitebox" id="paybox">
-                        </div>
-                    </div>               
-                </div>
-            </div>
-          #}
         
-        </div>  
-    
-        <div id="footer" class="container-fluid">
-            {% include ":default:footer.html.twig" %}
-        </div>
+        </div> 
+
 {% endblock %}

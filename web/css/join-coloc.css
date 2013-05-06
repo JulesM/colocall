@@ -37,11 +37,39 @@
     text-align: center;
 }
 
+.join-box h1{
+    font-size: 24px;
+}
+
 /* First page */
 
-#create-a-flatshare{
-    padding-top: 30px;
+.create-or-join{
+    display: inline-block;
+    width: 39%;
+    margin-left: 5%;
+    margin-right: 5%;
+    vertical-align: top;
+    margin-top: 40px;
+    text-align: center;
     font-family: 'Oswald-Light';
+    border: solid 1px;
+    background-color: white;
+    border: solid 1px grey;
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+.create-or-join .header{
+    border-radius: 5px 5px 0 0;
+    background-color: whitesmoke;
+    border: solid 1px grey;
+}
+
+.create-or-join h2{
+    margin-bottom: 10px;
+}
+
+#create-a-flatshare{
     font-size: 24px;
     color: rgba(0, 0, 0, 0.6);
     line-height: 35px;
@@ -51,7 +79,31 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
+
+#search-coloc{
+    margin-top: 40px;
+}
+
+#search-coloc form input{
+    margin-left: 10px;
+}
+
+#find-flatshare input{
+    vertical-align: top;
+}
+
+#search-coloc-box {
+}
+
+#search-coloc-box #p1{
+    font-size: 20px;
+}
+
+#search-coloc-box #p2{  
+}
+
 /* Creation form */
 
 .coloc-form-label{
@@ -77,13 +129,10 @@
 
 /* --- Invite friends part --- */
 
-#invitations-box{
-}
-
-#careful-note{
-    text-align: left;
-    font-size: 12px;
-    margin-bottom: 10px;
+#invite-container{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #invitation-container{
@@ -94,48 +143,30 @@
     font-size: 18px;
 }
 
-#remove-invitation-button{
-    font-family: 'Oswald-Bold';
-    font-size: 20px;
-    color: grey;
-    float: right;
+#invitations-box h3{
+    width: 100%;
+    font-family: 'Oswald-Light';
+    font-size: 12px;
+    line-height: 22px;
 }
 
 #invite-friends-form{
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
-    width: 66%;
 }
 
 #friend-email{
     display: inline-block;
     padding-top: 5px;
-    margin-left: 70px;
+    margin-left: 5%;
 }
 
 #add-friend{
     display: inline-block;
-    float: right;
     vertical-align: top;
 }
 
 #continue-button{
     text-align: right;
-}
-
-/* --- Update profile part --- */
-
-/* --- Invitation part --- */
-
-#invitation-box{
-    margin-top: 20px;
-    padding: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #515151;
-    border-radius: 5px;
-}
-
-#invitation-buttons{
-    float: right;
 }

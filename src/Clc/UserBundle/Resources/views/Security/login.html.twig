@@ -1,28 +1,27 @@
 {# src/ClcUserBundle/Resources/views/Security/login #}
 
-{% extends "FOSUserBundle::layout.html.twig" %}
-
-{% block fos_user_content %}
-
 <form action="{{ path("fos_user_security_check") }}" method="post">
 
-    <label for="username">Email</label>
-    <input type="text" id="email" name="_username" value="{{ last_username }}" required="required" />
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="_password" required="required" />
+    <input type="text" id="email" name="_username" value="{{ last_username }}" required="required" placeholder="Email" />
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
 
-    <input type="submit" class="btn" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <input type="password" id="password" name="_password" required="required" placeholder="Password"/>
+
+    <div id="remember-block">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+    </div>
+
+    <input type="submit" class="btn btn-success" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
 </form>
 
+<div id="block-error">
     {% if error %}
     	<div id="login-errors">{{ error|trans({}, 'FOSUserBundle') }}</div>
 	{% endif %}
+</div>
 
-{% endblock fos_user_content %}

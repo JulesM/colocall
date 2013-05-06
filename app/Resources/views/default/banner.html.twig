@@ -5,6 +5,7 @@
 </div>
         
 <div id="banner2">
+
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
         <div id="settings_button" class="banner-button">      
@@ -34,27 +35,15 @@
 
     {% else %}
     
-        <div id="login-box">
-            {% render 'FOSUserBundle:Security:login' %}
+        <div id="links-box">
+            <ul>
+                <li><a href="{{ path('clc_welcome_login') }}">Home</a></li>
+                <li><a href="{{ path('clc_welcome_about') }}">About</a></li>
+                <li><a href="{{ path('clc_welcome_register') }}">Register</a></li>
+                <li><a href="#howitworksmodal" data-toggle="modal">How it works</a></li>
+            </ul>
         </div>
-        
-        <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
-        
-        <!-- change password modal -->
-        <div id="changePasswordModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">Enter your email to get a new password</h3>
-            </div>
-            <div class="modal-body">
 
-                {% render 'FOSUserBundle:Resetting:request' %}
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        </div>
     {% endif %}
        
 </div>     

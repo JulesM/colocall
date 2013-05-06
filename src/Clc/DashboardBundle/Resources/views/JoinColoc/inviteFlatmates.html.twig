@@ -4,34 +4,34 @@
 
 {% block contentBlock %}
 
-	<div class="join-box" id="header-box">
-    	<p>Invite your Flatmates !</p>
-	</div>
-
-    <div class="join-box" id="invitations-box">
-
-    	<div id="careful-note">
-    		Be careful, emails have to be exactly the ones your flatmates will use to register, otherwise they will not see your invitaion once registered
+    <div id="invite-container">
+        <div class="join-box" id="header-box">
+        	<h1>Tell your flatmates to join you on Coloc'all !</h1>
     	</div>
 
-    	<div id="invitation-container">
+        <div class="join-box" id="invitations-box">
 
-    		{% for invitation in invitations %}
+            <h3>Your flatmates will receive an email inviting them to register on Coloc'all and join you in the flatshare you just created</h3>
 
-    		<p>{{ invitation.email }} <a class="btn btn-link" id="remove-invitation-button" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">x</a></p>
+        	<div id="invitation-container">
 
-    		{% endfor %}
+        		{% for invitation in invitations %}
 
-    	</div>
+        		<p>{{ invitation.email }}</p>
 
-    	<div>
-        	{% render 'ClcColocBundle:Invitation:inviteFlatmates' %}
-    	</div>
+        		{% endfor %}
 
-    	<div id="continue-button">
-    		<a class="btn btn-warning" href="{{ path('clc_dashboard_finish_register') }}">Validate and continue</a>
-    	</div>
+        	</div>
 
+        	<div>
+            	{% render 'ClcColocBundle:Invitation:inviteFlatmates' %}
+        	</div>
+
+        	<div id="continue-button">
+        		<a class="btn btn-warning" href="{{ path('clc_dashboard_finish_register') }}">Validate and continue</a>
+        	</div>
+
+        </div>
     </div>
 
 {% endblock %}

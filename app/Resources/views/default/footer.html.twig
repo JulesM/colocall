@@ -1,20 +1,12 @@
 {# app/Resources/views/default/footer.html.twig #}
 
-<!DOCTYPE html>
-
-{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-{% else %}
-
-    <footer>
-        <ul>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">About</a></li>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">Jobs</li>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">Investors</a></li>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">Media</li>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">API</li>
-            <li><a href="{{ path('clc_dashboard_homepage') }}">Blog</li>
-        </ul>
-    </footer>
-
-{% endif %}
+<footer>
+    <ul>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">About</a></li>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">Jobs</li>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">Investors</a></li>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">Media</li>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">API</li>
+        <li><a href="{{ path('clc_dashboard_homepage') }}">Blog</li>
+    </ul>
+</footer>

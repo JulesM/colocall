@@ -1,26 +1,24 @@
-{# src/Clc/UserBundle/Resources/views/Registration/register_content.html.twig #}
-
 <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
     
     {{ form_errors(form) }}
     
-    <div id="register-form-content">
         <div>
-            {{ form_label(form.email, 'Email') }}
+            {{ form_label(form.email, 'Enter your Email') }}
             {{ form_errors(form.email) }}
             {{ form_widget(form.email) }}
         </div>
 
         <div>
-            {{ form_label(form.plainPassword, 'Password') }}
+            {{ form_label(form.plainPassword, 'Choose a Password') }}
             {{ form_errors(form.plainPassword) }}
             {{ form_widget(form.plainPassword) }}
         </div>
-    </div>       
+      
     {{ form_rest(form) }}
       
     
-    <div id="signin_box_footer">
-        <input type="submit" id="register-button" class="btn" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    <div id="register-button">
+        <input type="submit" class="btn btn-success" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
     </div>
 </form>
+

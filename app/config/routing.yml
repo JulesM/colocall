@@ -1,15 +1,11 @@
 clc_welcome:
-    pattern:  /login
-    defaults: { _controller: ClcUserBundle:User:welcome }
-    
-clc_beta_new:
-    pattern: /beta
-    defaults: { _controller: ClcUserBundle:Beta:emailForm }
+    resource: "@ClcWelcomeBundle/Resources/config/routing.yml"
+    prefix:   /
 
 clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"
     prefix:   /user
-    
+
 clc_parameters:
     resource: "@ClcParametersBundle/Resources/config/routing.yml"
     prefix:   /parameters

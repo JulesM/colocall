@@ -1,0 +1,7 @@
+parameters:
+#    clc_welcome.example.class: Clc\WelcomeBundle\Example
+
+services:
+#    clc_welcome.example:
+#        class: %clc_welcome.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

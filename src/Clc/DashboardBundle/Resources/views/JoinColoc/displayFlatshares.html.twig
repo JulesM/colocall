@@ -6,8 +6,10 @@
 
 	{% for coloc in colocs %}
 
-	<p>{{ coloc.name}} ({{ coloc.city }})</p>
-	<p><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
+	<div id="search-coloc-box">
+		<p id="p1">{{ coloc.name}} - {{ coloc.city }} (currently {{ coloc.users |length }} flatmates)</p>
+		<p id="p2"><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
+	</div>
 
 	{% endfor %}
 
