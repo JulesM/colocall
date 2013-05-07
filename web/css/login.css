@@ -1,105 +1,72 @@
-/* --- Style de la page de login --- */
 
-body{
-    background-image: url('../img/visitor_homepage/Background/Overview-bckgd-new.jpg');
-    padding-left: 0px;
-    padding-right: 0px;
+
+/* --- Style des pages Welcome --- */
+
+#welcome1{
+    background-image: url('../img/signin_bckgd_image.jpg');
+    background-repeat: repeat-x;
+    box-shadow: 0px 1px 2px #323232 inset;
+    min-height: 510px;
+    padding-top: 30px;
 }
 
-#mainbox-bckgd{
+#welcome2{
+    background-image: url('../img/visitor_homepage/Background/Overview-bckgd-new.jpg');
+    background-repeat: repeat;
+}
+
+#welcome2-shaded{
     background-image: url('../img/visitor_homepage/Background/shaded-background.png');
     background-repeat: repeat-y;
-    min-width: 800px; 
 }
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* --- Style de la page de login --- */
 
 /* --- block 1 --- */
 
-#signup-box{
-    border-top: solid 1px transparent;
-    background-image: url('../img/signin_bckgd_image.jpg');
-    background-repeat: repeat-x;
-    height: 540px;
-    min-width: 800px;
-}
-
-#container-center-signup{
-    height: 100%;
-    min-width: 800px;
-}
 
 #mainbox{ 
-    height: 62%;
     width: 800px;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: auto;
 }
 
-#beta-box{
-    height: 20px;
-    margin-top: 10px;
-    background-color: white;
-    border: solid 1px grey;
-    border-radius: 5px;
-    font-family: 'Oswald-Regular';
-    font-size: 16px;
-    text-align: center;
-    vertical-align: bottom;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#middle_block1_ext{
-    height: 90%;
-    margin-left: auto;
-    margin-right: auto;
+#middle-block-ext{
     padding: 0.5% 0.5% 0.8% 0.5%;
     background-image: url('../img/visitor_homepage/Background/signin-box-strips.jpg');
 }
 
-#middle_block1{
+#middle-block{
     border: solid rgba(252, 220, 209, .5) 4px;
-    height: 99%;
-    width: 99%;
-    margin-left: auto;
-    margin-right: auto;
     background-color: white;
 }
 
-
-#catchphrase_box{
+#catchphrase-box{
     display: inline-block;
     width: 60%;
     height: 100%;
     vertical-align: top;
     font-family: 'Oswald-Regular';
-}
-
-#catchphrase1{
     text-align: center;
-    padding-top: 10px;
 }
 
-#catchphrase1 h1{
+#catchphrase-box h1{
+    margin-top: 25px;
     font-size: 50px;
     color: #e34a25;
 }    
 
-#catchphrase2{
-    text-align: center;
-}
-
-#catchphrase2 h2{
+#catchphrase-box h2{
     font-size: 32px;
 }   
 
-#catchphrase3{
-    text-align: center;
-    padding-top: 10px;
-}
-
-#catchphrase3 img{
+#catchphrase-img img{
     display: inline-block;
     margin-left: 30px;
     margin-right: 30px;
@@ -107,44 +74,49 @@ body{
     margin-bottom: 20px;
 }
 
-#catchphrase4{
+#catchphrase-lgd{
     font-size: 14px;
     text-align: center;
     padding-left: 18px;
 }
 
-#catchphrase4 p{
+#catchphrase-lgd p{
     display: inline-block;
     margin-left: 22px;
     margin-right: 22px;
 }
 
-#signin_box{
+#login-box{
     display: inline-block;
-    height: 100%;
+    height: 90%;
     width: 39%;
-    vertical-align: middle;
     font-family: 'Oswald-Regular';
 }
 
-#signin_box_content{
-    width: 260px;
+#login-box-content{
+    width: 90%;
     border: solid 1px;
     border-color: rgb(229, 229, 229);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4%;
+    margin-top: 10px;
     border-radius: 10px;
     text-align: center;
 }
 
 #legend{
     border-radius: 10px 10px 0 0;
+    border-bottom: solid 1px;
+    border-color: rgb(229, 229, 229);
     text-align: center;
     font-size: 30px;
-    height: 50px;
-    padding-top: 10px;
     background-color: whitesmoke;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#login-form{
+    padding-top: 15px;
 }
 
 #remember-block input,label{
@@ -173,16 +145,24 @@ body{
 #not-yet-user{
     margin-left: 2px;
 }
+
+#beta-box{
+    height: 20px;
+    margin-top: 10px;
+    background-color: white;
+    border: solid 1px grey;
+    border-radius: 5px;
+    font-family: 'Oswald-Regular';
+    font-size: 16px;
+    text-align: center;
+    vertical-align: bottom;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 /* --- block 2 --- */
 
 #block2{
     font-family: 'Oswald-Regular';
- 
-}
-
-.container-fluid{
-    padding-left: 0px;
-    padding-right: 0px;
 }
 
 #ribbon_container{
@@ -192,11 +172,6 @@ body{
     background-image: url('../img/visitor_homepage/orange-ribbon.jpg');
     background-repeat: repeat-x;
     box-shadow: 0px 1px 4px #323232;
-}
-
-#ribbon_block2{
-    border: solid black 1px;
-    width: 100%;
 }
 
 #mainbox-body{ 
@@ -331,77 +306,3 @@ body{
     width: 100px;
     min-width: 724px;
 }
-
-#ribbon_container2{
-    width: 100%;   
-    height: 16px;
-    margin-top: -10px;
-    background-image: url('../img/visitor_homepage/ribbon_with_frange.png');
-    background-repeat: repeat-x;
-    box-shadow: 0px 4px 8px #323232;
-}
-
-/* --- block 3 --- */
-/*
-#business-box{
-    
-    height: 540px;
-    background-image: url('../img/visitor_homepage/Background/Business-Model-bckgd.jpg');
-    background-repeat: no-repeat;
-    box-shadow: 0px 6px 12px #888;  
-}
-
-#block3{
-
-}
-
-#block3_container{
-    width: 66%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-}
-
-.whitebox{
-    background-color: white;
-    height: 150px;
-}
-
-#trialbox{
-    margin-bottom: 30px;
-}
-
-#lignboxleft{
-    display: inline-block;
-    height: 2px;
-    width: 40%;   
-}
-
-#timebox{
-    display: inline-block;
-    color: white;
-    width: 17%;
-    text-align: center;
-    font-family: 'Oswald-Regular';
-    font-size: 18px;
-}
-
-#lignboxright{
-    display: inline-block;
-    height: 2px;
-    width: 40%;
-}
-
-#freebox{
-    display: inline-block;
-    width: 30%;
-    margin-top: 30px;
-}
-
-#paybox{
-    display: inline-block;
-    float: right;
-    width: 68%;
-    margin-top: 30px;
-}
-*/

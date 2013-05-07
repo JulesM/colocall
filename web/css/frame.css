@@ -1,5 +1,8 @@
 /* web/css/frame.css */
 
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+
 root { 
     display: block;
 }

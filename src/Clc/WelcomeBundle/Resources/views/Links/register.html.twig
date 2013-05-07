@@ -1,26 +1,27 @@
 {% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block welcome %}
+{% block title %}Register to Coloc'all - start using Coloc'all with your flatmates today, it is free{% endblock %}
+
+{% block welcome1 %}
 
 <div class="links-page">
+	<div class="links-container" class="container">
 
-<div class="links-container" class="container">
+		<h1>Register here in 3 steps</h1>
+		<h3>1. Enter your email and choose a password</h3>
 
-<h1>Register here in a few steps</h1>
+		<div id="register-form">
+		{% render 'FOSUserBundle:Registration:register' %}
+		</div>
 
-<h3>1. Enter your email and choose a password</h3>
+		<h3>2. Check your emails and activate your account</h3>
+		
+		{% block step2 %}
+		{% endblock %}
 
-{% render 'FOSUserBundle:Registration:register' %}
+		<h3>3. Login in the home page and join a flatshare or create one</h3>
 
-<h3>2. Check your emails and activate your account</h3>
-
-{% block step2 %}
-{% endblock %}
-
-<h3>3. Login in the home page and join a flatshare or create one</h3>
-
-</div>
-
+	</div>
 </div>
 
 {% endblock %}

@@ -1,269 +1,260 @@
 {% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block welcome %}
+{% block title %}Welcome to Coloc'all - Make life in your shared appartment easier{% endblock %}
 
-    <div id="signup-box" class="container-fluid">
-        <div id="container-center-signup" class="container" >
-            <div id="mainbox">
-                
-                <div id="middle_block1_ext">
-                   <div id="middle_block1">
-                        <div id="catchphrase_box">
-                            <div id="catchphrase1">
-                                <h1>Welcome to Coloc'all</h1>
-                            </div>
-                            <div id="catchphrase2">
-                                <h2>Make life in your Flatshare easier</h2>
-                            </div>
-                            <div id="catchphrase3">
-                               <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="75px" width="75px" alt="">
-                               <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="75px" width="75px"  alt="">
-                               <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="75px" width="75px"  alt="">
-                            </div>
-                            <div id="catchphrase4">
-                               <p>Manage Expenses</p>
-                               <p>Follow To-dos</p>
-                               <p>Share Shopping Lists</p>
-                            </div>
-                        </div>
+{% block welcome1 %}
 
-                        <div id="signin_box">
-                          <div id="signin_box_content">
-                                <legend>
-                                    <div id="legend">
-                                      Login Here
-                                    </div>
-                                </legend>
-                                    
-                                <div id="login-form">
+<div id="mainbox">
+    <div id="middle-block-ext">
+       <div id="middle-block">
 
-                                	{% render 'FOSUserBundle:Security:login' %}
-
-                                </div> 
-
-                                <div id="login-footer">
-                                	<div class="login-footer-link">
-	                                	<a class="btn btn-link" id="not-yet-user" href="{{ path('clc_welcome_register') }}">Not yet a user ?</a>
-	                                </div>
-	                                <div class="login-footer-link">   
-	                                    <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
-	                                </div>
-        						</div>
-							        <!-- change password modal -->
-							        <div id="changePasswordModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							            <div class="modal-header">
-							                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							                <h3 id="myModalLabel">Enter your email to get a new password</h3>
-							            </div>
-							            <div class="modal-body">
-
-							                {% render 'FOSUserBundle:Resetting:request' %}
-
-							            </div>
-							            <div class="modal-footer">
-							                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-							            </div>
-							        </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                <div id="beta-box">
-                    <p>This is a Beta version, for ANY issue or question, please send an email to <a href="mailto:contact@colocall.co"><strong>contact@colocall.co</strong></a></p>
+            <div id="catchphrase-box">
+                <h1>Welcome to Coloc'all</h1>
+                <h2>Make life in your Flatshare easier</h2>
+                <div id="catchphrase-img">
+                   <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="75px" width="75px" alt="">
+                   <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="75px" width="75px"  alt="">
+                   <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="75px" width="75px"  alt="">
                 </div>
-
+                <div id="catchphrase-lgd">
+                   <p>Manage Expenses</p>
+                   <p>Follow To-dos</p>
+                   <p>Share Shopping Lists</p>
                 </div>
             </div>
+
+            <div id="login-box">
+              <div id="login-box-content">
+                    
+                <div id="legend">
+                  <h2>Login Here</h2>
+                </div>
+                    
+                <div id="login-form">
+                	{% render 'FOSUserBundle:Security:login' %}
+                </div> 
+
+                <div id="login-footer">
+                	<div class="login-footer-link">
+                  	<a class="btn btn-link" id="not-yet-user" href="{{ path('clc_welcome_register') }}">Not yet a user ?</a>
+                  </div>
+                  <div class="login-footer-link">   
+                      <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
+                  </div>
+                </div>
+
+				      </div>
+	          </div>
+
         </div>
     </div>
 
-    <div id="mainbox-bckgd" class="container-fluid">
-        <div id="ribbon_container" ></div>
-            <div class="container">    
-                <div id="mainbox-body">    
-                    <div id="feature-container">
-                        <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="expense manager">
-                            <h3>Manage Your Expenses</h3>
-                            <p>Share your common Expenses</p>
-                            <p>Keep track of your current debts</p>
-                            <p>Request a Payback at any time</p>
-                        </div>
+    <!-- change password modal -->
+    <div id="changePasswordModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Enter your email to get a new password</h3>
+        </div>
+        <div class="modal-body">
 
+            {% render 'FOSUserBundle:Resetting:request' %}
 
-                        <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="to-dos">
-                            <h3>Follow Your To-dos</h3>
-                            <p>Share To-dos in the common Agenda</p>
-                            <p>Edit assignees and due dates online</p>
-                            <p>Never forget what you commited to do</p>
-                        </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
 
+    <div id="beta-box">
+        <p>This is a Beta version, for ANY issue or question, please send an email to <a href="mailto:contact@colocall.co">contact@colocall.co</a></p>
+    </div>   
+</div>
 
-                        <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="shopping list">
-                            <h3>Share Shopping Lists</h3>
-                            <p>Add items to the shopping list</p>
-                            <p>Receive the list by email upon request</p>
-                            <p>Let your flatmates know you filled the fridge</p>
-                        </div>
-                    </div>
+{% endblock %}
+{% block welcome2 %}
 
-                    <center>
-                    <img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
-                    </center>
-
-                    <div id="caroussel-container-large" class="span12">
-                        <div id="myCarousel" class="carousel slide">
-
-                            <!-- Carousel items -->
-                            <div class="carousel-inner">
-                              <div class="active item">
-                                  <div id="item_container">
-                                    <div id="text">
-                                      <h3>Manage your common expenses</h3>
-                                      <p>- Share your common Expenses with your flatmates in a jiffy</p>
-                                      <p>- Keep track of your Social Debts and know what is own at every time</p>
-                                      <p>- Analyze your Spendings at the end of the month</p>
-                                      <p>Coloc'all keeps all your expenses in one place. Sharing expenses 
-                                          has never been so easy !</p>
-                                    </div>
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="expense blackboard">
-                                    </div>
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-request-payback.png') }}" style="margin-top: 20px;" alt="payback button">
-                                    </div>
-                                    <div id="text">
-                                        <h3>Payback your friends online</h3>
-                                        <p>- Get current Balances of all flatshares</p>
-                                        <p>- Request a Payback instantly at any time</p>
-                                        <p>- Payback your friends instantly with a mere Click</p>
-                                        <p>No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back !</p>
-                                    </div>
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="text">
-                                        <h3>Manage your to-dos easily</h3>    
-                                        <p>- Share To-dos in the common Agenda</p>
-                                        <p>- Follow the agenda and see what you have to do</p>
-                                        <p>- Check if tasks are late and tell your flatmates you take care of it</p>
-                                        <p>Coloc'all enables you to organize life easily and avoid any trouble due to forgettings</p> 
-                                    </div>
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-todos-transparent.png') }}" height="80%" width="80%" alt="to dos">
-                                    </div> 
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="dynamic shopping list iphone">
-                                    </div>
-                                    <div id="text">
-                                        <h3>Create dynamic shopping lists</h3>    
-                                        <p>- Add missing items as soon as you lack one</p>
-                                        <p>- Download the Shopping List when you have time to go to the shop</p>
-                                        <p>- Tell your flatmates you filled the fridge</p>
-                                        <p>With coloc'all dynamic shopping list, you will never run out of milk for 3 weeks anymore</p>
-                                    </div>  
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="text">
-                                      <h3>Host events with all your friends</h3>    
-                                      <p>- Create an event in your flatshare within Coloc'all</p>
-                                      <p>- Include your invitees in specific expense groups and lists</p>
-                                      <p>- Close the event and send notifications for paybakc to everyone</p>
-                                      <p>Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare</p>
-                                    </div>
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="host events">
-                                    </div>
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-facebook-page.png') }}" height="80%" width="80%" alt="facebook community">
-                                    </div>
-                                    <div id="text">
-                                        <h3>Share tips with Coloc'all community</h3>    
-                                        <p>- Share your experience with Coloc'all online community</p>
-                                        <p>- Be the flatshare of the month and earn prizes</p>
-                                        <p>- Attend social events with Coloc'all</p>
-                                        <p>Coloc'all is also a community of flatshares willing to meet with each other</p>
-                                    </div>
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="text">
-                                        <h3>Get fun statistics on your flatshare</h3>    
-                                        <p>- See of much you spend in booz each month</p>
-                                        <p>- Spot how late to-dos are usually done</p>
-                                        <p>- Analyze the change of your flatshare with your new female flatmate</p>
-                                        <p>Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff</p>
-                                    </div>
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-statistics-transparent.png') }}" height="60%" width="60%" alt="statistics">
-                                    </div> 
-                                  </div>        
-                              </div>
-                              <div class="item">
-                                  <div id="item_container">
-                                    <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-enjoy.png') }}" height="80%" width="80%" alt="enjoy life">
-                                    </div>
-                                    <div id="text">
-                                        <h3>Enjoy life as you should</h3>    
-                                        <p>- Be Happy</p>
-                                        <p>- Find Love</p>
-                                        <p>- Sleep well</p>
-                                        <p>Thanks to Coloc'all, you will have real matters to handle</p>
-                                    </div>
-                                  </div>        
-                              </div>      
-                            </div>
-                            <!-- Carousel nav -->
-                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-
-                            <div id="indicators_container">
-                                <ol class="carousel-indicators">
-                                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                                  <li data-target="#myCarousel" data-slide-to="3"></li>
-                                  <li data-target="#myCarousel" data-slide-to="4"></li>
-                                  <li data-target="#myCarousel" data-slide-to="5"></li>
-                                  <li data-target="#myCarousel" data-slide-to="6"></li>
-                                  <li data-target="#myCarousel" data-slide-to="7"></li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div id="platform_container" class="span12">
-                        <img id="platform_pic" src="{{ asset('img/visitor_homepage/Platform-list.jpg') }}" width="960px" alt="">
-                    </div>
-                        
+<div id="mainbox-bckgd">
+    <div id="ribbon_container" >
+    </div>
+    <div class="container">    
+        <div id="mainbox-body">    
+            <div id="feature-container">
+                <div id="feature" class="span4">
+                    <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="expense manager">
+                    <h3>Manage Your Expenses</h3>
+                    <p>Share your common Expenses</p>
+                    <p>Keep track of your current debts</p>
+                    <p>Request a Payback at any time</p>
                 </div>
-            </div>  
 
-            <div id="ribbon_container2">
+
+                <div id="feature" class="span4">
+                    <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="to-dos">
+                    <h3>Follow Your To-dos</h3>
+                    <p>Share To-dos in the common Agenda</p>
+                    <p>Edit assignees and due dates online</p>
+                    <p>Never forget what you commited to do</p>
+                </div>
+
+
+                <div id="feature" class="span4">
+                    <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="shopping list">
+                    <h3>Share Shopping Lists</h3>
+                    <p>Add items to the shopping list</p>
+                    <p>Receive the list by email upon request</p>
+                    <p>Let your flatmates know you filled the fridge</p>
+                </div>
             </div>
-        
-        </div> 
+
+            <center>
+            <img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+            </center>
+
+            <div id="caroussel-container-large" class="span12">
+                <div id="myCarousel" class="carousel slide">
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      <div class="active item">
+                          <div id="item_container">
+                            <div id="text">
+                              <h3>Manage your common expenses</h3>
+                              <p>- Share your common Expenses with your flatmates in a jiffy</p>
+                              <p>- Keep track of your Social Debts and know what is own at every time</p>
+                              <p>- Analyze your Spendings at the end of the month</p>
+                              <p>Coloc'all keeps all your expenses in one place. Sharing expenses 
+                                  has never been so easy !</p>
+                            </div>
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="expense blackboard">
+                            </div>
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-request-payback.png') }}" style="margin-top: 20px;" alt="payback button">
+                            </div>
+                            <div id="text">
+                                <h3>Payback your friends online</h3>
+                                <p>- Get current Balances of all flatshares</p>
+                                <p>- Request a Payback instantly at any time</p>
+                                <p>- Payback your friends instantly with a mere Click</p>
+                                <p>No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back !</p>
+                            </div>
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="text">
+                                <h3>Manage your to-dos easily</h3>    
+                                <p>- Share To-dos in the common Agenda</p>
+                                <p>- Follow the agenda and see what you have to do</p>
+                                <p>- Check if tasks are late and tell your flatmates you take care of it</p>
+                                <p>Coloc'all enables you to organize life easily and avoid any trouble due to forgettings</p> 
+                            </div>
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-todos-transparent.png') }}" height="80%" width="80%" alt="to dos">
+                            </div> 
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="dynamic shopping list iphone">
+                            </div>
+                            <div id="text">
+                                <h3>Create dynamic shopping lists</h3>    
+                                <p>- Add missing items as soon as you lack one</p>
+                                <p>- Download the Shopping List when you have time to go to the shop</p>
+                                <p>- Tell your flatmates you filled the fridge</p>
+                                <p>With coloc'all dynamic shopping list, you will never run out of milk for 3 weeks anymore</p>
+                            </div>  
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="text">
+                              <h3>Host events with all your friends</h3>    
+                              <p>- Create an event in your flatshare within Coloc'all</p>
+                              <p>- Include your invitees in specific expense groups and lists</p>
+                              <p>- Close the event and send notifications for paybakc to everyone</p>
+                              <p>Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare</p>
+                            </div>
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="host events">
+                            </div>
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-facebook-page.png') }}" height="80%" width="80%" alt="facebook community">
+                            </div>
+                            <div id="text">
+                                <h3>Share tips with Coloc'all community</h3>    
+                                <p>- Share your experience with Coloc'all online community</p>
+                                <p>- Be the flatshare of the month and earn prizes</p>
+                                <p>- Attend social events with Coloc'all</p>
+                                <p>Coloc'all is also a community of flatshares willing to meet with each other</p>
+                            </div>
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="text">
+                                <h3>Get fun statistics on your flatshare</h3>    
+                                <p>- See of much you spend in booz each month</p>
+                                <p>- Spot how late to-dos are usually done</p>
+                                <p>- Analyze the change of your flatshare with your new female flatmate</p>
+                                <p>Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff</p>
+                            </div>
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-statistics-transparent.png') }}" height="60%" width="60%" alt="statistics">
+                            </div> 
+                          </div>        
+                      </div>
+                      <div class="item">
+                          <div id="item_container">
+                            <div id="pic">
+                                <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-enjoy.png') }}" height="80%" width="80%" alt="enjoy life">
+                            </div>
+                            <div id="text">
+                                <h3>Enjoy life as you should</h3>    
+                                <p>- Be Happy</p>
+                                <p>- Find Love</p>
+                                <p>- Sleep well</p>
+                                <p>Thanks to Coloc'all, you will have real matters to handle</p>
+                            </div>
+                          </div>        
+                      </div>      
+                    </div>
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+                    <div id="indicators_container">
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                          <li data-target="#myCarousel" data-slide-to="4"></li>
+                          <li data-target="#myCarousel" data-slide-to="5"></li>
+                          <li data-target="#myCarousel" data-slide-to="6"></li>
+                          <li data-target="#myCarousel" data-slide-to="7"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="platform_container" class="span12">
+                <img id="platform_pic" src="{{ asset('img/visitor_homepage/Platform-list.jpg') }}" width="960px" alt="">
+            </div>
+                
+        </div>
+    </div>  
+</div> 
 
 {% endblock %}

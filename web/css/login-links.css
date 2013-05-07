@@ -1,11 +1,5 @@
 /* --- Style des pages About, Register et How it works --- */
 
-.links-page{
-	background-image: url('../img/signin_bckgd_image.jpg');	
-	padding-top: 30px;
-	height: 560px;
-}
-
 .links-container{
 	background-color: white;
 	border: solid red;
@@ -13,16 +7,12 @@
 	margin-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 20px;
+	padding: 30px;
 	font-family: 'Oswald-regular';
 }
 
-.links-page h2{
+.links-container h2{
 	font-family: 'Oswald-Light';
-}
-
-.links-container > p{
-	margin-left: 3%;
 }
 
 .founder-box{
@@ -41,13 +31,23 @@ h1{
 
 /* --- Register --- */
 
+#register-form{
+	text align: center;
+	width: 50%;
+	margin-left: 25%;
+}
+
+#register-form form{
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .links-container form > div > label{
 	width: 130px;
-	margin-left: 35px;
 }
 
 .links-container form > #register-button{
-	margin-left: 240px;
+	margin-left: 200px;
 	vertical-align: top;
 }
 

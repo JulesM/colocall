@@ -1,12 +1,15 @@
 {# app/Resources/views/default/footer.html.twig #}
 
-<footer>
+<div id="ribbon">
+</div>
+
+<div class="container-fluid">
     <ul>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">About</a></li>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">Jobs</li>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">Investors</a></li>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">Media</li>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">API</li>
-        <li><a href="{{ path('clc_dashboard_homepage') }}">Blog</li>
+        <li><a href="{{ path('clc_welcome_about') }}">About</a></li>
+        <li><a href="{{ path('clc_welcome_login') }}" rel="nofollow">Jobs</li>
+        <li><a href="{{ path('clc_welcome_login') }}" rel="nofollow">Investors</a></li>
+        <li><a href="{{ path('clc_welcome_login') }}" rel="nofollow">Media</li>
+        <li><a href="{{ path('clc_welcome_login') }}" rel="nofollow">API</li>
+        <li><a href="{{ path('clc_welcome_login') }}" rel="nofollow">Blog</li>
     </ul>
-</footer>
+</div>

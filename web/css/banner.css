@@ -1,6 +1,4 @@
 /* web/css/banner.css */
-@import url('bootstrap.css');
-@import url('bootstrap-responsive.css');
 
 root { 
     display: block;
@@ -66,7 +64,7 @@ root {
 
 #links-box{
     font-size: 20px;
-    padding-top: 6px;
+    padding-top: 8px;
 }
 
 #links-box li{

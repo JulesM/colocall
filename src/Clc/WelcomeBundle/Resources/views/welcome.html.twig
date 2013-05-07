@@ -10,10 +10,21 @@
 
 {% block mainbox %}
     
-    {% block welcome %}
-    {% endblock welcome %}
+    <section id="welcome1">
+    	<div class="container">
+	    	{% block welcome1 %}
+	    	{% endblock %}
+		</div>
+	</section>
 
-    <!-- Add Expense Modal -->
+	<section id="welcome2">
+		<div id="welcome2-shaded">
+	    	{% block welcome2 %}
+	    	{% endblock %}
+		</div>
+	</section>
+
+    <!-- How it works Modal -->
 
 	<div id="howitworksmodal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-header">
@@ -30,10 +41,8 @@
 	    </div>
 	</div>
 
-
-
-    <div id="footer" class="container-fluid">
-        {% include ":default:footer.html.twig" %}
-    </div>
+	<footer>
+    	{% include ":default:footer.html.twig" %}
+    </footer>
 
 {% endblock %}
