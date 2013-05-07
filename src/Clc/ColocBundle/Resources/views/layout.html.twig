@@ -72,12 +72,12 @@
             
             <div class="coloc-body">
                 {% if invitations|length == 0 %}
-                    <h4>There is no pending invitation</h4>
+                    <h3>There is no pending invitation</h3>
                 {% else %}
-                    <h4>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
+                    <h3>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
                              {{ invitations|length }} 
-                             pending invitations for :
-                    </h4>
+                             pending invitation(s) for :
+                    </h3>
 
                     {% for invitation in invitations %}
                         <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>

@@ -51,7 +51,7 @@
     vertical-align: top;
     margin-top: 40px;
     text-align: center;
-    font-family: 'Oswald-Light';
+    font-family: 'Oswald-Regular';
     border: solid 1px;
     background-color: white;
     border: solid 1px grey;
@@ -145,7 +145,7 @@
 
 #invitations-box h3{
     width: 100%;
-    font-family: 'Oswald-Light';
+    font-family: 'Oswald-Regular';
     font-size: 12px;
     line-height: 22px;
 }

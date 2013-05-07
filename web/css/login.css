@@ -81,7 +81,7 @@ body{
     width: 60%;
     height: 100%;
     vertical-align: top;
-    font-family: 'Oswald-Light';
+    font-family: 'Oswald-Regular';
 }
 
 #catchphrase1{
@@ -91,7 +91,6 @@ body{
 
 #catchphrase1 h1{
     font-size: 50px;
-    font-family: 'Oswald-Regular';
     color: #e34a25;
 }    
 
@@ -100,7 +99,7 @@ body{
 }
 
 #catchphrase2 h2{
-    font-size: 36px;
+    font-size: 32px;
 }   
 
 #catchphrase3{
@@ -117,7 +116,7 @@ body{
 }
 
 #catchphrase4{
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     padding-left: 18px;
 }
@@ -133,9 +132,6 @@ body{
     height: 100%;
     width: 39%;
     vertical-align: middle;
-}
-
-#signin_box p{
     font-family: 'Oswald-Regular';
 }
 
@@ -157,11 +153,6 @@ body{
     height: 50px;
     padding-top: 10px;
     background-color: whitesmoke;
-    font-family: 'Oswald-Regular';
-}
-
-#login-form{
-    font-family: 'Oswald-Regular';
 }
 
 #remember-block input,label{
@@ -184,10 +175,16 @@ body{
 
 #login-footer a{
     font-size: 11px;
+    font-family: Helvetica, Arial;
+}
+
+#not-yet-user{
+    margin-left: 2px;
 }
 /* --- block 2 --- */
 
 #block2{
+    font-family: 'Oswald-Regular';
  
 }
 
@@ -211,6 +208,7 @@ body{
 }
 
 #mainbox-body{ 
+    font-family: 'Oswald-Regular';
     height: 68%;
     min-height: 1008px;
     min-width: 768px;
@@ -238,15 +236,12 @@ body{
 }
 
 #feature h3{
-    font-family: 'Oswald-Bold';
     color: #e34a25;
-    font-weight: normal;
     margin-top: 50px;
 }
 
 #feature p{
     font-size: 16px;
-    font-family: 'Oswald-Regular';
 }
 
 .lign{
@@ -271,8 +266,6 @@ body{
     margin-right: auto;
 }
 
-
-
 .carousel-inner #item_container{
     height: 250px;
     width: 80%;
@@ -281,13 +274,11 @@ body{
 }
 
 .carousel-inner #item_container h3{
-    font-family: 'Oswald-Regular';
     color: #e34a25;
     font-weight: normal;
 }
 
 .carousel-inner #item_container p{
-    font-family: 'Oswald-Light';
 }
 
 .carousel-inner #text{
@@ -308,6 +299,9 @@ body{
 
 .carousel-control{
     margin-top: -50px;
+    padding-top: 3px;
+    font-family: calibri;
+    font-size: 36px;
 }
 
 #indicators_container{

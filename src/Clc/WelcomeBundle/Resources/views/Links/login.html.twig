@@ -43,7 +43,7 @@
 
                                 <div id="login-footer">
                                 	<div class="login-footer-link">
-	                                	<a class="btn btn-link" href="{{ path('clc_welcome_register') }}">Not yet a user ?</a>
+	                                	<a class="btn btn-link" id="not-yet-user" href="{{ path('clc_welcome_register') }}">Not yet a user ?</a>
 	                                </div>
 	                                <div class="login-footer-link">   
 	                                    <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
@@ -85,7 +85,7 @@
                 <div id="mainbox-body">    
                     <div id="feature-container">
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="expense manager">
                             <h3>Manage Your Expenses</h3>
                             <p>Share your common Expenses</p>
                             <p>Keep track of your current debts</p>
@@ -94,7 +94,7 @@
 
 
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="to-dos">
                             <h3>Follow Your To-dos</h3>
                             <p>Share To-dos in the common Agenda</p>
                             <p>Edit assignees and due dates online</p>
@@ -103,7 +103,7 @@
 
 
                         <div id="feature" class="span4">
-                            <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="">
+                            <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="shopping list">
                             <h3>Share Shopping Lists</h3>
                             <p>Add items to the shopping list</p>
                             <p>Receive the list by email upon request</p>
@@ -125,20 +125,20 @@
                                     <div id="text">
                                       <h3>Manage your common expenses</h3>
                                       <p>- Share your common Expenses with your flatmates in a jiffy</p>
-                                      <p>- Keep track of your Social Debts and know what you owe to whom at every time</p>
+                                      <p>- Keep track of your Social Debts and know what is own at every time</p>
                                       <p>- Analyze your Spendings at the end of the month</p>
                                       <p>Coloc'all keeps all your expenses in one place. Sharing expenses 
                                           has never been so easy !</p>
                                     </div>
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="expense blackboard">
                                     </div>
                                   </div>        
                               </div>
                               <div class="item">
                                   <div id="item_container">
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-request-payback.png') }}" style="margin-top: 20px;" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-request-payback.png') }}" style="margin-top: 20px;" alt="payback button">
                                     </div>
                                     <div id="text">
                                         <h3>Payback your friends online</h3>
@@ -159,14 +159,14 @@
                                         <p>Coloc'all enables you to organize life easily and avoid any trouble due to forgettings</p> 
                                     </div>
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-todos-transparent.png') }}" height="80%" width="80%" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-todos-transparent.png') }}" height="80%" width="80%" alt="to dos">
                                     </div> 
                                   </div>        
                               </div>
                               <div class="item">
                                   <div id="item_container">
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="dynamic shopping list iphone">
                                     </div>
                                     <div id="text">
                                         <h3>Create dynamic shopping lists</h3>    
@@ -187,14 +187,14 @@
                                       <p>Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare</p>
                                     </div>
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="host events">
                                     </div>
                                   </div>        
                               </div>
                               <div class="item">
                                   <div id="item_container">
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-facebook-page.png') }}" height="80%" width="80%" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-facebook-page.png') }}" height="80%" width="80%" alt="facebook community">
                                     </div>
                                     <div id="text">
                                         <h3>Share tips with Coloc'all community</h3>    
@@ -215,14 +215,14 @@
                                         <p>Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff</p>
                                     </div>
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-statistics-transparent.png') }}" height="60%" width="60%" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-statistics-transparent.png') }}" height="60%" width="60%" alt="statistics">
                                     </div> 
                                   </div>        
                               </div>
                               <div class="item">
                                   <div id="item_container">
                                     <div id="pic">
-                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-enjoy.png') }}" height="80%" width="80%" alt="">
+                                        <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-enjoy.png') }}" height="80%" width="80%" alt="enjoy life">
                                     </div>
                                     <div id="text">
                                         <h3>Enjoy life as you should</h3>    
