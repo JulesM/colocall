@@ -8,12 +8,19 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 30px;
+}
+
+.links-container h1{
+	text-align: center;
+	margin-bottom: 30px;
+	color: red;
+}
+
+.links-container h1,h2,h3,h4,h5,h6{
 	font-family: 'Oswald-regular';
 }
 
-.links-container h2{
-	font-family: 'Oswald-Light';
-}
+/* --- About --- */
 
 .founder-box{
 	display: inline-block;
@@ -23,10 +30,42 @@
 	text-align: center;
 }
 
-h1{
+.newsletter-container{
+	width: 66%;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px;
+	font-family: arial;
+}
+
+.newsletter-container h1{
+	font-family: 'Oswald-regular';
 	text-align: center;
 	margin-bottom: 30px;
 	color: red;
+}
+
+.newsletter-post{
+	border-left: solid 1px grey;
+	border-top: solid 1px grey;
+	padding-left: 10px;
+	margin-bottom: 30px;
+}
+
+.newsletter-post h3{
+	font-size: 18px;
+	font-family: 'Oswald-regular';
+}
+
+#bfm-post p{
+	display: inline-block;
+	width: 80%;
+}
+
+#bfm-post img{
+	float: right;
+	vertical-align: top;
 }
 
 /* --- Register --- */
