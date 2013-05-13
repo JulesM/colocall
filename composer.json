@@ -23,7 +23,8 @@
         "sonata-project/admin-bundle": "2.1.*@dev",
         "sonata-project/doctrine-orm-admin-bundle": "2.1.*@dev",
         "sonata-project/intl-bundle": "2.1.*@dev",
-        "sonata-project/cache-bundle": "2.1.*@dev"    
+        "sonata-project/cache-bundle": "2.1.*@dev",
+        "friendsofsymfony/facebook-bundle": "dev-master"    
     },
 
     "scripts": {
