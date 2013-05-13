@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new Clc\AdminBundle\ClcAdminBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Clc\WelcomeBundle\ClcWelcomeBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
