@@ -92,5 +92,12 @@
 
 /* --- How it works --- */
 
-#howitworksmodal{
+.links-container-how{
+	background-color: white;
+	border: solid red;
+	width: 50%;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px;
 }
