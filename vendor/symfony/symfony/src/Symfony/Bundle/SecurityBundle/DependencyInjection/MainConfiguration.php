@@ -301,7 +301,8 @@ class MainConfiguration implements ConfigurationInterface
             ->children()
                 ->arrayNode('providers')
                     ->example(array(
-                        'my_memory_provider' => array(
+                        'memory' => array(
+                            'name' => 'memory',
                             'memory' => array(
                                 'users' => array(
                                     'foo' => array('password' => 'foo', 'roles' => 'ROLE_USER'),
@@ -309,7 +310,7 @@ class MainConfiguration implements ConfigurationInterface
                                 ),
                             )
                         ),
-                        'my_entity_provider' => array('entity' => array('class' => 'SecurityBundle:User', 'property' => 'username'))
+                        'entity' => array('entity' => array('class' => 'SecurityBundle:User', 'property' => 'username'))
                     ))
                     ->disallowNewKeysInSubsequentConfigs()
                     ->isRequired()

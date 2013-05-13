@@ -37,8 +37,7 @@ class ProcessFailedExceptionTest extends \PHPUnit_Framework_TestCase
             '\InvalidArgumentException',
             'Expected a failed process, but the given process was successful.'
         );
-
-        new ProcessFailedException($process);
+        $exception = new ProcessFailedException($process);
     }
 
     /**

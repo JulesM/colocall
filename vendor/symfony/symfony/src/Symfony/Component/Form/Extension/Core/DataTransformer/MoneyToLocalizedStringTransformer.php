@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Form\Extension\Core\DataTransformer;
 
-use Symfony\Component\Form\Exception\TransformationFailedException;
+use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
 /**
  * Transforms between a normalized format and a localized money string.
@@ -50,14 +50,14 @@ class MoneyToLocalizedStringTransformer extends NumberToLocalizedStringTransform
      *
      * @return string Localized money string.
      *
-     * @throws TransformationFailedException If the given value is not numeric or
-     *                                       if the value can not be transformed.
+     * @throws UnexpectedTypeException if the given value is not numeric
+     * @throws TransformationFailedException if the value can not be transformed
      */
     public function transform($value)
     {
         if (null !== $value) {
             if (!is_numeric($value)) {
-                throw new TransformationFailedException('Expected a numeric.');
+                throw new UnexpectedTypeException($value, 'numeric');
             }
 
             $value /= $this->divisor;
@@ -73,8 +73,8 @@ class MoneyToLocalizedStringTransformer extends NumberToLocalizedStringTransform
      *
      * @return number Normalized number
      *
-     * @throws TransformationFailedException If the given value is not a string
-     *                                       or if the value can not be transformed.
+     * @throws UnexpectedTypeException if the given value is not a string
+     * @throws TransformationFailedException if the value can not be transformed
      */
     public function reverseTransform($value)
     {

@@ -245,7 +245,7 @@ A dynamic filter can define more than one dynamic parts::
         // ...
     });
 
-The filter will receive all dynamic part values before the normal filter
+The filter will receive all dynamic part values before the normal filters
 arguments, but after the environment and the context. For instance, a call to
 ``'foo'|a_path_b()`` will result in the following arguments to be passed to
 the filter: ``('a', 'b', 'foo')``.
@@ -330,15 +330,14 @@ Now, let's see the actual code of this class::
     {
         public function parse(Twig_Token $token)
         {
-            $parser = $this->parser;
-            $stream = $parser->getStream();
+            $lineno = $token->getLine();
+            $name = $this->parser->getStream()->expect(Twig_Token::NAME_TYPE)->getValue();
+            $this->parser->getStream()->expect(Twig_Token::OPERATOR_TYPE, '=');
+            $value = $this->parser->getExpressionParser()->parseExpression();
 
-            $name = $stream->expect(Twig_Token::NAME_TYPE)->getValue();
-            $stream->expect(Twig_Token::OPERATOR_TYPE, '=');
-            $value = $parser->getExpressionParser()->parseExpression();
-            $stream->expect(Twig_Token::BLOCK_END_TYPE);
+            $this->parser->getStream()->expect(Twig_Token::BLOCK_END_TYPE);
 
-            return new Project_Set_Node($name, $value, $token->getLine(), $this->getTag());
+            return new Project_Set_Node($name, $value, $lineno, $this->getTag());
         }
 
         public function getTag()
@@ -385,9 +384,9 @@ The ``Project_Set_Node`` class itself is rather simple::
 
     class Project_Set_Node extends Twig_Node
     {
-        public function __construct($name, Twig_Node_Expression $value, $line, $tag = null)
+        public function __construct($name, Twig_Node_Expression $value, $lineno, $tag = null)
         {
-            parent::__construct(array('value' => $value), array('name' => $name), $line, $tag);
+            parent::__construct(array('value' => $value), array('name' => $name), $lineno, $tag);
         }
 
         public function compile(Twig_Compiler $compiler)

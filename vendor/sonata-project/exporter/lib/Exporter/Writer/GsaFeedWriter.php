@@ -86,14 +86,14 @@ class GsaFeedWriter implements WriterInterface
      */
     public function write(array $data)
     {
-        $line = sprintf("        <record url=\"%s\" mimetype=\"%s\" action=\"%s\"/>\n",
+        $line = sprintf("    <record url=\"%s\" mimetype=\"%s\" action=\"%s\"/>\n",
             $data['url'],
             $data['mime_type'],
             $data['action']
         );
 
-        // + 18 corresponding to the length of the closing tags
-        if (($this->bufferSize + strlen($line) + 18) > self::LIMIT_SIZE) {
+        // + 10 corresponding to the length of the closing tag
+        if (($this->bufferSize + strlen($line) + 10) > self::LIMIT_SIZE) {
             $this->generateNewPart();
         }
 
@@ -139,8 +139,6 @@ class GsaFeedWriter implements WriterInterface
         <feedtype>$this->feedtype</feedtype>
     </header>
 
-    <group>
-
 XML
         );
     }
@@ -150,11 +148,7 @@ XML
      */
     private function closeFeed()
     {
-        fwrite($this->buffer, <<<EOF
-    </group>
-</gsafeed>
-EOF
-        );
+        fwrite($this->buffer, '</gsafeed>');
 
         fclose($this->buffer);
     }

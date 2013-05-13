@@ -20,13 +20,6 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="facebookId", type="string", length=255)
-     */
-    protected $facebookId;
     
     /**
      * @var string
@@ -110,45 +103,6 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param string $facebookId
-     * @return void
-     */
-    public function setFacebookId($facebookId)
-    {
-        $this->facebookId = $facebookId;
-        $this->setUsername($facebookId);
-        $this->salt = '';
-    }
- 
-    /**
-     * @return string
-     */
-    public function getFacebookId()
-    {
-        return $this->facebookId;
-    }
- 
-    /**
-     * @param Array
-     */
-    public function setFBData($fbdata) // C'est dans cette méthode que vous ajouterez vos informations
-    {
-        if (isset($fbdata['id'])) {
-            $this->setFacebookId($fbdata['id']);
-            $this->addRole('ROLE_FACEBOOK');
-        }
-        if (isset($fbdata['first_name'])) {
-            $this->setFirstname($fbdata['first_name']);
-        }
-        if (isset($fbdata['last_name'])) {
-            $this->setLastname($fbdata['last_name']);
-        }
-        if (isset($fbdata['email'])) {
-            $this->setEmail($fbdata['email']);
-        }
     }
 
     /**

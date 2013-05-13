@@ -1118,7 +1118,7 @@ class BasicFunctionalTest extends \Doctrine\Tests\OrmFunctionalTestCase
         $user->username = 'domnikl';
         $user->status = 'developer';
 
-        $this->setExpectedException('InvalidArgumentException', 'Entity has to be managed or scheduled for removal for single computation');
+        $this->setExpectedException('InvalidArgumentException', 'Entity has to be managed for single computation');
         $this->_em->flush($user);
     }
 
@@ -1202,9 +1202,8 @@ class BasicFunctionalTest extends \Doctrine\Tests\OrmFunctionalTestCase
     /**
      * @group DDC-720
      * @group DDC-1612
-     * @group DDC-2267
      */
-    public function testFlushSingleNewEntityThenRemove()
+    public function testFlushSingleNewEntity()
     {
         $user = new CmsUser;
         $user->name = 'Dominik';
@@ -1213,14 +1212,6 @@ class BasicFunctionalTest extends \Doctrine\Tests\OrmFunctionalTestCase
 
         $this->_em->persist($user);
         $this->_em->flush($user);
-
-        $userId = $user->id;
-
-        $this->_em->remove($user);
-        $this->_em->flush($user);
-        $this->_em->clear();
-
-        $this->assertNull($this->_em->find(get_class($user), $userId));
     }
 
     /**

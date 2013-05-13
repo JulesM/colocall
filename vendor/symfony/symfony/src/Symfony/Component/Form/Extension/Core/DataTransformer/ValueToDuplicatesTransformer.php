@@ -13,6 +13,7 @@ namespace Symfony\Component\Form\Extension\Core\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
+use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
@@ -51,13 +52,13 @@ class ValueToDuplicatesTransformer implements DataTransformerInterface
      *
      * @return mixed The value
      *
-     * @throws TransformationFailedException If the given value is not an array or
-     *                                       if the given array can not be transformed.
+     * @throws UnexpectedTypeException if the given value is not an array
+     * @throws TransformationFailedException if the given array can not be transformed
      */
     public function reverseTransform($array)
     {
         if (!is_array($array)) {
-            throw new TransformationFailedException('Expected an array.');
+            throw new UnexpectedTypeException($array, 'array');
         }
 
         $result = current($array);

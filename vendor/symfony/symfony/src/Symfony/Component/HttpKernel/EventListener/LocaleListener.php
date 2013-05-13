@@ -50,7 +50,7 @@ class LocaleListener implements EventSubscriberInterface
         $request = $event->getRequest();
 
         $request->setDefaultLocale($this->defaultLocale);
-        $this->setLocale($request, $request->attributes->get('_locale', $request->getLocale()));
+        $this->setLocale($request, $request->attributes->get('_locale', $this->defaultLocale));
 
         array_unshift($this->locales, $request->getLocale());
     }

@@ -37,11 +37,6 @@ class CookieJar
     /**
      * Gets a cookie by name.
      *
-     * You should never use an empty domain, but if you do so,
-     * this method returns the first cookie for the given name/path
-     * (this behavior ensures a BC behavior with previous versions of
-     * Symfony).
-     *
      * @param string $name   The cookie name
      * @param string $path   The cookie path
      * @param string $domain The cookie domain
@@ -54,26 +49,11 @@ class CookieJar
     {
         $this->flushExpiredCookies();
 
-        if (!empty($domain)) {
-            return isset($this->cookieJar[$domain][$path][$name]) ? $this->cookieJar[$domain][$path][$name] : null;
-        }
-
-        // avoid relying on this behavior that is mainly here for BC reasons
-        foreach ($this->cookieJar as $domain => $cookies) {
-            if (isset($cookies[$path][$name])) {
-                return $cookies[$path][$name];
-            }
-        }
-
-        return null;
+        return isset($this->cookieJar[$domain][$path][$name]) ? $this->cookieJar[$domain][$path][$name] : null;
     }
 
     /**
      * Removes a cookie by name.
-     *
-     * You should never use an empty domain, but if you do so,
-     * all cookies for the given name/path expire (this behavior
-     * ensures a BC behavior with previous versions of Symfony).
      *
      * @param string $name   The cookie name
      * @param string $path   The cookie path
@@ -87,23 +67,13 @@ class CookieJar
             $path = '/';
         }
 
-        if (empty($domain)) {
-            // an empty domain means any domain
-            // this should never happen but it allows for a better BC
-            $domains = array_keys($this->cookieJar);
-        } else {
-            $domains = array($domain);
-        }
+        unset($this->cookieJar[$domain][$path][$name]);
 
-        foreach ($domains as $domain) {
-            unset($this->cookieJar[$domain][$path][$name]);
+        if (empty($this->cookieJar[$domain][$path])) {
+            unset($this->cookieJar[$domain][$path]);
 
-            if (empty($this->cookieJar[$domain][$path])) {
-                unset($this->cookieJar[$domain][$path]);
-
-                if (empty($this->cookieJar[$domain])) {
-                    unset($this->cookieJar[$domain]);
-                }
+            if (empty($this->cookieJar[$domain])) {
+                unset($this->cookieJar[$domain]);
             }
         }
     }

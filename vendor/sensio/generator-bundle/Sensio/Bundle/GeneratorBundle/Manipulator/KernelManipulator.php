@@ -20,8 +20,8 @@ use Symfony\Component\HttpKernel\KernelInterface;
  */
 class KernelManipulator extends Manipulator
 {
-    protected $kernel;
-    protected $reflected;
+    private $kernel;
+    private $reflected;
 
     /**
      * Constructor.

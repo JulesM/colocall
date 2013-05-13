@@ -35,10 +35,6 @@ class Filesystem
      */
     public function copy($originFile, $targetFile, $override = false)
     {
-        if (stream_is_local($originFile) && !is_file($originFile)) {
-            throw new IOException(sprintf('Failed to copy %s because file not exists', $originFile));
-        }
-
         $this->mkdir(dirname($targetFile));
 
         if (!$override && is_file($targetFile)) {
@@ -48,15 +44,7 @@ class Filesystem
         }
 
         if ($doCopy) {
-            // https://bugs.php.net/bug.php?id=64634
-            $source = fopen($originFile, 'r');
-            $target = fopen($targetFile, 'w+');
-            stream_copy_to_stream($source, $target);
-            fclose($source);
-            fclose($target);
-            unset($source, $target);
-
-            if (!is_file($targetFile)) {
+            if (true !== @copy($originFile, $targetFile)) {
                 throw new IOException(sprintf('Failed to copy %s to %s', $originFile, $targetFile));
             }
         }
@@ -112,9 +100,12 @@ class Filesystem
      */
     public function touch($files, $time = null, $atime = null)
     {
+        if (null === $time) {
+            $time = time();
+        }
+
         foreach ($this->toIterator($files) as $file) {
-            $touch = $time ? @touch($file, $time, $atime) : @touch($file);
-            if (true !== $touch) {
+            if (true !== @touch($file, $time, $atime)) {
                 throw new IOException(sprintf('Failed to touch %s', $file));
             }
         }

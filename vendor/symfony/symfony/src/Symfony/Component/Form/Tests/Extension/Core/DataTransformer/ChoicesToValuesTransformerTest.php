@@ -45,7 +45,7 @@ class ChoicesToValuesTransformerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function testTransformExpectsArray()
     {
@@ -67,7 +67,7 @@ class ChoicesToValuesTransformerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function testReverseTransformExpectsArray()
     {

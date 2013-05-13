@@ -49,8 +49,6 @@ annotations::
     {
     }
 
-.. _frameworkextra-annotations-routing-activation:
-
 Activation
 ----------
 

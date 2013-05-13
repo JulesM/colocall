@@ -42,7 +42,6 @@ class DebugClassLoaderTest extends \PHPUnit_Framework_TestCase
                 $reflProp->setAccessible(true);
 
                 $this->assertNotInstanceOf('Symfony\Component\ClassLoader\DebugClassLoader', $reflProp->getValue($function[0]));
-
                 return;
             }
         }

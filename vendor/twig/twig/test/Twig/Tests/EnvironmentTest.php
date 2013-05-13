@@ -186,7 +186,7 @@ class Twig_Tests_EnvironmentTest extends PHPUnit_Framework_TestCase
     {
         $twig = new Twig_Environment(new Twig_Loader_String());
         $twig->addExtension(new Twig_Tests_EnvironmentTest_Extension());
-        $twig->removeExtension('environment_test');
+        $twig->removeExtension('test');
 
         $this->assertFalse(array_key_exists('test', $twig->getTags()));
         $this->assertFalse(array_key_exists('foo_filter', $twig->getFilters()));
@@ -253,7 +253,7 @@ class Twig_Tests_EnvironmentTest_Extension extends Twig_Extension
 
     public function getName()
     {
-        return 'environment_test';
+        return 'test';
     }
 }
 

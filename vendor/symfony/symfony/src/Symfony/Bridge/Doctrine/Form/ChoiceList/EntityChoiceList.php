@@ -111,7 +111,7 @@ class EntityChoiceList extends ObjectChoiceList
             $this->idField = $identifier[0];
             $this->idAsValue = true;
 
-            if (in_array($this->classMetadata->getTypeOfField($this->idField), array('integer', 'smallint', 'bigint'))) {
+            if ('integer' === $this->classMetadata->getTypeOfField($this->idField)) {
                 $this->idAsIndex = true;
             }
         }

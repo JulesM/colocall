@@ -155,7 +155,7 @@ class PostgreSqlPlatformTest extends AbstractPlatformTestCase
             $this->_platform->getCreateSequenceSQL($sequence)
         );
         $this->assertEquals(
-            'DROP SEQUENCE myseq CASCADE',
+            'DROP SEQUENCE myseq',
             $this->_platform->getDropSequenceSQL('myseq')
         );
         $this->assertEquals(

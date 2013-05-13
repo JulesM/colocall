@@ -207,7 +207,7 @@ class NumberToLocalizedStringTransformerTest extends LocalizedTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function testTransformExpectsNumeric()
     {
@@ -217,7 +217,7 @@ class NumberToLocalizedStringTransformerTest extends LocalizedTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function testReverseTransformExpectsString()
     {

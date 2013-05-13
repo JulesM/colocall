@@ -1916,22 +1916,31 @@ class SqlWalker implements TreeWalker
 
         foreach ($instanceOfExpr->value as $parameter) {
             if ($parameter instanceof AST\InputParameter) {
-                $sqlParameterList[] = $this->walkInputParameter($parameter);
+                // We need to modify the parameter value to be its correspondent mapped value
+                $dqlParamKey = $parameter->name;
+                $dqlParam    = $this->query->getParameter($dqlParamKey);
+                $paramValue  = $this->query->processParameterValue($dqlParam->getValue());
+
+                if ( ! ($paramValue instanceof \Doctrine\ORM\Mapping\ClassMetadata)) {
+                    throw QueryException::invalidParameterType('ClassMetadata', get_class($paramValue));
+                }
+
+                $entityClassName = $paramValue->name;
             } else {
                 // Get name from ClassMetadata to resolve aliases.
                 $entityClassName = $this->em->getClassMetadata($parameter)->name;
+            }
 
-                if ($entityClassName == $class->name) {
-                    $sqlParameterList[] = $this->conn->quote($class->discriminatorValue);
-                } else {
-                    $discrMap = array_flip($class->discriminatorMap);
+            if ($entityClassName == $class->name) {
+                $sqlParameterList[] = $this->conn->quote($class->discriminatorValue);
+            } else {
+                $discrMap = array_flip($class->discriminatorMap);
 
-                    if (!isset($discrMap[$entityClassName])) {
-                        throw QueryException::instanceOfUnrelatedClass($entityClassName, $class->rootEntityName);
-                    }
-
-                    $sqlParameterList[] = $this->conn->quote($discrMap[$entityClassName]);
+                if (!isset($discrMap[$entityClassName])) {
+                    throw QueryException::instanceOfUnrelatedClass($entityClassName, $class->rootEntityName);
                 }
+
+                $sqlParameterList[] = $this->conn->quote($discrMap[$entityClassName]);
             }
         }
 

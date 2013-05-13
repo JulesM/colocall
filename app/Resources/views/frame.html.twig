@@ -1,7 +1,7 @@
 {# app/Resources/views/frame.html.twig #}
  
 <!DOCTYPE html>
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  
@@ -36,25 +36,6 @@
     {% endblock mainbox %}
  
   {% block javascripts %}
-
-    {{ facebook_initialize({'xfbml': true, 'culture': 'fr_FR', 'fbAsyncInit': 'onFbInit();'}) }}
-        <script type="text/javascript" > // Script for FOSFacebookBundle
-        function goLogIn(){
-            window.location = "{{ path('_security_check') }}";
-        }
- 
-        function onFbInit() {
-            if (typeof(FB) != 'undefined' && FB != null ) {
-                FB.Event.subscribe('auth.statusChange', function(response) {
-                    if (response.session || response.authResponse) {
-                        setTimeout(goLogIn, 50);
-                    } else {
-                        window.location = "{{ path('_security_logout') }}";
-                    }
-                });
-            }
-        }
-        </script>
 
     <script type="text/javascript">
 

@@ -12,7 +12,6 @@
 namespace Symfony\Component\Form\Extension\Core\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use Symfony\Component\Form\Exception\TransformationFailedException;
 
 /**
  * Passes a value through multiple value transformers
@@ -23,7 +22,7 @@ class DataTransformerChain implements DataTransformerInterface
 {
     /**
      * The value transformers
-     * @var DataTransformerInterface[]
+     * @var array
      */
     protected $transformers;
 
@@ -49,7 +48,8 @@ class DataTransformerChain implements DataTransformerInterface
      *
      * @return mixed The transformed value
      *
-     * @throws TransformationFailedException
+     * @throws Symfony\Component\Form\Exception\TransformationFailedException
+     * @throws Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function transform($value)
     {
@@ -73,7 +73,8 @@ class DataTransformerChain implements DataTransformerInterface
      *
      * @return mixed The reverse-transformed value
      *
-     * @throws TransformationFailedException
+     * @throws Symfony\Component\Form\Exception\TransformationFailedException
+     * @throws Symfony\Component\Form\Exception\UnexpectedTypeException
      */
     public function reverseTransform($value)
     {
