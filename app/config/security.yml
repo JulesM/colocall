@@ -15,20 +15,23 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username_email
-            
+        my_facebook_provider:
+            id: my_user.facebook_provider # Notre provider, nous y viendrons par la suite.
+
+
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-      
+
         login_firewall:
             pattern:    ^/login$
             anonymous:  ~
-            
+
         about_firewall:
             pattern:    ^/about$
             anonymous:  ~
-            
+
         register_firewall:
             pattern:    ^/register
             anonymous:  ~
@@ -36,11 +39,11 @@ security:
         how_firewall:
             pattern:    ^/how$
             anonymous:  ~
-            
+
         resetting_firewall:
             pattern:    ^/resetting
             anonymous:  ~
-            
+
         secured_area:
             pattern:    ^/
             anonymous:  false
@@ -50,6 +53,11 @@ security:
                 default_target_path: /
                 provider: fos_userbundle
                 remember_me: true
+            fos_facebook:
+                app_url: "%api_facebook_name%"
+                server_url: "%api_facebook_server%"
+                check_path: /login_facebook_check   # Pour éviter toute confusion avec le formulaire de base, j'ai spécifié une route pour Facebook
+                provider: my_facebook_provider
             remember_me:
                 key: %secret%
             logout:

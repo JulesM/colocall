@@ -59,7 +59,7 @@ swiftmailer:
     host:       smtp.alwaysdata.com
     username:   jules@colocall.co
     password:   Ozanam1956
-    
+
 # FOSUserBundle Configuration (from SDZ)
 fos_user:
     db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
@@ -106,7 +106,15 @@ fos_user:
         user_manager:           fos_user.user_manager.default
     template:
         engine: twig
-    
+
+#FOSFacebookBundle
+fos_facebook:
+    alias:  facebook
+    app_id: %api_facebook_id%
+    secret: %api_facebook_secret%
+    cookie: true
+    permissions: [email, user_birthday, user_location]
+
 sonata_block:
     default_contexts: [cms]
     blocks:
