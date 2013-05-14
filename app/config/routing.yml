@@ -1,6 +1,6 @@
 clc_welcome:
     resource: "@ClcWelcomeBundle/Resources/config/routing.yml"
-    prefix:   /login
+    prefix:   /
 
 clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"

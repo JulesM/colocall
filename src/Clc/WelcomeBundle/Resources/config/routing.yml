@@ -1,5 +1,5 @@
 clc_welcome_login:
-    pattern:  /
+    pattern:  /login
     defaults: { _controller: ClcWelcomeBundle:Welcome:login}
 
 clc_welcome_about:
