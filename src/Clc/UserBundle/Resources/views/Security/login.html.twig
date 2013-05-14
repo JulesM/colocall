@@ -8,15 +8,14 @@
 
     <input type="password" id="password" name="_password" required="required" placeholder="Password"/>
 
-    <div id="login-row">
-        <div id="remember-block">
-            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-            <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-        </div>
+    
+    <div id="remember-block">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+    </div>
 
-        <div id="login-button">
-            <input type="submit" class="btn btn-success" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />    
-        </div>
+    <div id="login-button">
+        <input type="submit" class="btn btn-success" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />    
     </div>
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
