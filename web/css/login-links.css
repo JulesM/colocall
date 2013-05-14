@@ -58,6 +58,15 @@
 	font-family: 'Oswald-regular';
 }
 
+#connect-facebook-post p{
+	display: inline-block;
+	width: 80%;
+}
+#connect-facebook-post img{
+	float: right;
+	vertical-align: top;
+}
+
 #bfm-post p{
 	display: inline-block;
 	width: 80%;
