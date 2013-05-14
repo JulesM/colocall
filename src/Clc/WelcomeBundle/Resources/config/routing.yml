@@ -1,5 +1,5 @@
 clc_welcome_login:
-    pattern:  /login
+    pattern:  /
     defaults: { _controller: ClcWelcomeBundle:Welcome:login}
 
 clc_welcome_about:
@@ -13,3 +13,11 @@ clc_welcome_register:
 clc_welcome_how:
     pattern:  /how
     defaults: { _controller: ClcWelcomeBundle:Welcome:how }
+
+clc_welcome_investors:
+    pattern:  /investors
+    defaults: { _controller: ClcWelcomeBundle:Welcome:investors }
+
+clc_welcome_media:
+    pattern:  /media
+    defaults: { _controller: ClcWelcomeBundle:Welcome:media }

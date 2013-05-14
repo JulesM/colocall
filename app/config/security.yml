@@ -24,7 +24,7 @@ security:
             security: false
       
         login_firewall:
-            pattern:    ^/login$
+            pattern:    ^/login
             anonymous:  ~
             
         about_firewall:

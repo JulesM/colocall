@@ -16,6 +16,10 @@
 	color: red;
 }
 
+.links-container h6{
+	text-align: center;
+}
+
 .links-container h1,h2,h3,h4,h5,h6{
 	font-family: 'Oswald-regular';
 }
@@ -69,12 +73,23 @@
 
 #bfm-post p{
 	display: inline-block;
-	width: 80%;
+	width: 82%;
 }
 
 #bfm-post img{
 	float: right;
 	vertical-align: top;
+}
+
+#accenture-post p{
+	display: inline-block;
+	width: 82%;
+}
+
+#accenture-post img{
+	float: left;
+	vertical-align: top;
+	margin-right: 20px;
 }
 
 /* --- Register --- */

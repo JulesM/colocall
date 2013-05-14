@@ -25,4 +25,14 @@ class WelcomeController extends Controller
     {
         return $this->render('ClcWelcomeBundle:Links:how.html.twig');
     }
+
+    public function investorsAction()
+    {
+        return $this->render('ClcWelcomeBundle:Links:investors.html.twig');
+    }
+
+    public function mediaAction()
+    {
+        return $this->render('ClcWelcomeBundle:Links:media.html.twig');
+    }
 }
