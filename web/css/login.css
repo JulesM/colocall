@@ -123,10 +123,11 @@
 
 #remember-block input,label{
     display: inline-block;
+    margin: 5px;
 }
 
-#login-button{
-    margin-top: 5px;
+#_submit{
+    margin-top: 10px;
 }
 
 #facebook-button{

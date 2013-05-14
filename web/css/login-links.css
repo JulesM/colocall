@@ -2,7 +2,7 @@
 
 .links-container{
 	background-color: white;
-	border: solid red;
+	border: solid #e34a25;
 	width: 66%;
 	margin-bottom: 30px;
 	margin-left: auto;
@@ -13,7 +13,7 @@
 .links-container h1{
 	text-align: center;
 	margin-bottom: 30px;
-	color: red;
+	color: #e34a25;
 }
 
 .links-container h6{
