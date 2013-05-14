@@ -14,7 +14,7 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    api_facebook_id:      431921740237367# ID de l’application/Clé de l’API
+    api_facebook_id:      431921740237367 # ID de l’application/Clé de l’API
     api_facebook_secret:  f4a9575bce51fbcf4f6dc18617b74a9d # Clé secrète
     api_facebook_name:    http://apps.facebook.com/colocall/ # App Namespace
     api_facebook_server:  http://localhost:8888/colocall/web/app_dev.php/ # URL du site

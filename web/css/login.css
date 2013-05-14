@@ -101,6 +101,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
     text-align: center;
 }
@@ -120,14 +121,39 @@
     padding-top: 15px;
 }
 
-#remember-block input,label{
-    display: inline-block;
-    margin: 5px;
+#login-row{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#_submit{
+#remember-block{
+    display: inline-block;
+    width: 50%;
+}
+
+#remember-block input,label{
+    display: inline-block;
+}
+
+#remember_me{
+    margin-right: 10px;
+}
+
+#login-button{
+    display: inline-block;
+    text-align: right;
+}
+
+#login-button{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#facebook-button{
     margin-top: 10px;
-    margin-bottom: -15px;
+    margin-bottom: 10px;
 }
 
 #login-footer{

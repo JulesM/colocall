@@ -21,6 +21,9 @@
                    <p>Follow To-dos</p>
                    <p>Share Shopping Lists</p>
                 </div>
+
+                
+
             </div>
 
             <div id="login-box">
@@ -32,6 +35,10 @@
                     
                 <div id="login-form">
                 	{% render 'FOSUserBundle:Security:login' %}
+                </div>
+
+                <div id="facebook-button">
+                    {{ facebook_login_button({'autologoutlink': false}) }}
                 </div> 
 
                 <div id="login-footer">
@@ -44,8 +51,8 @@
                 </div>
 
 				      </div>
-	          </div>
 
+	          </div>
         </div>
     </div>
 
