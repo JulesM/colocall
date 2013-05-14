@@ -22,27 +22,29 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-      
+
         login_firewall:
-            pattern:    ^/login
+            pattern:    ^/login$
             anonymous:  ~
-            
+
         about_firewall:
-            pattern:    ^/about$
+            pattern:    ^/about
             anonymous:  ~
-            
         register_firewall:
             pattern:    ^/register
             anonymous:  ~
-
         how_firewall:
-            pattern:    ^/how$
+            pattern:    ^/how
             anonymous:  ~
-            
+        investors_firewall:
+            pattern:    ^/investors
+            anonymous:  ~
+        media_firewall:
+            pattern:    ^/media
+            anonymous:  ~
         resetting_firewall:
             pattern:    ^/resetting
             anonymous:  ~
-            
         secured_area:
             pattern:    ^/
             anonymous:  false
