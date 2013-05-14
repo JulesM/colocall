@@ -12,6 +12,19 @@ class DashboardController extends Controller
     {
         $user = $this->getUser();
         $coloc = $user->getColoc();
+        $picture = $user->getPicture();
+
+        if ($picture == null){
+            //Adding default picture
+            $em = $this->container->get('doctrine.orm.entity_manager');
+            $picture = $em ->getRepository('ClcUserBundle:profilepicture')
+                           ->find(1);
+            
+            $user->setPicture($picture);
+            $em->persist($user);
+            $em->flush();
+        }
+
         $path = $user->getPicture()->getPath();
         $this->container->get('request')->getSession()->set('path', $path);
         
