@@ -16,7 +16,20 @@ class ColocType extends AbstractType
                 ->add('address2', 'text', array('required' => false))
                 ->add('zipcode', 'integer')
                 ->add('city', 'text')
-                ->add('country', 'text');
+                ->add('country', 'text')
+                ->add('currency', 'choice', array(
+                        'choices'   => array(
+                            'EUR' => 'Euro',
+                            'USD' => 'US Dollar',
+                            'GBP' => 'British Pound',
+                            'INR' => 'Indian Rupee',
+                            'AUD' => 'Australian Dollar',
+                            'CAD' => 'Canadian Dollar',
+                            'CHF' => 'Swiss Franc',
+                            'CNY' => 'Chinese Yuan Renminbi',
+                            'JPY' => 'Japanese Yen',
+                            ),
+                        ));
     }
     
     public function getName()

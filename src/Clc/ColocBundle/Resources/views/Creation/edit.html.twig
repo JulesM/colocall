@@ -10,7 +10,7 @@
         <div class="coloc-edit">{{ form_widget(form.name) }}</div>
     </div>
    
-    <div>
+    <div style="margin-top: 30px;">
         <div class="coloc-edit coloc-label">{{ form_label(form.address1, 'Address line 1') }}</div>
         <div class="coloc-edit">{{ form_errors(form.address1) }}</div>
         <div class="coloc-edit">{{ form_widget(form.address1) }}</div>
@@ -38,6 +38,12 @@
         <div class="coloc-edit coloc-label">{{ form_label(form.country) }}</div>
         <div class="coloc-edit">{{ form_errors(form.country) }}</div>
         <div class="coloc-edit">{{ form_widget(form.country) }}</div>
+    </div>
+
+    <div style="margin-top: 30px; margin-bottom: 30px;">
+        <div class="coloc-edit coloc-label">{{ form_label(form.currency) }}</div>
+        <div class="coloc-edit">{{ form_errors(form.currency) }}</div>
+        <div class="coloc-edit">{{ form_widget(form.currency) }}</div>
     </div>
 
     {{ form_rest(form) }}

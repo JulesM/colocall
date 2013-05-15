@@ -468,27 +468,4 @@ class coloc
     {
         return $this->invitations;
     }
-
-    /**
-     * Set currency
-     *
-     * @param string $currency
-     * @return coloc
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
-    
-        return $this;
-    }
-
-    /**
-     * Get currency
-     *
-     * @return string 
-     */
-    public function getCurrency()
-    {
-        return $this->currency;
-    }
 }

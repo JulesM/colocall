@@ -40,6 +40,12 @@
         <div style="display: inline-block;">{{ form_widget(form.country) }}</div>
     </div>
 
+    <div>
+        <div class="coloc-form-label">{{ form_label(form.currency) }}</div>
+        <div style="display: inline-block;">{{ form_errors(form.currency) }}</div>
+        <div style="display: inline-block;">{{ form_widget(form.currency) }}</div>
+    </div>
+
     {{ form_rest(form) }}
 
     <div class="footer-buttons">
