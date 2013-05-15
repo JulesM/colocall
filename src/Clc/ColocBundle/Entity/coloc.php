@@ -71,9 +71,7 @@ class coloc
     protected $country;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="currency", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\currency", cascade={"persist"})
      */
     protected $currency;
 
@@ -469,13 +467,14 @@ class coloc
         return $this->invitations;
     }
 
+
     /**
      * Set currency
      *
-     * @param string $currency
+     * @param \Clc\ColocBundle\Entity\currency $currency
      * @return coloc
      */
-    public function setCurrency($currency)
+    public function setCurrency(\Clc\ColocBundle\Entity\currency $currency = null)
     {
         $this->currency = $currency;
     
@@ -485,7 +484,7 @@ class coloc
     /**
      * Get currency
      *
-     * @return string 
+     * @return \Clc\ColocBundle\Entity\currency 
      */
     public function getCurrency()
     {

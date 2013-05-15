@@ -71,9 +71,7 @@ class coloc
     protected $country;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="currency", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\currency", cascade={"persist"})
      */
     protected $currency;
 
@@ -468,4 +466,5 @@ class coloc
     {
         return $this->invitations;
     }
+
 }

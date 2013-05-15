@@ -77,7 +77,7 @@
                                 </td>
                                 <td>
                                     <div id="payback-arrow">
-                                        <p> {{ payment[1] }}€</p>
+                                        <p> {{ payment[1] }}{{ app.user.coloc.currency.symbol }}</p>
                                     </div>
                                 </td>
                                 <td>
@@ -137,7 +137,7 @@
                                         {% endif %}</b>
                         </div>
                       </td>
-                      <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
+                      <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}<div></td>
                       <td>
                         <div id="expense-list-edit-delete">
                             {#<i class="icon-edit"></i>#}
@@ -197,7 +197,7 @@
                                 Paid by <b>{{ expense.owner.nickname }}</b>
                             </div>
                           </td>
-                          <td><div id="expense-list-cost">{{ expense.amount }}€<div></td>
+                          <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}<div></td>
                           <td>
                             <div id="expense-list-edit-delete">
                                 {#<i class="icon-edit"></i>#}

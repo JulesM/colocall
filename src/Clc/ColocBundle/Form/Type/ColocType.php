@@ -17,19 +17,11 @@ class ColocType extends AbstractType
                 ->add('zipcode', 'integer')
                 ->add('city', 'text')
                 ->add('country', 'text')
-                ->add('currency', 'choice', array(
-                        'choices'   => array(
-                            'EUR' => 'Euro',
-                            'USD' => 'US Dollar',
-                            'GBP' => 'British Pound',
-                            'INR' => 'Indian Rupee',
-                            'AUD' => 'Australian Dollar',
-                            'CAD' => 'Canadian Dollar',
-                            'CHF' => 'Swiss Franc',
-                            'CNY' => 'Chinese Yuan Renminbi',
-                            'JPY' => 'Japanese Yen',
-                            ),
-                        ));
+                ->add('currency', 'entity', array(
+                            'class'         => 'ClcColocBundle:currency',
+                            'property'      => 'description',
+                            )
+                );
     }
     
     public function getName()

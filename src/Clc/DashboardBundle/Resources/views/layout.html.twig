@@ -77,7 +77,7 @@
                                                    {% else %} {{ expense.owner.nickname }}
                                                    {% endif %}</b>
                                             </td>
-                                            <td id="expense-amount">{{ expense.amount }}€</td>
+                                            <td id="expense-amount">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}</td>
                                             <td id="todo-list-edit-comment-delete">
                                               {#<i class="icon-edit"></i>#}
                                               {% if expense.active == 0 %}

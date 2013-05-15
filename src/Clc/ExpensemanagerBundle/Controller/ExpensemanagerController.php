@@ -44,16 +44,18 @@ class ExpensemanagerController extends Controller
         
         $form = $this->createFormBuilder($expense)
                      ->add('owner', 'entity', array(
-                            'class'         =>'ClcUserBundle:User', 
-                            'property'      =>'nickname',
+                            'class'         => 'ClcUserBundle:User', 
+                            'property'      => 'nickname',
                             'query_builder' => $usersQuery,
-                          ))
+                            ))
                      ->add('name', 'text')
-                     ->add('amount', 'integer')
+                     ->add('amount', 'money', array(
+                            'currency' => $coloc->getCurrency()->getISO(),
+                            ))
                      ->add('date', 'date', array(
                             'input'    => 'datetime',
-                            'widget'   =>'choice',
-                     ))
+                            'widget'   => 'choice',
+                            ))
                      ->add('users', 'entity', array(
                             'class'         => 'ClcUserBundle:User',
                             'property'      => 'nickname',
@@ -61,7 +63,7 @@ class ExpensemanagerController extends Controller
                             'multiple'      => 'true',
                             'expanded'      => 'true',
                             'required'      => 'true',
-                          ))
+                            ))
                      ->getForm();
         
         $request = $this->get('request');
