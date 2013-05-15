@@ -1,16 +1,24 @@
-{% if colocs == null %}
+{% if app.request.get('flatshare') == null %}
 
-<p>If you received an invitation via email, the name of the flatshare is in it</p>
+<p>If you received an invitation via email, the name of the flatshare is in it.</p>
 
 {% else %}
 
-	{% for coloc in colocs %}
+	{% if colocs == null %}
 
-	<div id="search-coloc-box">
-		<p id="p1">{{ coloc.name}} - {{ coloc.city }} (currently {{ coloc.users |length }} flatmates)</p>
-		<p id="p2"><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
-	</div>
+	<p>No flatshare was found, are you sure you typed its name correctly ?</p>
 
-	{% endfor %}
+	{% else %}
+
+		{% for coloc in colocs %}
+
+		<div id="search-coloc-box">
+			<p id="p1">{{ coloc.name}} - {{ coloc.city }} (currently {{ coloc.users |length }} flatmates)</p>
+			<p id="p2"><a href="{{ path('clc_dashboard_join_coloc', {'name' : coloc.name}) }}" class="btn btn-success">join this flatshare</a></p>
+		</div>
+
+		{% endfor %}
+
+	{% endif %}
 
 {% endif %}

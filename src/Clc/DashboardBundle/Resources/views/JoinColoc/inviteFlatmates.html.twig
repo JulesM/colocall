@@ -11,13 +11,14 @@
 
         <div class="join-box" id="invitations-box">
 
-            <h3>Your flatmates will receive an email inviting them to register on Coloc'all and join you in the flatshare you just created</h3>
+            <p>Your flatmates will receive an email inviting them to register/login to Coloc'all and communicate them the name of the Flatshare you just created <b>({{ app.user.coloc.name }})</b>.
+            You can also tell them directly the name of the flatshare.</p>
 
         	<div id="invitation-container">
 
         		{% for invitation in invitations %}
 
-        		<p>{{ invitation.email }}</p>
+        		<p>An email was sent to <b>{{ invitation.email }}</b></p>
 
         		{% endfor %}
 
