@@ -25,7 +25,7 @@ class ShoppinglistController extends Controller
         // initialisez simplement un objet $item
         $item = new item();
         $item->setState(0);
-        $item->setAddedDate(new \DateTime('today'));
+        $item->setAddedDate(new \DateTime('now'));
         $item->setAuthor($user);
         $item->setColoc($coloc);
 

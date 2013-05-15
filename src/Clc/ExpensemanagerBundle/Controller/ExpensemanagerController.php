@@ -31,7 +31,7 @@ class ExpensemanagerController extends Controller
         $expense->setAuthor($user);
         $expense->setOwner($user);
         $expense->setColoc($coloc);
-        $expense->setAddedDate(new \DateTime('today'));
+        $expense->setAddedDate(new \DateTime('now'));
         $expense->setDate(new \DateTime('today'));
         
         $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)

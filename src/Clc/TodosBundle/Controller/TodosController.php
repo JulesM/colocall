@@ -26,7 +26,7 @@ class TodosController extends Controller
         // initialisez simplement un objet $task
         $task = new task();
         $task->setState(0);
-        $task->setDate(new \DateTime('today'));
+        $task->setDate(new \DateTime('now'));
         $task->setDueDate(new \DateTime('tomorrow'));
         $task->setAuthor($user);
         $task->setColoc($coloc);
