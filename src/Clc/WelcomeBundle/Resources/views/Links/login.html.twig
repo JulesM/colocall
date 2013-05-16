@@ -1,6 +1,6 @@
 {% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block title %}Welcome to Coloc'all - Make life in your shared appartment easier{% endblock %}
+{% block title %}{% trans %}Welcome to Coloc'all - Make life in your shared appartment easier{% endtrans %}{% endblock %}
 
 {% block welcome1 %}
 
@@ -9,17 +9,19 @@
        <div id="middle-block">
 
             <div id="catchphrase-box">
-                <h1>Welcome to Coloc'all</h1>
-                <h2>Make life in your Flatshare easier</h2>
+                <h1>{% trans %}Welcome to Coloc'all{% endtrans %}</h1>
+                <h2>{% trans %}Make life in your Flatshare easier{% endtrans %}</h2>
                 <div id="catchphrase-img">
                    <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="85px" width="85px" alt="">
-                   <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="85px" width="85px"  alt="">
-                   <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="85px" width="85px"  alt="">
+                   <p>{% trans %}Manage Expenses{% endtrans %}</p>
                 </div>
-                <div id="catchphrase-lgd">
-                   <p>Manage Expenses</p>
-                   <p>Follow To-dos</p>
-                   <p>Share Shopping Lists</p>
+                <div id="catchphrase-img">
+                   <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="85px" width="85px"  alt="">
+                   <p>{% trans %}Follow To-dos{% endtrans %}</p>
+                </div>
+                <div id="catchphrase-img">
+                   <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="85px" width="85px"  alt="">
+                   <p>{% trans %}Share Shopping Lists{% endtrans %}</p>
                 </div>
             </div>
 
@@ -27,7 +29,7 @@
               <div id="login-box-content">
                     
                 <div id="legend">
-                  <h2>Login Here</h2>
+                  <h2>{% trans %}Login Here{% endtrans %}</h2>
                 </div>
                     
                 <div id="login-form">
@@ -40,10 +42,10 @@
 
                 <div id="login-footer">
                 	<div class="login-footer-link">
-                  	<a class="btn btn-link" id="not-yet-user" href="{{ path('clc_welcome_register') }}">Not yet a user ?</a>
+                  	<a class="btn btn-link" id="not-yet-user" href="{{ path('clc_welcome_register') }}">{% trans %}Not yet a user ?{% endtrans %}</a>
                   </div>
                   <div class="login-footer-link">   
-                      <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">Forgot your password ?</a>
+                      <a class="btn btn-link" id="forgot-password" href="#changePasswordModal" data-toggle="modal">{% trans %}Forgot your password ?{% endtrans %}</a>
                   </div>
                 </div>
 
@@ -57,7 +59,7 @@
     <div id="changePasswordModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Enter your email to get a new password</h3>
+            <h3 id="myModalLabel">{% trans %}Enter your email to get a new password{% endtrans %}</h3>
         </div>
         <div class="modal-body">
 
@@ -70,7 +72,7 @@
     </div>
 
     <div id="beta-box">
-        <p>This is a Beta version, for ANY issue or question, please send an email to <a href="mailto:contact@colocall.co">contact@colocall.co</a></p>
+        <p>{% trans %}This is a Beta version, for ANY issue or question, please send an email to {% endtrans %}<a href="mailto:contact@colocall.co">contact@colocall.co</a></p>
     </div>   
 </div>
 
@@ -85,35 +87,35 @@
             <div id="feature-container">
                 <div id="feature" class="span4">
                     <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="expense manager">
-                    <h3>Manage Your Expenses</h3>
-                    <p>Share your common Expenses</p>
-                    <p>Keep track of your current debts</p>
-                    <p>Request a Payback at any time</p>
+                    <h3>{% trans %}Manage your Expenses{% endtrans %}</h3>
+                    <p>{% trans %}Share your common Expenses{% endtrans %}</p>
+                    <p>{% trans %}Keep track of your current debts{% endtrans %}</p>
+                    <p>{% trans %}Request a Payback at any time{% endtrans %}</p>
                 </div>
 
 
                 <div id="feature" class="span4">
                     <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="to-dos">
-                    <h3>Follow Your To-dos</h3>
-                    <p>Share To-dos in the common Agenda</p>
-                    <p>Edit assignees and due dates online</p>
-                    <p>Never forget what you commited to do</p>
+                    <h3>{% trans %}Follow your To-dos{% endtrans %}</h3>
+                    <p>{% trans %}Share To-dos in the common Agenda{% endtrans %}</p>
+                    <p>{% trans %}Edit assignees and due dates online{% endtrans %}</p>
+                    <p>{% trans %}Never forget what you commited to do{% endtrans %}</p>
                 </div>
 
 
                 <div id="feature" class="span4">
                     <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="shopping list">
-                    <h3>Share Shopping Lists</h3>
-                    <p>Add items to the shopping list</p>
-                    <p>Receive the list by email upon request</p>
-                    <p>Let your flatmates know you filled the fridge</p>
+                    <h3>{% trans %}Share your Shopping Lists{% endtrans %}</h3>
+                    <p>{% trans %}Add items to the shopping list{% endtrans %}</p>
+                    <p>{% trans %}Receive the list by email upon request{% endtrans %}</p>
+                    <p>{% trans %}Let your flatmates know you filled the fridge{% endtrans %}</p>
                 </div>
             </div>
 
             <center>
 
               <img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
-              <h3>And much more to come :</h3>
+              <h3>{% trans %}And much more to come :{% endtrans %}</h3>
             </center>
 
             <div id="caroussel-container-large" class="span12">
@@ -124,12 +126,12 @@
                       <div class="active item">
                           <div id="item_container">
                             <div id="text">
-                              <h3>Manage your common expenses</h3>
-                              <p>- Share your common Expenses with your flatmates in a jiffy</p>
-                              <p>- Keep track of your Social Debts and know what is own at every time</p>
-                              <p>- Analyze your Spendings at the end of the month</p>
-                              <p>Coloc'all keeps all your expenses in one place. Sharing expenses 
-                                  has never been so easy !</p>
+                              <h3>{% trans %}Manage your common expenses{% endtrans %}</h3>
+                              <p>{% trans %}- Share your common Expenses with your flatmates in a jiffy{% endtrans %}</p>
+                              <p>{% trans %}- Keep track of your Social Debts and know what is own at every time{% endtrans %}</p>
+                              <p>{% trans %}- Analyze your Spendings at the end of the month{% endtrans %}</p>
+                              <p>{% trans %}Coloc'all keeps all your expenses in one place. Sharing expenses 
+                                  has never been so easy !{% endtrans %}</p>
                             </div>
                             <div id="pic">
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-blackboard.png') }}" alt="expense blackboard">
@@ -142,22 +144,22 @@
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-request-payback.png') }}" style="margin-top: 20px;" alt="payback button">
                             </div>
                             <div id="text">
-                                <h3>Payback your friends online</h3>
-                                <p>- Get current Balances of all flatshares</p>
-                                <p>- Request a Payback instantly at any time</p>
-                                <p>- Payback your friends instantly with a mere Click</p>
-                                <p>No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back !</p>
+                                <h3>{% trans %}Payback your friends online{% endtrans %}</h3>
+                                <p>{% trans %}- Get current Balances of all flatshares{% endtrans %}</p>
+                                <p>{% trans %}- Request a Payback instantly at any time{% endtrans %}</p>
+                                <p>{% trans %}- Payback your friends instantly with a mere Click{% endtrans %}</p>
+                                <p>{% trans %}No more late outstanding IOUs, with Coloc'all you are always a click away from getting paid back !{% endtrans %}</p>
                             </div>
                           </div>        
                       </div>
                       <div class="item">
                           <div id="item_container">
                             <div id="text">
-                                <h3>Manage your to-dos easily</h3>    
-                                <p>- Share To-dos in the common Agenda</p>
-                                <p>- Follow the agenda and see what you have to do</p>
-                                <p>- Check if tasks are late and tell your flatmates you take care of it</p>
-                                <p>Coloc'all enables you to organize life easily and avoid any trouble due to forgettings</p> 
+                                <h3>{% trans %}Manage your to-dos easily{% endtrans %}</h3>    
+                                <p>{% trans %}- Share To-dos in the common Agenda{% endtrans %}</p>
+                                <p>{% trans %}- Follow the agenda and see what you have to do{% endtrans %}</p>
+                                <p>{% trans %}- Check if tasks are late and tell your flatmates you take care of it{% endtrans %}</p>
+                                <p>{% trans %}Coloc'all enables you to organize life easily and avoid any trouble due to forgettings{% endtrans %}</p> 
                             </div>
                             <div id="pic">
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-todos-transparent.png') }}" height="80%" width="80%" alt="to dos">
@@ -170,22 +172,22 @@
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-shopping-list.png') }}" alt="dynamic shopping list iphone">
                             </div>
                             <div id="text">
-                                <h3>Create dynamic shopping lists</h3>    
-                                <p>- Add missing items as soon as you lack one</p>
-                                <p>- Download the Shopping List when you have time to go to the shop</p>
-                                <p>- Tell your flatmates you filled the fridge</p>
-                                <p>With coloc'all dynamic shopping list, you will never run out of milk for 3 weeks anymore</p>
+                                <h3>{% trans %}Create dynamic shopping lists{% endtrans %}</h3>    
+                                <p>{% trans %}- Add missing items as soon as you lack one{% endtrans %}</p>
+                                <p>{% trans %}- Download the Shopping List when you have time to go to the shop{% endtrans %}</p>
+                                <p>{% trans %}- Tell your flatmates you filled the fridge{% endtrans %}</p>
+                                <p>{% trans %}With coloc'all dynamic shopping list, you will never run out of milk for 3 weeks anymore{% endtrans %}</p>
                             </div>  
                           </div>        
                       </div>
                       <div class="item">
                           <div id="item_container">
                             <div id="text">
-                              <h3>Host events with all your friends</h3>    
-                              <p>- Create an event in your flatshare within Coloc'all</p>
-                              <p>- Include your invitees in specific expense groups and lists</p>
-                              <p>- Close the event and send notifications for paybakc to everyone</p>
-                              <p>Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare</p>
+                              <h3>{% trans %}Host events with all your friends{% endtrans %}</h3>    
+                              <p>{% trans %}- Create an event in your flatshare within Coloc'all{% endtrans %}</p>
+                              <p>{% trans %}- Include your invitees in specific expense groups and lists{% endtrans %}</p>
+                              <p>{% trans %}- Close the event and send notifications for paybakc to everyone{% endtrans %}</p>
+                              <p>{% trans %}Coloc'all does not limit their services to flatshare and help you get invitees in your flatshare{% endtrans %}</p>
                             </div>
                             <div id="pic">
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-event-organizer.png') }}" alt="host events">
@@ -198,22 +200,22 @@
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-facebook-page.png') }}" height="80%" width="80%" alt="facebook community">
                             </div>
                             <div id="text">
-                                <h3>Share tips with Coloc'all community</h3>    
-                                <p>- Share your experience with Coloc'all online community</p>
-                                <p>- Be the flatshare of the month and earn prizes</p>
-                                <p>- Attend social events with Coloc'all</p>
-                                <p>Coloc'all is also a community of flatshares willing to meet with each other</p>
+                                <h3>{% trans %}Share tips with Coloc'all community{% endtrans %}</h3>    
+                                <p>{% trans %}- Share your experience with Coloc'all online community{% endtrans %}</p>
+                                <p>{% trans %}- Be the flatshare of the month and earn prizes{% endtrans %}</p>
+                                <p>{% trans %}- Attend social events with Coloc'all{% endtrans %}</p>
+                                <p>{% trans %}Coloc'all is also a community of flatshares willing to meet with each other{% endtrans %}</p>
                             </div>
                           </div>        
                       </div>
                       <div class="item">
                           <div id="item_container">
                             <div id="text">
-                                <h3>Get fun statistics on your flatshare</h3>    
-                                <p>- See of much you spend in booz each month</p>
-                                <p>- Spot how late to-dos are usually done</p>
-                                <p>- Analyze the change of your flatshare with your new female flatmate</p>
-                                <p>Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff</p>
+                                <h3>{% trans %}Get fun statistics on your flatshare{% endtrans %}</h3>    
+                                <p>{% trans %}- See of much you spend in booz each month{% endtrans %}</p>
+                                <p>{% trans %}- Spot how late to-dos are usually done{% endtrans %}</p>
+                                <p>{% trans %}- Analyze the change of your flatshare with your new female flatmate{% endtrans %}</p>
+                                <p>{% trans %}Coloc'all will provide you fun statistics on your flatshare that you can even ask to the staff{% endtrans %}</p>
                             </div>
                             <div id="pic">
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-statistics-transparent.png') }}" height="60%" width="60%" alt="statistics">
@@ -226,11 +228,11 @@
                                 <img src="{{ asset('img/visitor_homepage/Carousel/Carousel-enjoy.png') }}" height="80%" width="80%" alt="enjoy life">
                             </div>
                             <div id="text">
-                                <h3>Enjoy life as you should</h3>    
-                                <p>- Be Happy</p>
-                                <p>- Find Love</p>
-                                <p>- Sleep well</p>
-                                <p>Thanks to Coloc'all, you will have real matters to handle</p>
+                                <h3>{% trans %}Enjoy life as you should{% endtrans %}</h3>    
+                                <p>{% trans %}- Be Happy{% endtrans %}</p>
+                                <p>{% trans %}- Find Love{% endtrans %}</p>
+                                <p>{% trans %}- Sleep well{% endtrans %}</p>
+                                <p>{% trans %}Thanks to Coloc'all, you will have real matters to handle{% endtrans %}</p>
                             </div>
                           </div>        
                       </div>      

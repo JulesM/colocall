@@ -11,7 +11,7 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
-    locale:            en
+    locale:            fr
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     api_facebook_id:      431921740237367 # ID de l’application/Clé de l’API

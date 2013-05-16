@@ -1,19 +1,19 @@
 {% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block title %}About Coloc'all - Coloc'all wants to simplify life in flatshares, we help you with expenses, to-dos and lists, and much more to come.{% endblock %}
+{% block title %}{% trans %}About Coloc'all - Coloc'all wants to simplify life in flatshares, we help you with expenses, to-dos and lists, and much more to come.{% endtrans %}{% endblock %}
 
 {% block welcome1 %}
 
 <div class="links-container">
 
-	<h1>About Coloc'all</h1>
-	<p>Coloc'all started with an idea from 2 students in French engineering schools who met during their bachelor degree. After having lived in shared appartments in different countries they realised that a simple and clear app could solve much more problems than the mere paper sheet they used to keep track of their expenses and to-dos. Motivated by their will to do things they decided to create it: Coloc'all was born.</p>
+	<h1>{% trans %}About Coloc'all{% endtrans %}</h1>
+	<p>{% trans %}Coloc'all started with an idea from 2 students in French engineering schools who met during their bachelor degree. After having lived in shared appartments in different countries they realised that a simple and clear app could solve much more problems than the mere paper sheet they used to keep track of their expenses and to-dos. Motivated by their will to do things they decided to create it: Coloc'all was born.{% endtrans %}</p>
 
-	<h2>What does Coloc'all mean ?</h2>
+	<h2>{% trans %}What does Coloc'all mean ?{% endtrans %}</h2>
 
-	<p>In French, a "coloc" is both a shared housing (colocation) and a flatmate (colocataire). Coloc'all means we want everybody to prefer living in a shared flat than alone, and Coloc'all is here to help that. Because when it works well, an experience in a shared flat is a thing we wish everyone to live once</p>
+	<p>{% trans %}In French, a "coloc" is both a shared housing (colocation) and a flatmate (colocataire). Coloc'all means we want everybody to prefer living in a shared flat than alone, and Coloc'all is here to help that. Because when it works well, an experience in a shared flat is a thing we wish everyone to live once{% endtrans %}</p>
 
-	<h2>The founders</h2>
+	<h2>{{ 'The Founders'|trans }}</h2>
 
 	<div class="founder-box">
 		<h4>Jules Marcilhacy</h4>
@@ -34,51 +34,51 @@
 </div>
 <div class="container">
     <div class="newsletter-container"> 
-		<h1>Coloc'all newsletter</h1>
-		<p>Follow here the news about Coloc'all : new features for your <strong>flatshare</strong> and what other people say about <strong>Coloc'all</strong>. If you talk about Coloc'all, let <a href="mailto:contact@colocall.co">us</a> know and we will report it !</p>
+		<h1>{% trans %}Coloc'all newsletter{% endtrans %}</h1>
+		<p>{% trans %}Follow here the news about Coloc'all : new features for your {% endtrans %}<strong>{{ 'flatshare'|trans }}</strong>{% trans %} and what other people say about {% endtrans %}<strong>{{"Coloc'all."|trans }}</strong> {% trans %}If you talk about Coloc'all, let {% endtrans %}<a href="mailto:contact@colocall.co">{{ 'us'|trans }}</a>{% trans %} know and we will report it !{% endtrans %}</p>
 
 		<div id="connect-facebook-post" class="newsletter-post">
-			<h3>Tuesday, May 14th, 2013 - Connect with Facebook !</h3>
-			<p>Facebook connect is now available on Coloc'all, you can connect directly with your facebook account and join your <strong>flatmates</strong> in 2 clicks. <a href="{{ path('clc_welcome_login') }}">Try it now !</a>
+			<h3>{% trans %}Tuesday, May 14th, 2013 - Connect with Facebook !{% endtrans %}</h3>
+			<p>{% trans %}Facebook connect is now available on Coloc'all, you can connect directly with your facebook account and join your {% endtrans %}<strong>{{ 'flatmates'|trans }}</strong>{% trans %} in 2 clicks. {% endtrans %}<a href="{{ path('clc_welcome_login') }}">{{ 'Try it now !'|trans }}</a>
 			</p>
 			<a href="{{ path('clc_welcome_login') }}"><img src="{{ asset('img/Logos/facebook-logo.jpg') }}" height="100px" width="100px" alt="Facebook logo"></a>
 		</div>
 
 		<div class="newsletter-post">
-			<h3>Sunday, May 12th, 2013 - Creation of the newsletter</h3>
-			<p>This newsletter is created in order to let you know how Coloc'all is evolving. You will fond in this section 2 kind of news :</br>
-				- what new features are available on Coloc'all. Based on your feedback (thank you) Coloc'all present s a new version at least every week.</br>
-				- what people say about Coloc'all. When someone talks about Coloc'all we will let you know. If you say something about Coloc'all on your website, let us know and we will report it.
+			<h3>{% trans %}Sunday, May 12th, 2013 - Creation of the newsletter{% endtrans %}</h3>
+			<p>{% trans %}This newsletter is created in order to let you know how Coloc'all is evolving. You will fond in this section 2 kind of news :{% endtrans %}</br>
+				{% trans %}- what new features are available on Coloc'all. Based on your feedback (thank you) Coloc'all present s a new version at least every week.{% endtrans %}</br>
+				{% trans %}- what people say about Coloc'all. When someone talks about Coloc'all we will let you know. If you say something about Coloc'all on your website, let us know and we will report it.{% endtrans %}
 			</p>
 		</div>
 
 		<div class="newsletter-post">
-			<h3>Thursday, May 2nd - One week update</h3>
-			<p>After one week online and first <strong>flatmates</strong> registered, Coloc'all is fully debugged and all features are working (expenses, to-dos and shopping lists)</br>
-				- we thank first <strong>flatmates</strong> (The_fresh and Dark_Marc living in 506MixParty) who trusted us and encourage more <strong>shared appartments</strong> to join Coloc'all</br>
-				- we read your feedbacks and will very soon simplify the register logics in order to make it easier</p>
+			<h3>{% trans %}Thursday, May 2nd - One week update{% endtrans %}</h3>
+			<p>{% trans %}After one week online and first {% endtrans %}<strong>{{ 'flatmates'|trans }}</strong>{% trans %} registered, Coloc'all is fully debugged and all features are working (expenses, to-dos and shopping lists){% endtrans %}</br>
+				{% trans %}- we thank first {% endtrans %}<strong>{{ 'flatmates'|trans }}</strong>{% trans %} (The_fresh and Dark_Marc living in 506MixParty) who trusted us and encourage more {% endtrans %}<strong>{{ 'shared appartments'|trans }}</strong>{% trans %} to join Coloc'all{% endtrans %}</br>
+				{% trans %}- we read your feedbacks and will very soon simplify the register logics in order to make it easier{% endtrans %}</p>
 		</div>
 
 		<div class="newsletter-post">
-			<h3>Thursday, April 25th, 2013 - Release of the Beta version of Coloc'all</h3>
-			<p>Coloc'all Beta version is open to anyone through www.colocall.co. We are happy to welcome any flatmate in the world willing to test our service and help us improve it. It is free.</p>
-			<p>For now, Coloc'all offers :</p>
-				- 3 main features : expense manager, to-do agenda, dynamic shopping-list</br>
-				- an internal chat for flatmates</br>
-				- a website in English only
+			<h3>{% trans %}Thursday, April 25th, 2013 - Release of the Beta version of Coloc'all{% endtrans %}</h3>
+			<p>{% trans %}Coloc'all Beta version is open to anyone through www.colocall.co. We are happy to welcome any flatmate in the world willing to test our service and help us improve it. It is free.{% endtrans %}</p>
+			<p>{% trans %}For now, Coloc'all offers :{% endtrans %}
+				{% trans %}- 3 main features : expense manager, to-do agenda, dynamic shopping-list{% endtrans %}</br>
+				{% trans %}- an internal chat for flatmates{% endtrans %}</br>
+				{% trans %}- a website in English only{% endtrans %}
 			</p>
 		</div>
 
 		<div class="newsletter-post">
-			<h3>Saturday, April 6th, 2013 - Jules (founder) talks about Coloc'all on French radio BFM Business</h3>
-			<p>Jules Marcilhacy was invited by Alexandre Lichan to talk about Coloc'all in <a href="http://www.bfmtv.com/emission/club-media-rh/">Club Media RH</a> (BFM Business) on April 6th, after he was selected for the finals of Generation Accenture</p>
+			<h3>{% trans %}Saturday, April 6th, 2013 - Jules (founder) talks about Coloc'all on French radio BFM Business{% endtrans %}</h3>
+			<p>{% trans %}Jules Marcilhacy was invited by Alexandre Lichan to talk about Coloc'all in {% endtrans %}<a href="http://www.bfmtv.com/emission/club-media-rh/">Club Media RH</a>{% trans %} (BFM Business) on April 6th, after he was selected for the finals of Generation Accenture{% endtrans %}</p>
 			<div id="bfm-post">
-				<p><strong>Interview on BFM</strong>, you can find the podcast <a href="http://www.bfmtv.com/grille/bfmbusiness/podcast-radio/12722/">here</a>, Jules talks about <strong>Coloc'all</strong> starting at 34'00. You will also find an interview of Romain Soubeyran, dean at <a href="http://www.mines-paristech.fr">Mines Paristech</a>, engineering school where Jules is graduating this year.</p>
+				<p><strong>Interview on BFM</strong>{% trans %}, you can find the podcast {% endtrans %}<a href="http://www.bfmtv.com/grille/bfmbusiness/podcast-radio/12722/">{{ 'here'|trans }}</a>{% trans %}, Jules talks about {% endtrans %}<strong>Coloc'all</strong>{% trans %} starting at 34'00. You will also find an interview of Romain Soubeyran, dean at {% endtrans %}<a href="http://www.mines-paristech.fr">Mines Paristech</a>{% trans %}, engineering school where Jules is graduating this year.{% endtrans %}</p>
 				<a href="http://www.bfmtv.com/economie/"><img src="{{ asset('img/Logos/logo-bfm-radio-eco.jpg') }}" height="100px" width="100px" alt="BFM Business logo"></a>
 			</div>
 			<div id="accenture-post">
 				<a href="http://www.mediarh.com/5-accenture.html"><img src="{{ asset('img/Logos/Jules-Accenture.jpg') }}" height="100px" width="100px" alt="Jules Generation Accenture"></a>
-				<p><strong>Generation Accenture</strong> is an entrepreneurship competition for students in top French Business and Engineering Schools with a project to defend during a real-condition interview lead by a journalist at BFM</p>
+				<p><strong>Generation Accenture</strong>{% trans %} is an entrepreneurship competition for students in top French Business and Engineering Schools with a project to defend during a real-condition interview lead by a journalist at BFM{% endtrans %}</p>
 			</div>
 		</div>
 		
