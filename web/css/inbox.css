@@ -137,6 +137,10 @@
     border-radius: 5px;
 }
 
+#notification-messages-box{
+    border-top: solid 1px grey;
+}
+
 .notification-box{
     width: 95%;
     min-width: 338px;
@@ -193,6 +197,5 @@
     vertical-align: middle;
     text-align: center;
     width: 35px;
-    font-family: 'Oswald-light';
     float: right;
 }
