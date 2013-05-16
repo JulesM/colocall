@@ -35,7 +35,8 @@
   {% include "ClcExpensemanagerBundle:Default:addexpensemodal.html.twig" %}
   
   <div id="expense-content">
-    <div id="expense-middle">  
+    <div id="expense-middle"> 
+
       <div id="overview-container">
         <div id="expense-dashboard-container" class="dashboard-container">
           <div id="new-expense-left">
@@ -121,7 +122,6 @@
             {% if user_expense == null %}
               You did not add any expense yet
             {% else %}
-              
                 <table id="expense-list-table" class="table table-hover">
                   <tbody>
 
@@ -137,7 +137,7 @@
                                         {% endif %}</b>
                         </div>
                       </td>
-                      <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}<div></td>
+                      <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}</div></td>
                       <td>
                         <div id="expense-list-edit-delete">
                             {#<i class="icon-edit"></i>#}
@@ -156,9 +156,7 @@
 
                   </tbody>
                 </table>
-
             {% endif %}  
- 
           </div>
         </div>  
         
@@ -197,7 +195,7 @@
                                 Paid by <b>{{ expense.owner.nickname }}</b>
                             </div>
                           </td>
-                          <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}<div></td>
+                          <td><div id="expense-list-cost">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}</div></td>
                           <td>
                             <div id="expense-list-edit-delete">
                                 {#<i class="icon-edit"></i>#}
@@ -222,7 +220,7 @@
               {% endif %} 
 
               </div>
-          </div>
+            </div>
         </div>       
       </div>   
       
