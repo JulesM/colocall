@@ -233,9 +233,22 @@ tbody *{
     margin-top: 1px;
 }
 
+#item-check{
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  padding-top: 22px;
+}
+
+#item-check p{
+  text-align: center;
+  font-size: 11px;
+  color: green;
+}
+
 #all-todos-caption{
     display: inline-block;
-    margin-left: 68px;
+    margin-left: 10px;
     width: 500px;
     vertical-align: middle;
 }

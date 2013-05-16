@@ -19,7 +19,8 @@ class StatisticsController extends Controller
         
         $feedback->setDate( new \DateTime('now'))
                  ->setAuthor($this->getUser())
-                 ->setCategory('statistics');
+                 ->setCategory('statistics')
+                 ->setSolved(false);
         
         $form = $this->createFormBuilder($feedback)
                      ->add('text', 'textarea')

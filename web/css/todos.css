@@ -354,7 +354,10 @@ tbody *{
     padding-left: auto;
 }
 
-
+#todo-check{
+    font-family: arial;
+    font-size: 10px;
+}
 
 /*Slider*/
 

@@ -55,7 +55,10 @@
                      
                     <caption id="todo-table-caption">  
                         <div id="todo-filter-tab-container">
-                            <div id="item-check" class="btn-group">
+                            <div id="item-check">
+                              {% if state == 0 %}<p>Bought ?</p>
+                              {% else %}<p>Re-add</p>
+                              {% endif %}
                             </div> 
                             <div id="all-todos-caption">
                                 

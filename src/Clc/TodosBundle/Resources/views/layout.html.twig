@@ -54,7 +54,7 @@
                     
                     <thead>
                       <tr>
-                        <th></th>
+                        <th><div id="todo-check">Done ?</div></th>
                         <th>What</th>
                         <th>Who</th>
                         <th>When</th>
@@ -171,7 +171,11 @@
                   
                     <thead>
                       <tr>
-                        <th></th>
+                        <th><div id="todo-check">
+                          {% if state == 0 %}Done ?
+                          {% else %} Not done ?
+                          {% endif %}</div>
+                        </th>
                         <th>What</th>
                         <th>Who</th>
                         <th>When</th>
