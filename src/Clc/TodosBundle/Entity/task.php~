@@ -65,7 +65,7 @@ class task
     protected $owner;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="tasks", cascade={"persist"})
      */
     protected $coloc;
     

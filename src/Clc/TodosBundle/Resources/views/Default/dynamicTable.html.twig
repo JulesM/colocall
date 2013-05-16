@@ -17,9 +17,8 @@
      <td><div id="task">{{ task.task }}</div></td>
      
      <td><div id="task-owner">
-     {% if task.owner != null %}
-     {{ task.owner.nickname }}
-     {% else %}
+     {% if task.owner == null %} <p style="color: lightgrey">Anyone</p>
+     {% else %} {{ task.owner.nickname }}
      {% endif %}
      </div></td>
              

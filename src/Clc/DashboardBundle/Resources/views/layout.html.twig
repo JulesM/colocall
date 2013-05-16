@@ -122,7 +122,11 @@
                                 <tr>
                                   <td id="mini-shopping-list-item">
                                     <h3>{{ todo.task }}</h3>
-                                    <i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }}                                 
+                                    <p><i class="icon-time"></i>For {{ todo.dueDate|date("d/m") }} - 
+                                        {% if todo.owner == app.user %} <b>You</b> are assigned
+                                        {% else %} No one assigned
+                                        {% endif %}
+                                    </p>
                                   </td>
                                   <td id="todo-list-edit-comment-delete">
                                     {#<i class="icon-edit"></i>#}

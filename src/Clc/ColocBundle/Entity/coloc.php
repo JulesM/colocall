@@ -104,6 +104,11 @@ class coloc
      * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", mappedBy="coloc", cascade={"persist"})
      */
     protected $paybacks;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\TodosBundle\Entity\task", mappedBy="coloc", cascade={"persist"})
+     */
+    protected $tasks;    
     
     /**
      * @ORM\OneToMany(targetEntity="Clc\ColocBundle\Entity\invitation", mappedBy="coloc", cascade={"persist"})
@@ -489,5 +494,38 @@ class coloc
     public function getCurrency()
     {
         return $this->currency;
+    }
+
+    /**
+     * Add tasks
+     *
+     * @param \Clc\TodosBundle\Entity\task $tasks
+     * @return coloc
+     */
+    public function addTask(\Clc\TodosBundle\Entity\task $tasks)
+    {
+        $this->tasks[] = $tasks;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tasks
+     *
+     * @param \Clc\TodosBundle\Entity\task $tasks
+     */
+    public function removeTask(\Clc\TodosBundle\Entity\task $tasks)
+    {
+        $this->tasks->removeElement($tasks);
+    }
+
+    /**
+     * Get tasks
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTasks()
+    {
+        return $this->tasks;
     }
 }

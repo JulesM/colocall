@@ -36,7 +36,7 @@ class DashboardController extends Controller
             return $this->render('ClcDashboardBundle::layout.html.twig', array(
             'current_balances' => $this->getCurrentBalancesAction(),
             'latest_expenses'  => $this->getLatestExpensesAction(),
-            'my_todos'         => $this->getMyTodosAction(0),
+            'my_todos'         => $this->getMyTodosAction(),
             'shopping_list'    => $this->getShoppingListAction(0),
         ));
         }
@@ -71,14 +71,24 @@ class DashboardController extends Controller
         return $latest_expenses_sorted;
     }
     
-    private function getMyTodosAction($state)
+    private function getMyTodosAction()
     {
         $user = $this->getUser();
+        $coloc = $user->getColoc();
         
         $td = $this->container->get('clc_todos.todos');
-        $task_list = $td->getMine($user, $state);
+        $task_list = $td->getByColoc($coloc, 0);
         
-        return $task_list;
+        $my_task_list = array();
+
+        foreach ($task_list as $task){
+            if ($task->getOwner() == $user or $task->getOwner() == null){
+                $my_task_list[] = $task;
+            }else{
+            }
+        }
+
+        return $my_task_list;
     }
     
     private function getShoppingListAction($state)

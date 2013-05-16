@@ -104,6 +104,11 @@ class coloc
      * @ORM\OneToMany(targetEntity="Clc\ExpensemanagerBundle\Entity\payback", mappedBy="coloc", cascade={"persist"})
      */
     protected $paybacks;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Clc\TodosBundle\Entity\task", mappedBy="coloc", cascade={"persist"})
+     */
+    protected $tasks;    
     
     /**
      * @ORM\OneToMany(targetEntity="Clc\ColocBundle\Entity\invitation", mappedBy="coloc", cascade={"persist"})
@@ -467,4 +472,27 @@ class coloc
         return $this->invitations;
     }
 
+
+    /**
+     * Set currency
+     *
+     * @param \Clc\ColocBundle\Entity\currency $currency
+     * @return coloc
+     */
+    public function setCurrency(\Clc\ColocBundle\Entity\currency $currency = null)
+    {
+        $this->currency = $currency;
+    
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return \Clc\ColocBundle\Entity\currency 
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
 }
