@@ -2,8 +2,9 @@
 
 {% for task in coloc_task %}
 
-    <tr id={{ task.task }}>
-     <td><div id="check">
+    <tr id="{{ task.task }}">
+     <td>
+        <div id="check">
          <div class="btn-group">
 
              {% if state == 0 %}
@@ -13,7 +14,8 @@
              {% endif %}
 
          </div>                        
-     </div></td>
+        </div>
+    </td>
      <td><div id="task">{{ task.task }}</div></td>
      
      <td><div id="task-owner">
