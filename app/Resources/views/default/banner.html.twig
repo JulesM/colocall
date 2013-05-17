@@ -1,42 +1,44 @@
 {# app/Resources/views/banner.html.twig#}
-  
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
 <div id="banner1">
   <a href="{{ path('clc_dashboard_homepage') }}"><img src="{{ asset('img/logo.png') }}" id="logo"  alt=""></a>
 </div>
         
 <div id="banner2">
 
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-        <div id="settings_button" class="banner-button">      
-            <div class="dropdown">
-                <a id="settings_dropdown_button" class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="icon-cog"></i>
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <!-- dropdown menu links -->
-                    <li><a href="{{ path('clc_parameters_homepage') }}">Parameters</a></li>
-                    <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>         
-                </ul>
-            </div>
+    <div id="settings_button" class="banner-button">      
+        <div class="dropdown">
+            <a id="settings_dropdown_button" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="icon-cog"></i>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <!-- dropdown menu links -->
+                <li><a href="{{ path('clc_parameters_homepage') }}">Parameters</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>         
+            </ul>
         </div>
-    
-        <div id="home_button" class="banner-button">
-            <a class="btn btn-link" href="{{ path('clc_dashboard_homepage') }}">Dashboard</a>        
-        </div>
-    
-        <div id="name_button" class="banner-button">
-            <a class="btn btn-link" href="{{ path('clc_user_profile') }}">
-                <img src="{{ asset(app.session.get('path')) }}" alt="">
-                <p>{{ app.user.nickname }}</p>
-            </a>        
-        </div>
+    </div>
 
-    {% else %}
+    <div id="home_button" class="banner-button">
+        <a class="btn btn-link" href="{{ path('clc_dashboard_homepage') }}">Dashboard</a>        
+    </div>
 
-        {% include "ClcWelcomeBundle:Banner:nav.html.twig" %}
+    <div id="name_button" class="banner-button">
+        <a class="btn btn-link" href="{{ path('clc_user_profile') }}">
+            <img src="{{ asset(app.session.get('path')) }}" alt="">
+            <p>{{ app.user.nickname }}</p>
+        </a>        
+    </div>
 
-    {% endif %}
+</div> 
+
+{% else %}
+
+    {% include "ClcWelcomeBundle:Banner:welcome-banner.html.twig" %}
+
+{% endif %}
        
-</div>     
+    

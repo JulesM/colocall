@@ -1,42 +1,69 @@
+root:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /{_locale}/
+        permanent: true
+
 clc_welcome:
     resource: "@ClcWelcomeBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr
 
 clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"
-    prefix:   /user
+    prefix:   /{_locale}/user
+    requirements:
+        _locale: en|fr
 
 clc_parameters:
     resource: "@ClcParametersBundle/Resources/config/routing.yml"
-    prefix:   /parameters
+    prefix:   /{_locale}/parameters
+    requirements:
+        _locale: en|fr
 
 clc_coloc:
     resource: "@ClcColocBundle/Resources/config/routing.yml"
-    prefix:   /coloc
+    prefix:   /{_locale}/coloc
+    requirements:
+        _locale: en|fr
 
 clc_dashboard:
     resource: "@ClcDashboardBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr
 
 clc_inbox:
     resource: "@ClcInboxBundle/Resources/config/routing.yml"
-    prefix:   /inbox
+    prefix:   /{_locale}/inbox
+    requirements:
+        _locale: en|fr
 
 clc_event:
     resource: "@ClcEventBundle/Resources/config/routing.yml"
-    prefix:   /event
+    prefix:   /{_locale}/event
+    requirements:
+        _locale: en|fr
 
 clc_shoppinglist:
     resource: "@ClcShoppinglistBundle/Resources/config/routing.yml"
-    prefix:   /shoppinglist
+    prefix:   /{_locale}/shoppinglist
+    requirements:
+        _locale: en|fr
 
 clc_todos:
     resource: "@ClcTodosBundle/Resources/config/routing.yml"
-    prefix:   /todos
+    prefix:   /{_locale}/todos
+    requirements:
+        _locale: en|fr
 
 clc_expensemanager:
     resource: "@ClcExpensemanagerBundle/Resources/config/routing.yml"
-    prefix:   /expensemanager/
+    prefix:   /{_locale}/expensemanager/
+    requirements:
+        _locale: en|fr
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -58,19 +85,27 @@ fos_user_change_password:
     prefix: /change-password
 
 _security_check:
-    pattern:  /login_facebook_check
+    pattern:  /{_locale}/login_facebook_check
+    requirements:
+        _locale: en|fr
 
 _security_logout:
-    pattern:  /logout
+    pattern:  /{_locale}/logout
+    requirements:
+        _locale: en|fr
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
+    prefix: /{_locale}/admin
+    requirements:
+        _locale: en|fr
 
 _sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /admin
+    prefix: /{_locale}/admin
+    requirements:
+        _locale: en|fr
 
 
 # Internal routing configuration to handle ESI

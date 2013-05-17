@@ -21,3 +21,7 @@ clc_welcome_investors:
 clc_welcome_media:
     pattern:  /media
     defaults: { _controller: ClcWelcomeBundle:Welcome:media }
+
+clc_welcome_set_locale:
+    pattern: /set_locale/{locale}
+    defaults: { _controller: ClcWelcomeBundle:Welcome:setLocale }

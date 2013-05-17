@@ -35,4 +35,9 @@ class WelcomeController extends Controller
     {
         return $this->render('ClcWelcomeBundle:Links:media.html.twig');
     }
+
+    public function setLocaleAction($locale)
+    {
+        return $this->redirect($this->generateUrl('clc_welcome_login' ,array('_locale'=>$locale)));
+    }
 }

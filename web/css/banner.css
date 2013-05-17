@@ -6,21 +6,9 @@ root {
 
 /* --- Style de la bannière --- */
 
-/*.container-fluid{
-    padding-left: 0px;
-}*/
-
-#banner{
-    height: 40px;
-    width: 850px;
-    margin-right: auto;
-    margin-left: auto; 
-}
-
-
 #banner-container{
     background-color: white;
-    height: 40px;
+    height: 45px;
     min-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -39,36 +27,36 @@ root {
 }
 
 #banner1{
-    display: inline-block;
-    width: 200px;
-    height: 30px;
-    margin-left: auto;
-    vertical-align: top;
-    margin-top: 2px;
-}
-
-#banner2{
-    display: inline-block;
-    width: 500px;
-    height: 100%;
-    vertical-align: top;
-    float:right;
-    font-family: 'Oswald-Regular';
+    float: left;
+    width: 15%;
+    margin-left: 10%;
+    margin-top: 4px;
 }
 
 #logo{
     height: 38px;
 }
 
+#banner2{
+    float:right;
+    width: 70%;
+    margin-top: 4px;
+    font-family: 'Oswald-Regular';
+    text-align: right;
+}
+
 /* --- Welcome --- */
 
 #links-box{
+    display: inline-block;
+    width: 75%;
     font-size: 20px;
     padding-top: 8px;
     text-align: right;
 }
 
-#links-box ul{    margin-left: 0;
+#links-box ul{
+    margin-right: 10%;
 }
 
 #links-box li{
@@ -93,6 +81,29 @@ root {
     color: #a4a4a4;
 }
 #links-box a:active {
+    text-decoration:none;
+    color: grey;
+}
+
+#language{
+    display: inline-block;
+    width: 20%;
+    text-align: center; 
+}
+
+#language a:link {
+    text-decoration:none;
+    color: black;
+}
+#language a:visited {
+    text-decoration:none;
+    color: black;
+}
+#language a:hover {
+    text-decoration:none;
+    color: #a4a4a4;
+}
+#language a:active {
     text-decoration:none;
     color: grey;
 }
