@@ -2,16 +2,20 @@
     
     {{ form_errors(form) }}
     
-        <div>
-            {{ form_label(form.email, 'Enter your Email') }}
-            {{ form_errors(form.email) }}
-            {{ form_widget(form.email) }}
+        <div class="form-row">
+            <div class="form-label">{{ 'Enter your email'|trans }}</div>
+            <div id="widget">
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
         </div>
 
-        <div>
-            {{ form_label(form.plainPassword, 'Choose a Password') }}
-            {{ form_errors(form.plainPassword) }}
-            {{ form_widget(form.plainPassword) }}
+        <div class="form-row">
+            <div class="form-label">{{ 'Choose a password'|trans }}</div>
+            <div id="widget">
+                {{ form_errors(form.plainPassword) }}
+                {{ form_widget(form.plainPassword) }}
+            </div>
         </div>
       
     {{ form_rest(form) }}

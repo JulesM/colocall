@@ -96,7 +96,7 @@
 
 #register-form{
 	text align: center;
-	width: 50%;
+	width: 80%;
 	margin-left: 25%;
 }
 
@@ -105,12 +105,16 @@
 	margin-right: auto;
 }
 
-.links-container form > div > label{
-	width: 130px;
+#register-form .form-row div{
+	display: inline-block;
+}
+
+#register-form .form-row .form-label{
+	min-width: 30%;
 }
 
 .links-container form > #register-button{
-	margin-left: 200px;
+	margin-left: 40%;
 	vertical-align: top;
 }
 

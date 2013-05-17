@@ -27,6 +27,10 @@ security:
             pattern:    ^/(en|fr)/(login$|about|register|how|investors|media|resetting|set_locale/(en|fr))
             anonymous:  ~
 
+        register_firewall:
+            pattern:    ^/(register|resetting)
+            anonymous:  ~
+
         secured_area:
             pattern:    ^/
             anonymous:  false
