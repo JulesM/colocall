@@ -226,6 +226,30 @@ login-button{
     font-size: 16px;
 }
 
+#feature a{
+    font-family: arial;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+
+    /* transition */
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#feature a:hover,
+#feature a:active,
+#feature a:focus{
+    opacity: 1;
+}
+
 .lign{
     background: transparent;
     border-color: black;
