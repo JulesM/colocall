@@ -23,7 +23,7 @@
 
   </head>
  
-  <body>
+  <body data-spy="scroll" data-target=".navbar">
 
     {{ facebook_initialize({'xfbml': true, 'culture': 'fr_FR', 'fbAsyncInit': 'onFbInit();'}) }}
 
@@ -36,8 +36,6 @@
     {% block mainbox %}
     
     {% endblock mainbox %}
- 
-  {% block javascripts %}
 
     <script type="text/javascript" > // Script for FOSFacebookBundle
       function goLogIn(){
@@ -79,6 +77,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
+  {% block javascripts %} 
   {% endblock %}
  
   </body>

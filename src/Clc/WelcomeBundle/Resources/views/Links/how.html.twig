@@ -2,9 +2,148 @@
 
 {% block title %}{% trans %}Coloc'all - How ito use Coloc'all in your shared flat{% endtrans %}{% endblock %}
 
-{% block welcome1 %}
-<div class="links-container-how">
-	<img src="{{ asset('img/visitor_homepage/How/infographic.jpg') }}" alt="Coloc'all infographic">
-</div>
+{% block mainbox %}
+
+<section id="welcome2">
+	<div id="welcome2-shaded">
+		<div clas="container-fluid">
+			<div id="how-container">
+
+				<h1>{% trans %}Coloc'all - How it works ?{% endtrans %}</h1>
+
+				<div class="btn-toolbar" data-offset="200" style="text-align: center;">
+					<div class="btn-group">
+					  <a href="#Expenses" class="btn btn-large">{{ 'Expenses'|trans }}</a>
+					  <a href="#To-dos" class="btn btn-large">{{ 'To-dos'|trans }}</a>
+					  <a href="#Shopping-List" class="btn btn-large">{{ 'Shopping List'|trans }}</a>
+					  <a href="#Dashboard" class="btn btn-large">{{ 'Dashboard'|trans }}</a>
+					</div>
+					<div class="btn-group">
+					  <a href="#Register" class="btn btn-danger btn-large">{{ 'Register now'|trans }}</a>
+					</div>
+				</div>
+
+				<div class="feature" id="Expenses">
+					<img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+					<h2>{{ 'Manage common Expenses with your flatmates :'|trans }}</h2>
+					<div>
+						<div class="feature-body">
+							<h4>{{ '1. Add Expenses you made for your flatmates'|trans }}</h4>
+							<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/add-expense.png') }}" alt="Add expense modal" width="80%"></div>
+						</div>
+						<div class="feature-body">
+							<h4>{{ '2. Follow Expenses made by you and your flatmates'|trans }}</h4>
+							<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/all-expenses.png') }}" alt="Folow to-dos"></div>
+						</div>
+					</div>
+					<div class="feature-body">
+						<h4>{{ '3. See current Balance of each flatmate at any time'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/current-balances.png') }}" alt="Current balances"></div>
+					</div>
+					<div class="feature-body">
+						<h4>{{ '4. Suggest a Payback to your flatmates'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/payback-summary.png') }}" alt="Suggest payback"></div>
+					</div>
+				</div>
+
+				<div class="feature" id="To-dos">
+					<img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+					<h2>{{ 'Follow your To-dos :'|trans }}</h2>
+					<div class="feature-body">
+						<h4>{{ '1. Add To-dos in the common agenda'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/add-todo.png') }}" alt="Add to-do modal"></div>
+					</div>
+					<div class="feature-body">	
+						<h4>{{ '2. Follow your To-dos not to forget any'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/all-todos.png') }}" alt="Follow to-dos"></div>
+					</div>	
+					<div class="feature-body">
+						<h4>{{ '3. Check it when something is done'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/checked-todos.png') }}" alt="Check to-dos"></div>
+					</div>	
+				</div>
+
+				<div class="feature" id="Shopping-List">
+					<img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+					<h2>{{ 'Create a shared Shopping List :'|trans }}</h2>
+					<div class="feature-body">
+						<h4>{{ '1. Add an Item each time something is missing'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/add-item.png') }}" alt="Add item modal"></div>
+					</div>	
+					<div class="feature-body">
+						<h4>{{ '2. Manage your dynamic Shopping List'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/list-overview.png') }}" alt="Manage list"></div>
+					</div>	
+					<div class="feature-body">
+						<h4>{{ '3. Receive the List by email when you want to go shopping'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/receive-list.png') }}" alt="Receive list"></div>
+					</div>	
+					<div class="feature-body">
+						<h4>{{ '4. Let your Flatmates know you filled the fridge'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/recently-bought.png') }}" alt="Recently bought"></div>
+					</div>	
+				</div>
+
+
+				<div class="feature" id="Dashboard">
+					<img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+					<h2>{{ 'Follow everything in your dashboard :'|trans }}</h2>
+					<div style="text-align: center;">
+						<h4>{{ 'Your homepage is you dashboard where you have the essential information at a glance'|trans }}</h4>
+						<div class="how-img"><img src="{{ asset('img/visitor_homepage/How/dashboard.png') }}" alt="Dashboard"></div>
+					</div>	
+				</div>
+
+				<img src="{{ asset('img/visitor_homepage/hr.png') }}" height="0.1px" width="900px" alt="" margin-left="auto" margin-right="auto">
+
+				<div style="text-align: center;margin-top: 30px;">
+					<a href="{{ path('clc_welcome_register') }}" class="btn btn-large btn-danger">{{ 'Register now'|trans }}</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<p id="back-top">
+		<a href="#top"><span></span>Back to Top</a>
+	</p>
+
+</section>
+
+<footer>
+	{% include "ClcWelcomeBundle:Footer:nav.html.twig" %}	
+</footer>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script>
+$(document).ready(function(){
+
+	// hide #back-top first
+	$("#back-top").hide();
+	
+	// fade in #back-top
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		$('#back-top a').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+</script>
 
 {% endblock %}

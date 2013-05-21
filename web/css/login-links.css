@@ -47,7 +47,7 @@
 	font-family: 'Oswald-regular';
 	text-align: center;
 	margin-bottom: 30px;
-	color: red;
+	color: #e34a25;
 }
 
 .newsletter-post{
@@ -120,12 +120,106 @@
 
 /* --- How it works --- */
 
-.links-container-how{
-	background-color: white;
-	border: solid red;
-	width: 50%;
+#how-container{
+	width: 66%;
 	margin-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 30px;
 }
+
+#how-container h1{
+	font-family: 'Oswald-regular';
+	text-align: center;
+	margin-bottom: 30px;
+	color: #e34a25;
+}
+
+#how-container .btn-toolbar{
+	text-align: center;
+	margin-top: 60px;
+}
+
+#how-container > img{
+	margin-top: 50px;
+}
+
+#how-container h2{
+	font-family: 'Oswald-regular';
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.feature-body{
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	padding: 5px;
+}
+
+.feature{
+	padding-top: 40px;
+}
+
+.feature h4{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.feature .how-img{
+	text-align: center;
+}
+
+.feature .how-img img{
+	border: solid 1px grey;
+	border-radius: 10px;
+}
+
+/* --- Back to Top button --- */
+
+#back-top {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
+
+#back-top a {
+	width: 108px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover {
+	color: #000;
+}
+
+/* arrow icon (span tag) */
+#back-top span {
+	width: 108px;
+	height: 108px;
+	display: block;
+	margin-bottom: 7px;
+	background: #ddd url(http://webdesignerwall.com/demo/scroll-to-top/up-arrow.png) no-repeat center center;
+
+	/* rounded corners */
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover span {
+	background-color: #777;
+}
+
