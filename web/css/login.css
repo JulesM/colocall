@@ -78,6 +78,13 @@
     margin-right: 30px;
     margin-top: 22px;
     margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+#catchphrase-img img:hover,
+#catchphrase-img img:active,
+#catchphrase-img img:focus{
+    opacity: 1;
 }
 
 #catchphrase-lgd{

@@ -57,32 +57,28 @@ root {
 
 #links-box ul{
     margin-right: 10%;
+    min-width: 500px;
 }
 
 #links-box li{
     display: inline-block;
     height: 100%;
     text-align: center;
-    vertical-align: middle;
-    margin-right: 10px;
-    margin-left: 10px;
+    vertical-align: middle; 
 }
 
-#links-box a:link {
-    text-decoration:none;
+#links-box a{
+    padding-right: 15px;
+    padding-left: 15px;
     color: black;
-}
-#links-box a:visited {
     text-decoration:none;
-    color: black;
+    border-radius: 10px;
 }
-#links-box a:hover {
-    text-decoration:none;
-    color: #a4a4a4;
-}
-#links-box a:active {
-    text-decoration:none;
-    color: grey;
+
+#links-box a:hover,
+#links-box a:focus,
+#links-box a:active{
+    background-color: lightgrey;
 }
 
 #language{

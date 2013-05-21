@@ -12,15 +12,15 @@
                 <h1>{% trans %}Welcome to Coloc'all{% endtrans %}</h1>
                 <h2>{% trans %}Make life in your Flatshare easier{% endtrans %}</h2>
                 <div id="catchphrase-img">
-                   <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="85px" width="85px" alt="">
+                   <a href="{{ path('clc_welcome_how') }}#Expenses"><img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="85px" width="85px" alt=""></a>
                    <p>{% trans %}Manage Expenses{% endtrans %}</p>
                 </div>
                 <div id="catchphrase-img">
-                   <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="85px" width="85px"  alt="">
+                   <a href="{{ path('clc_welcome_how') }}#To-dos"><img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="85px" width="85px"  alt=""></a>
                    <p>{% trans %}Follow To-dos{% endtrans %}</p>
                 </div>
                 <div id="catchphrase-img">
-                   <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="85px" width="85px"  alt="">
+                   <a href="{{ path('clc_welcome_how') }}#Shopping-List"><img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="85px" width="85px"  alt=""></a>
                    <p>{% trans %}Share Shopping Lists{% endtrans %}</p>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <p>{% trans %}Keep track of your current debts{% endtrans %}</p>
                     <p>{% trans %}Request a Payback at any time{% endtrans %}</p>
                     <div style="padding-top: 20px;">
-                      <a href="/{{ app.request.locale }}/how#Expenses">{{ 'Learn more'|trans }}</a>
+                      <a href="{{ path('clc_welcome_how') }}#Expenses">{{ 'Learn more'|trans }}</a>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@
                     <p>{% trans %}Edit assignees and due dates online{% endtrans %}</p>
                     <p>{% trans %}Never forget what you commited to do{% endtrans %}</p>
                     <div style="padding-top: 20px;">
-                      <a href="/{{ app.request.locale }}/how#To-dos">{{ 'Learn more'|trans }}</a>
+                      <a href="{{ path('clc_welcome_how') }}#To-dos">{{ 'Learn more'|trans }}</a>
                     </div>
                 </div>
 
@@ -116,7 +116,7 @@
                     <p>{% trans %}Receive the list by email upon request{% endtrans %}</p>
                     <p>{% trans %}Let your flatmates know you filled the fridge{% endtrans %}</p>
                     <div style="padding-top: 20px;">
-                      <a href="/{{ app.request.locale }}/how#Shopping-List">{{ 'Learn more'|trans }}</a>
+                      <a href="{{ path('clc_welcome_how') }}#Shopping-List">{{ 'Learn more'|trans }}</a>
                     </div>
                 </div>
             </div>
