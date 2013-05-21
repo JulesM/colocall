@@ -57,4 +57,4 @@ security:
         - { path: ^/(en|fr)/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr)/how$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr)/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/(en|fr)/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }

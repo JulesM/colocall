@@ -1,10 +1,3 @@
-root:
-    pattern: /
-    defaults:
-        _controller: FrameworkBundle:Redirect:urlRedirect
-        path: /{_locale}/
-        permanent: true
-
 clc_welcome:
     resource: "@ClcWelcomeBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/
@@ -13,55 +6,53 @@ clc_welcome:
 
 clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/user
+    prefix:   /user
     requirements:
         _locale: en|fr
 
 clc_parameters:
     resource: "@ClcParametersBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/parameters
+    prefix:   /parameters
     requirements:
         _locale: en|fr
 
 clc_coloc:
     resource: "@ClcColocBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/coloc
+    prefix:   /coloc
     requirements:
         _locale: en|fr
 
 clc_dashboard:
     resource: "@ClcDashboardBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: en|fr
+    prefix:   /
 
 clc_inbox:
     resource: "@ClcInboxBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/inbox
+    prefix:   /inbox
     requirements:
         _locale: en|fr
 
 clc_event:
     resource: "@ClcEventBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/event
+    prefix:   /event
     requirements:
         _locale: en|fr
 
 clc_shoppinglist:
     resource: "@ClcShoppinglistBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/shoppinglist
+    prefix:   /shoppinglist
     requirements:
         _locale: en|fr
 
 clc_todos:
     resource: "@ClcTodosBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/todos
+    prefix:   /todos
     requirements:
         _locale: en|fr
 
 clc_expensemanager:
     resource: "@ClcExpensemanagerBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/expensemanager/
+    prefix:   /expensemanager/
     requirements:
         _locale: en|fr
 
@@ -85,25 +76,25 @@ fos_user_change_password:
     prefix: /change-password
 
 _security_check:
-    pattern:  /{_locale}/login_facebook_check
+    pattern:  /login_facebook_check
     requirements:
         _locale: en|fr
 
 _security_logout:
-    pattern:  /{_locale}/logout
+    pattern:  /logout
     requirements:
         _locale: en|fr
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /{_locale}/admin
+    prefix: /admin
     requirements:
         _locale: en|fr
 
 _sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /{_locale}/admin
+    prefix: /admin
     requirements:
         _locale: en|fr
 

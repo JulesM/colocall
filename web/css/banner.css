@@ -158,7 +158,7 @@ root {
 }
 
 #settings_button{
-    margin-right: 70px;
+    margin-right: 170px;
     font-size: 20px;
     padding-top: 8px;
 }
@@ -172,6 +172,10 @@ root {
     height: 100%;
     text-decoration: none;
     color: black;
+}
+
+#settings_button ul{
+    text-align: center;
 }
 
 .nav nav-tabs nav-stacked{
