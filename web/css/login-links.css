@@ -179,12 +179,12 @@
 
 #back-top {
 	position: fixed;
-	bottom: 30px;
+	bottom: 200px;
 	right: 30px;
 }
 
 #back-top a {
-	width: 108px;
+	width: 80px;
 	display: block;
 	text-align: center;
 	font: 11px/100% Arial, Helvetica, sans-serif;
@@ -203,8 +203,8 @@
 
 /* arrow icon (span tag) */
 #back-top span {
-	width: 108px;
-	height: 108px;
+	width: 80px;
+	height: 80px;
 	display: block;
 	margin-bottom: 7px;
 	background: #ddd url(http://webdesignerwall.com/demo/scroll-to-top/up-arrow.png) no-repeat center center;
