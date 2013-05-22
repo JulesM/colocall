@@ -201,26 +201,22 @@ login-button{
     height: 68%;
     min-height: 1008px;
     min-width: 768px;
-    margin-top:auto;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
 }
 
 #feature-container{
-    height: 350px;
     width: 100%;
     min-width: 724px;
     margin-top:50px;
+    margin-bottom: 50px;
 }
 
 #feature{
     display: inline-block;
-    height: 100%;
-    width: 25%;
-    min-width: 200px;
-    margin-left: 5%;
-    margin-right: auto;
+    width: 32%;
     text-align: center;
 }
 

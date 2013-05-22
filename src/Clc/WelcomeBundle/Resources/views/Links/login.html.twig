@@ -85,7 +85,7 @@
     <div class="container">    
         <div id="mainbox-body">    
             <div id="feature-container">
-                <div id="feature" class="span4">
+                <div id="feature">
                     <img src="{{ asset('img/visitor_homepage/icon-expenses.png') }}" height="100px" width="100px" alt="expense manager">
                     <h3>{% trans %}Manage your Expenses{% endtrans %}</h3>
                     <p>{% trans %}Share your common Expenses{% endtrans %}</p>
@@ -96,8 +96,7 @@
                     </div>
                 </div>
 
-
-                <div id="feature" class="span4">
+                <div id="feature">
                     <img src="{{ asset('img/visitor_homepage/icon-list.png') }}" height="100px" width="100px"  alt="to-dos">
                     <h3>{% trans %}Follow your To-dos{% endtrans %}</h3>
                     <p>{% trans %}Share To-dos in the common Agenda{% endtrans %}</p>
@@ -108,13 +107,12 @@
                     </div>
                 </div>
 
-
-                <div id="feature" class="span4">
+                <div id="feature">
                     <img src="{{ asset('img/visitor_homepage/icon-shopping.png') }}" height="100px" width="100px"  alt="shopping list">
-                    <h3>{% trans %}Share your Shopping Lists{% endtrans %}</h3>
+                    <h3>{% trans %}Share Shopping Lists{% endtrans %}</h3>
                     <p>{% trans %}Add items to the shopping list{% endtrans %}</p>
                     <p>{% trans %}Receive the list by email upon request{% endtrans %}</p>
-                    <p>{% trans %}Let your flatmates know you filled the fridge{% endtrans %}</p>
+                    <p>{% trans %}Tell your flatmates you filled the fridge{% endtrans %}</p>
                     <div style="padding-top: 20px;">
                       <a href="{{ path('clc_welcome_how') }}#Shopping-List">{{ 'Learn more'|trans }}</a>
                     </div>
