@@ -8,19 +8,16 @@ clc_user:
     resource: "@ClcUserBundle/Resources/config/routing.yml"
     prefix:   /user
     requirements:
-        _locale: en|fr
 
 clc_parameters:
     resource: "@ClcParametersBundle/Resources/config/routing.yml"
     prefix:   /parameters
     requirements:
-        _locale: en|fr
 
 clc_coloc:
     resource: "@ClcColocBundle/Resources/config/routing.yml"
     prefix:   /coloc
     requirements:
-        _locale: en|fr
 
 clc_dashboard:
     resource: "@ClcDashboardBundle/Resources/config/routing.yml"
@@ -29,32 +26,22 @@ clc_dashboard:
 clc_inbox:
     resource: "@ClcInboxBundle/Resources/config/routing.yml"
     prefix:   /inbox
-    requirements:
-        _locale: en|fr
 
 clc_event:
     resource: "@ClcEventBundle/Resources/config/routing.yml"
     prefix:   /event
-    requirements:
-        _locale: en|fr
 
 clc_shoppinglist:
     resource: "@ClcShoppinglistBundle/Resources/config/routing.yml"
     prefix:   /shoppinglist
-    requirements:
-        _locale: en|fr
 
 clc_todos:
     resource: "@ClcTodosBundle/Resources/config/routing.yml"
     prefix:   /todos
-    requirements:
-        _locale: en|fr
 
 clc_expensemanager:
     resource: "@ClcExpensemanagerBundle/Resources/config/routing.yml"
     prefix:   /expensemanager/
-    requirements:
-        _locale: en|fr
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -77,26 +64,18 @@ fos_user_change_password:
 
 _security_check:
     pattern:  /login_facebook_check
-    requirements:
-        _locale: en|fr
 
 _security_logout:
     pattern:  /logout
-    requirements:
-        _locale: en|fr
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
-    requirements:
-        _locale: en|fr
 
 _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
-    requirements:
-        _locale: en|fr
 
 
 # Internal routing configuration to handle ESI

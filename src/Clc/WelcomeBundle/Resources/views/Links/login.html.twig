@@ -4,17 +4,6 @@
 
 {% block welcome1 %}
 
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=431921740237367";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-
-  <div class="fb-like" data-href="https://www.facebook.com/pages/Colocall/368825319888307" data-send="false" data-width="450" data-show-faces="false" data-font="arial"></div>
-
 <div id="mainbox">
 
     <div id="middle-block-ext">
@@ -49,7 +38,7 @@
                 </div>
 
                 <div id="facebook-button">
-                    {{ facebook_login_button({'autologoutlink': false}) }}
+                    {{ facebook_login_button({'autologoutlink': true}) }}
                 </div> 
 
                 <div id="login-footer">
