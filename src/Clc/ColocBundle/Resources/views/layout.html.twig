@@ -68,27 +68,20 @@
             </div>
             
         </div>
+
         <div id="coloc-right-bottom-box" class="coloc-box">
             
             <div class="coloc-body">
-                {% if invitations|length == 0 %}
-                    <h3>There is no pending invitation</h3>
-                {% else %}
-                    <h3>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
-                             {{ invitations|length }} 
-                             pending invitation(s) for :
-                    </h3>
-
-                    {% for invitation in invitations %}
-                        <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
-                        <a id="cross-button" type="button" class="close" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">×</a>
-                    {% endfor %}
-                {% endif %}
+                <h3>Invite your flatmates</h3>
+                <p>Tell them to :</br></br>
+                    1. Register and login to Coloc'all</br>
+                    2. Search your flatshare with its name ( {{ app.user.coloc.name }} )</br>
+                    3. Join the flatshare and enjoy Coloc'all</p>
             </div>
              
             <div class="coloc-footer">        
                 {% include "ClcColocBundle:Invitation:sendInvitationModal.html.twig" %}
-                <a class="btn" href="#sendinvitationmodal" data-toggle="modal">Send an invitation</a>
+                <a class="btn" href="#sendinvitationmodal" data-toggle="modal">Send an invitation email</a>
             </div>
                 
         </div>

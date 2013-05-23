@@ -11,14 +11,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    max-height: 500px;
     font-family: 'Oswald-regular';
 }
 
 #coloc-left-box{
     display: inline-block;
     width: 48%;
-    height: 400px;
+    height: 500px;
     
 }
 
@@ -26,18 +25,18 @@
     display: inline-block;
     float:right;
     width: 48%;
-    height: 400px;
+    height: 500px;
 }
 
 #coloc-right-top-box{
-    height: 58%;
+    height: 225px;
     vertical-align: top;
     border: solid 1px transparent;
 }
 
 #coloc-right-bottom-box{
-    height: 38%;
-    margin-top: 4%;
+    height: 225px;
+    margin-top: 50px;
 }
 
 .coloc-box{
@@ -127,19 +126,3 @@
 }
 
 /* --- Right bottom box css --- */
-
-.coloc-body h4{
-    font-family: arial;
-    font-size: 14px;
-    text-align: center;
-    margin-top: -8px;
-}
-
-#coloc-right-bottom-box p{
-    display: inline-block;
-}
-
-#coloc-right-bottom-box #cross-button{
-    display: inline-block;
-    font-size: 30px;
-}

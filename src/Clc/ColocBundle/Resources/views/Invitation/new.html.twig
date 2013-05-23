@@ -5,9 +5,8 @@
     {{ form_errors(form) }}
 
     <div>
-        {{ form_label(form.email, 'Enter the email of the person you want to invite in your flatshare') }}
         {{ form_errors(form.email) }}
-        {{ form_widget(form.email) }}
+        {{ form_widget(form.email, { 'attr': {'placeholder' : 'Email of your flatmate'}}) }}
     </div>
 
     {{ form_rest(form) }}
