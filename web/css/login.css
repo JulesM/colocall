@@ -190,9 +190,9 @@ login-button{
     box-shadow: 0px 1px 4px #323232;
 }
 
-#fb-page-link{
+.page-link{
+    display: inline-block;
     float: right;
-    margin-right: 5%;
     background-color: transparent;
     width: 60px;
     height: 60px;
@@ -200,17 +200,18 @@ login-button{
     text-align: middle;
 }
 
-#fb-page-button{
+.page-button{
     border-radius: 100%;
     background-color: white;
+    border: solid 1px;
 }
 
-#fb-page-link img{
-    opacity: 0.9;
-}#fb-page-link img:hover{
+.page-link img{
+    opacity: 0.8;
+}.page-link img:hover{
     opacity: 1;
-}#fb-page-link img:active{
-    opacity: 0.9;
+}.page-link img:active{
+    opacity: 0.8;
 }
 
 #mainbox-body{ 
