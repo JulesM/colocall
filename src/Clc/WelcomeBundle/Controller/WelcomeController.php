@@ -38,7 +38,11 @@ class WelcomeController extends Controller
 
     public function setLocaleAction($locale)
     {
-        return $this->redirect($this->generateUrl('clc_welcome_login' ,array('_locale'=>$locale)));
+        $this->get('session')->set('_locale', $locale);
+        $invitation_token = $this->get('session')->get('invitation_token');
+        $route = $this->get('request')->get('route');
+
+        return $this->redirect($this->generateUrl($route, array('_locale' => $locale, 'invitation_token' => $invitation_token)));
     }
 
     public function invitationAction($invitation_token)
@@ -52,6 +56,7 @@ class WelcomeController extends Controller
         }else{
             $session =$this->getRequest()->getSession();
             $session->set('invitation_id', $coloc->getId());
+            $session->set('invitation_token', $invitation_token);
 
             return $this->render('ClcWelcomeBundle:Invitation:invitation-register.html.twig');
         }  

@@ -17,8 +17,8 @@
 	<div class="dropdown" id="language">
 	  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ 'Language : English'| trans }}<b class="caret"></b></a>
 	  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-	    <li><a href="{{ path('clc_welcome_set_locale', { 'locale': 'en' }) }}">English</a></li>
-	    <li><a href="{{ path('clc_welcome_set_locale', { 'locale': 'fr' }) }}">Français</a></li>
+	    <li><a href="{{ path('clc_welcome_set_locale', { 'locale': 'en', 'route' : app.request.attributes.get('_route') }) }}">English</a></li>
+	    <li><a href="{{ path('clc_welcome_set_locale', { 'locale': 'fr', 'route' : app.request.attributes.get('_route') }) }}">Français</a></li>
 	  </ul>
 	</div>
 

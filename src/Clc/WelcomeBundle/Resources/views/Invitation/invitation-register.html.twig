@@ -2,17 +2,17 @@
 
 {% block title %}Coloc'all - Accept invitation{% endblock %}
 
-{% block registerTitle %}<h1>Register here to accept the invitation</h1>{% endblock %}
+{% block registerTitle %}<h1>{{ 'Register here to accept the invitation'|trans }}</h1>{% endblock %}
 
 {% block registerFooter %}
 	
-	<p>If you already registered, <a href="#loginModal" data-toggle="modal">login here</a></p>
+	<p>{{ 'If you already registered,'|trans }} <a href="#loginModal" data-toggle="modal">{{ 'login here'|trans }}</a></p>
 
 	<!-- login modal -->
     <div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Login here to accept the invitation</h3>
+            <h3 id="myModalLabel">{{ 'Login here to accept the invitation'|trans }}</h3>
         </div>
         <div class="modal-body">
 
@@ -20,7 +20,7 @@
 
         </div>
         <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">{{ 'Close'|trans }}</button>
         </div>
     </div>
 

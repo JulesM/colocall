@@ -7,12 +7,12 @@
 <div class="links-page">
 	<div class="links-container" class="container" style="min-width: 500px">
 
-		{% block registerTitle %}<h1>Register to Coloc'all</h1>{% endblock %}
+		{% block registerTitle %}<h1>{% trans %}Register to Coloc'all{% endtrans %}</h1>{% endblock %}
 		
 		<div class="register-box">
 			<div id="email-box">
 				<div class="title">
-					<h3>Register with your email</h3>
+					<h3>{{ 'Register with your email'|trans }}</h3>
 				</div>
 				<div id="register-form">
 					{% render 'FOSUserBundle:Registration:register' %}
@@ -22,7 +22,7 @@
 
 	        <div id="facebook-box">
 	        	<div class="title">
-					<h3>Register with facebook</h3>
+					<h3>{{ 'Register with facebook'|trans }}</h3>
 				</div>
 	        	<div id="facebook-button">
 	                {{ facebook_login_button({'autologoutlink': false, 'label': 'Register with facebook'}) }}
@@ -33,7 +33,7 @@
 
 		<div id="register-footer">
 			{% block registerFooter %}
-				<p>If you received an invitation, you should register through the link you received in the email</p>
+				<p>{{ 'If you received an invitation, you should register through the link you received in the email'|trans }}</p>
 			{% endblock %}
 		</div>
 	</div>

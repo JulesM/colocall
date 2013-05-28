@@ -43,3 +43,7 @@ clc_coloc_statistics:
 clc_coloc_statistics_feedback:
     pattern: /statistics/feedback
     defaults: { _controller: ClcColocBundle:Statistics:feedback }
+
+clc_coloc_generate_tokens:
+    pattern: /generate/tokens
+    defaults: { _controller: ClcColocBundle:Coloc:generateAllTokens }

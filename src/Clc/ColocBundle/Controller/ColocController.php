@@ -129,4 +129,20 @@ class ColocController extends Controller
 
     return $key;
     }
+
+    public function generateAllTokensAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $colocs = $em ->getRepository('ClcColocBundle:coloc')
+                     ->findAll();
+
+        foreach($colocs as $coloc){
+            $token = $this->generateTokenAction($coloc);
+            $coloc->setInvitationToken($token);
+        }
+        $em->flush();
+
+        $url = $this->get('router')->generate('clc_coloc_homepage');
+        return $this->redirect($url);
+    }
 }

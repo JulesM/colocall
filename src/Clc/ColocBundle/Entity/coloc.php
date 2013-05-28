@@ -50,9 +50,9 @@ class coloc
     protected $address2;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="zipcode", type="integer")
+     * @ORM\Column(name="zipcode", type="string", length=255)
      */
     protected $zipcode;
 

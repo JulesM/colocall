@@ -3,7 +3,11 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
     <div id="banner1">
-      <a href="{{ path('clc_dashboard_homepage') }}"><img src="{{ asset('img/logo.png') }}" id="logo"  alt=""></a>
+        {% if app.user.id == 1 %}
+            <a class="btn btn-success" href="{{ path('clc_coloc_generate_tokens') }}">Generate Tokens</a>
+        {% else %}
+            <a href="{{ path('clc_dashboard_homepage') }}"><img src="{{ asset('img/logo.png') }}" id="logo"  alt=""></a>
+        {% endif %}
     </div>
             
     <div id="banner2">
