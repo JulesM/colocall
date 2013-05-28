@@ -24,7 +24,7 @@ class invitation
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
@@ -44,7 +44,7 @@ class invitation
      * @ORM\ManyToOne(targetEntity="Clc\ColocBundle\Entity\coloc", inversedBy="invitations", cascade={"persist"})
      */
     protected $coloc;
-    
+
     /**
      * @var string
      *

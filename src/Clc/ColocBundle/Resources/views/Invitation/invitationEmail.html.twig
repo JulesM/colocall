@@ -1,12 +1,10 @@
 Hey,
 
-You received an invitation from your flatmate {{ sender.nickname }} ( {{ sender.email }}) to join a virtual Flatshare on Coloc'all called {{ sender.coloc.name }}.
+You received an invitation from your flatmate {{ user.nickname }} ( {{ user.email }}) to join a virtual Flatshare on Coloc'all called {{ user.coloc.name }}. Coloc'all is a platform where you can manage your flatshare life (expenses, to-dos, shopping lists, ...) online.
 
-1. Go to www.colocall.co and register
+Follow this link and register:
 
-2. Login
-
-3. Enter "{{ sender.coloc.name }}" in the search bar and join the flatshare
+http://www.colocall.co/{{ locale }}/invitation/{{ user.coloc.invitationToken }}
 
 We are happy to welcome you,
 

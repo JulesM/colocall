@@ -88,6 +88,13 @@ class coloc
      * @ORM\Column(name="other", type="text", nullable=true)
      */
     protected $other;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="invitationToken", type="string", nullable=true)
+     */
+    protected $invitationToken;    
     
     /**
      * @ORM\OneToMany(targetEntity="Clc\UserBundle\Entity\User", mappedBy="coloc", cascade={"persist"})
@@ -370,7 +377,17 @@ class coloc
      */
     public function getUsers()
     {
-        return $this->users;
+        $users = $this->users;
+        $active_users = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach($users as $user){
+            if ($user->isEnabled() ==1){
+                $active_users[] = $user;
+            }else{
+            }
+        }
+
+        return $active_users;
     }
 
     /**
@@ -527,5 +544,28 @@ class coloc
     public function getTasks()
     {
         return $this->tasks;
+    }
+
+    /**
+     * Set invitation_token
+     *
+     * @param string $invitationToken
+     * @return coloc
+     */
+    public function setInvitationToken($invitationToken)
+    {
+        $this->invitationToken = $invitationToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get invitation_token
+     *
+     * @return string 
+     */
+    public function getInvitationToken()
+    {
+        return $this->invitationToken;
     }
 }

@@ -37,6 +37,9 @@ class ColocController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($coloc);
                 $em->flush();
+
+                $coloc->setInvitationToken($this->generateTokenAction($coloc));
+                $em->flush();
                 
                 $url = $this->get('router')->generate('clc_dashboard_invite_flatmates');
                 return $this->redirect($url);
@@ -112,5 +115,18 @@ class ColocController extends Controller
         return new RedirectResponse(
                 $this->container->get('router')->generate('fos_user_security_logout')
                 ); 
+    }
+
+    public function generateTokenAction($coloc)
+    {
+        $key = $coloc->getId();
+        $key .= 'z';
+        $keys = array_merge(range(0, 9), range('a', 'y'));
+
+        for ($i = 0; $i < 30; $i++) {
+            $key .= $keys[array_rand($keys)];
+    }
+
+    return $key;
     }
 }

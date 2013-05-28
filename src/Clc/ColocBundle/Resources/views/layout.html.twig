@@ -73,10 +73,20 @@
             
             <div class="coloc-body">
                 <h3>Invite your flatmates</h3>
-                <p>Tell them to :</br></br>
-                    1. Register and login to Coloc'all</br>
-                    2. Search your flatshare with its name ( {{ app.user.coloc.name }} )</br>
-                    3. Join the flatshare and enjoy Coloc'all</p>
+                {% if invitations|length == 0 %}
+                    <p>There is no pending invitation</p>
+                {% else %}
+                    <p>There {% if invitations|length == 1 %} is {% else %} are {% endif %} 
+                             {{ invitations|length }} 
+                             pending invitation(s) for :
+                    </p>
+
+                    {% for invitation in invitations %}
+                        <p>{{ invitation.email }} (by {{invitation.author.nickname}})</p>
+                        <a id="cross-button" type="button" class="close" href="{{ path('clc_coloc_remove_invitation', { 'id': invitation.id}) }}">×</a>
+                    {% endfor %}
+                {% endif %}
+
             </div>
              
             <div class="coloc-footer">        

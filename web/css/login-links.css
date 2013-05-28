@@ -93,12 +93,36 @@
 	margin-right: 20px;
 }
 
-/* --- Register --- */
+/* --- Register & Invitation--- */
 
-#register-form{
-	text align: center;
-	width: 80%;
-	margin-left: 25%;
+.register-box{
+}
+
+#email-box{
+	border: solid 1px #e34a25; 
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width: 50%;
+
+}
+#facebook-box{
+	border: solid 1px #e34a25; 
+	border-radius: 5px;
+	display: inline-block;
+	margin-left: 8%	;
+	vertical-align: top;
+	text-align: center;
+	width: 40%;
+	min-height: 222px;
+}
+
+.register-box .title{
+	background-color: red; 
+	border: solid 1px red;	
+	margin-bottom: 20px; 
+	color: white;
 }
 
 #register-form form{
@@ -111,12 +135,20 @@
 }
 
 #register-form .form-row .form-label{
-	min-width: 30%;
+	width: 180px;
+	text-align: left;
 }
 
-.links-container form > #register-button{
-	margin-left: 40%;
-	vertical-align: top;
+#register-button{
+	margin-top: 10px;	
+}
+
+.register-box #facebook-button{
+	margin-top: 50px;	
+}
+#register-footer{
+	text-align: center;
+	margin-top: 20px;
 }
 
 /* --- How it works --- */

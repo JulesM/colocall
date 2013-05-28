@@ -1,7 +1,13 @@
-{% extends "ClcWelcomeBundle:Links:register.html.twig" %}
+{% extends "ClcWelcomeBundle::welcome.html.twig" %}
 
-{% block step2 %}
+{% block welcome1 %}
+
+<div class="links-page">
+	<div class="links-container" class="container">
 	
-    <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+    	<p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+
+	</div>
+</div>
     
 {% endblock  %}

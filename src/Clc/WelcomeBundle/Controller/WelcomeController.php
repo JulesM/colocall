@@ -40,4 +40,20 @@ class WelcomeController extends Controller
     {
         return $this->redirect($this->generateUrl('clc_welcome_login' ,array('_locale'=>$locale)));
     }
+
+    public function invitationAction($invitation_token)
+    {
+        $em = $this->container->get('doctrine.orm.entity_manager');
+        $coloc = $em ->getRepository('ClcColocBundle:coloc')
+                     ->findOneByInvitationToken($invitation_token);
+
+        if(!$coloc){
+            throw $this->createNotFoundException('The invitation token is not correct');
+        }else{
+            $session =$this->getRequest()->getSession();
+            $session->set('invitation_id', $coloc->getId());
+
+            return $this->render('ClcWelcomeBundle:Invitation:invitation-register.html.twig');
+        }  
+    }
 }

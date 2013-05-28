@@ -6,7 +6,7 @@
             <div class="form-label">{{ 'Enter your email'|trans }}</div>
             <div id="widget">
                 {{ form_errors(form.email) }}
-                {{ form_widget(form.email) }}
+                {{ form_widget(form.email, { 'attr': { 'style' : 'width: 160px' } }) }}
             </div>
         </div>
 
@@ -14,7 +14,7 @@
             <div class="form-label">{{ 'Choose a password'|trans }}</div>
             <div id="widget">
                 {{ form_errors(form.plainPassword) }}
-                {{ form_widget(form.plainPassword) }}
+                {{ form_widget(form.plainPassword, { 'attr': { 'style' : 'width: 160px' } }) }}
             </div>
         </div>
       

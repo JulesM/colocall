@@ -5,22 +5,37 @@
 {% block welcome1 %}
 
 <div class="links-page">
-	<div class="links-container" class="container">
+	<div class="links-container" class="container" style="min-width: 500px">
 
-		<h1>{{ 'Register here in 3 steps'|trans }}</h1>
-		<h3>1. {{ 'Enter your email and choose a password'|trans }}</h3>
+		{% block registerTitle %}<h1>Register to Coloc'all</h1>{% endblock %}
+		
+		<div class="register-box">
+			<div id="email-box">
+				<div class="title">
+					<h3>Register with your email</h3>
+				</div>
+				<div id="register-form">
+					{% render 'FOSUserBundle:Registration:register' %}
+				</div>
 
-		<div id="register-form">
-		{% render 'FOSUserBundle:Registration:register' %}
+	        </div>
+
+	        <div id="facebook-box">
+	        	<div class="title">
+					<h3>Register with facebook</h3>
+				</div>
+	        	<div id="facebook-button">
+	                {{ facebook_login_button({'autologoutlink': false, 'label': 'Register with facebook'}) }}
+	            </div>
+
+	        </div>
 		</div>
 
-		<h3>2. {{ 'Check your emails and activate your account'|trans }}</h3>
-		
-		{% block step2 %}
-		{% endblock %}
-
-		<h3>3. {{ 'Login in the home page and join a flatshare or create one'|trans }}</h3>
-
+		<div id="register-footer">
+			{% block registerFooter %}
+				<p>If you received an invitation, you should register through the link you received in the email</p>
+			{% endblock %}
+		</div>
 	</div>
 </div>
 

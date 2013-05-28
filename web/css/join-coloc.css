@@ -18,71 +18,30 @@
     border: 1px solid #cdcdcd;
     border-radius: 5px;
     background-color: white;
-    box-shadow: inset 2px 2px 2px grey;
+    box-shadow: inset 1px 1px 2px grey;
     font-family: 'Oswald-Regular';
-    font-size: 24px;
-    line-height: 35px;
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.join-box h1{
-    font-size: 24px;
+#create-flatshare-button{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* First page */
 
-.create-or-join{
-    vertical-align: top;
-    text-align: center;
-    font-family: 'Oswald-Regular';  
-    background-color: white;
-    border-radius: 5px;
-    border: solid 2px #cdcdcd;
-    min-height: 220px;
-    width: 45%;
-}
-.create-or-join .header{
-    background-color: whitesmoke;
-    border-top: 1px solid transparent;
-    border-bottom: solid 1px #cdcdcd;
-    border-radius:  5px 5px 0 0;
-    padding-bottom: 5px;
-}
-.create-or-join h2{
-    margin-bottom: 10px;
-}
-#find-flatshare{
-    float: left;
-}
-#search-coloc{
-    margin-top: 40px;
-}
-#search-coloc form input{
-    margin-left: 10px;
-}
-#find-flatshare input{
-    vertical-align: top;
-}
-#search-coloc-box #p1{
-    font-size: 20px;
-}
-#create-a-flatshare{
-    float: right;
-    vertical-align: top;
-}
-#create-a-flatshare .btn{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    font-size: 14px;
+#welcome-create-box{
+    margin-top: 60px;
+    padding: 30px;
 }
 
 /* Creation form */
+
+#form-box form{
+    margin-top: 20px;
+}
 
 .coloc-form-label{
     display: inline-block;
@@ -145,6 +104,7 @@
 #add-friend{
     display: inline-block;
     vertical-align: top;
+    margin-top: 5px;
 }
 
 #continue-button{

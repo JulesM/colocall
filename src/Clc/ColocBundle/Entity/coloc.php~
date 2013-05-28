@@ -88,6 +88,13 @@ class coloc
      * @ORM\Column(name="other", type="text", nullable=true)
      */
     protected $other;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="invitationToken", type="string", nullable=true)
+     */
+    protected $invitationToken;    
     
     /**
      * @ORM\OneToMany(targetEntity="Clc\UserBundle\Entity\User", mappedBy="coloc", cascade={"persist"})
@@ -370,7 +377,17 @@ class coloc
      */
     public function getUsers()
     {
-        return $this->users;
+        $users = $this->users;
+        $active_users = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach($users as $user){
+            if ($user->isEnabled() ==1){
+                $active_users[] = $user;
+            }else{
+            }
+        }
+
+        return $active_users;
     }
 
     /**
@@ -494,5 +511,61 @@ class coloc
     public function getCurrency()
     {
         return $this->currency;
+    }
+
+    /**
+     * Add tasks
+     *
+     * @param \Clc\TodosBundle\Entity\task $tasks
+     * @return coloc
+     */
+    public function addTask(\Clc\TodosBundle\Entity\task $tasks)
+    {
+        $this->tasks[] = $tasks;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tasks
+     *
+     * @param \Clc\TodosBundle\Entity\task $tasks
+     */
+    public function removeTask(\Clc\TodosBundle\Entity\task $tasks)
+    {
+        $this->tasks->removeElement($tasks);
+    }
+
+    /**
+     * Get tasks
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTasks()
+    {
+        return $this->tasks;
+    }
+
+    /**
+     * Set invitation_token
+     *
+     * @param string $invitationToken
+     * @return coloc
+     */
+    public function setInvitationToken($invitationToken)
+    {
+        $this->invitationToken = $invitationToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get invitation_token
+     *
+     * @return string 
+     */
+    public function getInvitationToken()
+    {
+        return $this->invitationToken;
     }
 }

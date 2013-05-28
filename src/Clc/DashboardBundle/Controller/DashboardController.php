@@ -25,6 +25,19 @@ class DashboardController extends Controller
             $em->flush();
         }
 
+        //Adding coloc if invitation detected
+        $invitation_id = $this->container->get('request')->getSession()->get('invitation_id');
+
+        if ($coloc == null and $invitation_id != null) {
+            $em = $this->container->get('doctrine.orm.entity_manager');
+            $coloc = $em ->getRepository('ClcColocBundle:coloc')
+                           ->find($invitation_id);
+            
+            $user->setColoc($coloc);
+            $em->persist($user);
+            $em->flush();
+        }
+
         $path = $user->getPicture()->getPath();
         $this->container->get('request')->getSession()->set('path', $path);
         

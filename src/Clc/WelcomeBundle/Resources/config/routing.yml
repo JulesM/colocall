@@ -25,3 +25,8 @@ clc_welcome_media:
 clc_welcome_set_locale:
     pattern: /set_locale/{locale}
     defaults: { _controller: ClcWelcomeBundle:Welcome:setLocale }
+
+clc_welcome_invitation:
+    pattern: /invitation/{invitation_token}
+    defaults: { _controller: ClcWelcomeBundle:Welcome:invitation }
+

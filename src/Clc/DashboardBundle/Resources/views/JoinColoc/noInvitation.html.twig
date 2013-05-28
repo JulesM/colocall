@@ -4,40 +4,15 @@
 
 {% block contentBlock %}
 
-	<div class="span10 offset1 join-box">
-    	<p>Welcome <b>{{ app.user.nickname }}</b>, in order to use Coloc'all you need to join a virtual flatshare</p>
-    	<p>You can either <b>join</b> one or <b>create</b> a new one</p>
-	</div>
+	<div class="span9 offset1 join-box" id="welcome-create-box">
+    	<h3>Welcome <b>{{ app.user.nickname }}</b>, in order to use Coloc'all you need to register your flatshare</h3>
 
-	<div class="span10 offset1">
-
-		<div id="find-flatshare" class="create-or-join">
-			<div class="header">
-				<h2>Join a Flatshare</h2>
-			</div>
-			<div id="search-coloc">
-				<form method="get" action="{{ path('clc_dashboard_homepage') }}">
-					<p>
-						<input type="search" name="flatshare" id="flatshare" placeholder="Exact name of the Flatshare" style="width: 250px;"/>
-						<input type="submit" value="Search Flatshare" class="btn btn-warning" />
-					</p>
-				</form>
-			</div>
-			<div id="display-coloc">
-				{% render 'ClcColocBundle:Invitation:searchColoc' with { 'flatshare' : app.request.get('flatshare')}%}
-			</div>	
+    	<div id="create-flatshare-button">
+			<a class="btn btn-large btn-success" href="{{ path('clc_dashboard_create_flatshare') }}">Register my flatshare on Coloc'all</a>
 		</div>
 
-		<div id="create-a-flatshare" class="create-or-join">
-			<div class="header">
-				<h2>Create a Flatshare</h2>
-			</div>
-			<div id="create-flatshare-button">
-				<a class="btn btn-large btn-success" href="{{ path('clc_dashboard_create_flatshare') }}">Create a virtual Flatshare right now</a>
-			</div>
-			<p>If none of your flatmates created a flatshare, then you have to create one and communicate it to them</p>
-		</div>	
-
+		<p>ATTENTION : if one of your flatmates already registered your flatshare, ask him to send you an invitation e-mail and then login through the link you received</p>
+		<p>session id {{ app.session.get('invitation_id')}}</p>
 	</div>
 
 {% endblock %}

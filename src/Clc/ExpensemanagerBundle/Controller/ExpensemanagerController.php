@@ -37,8 +37,8 @@ class ExpensemanagerController extends Controller
         $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
                     {
                     return $ur->createQueryBuilder('u')
-                              ->where('u.coloc = :coloc')
-                              ->setParameter('coloc', $coloc)
+                              ->where('u.coloc = :coloc and u.enabled = :enabled')
+                              ->setParameters(array('coloc' => $coloc, 'enabled' => 1))
                               ->orderBy('u.nickname', 'ASC');
                     };
         

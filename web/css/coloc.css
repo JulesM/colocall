@@ -11,6 +11,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+}
+
+#coloc-content h1,h2,h3,h4,h5,h6,a{
     font-family: 'Oswald-regular';
 }
 
@@ -35,8 +38,8 @@
 }
 
 #coloc-right-bottom-box{
-    height: 225px;
-    margin-top: 50px;
+    height: 250px;
+    margin-top: 25px;
 }
 
 .coloc-box{
@@ -126,3 +129,12 @@
 }
 
 /* --- Right bottom box css --- */
+
+#coloc-right-bottom-box p{
+    width: 94%;
+    display: inline-block;
+}
+#coloc-right-bottom-box #cross-button{
+    width: 4%;
+    display: inline-block;
+}
