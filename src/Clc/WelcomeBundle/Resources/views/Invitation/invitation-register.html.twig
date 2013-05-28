@@ -18,6 +18,12 @@
 
             {% render 'FOSUserBundle:Security:login' %}
 
+            <p>OR<p>
+
+            <div id="facebook-button">
+                {{ facebook_login_button({'autologoutlink': false, 'label': 'Connect with facebook'}) }}
+            </div> 
+
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">{{ 'Close'|trans }}</button>
