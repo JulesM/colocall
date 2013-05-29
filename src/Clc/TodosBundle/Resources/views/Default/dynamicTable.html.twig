@@ -3,66 +3,50 @@
 {% for task in coloc_task %}
 
     <tr id="{{ task.task }}">
-     <td>
-        <div id="check">
-         <div class="btn-group">
+        <td>
+            <div id="check">
+                <div class="btn-group">
 
-             {% if state == 0 %}
-                <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
-             {% else %}   
-                <a id="todo-check" class="btn" href="{{ path('clc_todos_uncheck', {'id': task.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
-             {% endif %}
+                    {% if state == 0 %}
+                       <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+                    {% else %}   
+                      <a id="todo-check" class="btn" href="{{ path('clc_todos_uncheck', {'id': task.id}) }}"><i class=" icon-share-alt" style="margin-right: 0px; color: red;"></i></a>
+                    {% endif %}
 
-         </div>                        
-        </div>
-    </td>
-     <td><div id="task">{{ task.task }}</div></td>
+                </div>                        
+            </div>
+        </td>
+        <td>
+            <div id="task">{{ task.task }}</div>
+        </td>
      
-     <td><div id="task-owner">
-     {% if task.owner == null %} <p style="color: lightgrey">Anyone</p>
-     {% else %} {{ task.owner.nickname }}
-     {% endif %}
-     </div></td>
-             
-     <td><div id="date">
-         {% if state == 0 %}
-             {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
-                 overdue
-             {% elseif task.dueDate|date("m/d") == "now"|date("m/d") %}
-                 today
-             {% else %}
-                 <i class="icon-time"></i>{{ task.dueDate|date("d/m") }}
-             {% endif %}
-         {% else %}
-             <i class="icon-time"></i>{{ task.dueDate|date("d-m") }} 
-         {% endif %}      
-     </div></td>
+        <td>
+            <div id="task-owner">
+                {% if task.owner == null %} <p style="color: lightgrey">Anyone</p>
+                {% else %} {{ task.owner.nickname }}
+                {% endif %}
+            </div>
+        </td>
      
-     <td><div id="edit-delete">
-       {#<a href="#edittodomodal{{task.id}}" data-toggle="modal">
-         <i class="icon-edit"></i>
-       </a>#}
-       <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
-         <i class="icon-trash"></i>
-       </a>
-     </div></td>
+        <td>
+            <div id="edit-delete">
+                {% if state == 0 %}
+                    <a href="{{ path('clc_todos_check', {'id': task.id}) }}">
+                        <i class="icon-ok"></i>
+                    </a>
+                    <a href="{{ path('clc_todos_edit', {'id': task.id}) }}">
+                        <i class="icon-edit"></i>
+                    </a>
+                    <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
+                        <i class="icon-trash"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ path('clc_todos_uncheck', {'id': task.id}) }}">
+                        <i class=" icon-share-alt"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </td>
     </tr>
-
-    {#<!-- Edit Modal --> 
-    <div id="edittodomodal{{task.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Edit To-do</h3>
-        </div>
-    <div class="modal-body">
-
-    {% render 'ClcTodosBundle:Todos:edit' with {'id': task.id} %}
-
-    </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-    </div>#}
-   
-  
+     
 {% endfor %}

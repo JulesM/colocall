@@ -52,7 +52,7 @@ security:
                 target: fos_user_security_login
 
     access_control:
-        - { path: ^/(en|fr)/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr)/about, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr)/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr)/how, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -1,0 +1,50 @@
+{# src/Clc/TodosBundle/Resources/views/Default/edit.html.twig #}
+
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/todos.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+
+    <div id="edit-todo-box">
+
+        <div id="edit-todo-header">
+            <h3>Edit To-do</h3>
+        </div>
+
+        <form action="{{ path('clc_todos_edit', {'id' : id }) }}" method="post" {{ form_enctype(form) }}>
+        
+            {{ form_errors(form) }}
+
+            <div class="edit-todo-block">
+                <div class="edit-todo-label">{{ form_label(form.task, 'To-do description') }}</div>
+                <div class="edit-todo-errors">{{ form_errors(form.task) }}</div>
+                <div class="edit-todo-widget">{{ form_widget(form.task) }}</div>
+            </div>
+
+            <div class="edit-todo-block">
+                <div class="edit-todo-label">{{ form_label(form.dueDate, 'Due date') }}</div>
+                <div class="edit-todo-errors">{{ form_errors(form.dueDate) }}</div>
+                <div class="edit-todo-widget">{{ form_widget(form.dueDate) }}</div>
+            </div>
+
+            <div class="edit-todo-block">
+                <div class="edit-todo-label">{{ form_label(form.owner, 'Who is assigned ? (leave blank for Anyone)') }}</div>
+                <div class="edit-todo-errors">{{ form_errors(form.owner) }}</div>
+                <div class="edit-todo-widget">{{ form_widget(form.owner) }}</div>
+            </div>
+
+            {{ form_rest(form) }}
+
+            <div class="edit-todo-button">
+                <a class="btn" href"{{ path('clc_todos_homepage', {'state': 0}) }}">Cancel</a>
+                <input class="btn btn-success" type="submit" value="Validate changes"/>
+            </div>
+        </form>
+
+    </div>  
+
+{% endblock %}

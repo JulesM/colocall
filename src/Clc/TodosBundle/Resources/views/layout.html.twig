@@ -32,33 +32,30 @@
       <div id="todos-table1-container">
           <section class="todo">
               
-              <table id="todo-list" class="table table-hover">
+              <table id="todo-list" class="table">
                    
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
                           <div id="all-todos-caption">
-                              <p>My Pending To-dos</p>                           
+                              <p>My Pending To-dos {{ user_task|length }}</p>                           
                           </div>
                       </div>
                   </caption>
                   
                   {% if user_task == null %}
                     <tbody>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>You do not have any pending to-do</td>
-                         </tr>
+                       <tr>
+                          <td style="padding-left: 15%">You do not have any pending to-do assigned</td>
+                       </tr>
                     </body>
                   {% else %}
                     
                     <thead>
                       <tr>
-                        <th><div id="todo-check">Done ?</div></th>
-                        <th>What</th>
-                        <th>Who</th>
-                        <th>When</th>
-                        <th>Edit</th>
+                        <th style="width: 10%"><div id="todo-check">Done ?</div></th>
+                        <th style="width: 50%">What</th>
+                        <th style="width: 25%">Who</th>
+                        <th style="width: 15%; text-align: center">Edit</th>
                       </tr>
                     </thead>
 
@@ -70,46 +67,20 @@
                               <button class="btn"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></button>
                           </div></td>
                           <td><div id="task">{{ task.task }}</div></td>
-                          <td><div id="task-owner">{{ task.owner.nickname }}</div></td>
-                          <td><div id="date">
-                                {% if state == 0 %}
-                                    {% if task.dueDate|date("m/d") < "now"|date("m/d") %}
-                                        overdue
-                                    {% elseif task.dueDate|date("m/d") == "now"|date("m/d") %}
-                                        today
-                                    {% else %}
-                                        <i class="icon-time"></i>{{ task.dueDate|date("d/m") }}
-                                    {% endif %}
-                                {% else %}
-                                    <i class="icon-time"></i>{{ task.dueDate|date("d-m") }} 
-                                {% endif %}      
-                              </div></td>
-                          <td><div id="edit-delete">
-                            {#<a href="#edittodomodal{{task.id}}" data-toggle="modal">
+                          <td><div id="task-owner" class="text-centered">{{ task.owner.nickname }}</div></td>
+                          <td class="text-centered"><div id="edit-delete">
+                            <a href="{{ path('clc_todos_check', {'id': task.id}) }}">
+                                <i class="icon-ok"></i>
+                            </a>
+                            <a href="{{ path('clc_todos_edit', {'id': task.id}) }}">
                                 <i class="icon-edit"></i>
-                            </a>#}
+                            </a>
                             <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
                               <i class="icon-trash"></i>
                             </a>
                           </div></td>
                         </tr>
                         
-                        <!-- Edit Modal --> 
-                        <div id="edittodomodal{{task.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h3 id="myModalLabel">Edit To-do</h3>
-                            </div>
-                        <div class="modal-body">
-
-                        {% render 'ClcTodosBundle:Todos:edit' with {'id': task.id} %}
-
-                        </div>
-                            <div class="modal-footer">
-                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                            </div>
-                        </div>
-
                         {% endfor %}
                     </tbody>
                     
@@ -145,7 +116,7 @@
     
       <div id="todos-table2-container">
           <section class="todo">
-              <table id="todo-list" class="table table-hover">
+              <table id="todo-list" class="table">
                   
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
@@ -162,24 +133,27 @@
                   {% if coloc_task == null %}
                     <tbody>
                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td>You do not have any pending to-do</td>
+                            {% if state == 0 %}
+                              <td style="padding-left: 15%">There is no pending to-do for your flatshare - <a href="#addtodomodal" data-toggle="modal">Add a To-do ?</a></td>
+                            {% else %}
+                              <td style="padding-left: 15%">There is no checked to-do for your flatshare</td>
+                            {% endif %}
                          </tr>
                     </body>
                   {% else %}
                   
                     <thead>
                       <tr>
-                        <th><div id="todo-check">
-                          {% if state == 0 %}Done ?
-                          {% else %} Not done ?
-                          {% endif %}</div>
+                        <th style="width: 10%">
+                          <div id="todo-check">
+                            {% if state == 0 %}Done ?
+                            {% else %} Re-add ?
+                            {% endif %}
+                          </div>
                         </th>
-                        <th>What</th>
-                        <th>Who</th>
-                        <th>When</th>
-                        <th>Edit</th>
+                        <th style="width: 50%">What</th>
+                        <th style="width: 25%">Who</th>
+                        <th style="width: 15%; text-align: center">Edit</th>
                       </tr>
                     </thead>
 

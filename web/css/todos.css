@@ -1,9 +1,17 @@
 /* --- Todos Bundle --- */
+
 #mainbox{
     background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
 }
 
+table{
+  table-layout: fixed;
+}
+
+table th,td{
+  overflow: hidden;
+}
 
 #todos-content{
     height: 100%;
@@ -24,7 +32,6 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    
 }
 
 .state-button{
@@ -203,7 +210,6 @@ td{
 
 #edit-delete{
     text-align: center;
-    width: 50px;
 }
 
 #edit-delete i{
@@ -361,44 +367,6 @@ tbody *{
 
 /*Slider*/
 
-.regular-checkbox {
-	display: none;
-        opacity: 0.8;
-}
-
-.regular-checkbox:hover{
-        opacity: 1;
-}
-
-.regular-checkbox + label {
-        margin-top: 2px;
-	display: inline;
-	float: middle;
-	width: 70px;
-	height: 24px;
-	background: no-repeat centeR;
-	display: inline-block;
-	position: relative;
-        top:0;
-	background-image: url(../img/chk_on.png);
-	cursor: pointer;
-        opacity: 1;
-        
-}
-
-.regular-checkbox + label:hover{
-        opacity: 1;
-}
-
-.regular-checkbox:checked + label {
-	background-image: url(../img/chk_off.png);
-
-}
-
-.regular-checkbox:checked + label:after {
-	background-image: url(../img/chk_on.png);
-}
-
 .todo-filter-tab li > p > img{
 	display: inline-block;
 	float: middle;
@@ -466,4 +434,45 @@ tbody *{
       margin-left: 0;
       margin-top: 2px;
   }
+}
+
+/* --- Edit a To-do --- */
+
+#edit-todo-box{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: white;
+  border: solid 1px grey;
+  border-radius: 5px;
+}
+
+#edit-todo-header{
+  text-align: center;
+  border-bottom: solid 1px grey;
+  margin-bottom: 20px;
+}
+
+.edit-todo-block{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-todo-label{
+  display: inline-block;
+  font-family: 'Oswald-regular';
+}
+
+.edit-todo-widget{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.edit-todo-button{
+  margin-top: 20px;
+  text-align: center;
 }

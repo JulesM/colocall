@@ -19,14 +19,14 @@ class Todos {
         if ($state == 0) {
         
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state = :state ORDER BY t.dueDate ASC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state = :state ORDER BY t.date ASC'
                                  ); 
         }
         
         else {
          
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state = :state ORDER BY t.dueDate DESC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.coloc = :coloc AND t.state = :state ORDER BY t.date DESC'
                                  );    
         }
         
@@ -43,14 +43,14 @@ class Todos {
         if ($state == 0) {
         
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.dueDate ASC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.date ASC'
                                  ); 
         }
         
         else {
          
         $query = $em->createQuery(
-            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.dueDate DESC'
+            'SELECT t FROM ClcTodosBundle:task t WHERE t.owner = :user AND t.state = :state ORDER BY t.date DESC'
                                  );    
         }
         

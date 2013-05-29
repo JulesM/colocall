@@ -4,7 +4,9 @@
 namespace Clc\TodosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Clc\TodosBundle\Form\Type\TaskType;
 use Clc\TodosBundle\Entity\task;
 
 class TodosController extends Controller
@@ -84,18 +86,30 @@ class TodosController extends Controller
     
     public function editAction($id)
     {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+
         $em = $this->getDoctrine()->getEntityManager();
         $task = $em->getRepository('ClcTodosBundle:task')->find($id);
-        
+
+        $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                    {
+                    return $ur->createQueryBuilder('u')
+                              ->where('u.coloc = :coloc and u.enabled = :enabled')
+                              ->setParameters(array('coloc' => $coloc, 'enabled' => 1))
+                              ->orderBy('u.nickname', 'ASC');
+                    };
+
         $form = $this->createFormBuilder($task)
-                     ->add('task', 'text')
-                     ->add('dueDate', 'date')
-                     ->add('owner', 'entity', array(
-                            'required'=>false,
-                            'class'=>'ClcUserBundle:User', 
-                            'property'=>'nickname',
-                            ))    
-                     ->getForm();
+            ->add('task', 'text')
+            ->add('dueDate', 'date')
+            ->add('owner', 'entity', array(
+                  'class'         => 'ClcUserBundle:User', 
+                  'property'      => 'nickname',
+                  'query_builder' => $usersQuery,
+                  'required'      => false,
+                ))    
+            ->getForm();    
         
         $request = $this->get('request');
 
@@ -103,17 +117,17 @@ class TodosController extends Controller
             $form->bind($request);
             
             if ($form->isValid()) {
-                
-                $em->persist($task);
+
                 $em->flush();
                 
-                $url = $this->getRequest()->headers->get("referer");
+                $url = $this->get('router')->generate('clc_todos_homepage', array('state' => 0));
                 return $this->redirect($url);
             }
         }
         
-        return $this->render('ClcTodosBundle:Default:new.html.twig', array(
+        return $this->render('ClcTodosBundle:Default:edit.html.twig', array(
             'form' => $form->createView(),
+            'id'   => $id,
         ));
     }
     
