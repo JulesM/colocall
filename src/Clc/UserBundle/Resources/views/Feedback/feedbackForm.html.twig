@@ -5,15 +5,13 @@
     {{ form_errors(form) }}
 
     <div>
-        {{ form_label(form.category, 'Please give us feedback') }}
         {{ form_errors(form.category) }}
-        {{ form_widget(form.category, { 'attr': { 'style' : 'width: 120px;' } }) }}
+        {{ form_widget(form.category, { 'attr': { 'style' : 'width: 80%;' } }) }}
     </div>
 
     <div>
-        {{ form_label(form.text, ' ') }}
         {{ form_errors(form.text) }}
-        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%; margin-top: -10px;' } }) }}
+        {{ form_widget(form.text, { 'attr': { 'style' : 'width: 90%; height : 100px;' } }) }}
     </div>
 
     {{ form_rest(form) }}

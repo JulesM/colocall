@@ -8,10 +8,6 @@ clc_shoppinglist_new:
     pattern: /
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:new }
 
-clc_shoppinglist_edit:
-    pattern: /edit/{id}
-    defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:edit }
-
 clc_shoppinglist_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcShoppinglistBundle:Shoppinglist:remove }
