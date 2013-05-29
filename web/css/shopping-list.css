@@ -145,7 +145,7 @@ td{
 }
 
 #shopping-list-item{
-    width: 480px;
+    width: 460px;
     padding-left: 10px;
 }
 
@@ -156,11 +156,11 @@ td{
 }
 #edit-delete{
     text-align: center;
-    width: 60px;
+    width: 80px;
 }
 
 #edit-delete i{
-        color: rgb(139, 143, 151);
+    color: rgb(139, 143, 151);
 }
 
 #todo-list{

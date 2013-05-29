@@ -51,7 +51,7 @@
       
         <div id="todos-table2-container">
             <section class="todo">
-                <table id="todo-list" class="table table-hover">
+                <table id="todo-list" class="table">
                      
                     <caption id="todo-table-caption">  
                         <div id="todo-filter-tab-container">
@@ -78,27 +78,47 @@
                         {% for item in item_list %}  
 
                         <tr>
-                          <td><div id="check">
-                                  
-                            {% if state == 0 %}
-                               <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
-                            {% else %}   
-                               <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}"><i class="icon-remove" style="margin-right: 0px; color: red;"></i></a>
-                            {% endif %}
-                                  
-                          </div></td>
+                          <td>
+                            <div id="check">
+
+                              {% if state == 0 %}
+                                <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}">  <i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i>
+                                </a>
+                              {% else %}   
+                                <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}">
+                                  <i class=" icon-share-alt" style="margin-right: 0px; color: red;"></i>
+                                </a>
+                              {% endif %}
+
+                            </div>
+                          </td>
                           <td>
                               <div id="shopping-list-item">
                                 <div id="item">{{ item.name }}</div>
-                                <div id="author-date"> Added by {{ item.author.nickname }} on {{ item.addedDate|date("d/m")  }}
+                                <div id="author-date"> 
+                                  Added by {{ item.author.nickname }} on {{ item.addedDate|date("d/m")  }}
+                                </div>
                               </div>
                           </td>
-                          <td><div id="edit-delete">
-                            {#<i class="icon-edit"></i>#}
-                            <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
-                              <i class="icon-trash"></i>
-                            </a>
-                          </div></td>
+                          <td>
+                            <div id="edit-delete">
+                              {% if state == 0 %}
+                                <a href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}">
+                                  <i class="icon-ok"></i>
+                                </a>
+                                <a href="{{ path('clc_shoppinglist_edit', {'id': item.id}) }}">
+                                  <i class="icon-edit"></i>
+                                </a>
+                                <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
+                                  <i class="icon-trash"></i>
+                                </a>
+                              {% else %}
+                                <a href="{{ path('clc_shoppinglist_uncheck', {'id': item.id}) }}">
+                                  <i class="icon-share-alt"></i>
+                                </a>
+                              {% endif %}
+                            </div>
+                          </td>
                         </tr>
                        
                         {% endfor %}  
