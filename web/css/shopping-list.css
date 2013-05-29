@@ -7,13 +7,18 @@
 #todos-content{
     height: 100%;
     width: 100%;
-    padding-top: 20px;
     position: relative;
-    /*z-index:0;*/
 }
 
 #todos-middle{
     width: 90%;
+}
+
+#shopping-title{
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #todos-toolbar-tab{

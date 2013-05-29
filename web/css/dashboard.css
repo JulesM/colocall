@@ -1,14 +1,5 @@
 /* --- Style of the dashboard --- */
 
-root { 
-    display: block;
-}
-
-body{
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
 #dashboard-content{
     background-image: url('../img/dashboard/retina_wood_@2X.png');
     background-repeat: repeat;
@@ -23,11 +14,8 @@ body{
 #dashboard-title{
     width: 100%;
     text-align: center;
-}
-
-#dashboard-title img{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #overview-container{

@@ -4,6 +4,11 @@ root {
     display: block;
 }
 
+body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 /* --- General frame --- */
 
 
@@ -149,58 +154,4 @@ last-a{
     width: 80%;
     min-width: 700px;
     margin-top: 10px;
-}
-
-/* --- Expensemanager Bundle --- */
-
-#expense-content{
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/dashboard/dashboard-bckgd.jpg');
-    background-repeat: repeat;
-    padding-top: 20px;
-}
-
-#balance-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#list-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-
-/* --- Shoppinglist Bundle --- */
-
-#shoppinglist-content{
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/dashboard/dashboard-bckgd.jpg');
-    background-repeat: repeat;
-    padding-top: 20px;
-}
-
-#shoppinglist-table1-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#shoppinglist-table2-container{
-    border: solid 1px;
-    height: 300px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
 }
