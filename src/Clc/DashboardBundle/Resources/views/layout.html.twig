@@ -131,8 +131,15 @@
                                     </p>
                                   </td>
                                   <td id="todo-list-edit-comment-delete">
-                                    {#<i class="icon-edit"></i>#}
-                                    <a id="todo-check" class="btn" href="{{ path('clc_todos_check', {'id': task.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+                                    <a href="{{ path('clc_todos_check', {'id': task.id}) }}">
+                                        <i class="icon-ok"></i>
+                                    </a>
+                                    <a href="{{ path('clc_todos_edit', {'id': task.id}) }}">
+                                        <i class="icon-edit"></i>
+                                    </a>
+                                    <a href="{{ path('clc_todos_remove', {'id': task.id}) }}">
+                                      <i class="icon-trash"></i>
+                                    </a>
                                   </td>
                                 </tr>
 
@@ -169,7 +176,12 @@
                                     <i class="icon-time"></i>Added on {{ item.addedDate|date("d/m") }}                                 
                                   </td>
                                   <td id="todo-list-edit-comment-delete">
-                                    <a id="todo-check" class="btn" href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}"><i class="icon-ok" style="margin-right: 0px; color: rgb(155, 197, 142);"></i></a>
+                                    <a href="{{ path('clc_shoppinglist_check', {'id': item.id}) }}">
+                                      <i class="icon-ok"></i>
+                                    </a>
+                                    <a href="{{ path('clc_shoppinglist_remove', {'id': item.id}) }}">
+                                      <i class="icon-trash"></i>
+                                    </a>
                                   </td>
                                 </tr>
 
