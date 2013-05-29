@@ -147,11 +147,3 @@ last-a{
     /*text-shadow: 1px 0.5px 0px rgb(255, 255, 255), 1.5px 2px 0px rgba(0, 0, 0, 0.15);*/
     color: black;
 }
-
-/* --- Explainations --- */
-
-#explainations-container{
-    width: 80%;
-    min-width: 700px;
-    margin-top: 10px;
-}
