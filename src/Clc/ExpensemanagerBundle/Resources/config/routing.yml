@@ -6,8 +6,12 @@ clc_expensemanager_homepage:
     
 clc_expensemanager_new:
     pattern: /new
-    defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:new } 
+    defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:new }
     
+clc_expensemanager_edit:
+    pattern: /edit/{id}
+    defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:edit }
+
 clc_expensemanager_remove:
     pattern: /remove/{id}
     defaults: { _controller: ClcExpensemanagerBundle:Expensemanager:remove }

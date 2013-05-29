@@ -296,3 +296,44 @@
 .inactive-expense #expense-list-cost{
     color: grey;
 }
+
+/* --- Edit a To-do --- */
+
+#edit-expense-box{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: white;
+  border: solid 1px grey;
+  border-radius: 5px;
+}
+
+#edit-expense-header{
+  text-align: center;
+  border-bottom: solid 1px grey;
+  margin-bottom: 20px;
+}
+
+.edit-expense-block{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-expense-label{
+  display: inline-block;
+  font-family: 'Oswald-regular';
+}
+
+.edit-expense-widget{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.edit-expense-button{
+  margin-top: 20px;
+  text-align: center;
+}

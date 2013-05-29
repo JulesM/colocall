@@ -79,13 +79,15 @@
                                             </td>
                                             <td id="expense-amount">{{ expense.amount }}{{ app.user.coloc.currency.symbol }}</td>
                                             <td id="todo-list-edit-comment-delete">
-                                              {#<i class="icon-edit"></i>#}
                                               {% if expense.active == 0 %}
-                                                  <i class="icon-ok"></i>
+                                                <i class="icon-lock"></i>
                                               {% else %}
-                                                  <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
+                                                <a href="{{ path('clc_expensemanager_edit', {'id': expense.id}) }}">
+                                                  <i class="icon-edit"></i>
+                                                </a>
+                                                <a href="{{ path('clc_expensemanager_remove', {'id': expense.id}) }}">
                                                   <i class="icon-trash"></i>
-                                                  </a>
+                                                </a>
                                               {% endif %}
                                             </td>
                                           </tr>

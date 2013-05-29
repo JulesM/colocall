@@ -101,6 +101,67 @@ class ExpensemanagerController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    public function editAction($id)
+    {
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $expense = $em->getRepository('ClcExpensemanagerBundle:expense')->find($id);
+        
+        $usersQuery = function(\Clc\UserBundle\Entity\UserRepository $ur) use ($coloc)
+                    {
+                    return $ur->createQueryBuilder('u')
+                              ->where('u.coloc = :coloc and u.enabled = :enabled')
+                              ->setParameters(array('coloc' => $coloc, 'enabled' => 1))
+                              ->orderBy('u.nickname', 'ASC');
+                    };
+        
+        $form = $this->createFormBuilder($expense)
+                     ->add('owner', 'entity', array(
+                            'class'         => 'ClcUserBundle:User', 
+                            'property'      => 'nickname',
+                            'query_builder' => $usersQuery,
+                            ))
+                     ->add('name', 'text')
+                     ->add('amount', 'money', array(
+                            'currency' => $coloc->getCurrency()->getISO(),
+                            ))
+                     ->add('date', 'date', array(
+                            'input'    => 'datetime',
+                            'widget'   => 'choice',
+                            ))
+                     ->add('users', 'entity', array(
+                            'class'         => 'ClcUserBundle:User',
+                            'property'      => 'nickname',
+                            'query_builder' => $usersQuery,
+                            'multiple'      => 'true',
+                            'expanded'      => 'true',
+                            'required'      => 'true',
+                            ))
+                     ->getForm();
+        
+        $request = $this->get('request');
+
+        if ($request->isMethod('POST')) {
+            
+            $form->bind($request);
+
+            if ($form->isValid() and count($form->get('users')->getData()) > 0) {
+                    
+                $em->flush();
+                
+                $url = $this->get('router')->generate('clc_expensemanager_homepage');
+                return $this->redirect($url);
+            }
+        }
+                
+        return $this->render('ClcExpensemanagerBundle:Default:edit.html.twig', array(
+            'form' => $form->createView(),
+            'id'   => $id,
+        ));
+    }
     
     public function getByColocAction()
     {
