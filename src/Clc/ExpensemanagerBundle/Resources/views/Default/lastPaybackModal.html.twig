@@ -1,0 +1,57 @@
+{# src/Clc/DashboardBundle/resources/views/default/lastPaybackModal.html.twig #}
+
+<!-- Last Payback Modal -->
+
+<div id="lastPaybackModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        {% if last_payback != null %}
+            <h3 id="myModalLabel">Last Payback - {{ last_payback.date|date("d/m") }}</h3>
+        {% else %}{% endif %}
+    </div>
+    <div class="modal-body" style="text-align: center;">
+
+        <div id="expense-body-right-modal" class="expense-body"> 
+              
+                {% if last_payback is null %}
+                    <p>There was no payback yet in your flatshare</p>
+                {% else %}
+                    
+                    <div>
+                        <p id="payback-table-caption">Payments</p>
+                    </div>                    
+                    <div class="table-slimscroll">
+                    <table id="payback-table" class="table">
+                        
+                        <tbody>                          
+                                    {% for payment in last_payback.paymentsArray %}
+                            <tr>
+                                <td>
+                                    <div id="payback-sender">
+                                        <p>{{ payment[0] }}</p> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="payback-arrow">
+                                        <p> {{ payment[1] }}{{ app.user.coloc.currency.symbol }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="payback-recipient">
+                                        <p>{{ payment[2] }}</p> 
+                                    </div>                                
+                                </td>
+                             </tr>
+                                    {% endfor %}
+                        </tbody>
+                     </table>  
+                     </div>
+                {% endif %}
+                     
+            </div>    
+
+        <div id="payback-modal-buttons">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>    
+    </div>
+</div>

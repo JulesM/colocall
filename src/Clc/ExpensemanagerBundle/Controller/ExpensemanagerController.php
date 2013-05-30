@@ -18,6 +18,7 @@ class ExpensemanagerController extends Controller
             'user_expense'  => $this->getMineAction(),
             'forme_expense' => $this->getForMeAction(),
             'balances'      => $this->getActiveBalancesAction(),
+            'payback'       => $this->getPaybackAction(),
             'last_payback'  => $this->getLastPaybackAction(),
         ));
     }
@@ -73,20 +74,9 @@ class ExpensemanagerController extends Controller
             $form->bind($request);
 
             if ($form->isValid() and count($form->get('users')->getData()) > 0) {
-                
-                $notification = new \Clc\InboxBundle\Entity\notification;
-                $notification->setCategory(1)
-                             ->setAuthor($expense->getOwner())
-                             ->setDate(new \Datetime('now'))
-                             ->setExpense($expense)
-                             ->setActive(1);
-                
-                foreach ($expense->getUsers() as $u) {
-                    $notification->addUser($u);
-                }
                     
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($notification);
+                $em->persist($expense);
                 $em->flush();
                 
                 $url = $this->getRequest()->headers->get("referer");
@@ -219,28 +209,56 @@ class ExpensemanagerController extends Controller
         return $bal->getActiveBalances($coloc);
     }
     
-    public function applyPaybackAction()
+    public function getPaybackAction()
     {
-        $coloc = $this->getUser()->getColoc();
+        $user = $this->getUser(); 
+        $coloc = $user->getColoc();
         $payback = new payback();
         $payback->setColoc($coloc);
-        $payback->setDate(new \Datetime('today'));
+        $payback->setAuthor($user);
+        $payback->setDate(new \Datetime('now'));
         
         $bal = $this->container->get('clc_user.balance');
         $activeBalances = $bal->getActiveBalances($coloc);
         
         $pb = $this->container->get('clc_expensemanager.payback');
-        $payments = $pb->applyPayback($coloc, $activeBalances);
-        
-        $em = $this->getDoctrine()->getEntityManager();
+        $payments = $pb->getPayback($coloc, $activeBalances);
         
         $payback->setPaymentsArray($payments);
-        
+
+        return $payback;
+    }
+
+    public function applyPaybackAction()
+    {   
+        $user = $this->getUser();
+        $coloc = $user->getColoc();
+        $payback = $this->getPaybackAction();
+
+        $pb = $this->container->get('clc_expensemanager.payback');
+        $pb->applyPayback($coloc);
+
+        $em = $this->getDoctrine()->getEntityManager();
         $em->persist($payback);
         $em->flush();
-        
+
+        $users= $coloc->getUsers();
+        $mailer = $this->get('mailer');
+        foreach($users as $recipient) {
+            $message = \Swift_Message::newInstance();
+            $message->setSubject('Payback on Coloc\'all !')
+                    ->setFrom(array('noreply@colocall.co' => 'Coloc\'all'))
+                    ->setTo($recipient->getEmail())
+                    ->setBody($this->renderView('ClcExpensemanagerBundle:Default:paybackEmail.html.twig', array(
+                                                'recipient' => $recipient, 
+                                                'payback' => $payback)
+                                                ),
+                                             'text/html');
+            $mailer->send($message);
+        }
+
         $url = $this->getRequest()->headers->get("referer");
-        return $this->redirect($url);
+        return $this->redirect($url); 
     }
     
     public function getLastPaybackAction()

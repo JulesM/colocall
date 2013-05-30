@@ -7,16 +7,47 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="myModalLabel">Suggest a Payback to your flatmates</h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" style="text-align: center;">
 
-        <div id="payback-modal-body">
-            <p>This will calculate who owes what to whom and <b>set all balances back to 0</b>.</p>
-            <p><b>You will not</b> be able to revert this payback !</p>
-            <p>Are you sure you want to apply a Payback ?</p>
-        </div>    
+        <p>This will freeze current debts in a payback and <b>set all balances back to 0</b>.</p>
+
+        <div id="expense-body-right-modal" class="expense-body"> 
+            <div>
+                <p id="payback-table-caption">Payements</p>
+            </div>                    
+            <div class="table-slimscroll">
+                <table id="payback-table" class="table">
+                    <tbody>                          
+                        {% for payment in payback.paymentsArray %}
+                            <tr>
+                                <td>
+                                    <div id="payback-sender">
+                                        <p>{{ payment[0] }}</p> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="payback-arrow">
+                                        <p> {{ payment[1] }}{{ app.user.coloc.currency.symbol }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="payback-recipient">
+                                        <p>{{ payment[2] }}</p> 
+                                    </div>                                
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+            
+        <p><b>You will not</b> be able to revert this payback !</p>
+        <p>Are you sure you want to apply a Payback ?</p>
+            
 
         <div id="payback-modal-buttons">
-            <a class="btn btn-success" href="{{ path('clc_expensemanager_applypayback') }}">Yes</a>
+            <a class="btn btn-success" href="{{ path('clc_expensemanager_applypayback') }}">Apply Payback</a>
             <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
         </div>    
     </div>

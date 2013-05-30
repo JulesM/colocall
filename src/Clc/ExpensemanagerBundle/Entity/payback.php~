@@ -34,6 +34,11 @@ class payback
     protected $coloc;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+    protected $author;
+
+    /**
      * @var array
      *
      * @ORM\Column(name="paymentsArray", type="array")

@@ -41,19 +41,8 @@ class ShoppinglistController extends Controller
 
             if ($form->isValid()) {
                 
-                $notification = new \Clc\InboxBundle\Entity\notification;
-                $notification->setCategory(4)
-                             ->setAuthor($item->getAuthor())
-                             ->setDate(new \Datetime('now'))
-                             ->setItem($item)
-                             ->setActive(1);
-                
-                foreach ($coloc->getUsers() as $u) {
-                    $notification->addUser($u);
-                }
-                
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($notification);
+                $em->persist($item);
                 $em->flush();
                 
                 $url = $this->getRequest()->headers->get("referer");
@@ -90,19 +79,8 @@ class ShoppinglistController extends Controller
 
             if ($form->isValid()) {
                 
-                $notification = new \Clc\InboxBundle\Entity\notification;
-                $notification->setCategory(4)
-                             ->setAuthor($item->getAuthor())
-                             ->setDate(new \Datetime('now'))
-                             ->setItem($item)
-                             ->setActive(1);
-                
-                foreach ($coloc->getUsers() as $u) {
-                    $notification->addUser($u);
-                }
-                
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($notification);
+                $em->persist($item);
                 $em->flush();
                 
                 $url = $this->getRequest()->headers->get("referer");

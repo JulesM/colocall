@@ -34,6 +34,11 @@ class payback
     protected $coloc;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Clc\UserBundle\Entity\User", cascade={"persist"})
+     */
+    protected $author;
+
+    /**
      * @var array
      *
      * @ORM\Column(name="paymentsArray", type="array")
@@ -145,5 +150,28 @@ class payback
     public function getNotification()
     {
         return $this->notification;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Clc\UserBundle\Entity\User $author
+     * @return payback
+     */
+    public function setAuthor(\Clc\UserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Clc\UserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

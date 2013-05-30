@@ -30,7 +30,6 @@ body{
 
 #leftbox{
     width: 22%;
-    height: 100%;
     overflow: hidden;
     min-height: 600px;
 }
@@ -39,8 +38,6 @@ body{
     display: inline-block;
     float: right;
     width: 84%;
-    height: 100%;
-    min-height: 600px;
 }
 
 /* --- Floating Toolbar --- */

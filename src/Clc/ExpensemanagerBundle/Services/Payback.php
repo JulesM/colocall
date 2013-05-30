@@ -5,7 +5,7 @@ namespace Clc\ExpensemanagerBundle\Services;
 
 class Payback {
     
-    public function applyPayback($coloc, $activeBalances)
+    public function getPayback($coloc, $activeBalances)
     {
         $payments = array();
         $positive = array();
@@ -62,17 +62,21 @@ class Payback {
             reset($a);
             reset($b);
             
-            if (current($a) < 1) {$continue = false;} else {$continue = true;}
+            if (current($a) < 0.1) {$continue = false;} else {$continue = true;}
         }
-        
+
+        return $payments;
+    }
+
+    public function applyPayback($coloc)
+    {   
         $activeExpenses = $coloc->getExpenses();
         
         foreach($activeExpenses as $expense) {
             $expense->setActive(false);
         }
         
-        return $payments;
-        
+        return true;
     }
     
     public function sortExpensesByDate($array)

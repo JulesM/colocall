@@ -61,48 +61,48 @@
             </div>
 
             <div id="expense-body-right" class="expense-body"> 
-              
-                {% if last_payback is null %}
-                    <p>There was no payback yet in your flatshare</p>
-                {% else %}
-                    
-                        <div>
-                            <p id="payback-table-caption">Last payback on {{ last_payback.date|date("d/m") }}</p>
-                        </div>                    
-                    <div class="table-slimscroll">
-                    <table id="payback-table" class="table">
-                        
-                        <tbody>                          
-                                    {% for payment in last_payback.paymentsArray %}
-                            <tr>
-                                <td>
-                                    <div id="payback-sender">
-                                        <p>{{ payment[0] }}</p> 
-                                    </div>
-                                </td>
-                                <td>
-                                    <div id="payback-arrow">
-                                        <p> {{ payment[1] }}{{ app.user.coloc.currency.symbol }}</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div id="payback-recipient">
-                                        <p>{{ payment[2] }}</p> 
-                                    </div>                                
-                                </td>
-                             </tr>
-                                    {% endfor %}
-                        </tbody>
-                     </table>  
-                     </div>
-                {% endif %}
-                     
+              <div>
+                <p id="payback-table-caption">Current debts</p>
+              </div>                    
+              <div class="table-slimscroll">
+                <table id="payback-table" class="table">
+                  <tbody>                          
+                    {% for payment in payback.paymentsArray %}
+                      <tr>
+                        <td>
+                          <div id="payback-sender">
+                            <p>{{ payment[0] }}</p> 
+                          </div>
+                        </td>
+                        <td>
+                          <div id="payback-arrow">
+                            <p> {{ payment[1] }}{{ app.user.coloc.currency.symbol }}</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div id="payback-recipient">
+                            <p>{{ payment[2] }}</p> 
+                          </div>                                
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>  
+              </div>
             </div>   
                     
             {% include "ClcExpensemanagerBundle:Default:suggestPaybackModal.html.twig" %}
+            {% include "ClcExpensemanagerBundle:Default:lastPaybackModal.html.twig" %}
 
-            <a class="btn btn-warning" href="#suggestPaybackModal" data-toggle="modal">Suggest a Payback</a>
-               
+            <div id="payback-buttons">
+              <a class="btn btn-warning" href="#suggestPaybackModal" data-toggle="modal">Apply Payback</a>
+              {% if last_payback != null %}
+                <a id="last-payback-button" href="#lastPaybackModal" data-toggle="modal">Last Payback :</br>{{ last_payback.date|date("d/m") }}</a>
+              {% else %}
+                <a id="last-payback-button" href="#">No payback yet</a>
+              {% endif %}
+            </div>
+
           </div>
             
         </div>
@@ -124,7 +124,7 @@
           <div id="expense-list-body">
               
             {% if user_expense == null %}
-              You did not add any expense yet
+              <p class="nothing-to-show">You did not add any expense yet</p>
             {% else %}
                 <table id="expense-list-table" class="table table-hover">
                   <tbody>
@@ -182,7 +182,7 @@
               <div id="expense-list-body">       
 
               {% if forme_expense == null%}
-                  You were not tagged in any expense yet
+                  <p class="nothing-to-show">You were not tagged in any expense yet</p>
               {% else %}
 
                 <table class="table table-hover">
