@@ -32,6 +32,9 @@ class ExpensemanagerController extends Controller
         $expense->setAuthor($user);
         $expense->setOwner($user);
         $expense->setColoc($coloc);
+        foreach($coloc->getUsers() as $u){
+            $expense->addUser($u);
+        }
         $expense->setAddedDate(new \DateTime('now'));
         $expense->setDate(new \DateTime('today'));
         
