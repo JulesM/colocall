@@ -145,7 +145,7 @@
                       <td>
                         <div id="expense-list-edit-delete">
                             {% if expense.active == 0 %}
-                              <i class="icon-lock"></i>
+                              <p style="font-size: 11px; font-style: italic;">paid</p>
                             {% else %}
                               <a href="{{ path('clc_expensemanager_edit', {'id': expense.id}) }}">
                                 <i class="icon-edit"></i>
@@ -209,7 +209,7 @@
                           <td>
                             <div id="expense-list-edit-delete">
                                 {% if expense.active == 0 %}
-                                  <i class="icon-lock"></i>
+                                  <p style="font-size: 11px; font-style: italic;">paid</p>
                                 {% else %}
                                   <a href="{{ path('clc_expensemanager_edit', {'id': expense.id}) }}">
                                     <i class="icon-edit"></i>
