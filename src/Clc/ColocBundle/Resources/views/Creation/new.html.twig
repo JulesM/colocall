@@ -5,7 +5,7 @@
     {{ form_errors(form) }}
 
     <div>
-        <div class="coloc-form-label">{{ form_label(form.name, 'Name of the flatshare') }}</div>
+        <div class="coloc-form-label">{{ form_label(form.name, 'Name of the flatshare *') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.name) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.name) }}</div>
     </div>
@@ -29,19 +29,19 @@
     </div>
     
     <div>
-        <div class="coloc-form-label">{{ form_label(form.city) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.city, 'City *') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.city) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.city) }}</div>
     </div>
     
     <div>
-        <div class="coloc-form-label">{{ form_label(form.country) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.country, 'Country *') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.country) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.country) }}</div>
     </div>
 
     <div>
-        <div class="coloc-form-label">{{ form_label(form.currency) }}</div>
+        <div class="coloc-form-label">{{ form_label(form.currency, 'Currency *') }}</div>
         <div style="display: inline-block;">{{ form_errors(form.currency) }}</div>
         <div style="display: inline-block;">{{ form_widget(form.currency) }}</div>
     </div>

@@ -38,7 +38,7 @@ class coloc
     /**
      * @var string
      *
-     * @ORM\Column(name="address1", type="string", length=255)
+     * @ORM\Column(name="address1", type="string", length=255, nullable=true)
      */
     protected $address1;
 
@@ -52,7 +52,7 @@ class coloc
     /**
      * @var string
      *
-     * @ORM\Column(name="zipcode", type="string", length=255)
+     * @ORM\Column(name="zipcode", type="string", length=255, nullable=true)
      */
     protected $zipcode;
 

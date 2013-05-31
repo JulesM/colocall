@@ -12,9 +12,9 @@ class ColocType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text')
-                ->add('address1', 'text')
+                ->add('address1', 'text', array('required' => false))
                 ->add('address2', 'text', array('required' => false))
-                ->add('zipcode', 'integer')
+                ->add('zipcode', 'integer', array('required' => false))
                 ->add('city', 'text')
                 ->add('country', 'text')
                 ->add('currency', 'entity', array(
