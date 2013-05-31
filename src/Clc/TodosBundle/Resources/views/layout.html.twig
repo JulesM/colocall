@@ -34,7 +34,7 @@
                   <caption id="todo-table-caption">  
                       <div id="todo-filter-tab-container"> 
                           <div id="all-todos-caption">
-                              <p>My Pending To-dos {{ user_task|length }}</p>                           
+                              <p>My Pending To-dos ({{ user_task|length }})</p>                           
                           </div>
                       </div>
                   </caption>
@@ -119,8 +119,8 @@
                       <div id="todo-filter-tab-container"> 
                           <div id="all-todos-caption">
                               
-                              {% if state == 0 %} <p>All Pending To-dos</p>
-                              {% else %}          <p>All Checked To-dos</p>
+                              {% if state == 0 %} <p>All Pending To-dos ({{ coloc_task|length }})</p>
+                              {% else %}          <p>All Checked To-dos ({{ coloc_task|length }})</p>
                               {% endif %}
                               
                           </div>

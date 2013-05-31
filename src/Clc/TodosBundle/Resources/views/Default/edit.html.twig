@@ -26,12 +26,6 @@
             </div>
 
             <div class="edit-todo-block">
-                <div class="edit-todo-label">{{ form_label(form.dueDate, 'Due date') }}</div>
-                <div class="edit-todo-errors">{{ form_errors(form.dueDate) }}</div>
-                <div class="edit-todo-widget">{{ form_widget(form.dueDate) }}</div>
-            </div>
-
-            <div class="edit-todo-block">
                 <div class="edit-todo-label">{{ form_label(form.owner, 'Who is assigned ? (leave blank for Anyone)') }}</div>
                 <div class="edit-todo-errors">{{ form_errors(form.owner) }}</div>
                 <div class="edit-todo-widget">{{ form_widget(form.owner) }}</div>
@@ -40,7 +34,7 @@
             {{ form_rest(form) }}
 
             <div class="edit-todo-button">
-                <a class="btn" href"{{ path('clc_todos_homepage', {'state': 0}) }}">Cancel</a>
+                <a class="btn" href="{{ path('clc_todos_homepage', {'state': 0}) }}">Cancel</a>
                 <input class="btn btn-success" type="submit" value="Validate changes"/>
             </div>
         </form>
